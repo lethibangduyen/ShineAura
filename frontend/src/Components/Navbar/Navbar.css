@@ -1,0 +1,114 @@
+.logo-icon {
+    position: relative;
+    width: 158px;
+    height: 40px;
+    object-fit: cover;
+  }
+  .streamline_icon {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    overflow: hidden;
+  }
+  .collection {
+    position: absolute;
+    top: -2px;
+    left: 20px;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    font-weight: 300;
+  }
+  .streamlineinterface {
+    position: relative;
+    width: 158px;
+    height: 20px;
+  }
+  .hot-deal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 111px;
+  }
+  .about-us,
+  .best-seller,
+  .hot-deal {
+    position: relative;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    font-weight: 300;
+    flex-shrink: 0;
+  }
+  .best-seller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+  }
+  .about-us {
+    width: 112px;
+  }
+  .about-us,
+  .frame-parent,
+  .policy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .policy {
+    position: relative;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    font-weight: 300;
+    width: 79px;
+    flex-shrink: 0;
+  }
+  .frame-parent {
+    align-self: stretch;
+    width: 840px;
+    flex-direction: row;
+    padding: 10px 0;
+    box-sizing: border-box;
+    gap: 40px;
+  }
+  .icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .icon-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .navigation,
+  .nav_bar {
+    background-color: #fff;
+    height: 80px;
+  }
+  .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .nav_bar {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+    font-family: Montserrat;
+  }
+  
