@@ -1,114 +1,256 @@
 .logo-icon {
-    position: relative;
-    width: 158px;
-    height: 40px;
-    object-fit: cover;
-  }
-  .streamline_icon {
-    position: absolute;
-    top: 4px;
-    left: 0;
-    width: 12px;
-    height: 12px;
-    overflow: hidden;
-  }
-  .collection {
-    position: absolute;
-    top: -2px;
-    left: 20px;
-    letter-spacing: 0.03em;
-    text-transform: capitalize;
-    font-weight: 300;
-  }
-  .streamlineinterface {
-    position: relative;
-    width: 158px;
-    height: 20px;
-  }
-  .hot-deal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 111px;
-  }
-  .about-us,
-  .best-seller,
-  .hot-deal {
-    position: relative;
-    letter-spacing: 0.03em;
-    text-transform: capitalize;
-    font-weight: 300;
-    flex-shrink: 0;
-  }
-  .best-seller {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 140px;
-  }
-  .about-us {
-    width: 112px;
-  }
-  .about-us,
-  .frame-parent,
-  .policy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .policy {
-    position: relative;
-    letter-spacing: 0.03em;
-    text-transform: capitalize;
-    font-weight: 300;
-    width: 79px;
-    flex-shrink: 0;
-  }
-  .frame-parent {
-    align-self: stretch;
-    width: 840px;
-    flex-direction: row;
-    padding: 10px 0;
-    box-sizing: border-box;
-    gap: 40px;
-  }
-  .icon {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-  .icon-parent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-  }
-  .navigation,
-  .nav_bar {
-    background-color: #fff;
-    height: 80px;
-  }
-  .navigation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1440px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-  }
-  .nav_bar {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-    font-size: 20px;
-    color: #000;
-    font-family: Montserrat;
-  }
-  
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.logo {
+  width: 194.48px;
+  height: 50px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12.033695220947266px;
+  box-sizing: border-box;
+  z-index: 0;
+}
+.icon,
+.text {
+  position: relative;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.text {
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+.s-button {
+  gap: 8px;
+}
+.s-button,
+.s-button1 {
+  border-radius: 2px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+}
+.frame-parent {
+  gap: 8px;
+  z-index: 1;
+}
+.icon-parent, 
+.frame-parent,
+.s-button2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.s-button2 {
+  border-radius: 2px;
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.frame-group {
+  gap: 16px;
+  z-index: 2;
+}
+.all {
+  position: relative;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000;
+}
+.facial-cleanser,
+.moisturizing-cream,
+.skin-care,
+.sunscreen-cream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.facial-cleanser,
+.moisturizing-cream,
+.sunscreen-cream {
+  font-weight: 500;
+}
+.moisturizing-cream,
+.sunscreen-cream {
+  top: 33px;
+}
+.moisturizing-cream {
+  top: 66px;
+}
+.exfoliating-scrub,
+.makeup-remover,
+.nourishing-face-mask,
+.nourishing-serum,
+.toning-lotion {
+  position: absolute;
+  top: 99px;
+  left: 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.exfoliating-scrub,
+.nourishing-face-mask,
+.nourishing-serum,
+.toning-lotion {
+  top: 132px;
+}
+.exfoliating-scrub,
+.nourishing-face-mask,
+.nourishing-serum {
+  top: 165px;
+}
+.exfoliating-scrub,
+.nourishing-face-mask {
+  top: 198px;
+}
+.nourishing-face-mask {
+  top: 231px;
+}
+.facial-cleanser-parent {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 192px;
+  height: 248px;
+  font-size: 14px;
+  color: #5d5d5d;
+}
+.skin-care-parent {
+  position: relative;
+  width: 192px;
+  height: 284px;
+}
+.loose-powder {
+  position: absolute;
+  top: 264px;
+  left: 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.lipstick-parent {
+  position: absolute;
+  top: 36px;
+  left: 1px;
+  width: 127px;
+  height: 281px;
+  font-size: 14px;
+  color: #5d5d5d;
+}
+.makeup-parent {
+  position: relative;
+  width: 128px;
+  height: 317px;
+}
+.all-parent,
+.navigation {
+  background-color: #fff;
+  flex-direction: row;
+}
+.all-parent {
+  margin: 0 !important;
+  position: absolute;
+  top: 88px;
+  left: 330px;
+  border-radius: 2px;
+  border: 1px solid #000;
+  display: none;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px 32px;
+  gap: 64px;
+  z-index: 3;
+  text-align: left;
+  font-size: 16px;
+  color: #4f4f4f;
+}
+.all-parent {
+  /* Cố định kích thước và hiển thị flex để sử dụng flexbox */
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa 2 cột */
+}
+
+.column {
+  /* Đặt kích thước và chia đều không gian cho 2 cột */
+  flex: 1;
+}
+.navbar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+  gap: 48px;
+  text-align: center;
+  font-size: 20px;
+  color: #000;
+  font-family: Montserrat;
+}
+.s-button1:hover {
+  color: #fff; /* Chữ trắng khi hover */
+  background-color:black; /* Nền xanh khi hover */
+}
+.s-button:hover {
+  color: #fff; /* Chữ trắng khi hover */
+  background-color: black;}
+/* Navbar.css */
+
+/* ... các phần CSS khác ... */
+
+.s-button {
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown styling */
+.all-parent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1;
+  display: none; /* Ẩn ban đầu */
+}
+
+/* Hiển thị dropdown khi showAllParent là true */
+.s-button:hover .all-parent {
+  display: block;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
