@@ -203,7 +203,9 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        { <div className="icon-parent">
+        {
+            
+         <div className="icon-parent">
         <div className="s-button2">
           <img className="icon" alt="" src={cart_icon} />
         </div>
@@ -213,7 +215,8 @@ const Navbar = () => {
         <div className="s-button2">
           <img className="icon" alt="" src={people_icon} />
         </div>
-      </div>}
+      </div>
+      }
       </div>
     </div>
   );
