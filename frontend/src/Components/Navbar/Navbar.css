@@ -23,12 +23,7 @@
 .text {
   position: relative;
 }
-.icon {
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
+
 .text {
   letter-spacing: 0.03em;
   text-transform: capitalize;
@@ -38,7 +33,7 @@
   gap: 8px;
 }
 .s-button,
-.s-button1 {
+.nav-button{
   border-radius: 2px;
   background-color: #fff;
   display: flex;
@@ -47,19 +42,19 @@
   justify-content: center;
   padding: 16px 20px;
 }
-.frame-parent {
+.nav-parent {
   gap: 8px;
   z-index: 1;
 }
-.icon-parent, 
-.frame-parent,
-.s-button2 {
+.icon-nav,
+.nav-parent,
+.icon-button   {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.s-button2 {
+.icon-button {
   border-radius: 2px;
   background-color: #fff;
   width: 36px;
@@ -67,9 +62,45 @@
   padding: 8px;
   box-sizing: border-box;
 }
-.frame-group {
+.icon-nav {
   gap: 16px;
   z-index: 2;
+}
+.all-parent,
+.navigation {
+  background-color: #fff;
+  flex-direction: row;
+}
+.all-parent {
+  margin: 0 !important;
+  position: absolute;
+  top: 88px;
+  left: 330px;
+  border-radius: 2px;
+  border: 1px solid #000;
+  display: none;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px 32px;
+  gap: 64px;
+  z-index: 3;
+  text-align: left;
+  font-size: 16px;
+  color: #4f4f4f;
+}
+.navigation {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+  gap: 48px;
+  text-align: center;
+  font-size: 20px;
+  color: #000;
+  font-family: Montserrat;
 }
 .all {
   position: relative;
@@ -165,92 +196,31 @@
   width: 128px;
   height: 317px;
 }
-.all-parent,
-.navigation {
-  background-color: #fff;
-  flex-direction: row;
-}
-.all-parent {
-  margin: 0 !important;
-  position: absolute;
-  top: 88px;
-  left: 330px;
-  border-radius: 2px;
-  border: 1px solid #000;
-  display: none;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 24px 32px;
-  gap: 64px;
-  z-index: 3;
-  text-align: left;
-  font-size: 16px;
-  color: #4f4f4f;
-}
-.all-parent {
-  /* Cố định kích thước và hiển thị flex để sử dụng flexbox */
-  display: flex;
-  gap: 20px; /* Khoảng cách giữa 2 cột */
+
+.nav-button:hover {
+  color: #fff;
+  background-color: black;
 }
 
-.column {
-  /* Đặt kích thước và chia đều không gian cho 2 cột */
-  flex: 1;
-}
-.navbar {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 0;
-  box-sizing: border-box;
-  gap: 48px;
-  text-align: center;
-  font-size: 20px;
-  color: #000;
-  font-family: Montserrat;
-}
-.s-button1:hover {
-  color: #fff; /* Chữ trắng khi hover */
-  background-color:black; /* Nền xanh khi hover */
-}
 .s-button:hover {
-  color: #fff; /* Chữ trắng khi hover */
-  background-color: black;}
-/* Navbar.css */
-
-/* ... các phần CSS khác ... */
-
-.s-button {
-  gap: 8px;
-  position: relative;
-  cursor: pointer;
+  color: #fff;
+  background-color: black;
 }
+
+/* ... other styles ... */
 
 /* Dropdown styling */
 .all-parent {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100px;
+  left: auto;
   background-color: #fff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   z-index: 1;
-  display: none; /* Ẩn ban đầu */
+  display: none;
 }
 
-/* Hiển thị dropdown khi showAllParent là true */
 .s-button:hover .all-parent {
-  display: block;
-}
-
-.dropdown-item {
-  cursor: pointer;
-  padding: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-item:hover {
-  background-color: #f1f1f1;
+  display: flex;
 }

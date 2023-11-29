@@ -1,0 +1,278 @@
+.vector-icon {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.logo {
+  width: 280.05px;
+  height: 72px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 17.328521728515625px;
+  box-sizing: border-box;
+}
+.collection,
+.contact,
+.product,
+.site-map,
+.term-condition {
+  position: absolute;
+  top: 81px;
+  left: 0;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+.collection,
+.contact,
+.site-map,
+.term-condition {
+  top: 165px;
+}
+.collection,
+.site-map,
+.term-condition {
+  top: 109px;
+}
+.site-map,
+.term-condition {
+  top: 193px;
+}
+.site-map {
+  top: 0;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  font-family: Montserrat;
+}
+.about-us,
+.home {
+  position: absolute;
+  top: 53px;
+  left: 0;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+.about-us {
+  top: 137px;
+}
+.group-child {
+  position: absolute;
+  top: 34.5px;
+  left: -0.5px;
+  border-top: 1px solid #fff;
+  box-sizing: border-box;
+  width: 160px;
+  height: 1px;
+}
+.product-parent {
+  position: relative;
+  width: 159px;
+  height: 209px;
+}
+.group-item {
+  position: absolute;
+  top: 34.5px;
+  left: -0.5px;
+  border-top: 1px solid #fff;
+  box-sizing: border-box;
+  width: 159px;
+  height: 1px;
+}
+.exfoliating-scrub,
+.foundation,
+.lipstick,
+.nourishing-face-mask {
+  position: absolute;
+  top: 221px;
+  left: 0;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+.foundation,
+.lipstick,
+.nourishing-face-mask {
+  top: 249px;
+}
+.foundation,
+.lipstick {
+  top: 53px;
+  left: 152px;
+}
+.foundation {
+  top: 81px;
+}
+.blush,
+.eyeliner,
+.eyeshadow,
+.face-powder,
+.lip-pencil,
+.loose-powder,
+.mascara {
+  position: absolute;
+  top: 109px;
+  left: 152px;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+.blush,
+.eyeliner,
+.eyeshadow,
+.lip-pencil,
+.loose-powder,
+.mascara {
+  top: 137px;
+}
+.blush,
+.eyeliner,
+.eyeshadow,
+.lip-pencil,
+.loose-powder {
+  top: 165px;
+}
+.blush,
+.eyeliner,
+.lip-pencil,
+.loose-powder {
+  top: 193px;
+}
+.eyeliner,
+.lip-pencil,
+.loose-powder {
+  top: 221px;
+}
+.lip-pencil,
+.loose-powder {
+  top: 249px;
+}
+.loose-powder {
+  top: 277px;
+}
+.collection-parent {
+  position: relative;
+  width: 231px;
+  height: 293px;
+}
+.contact-us {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  display: inline-block;
+  width: 136px;
+  height: 23px;
+}
+.group-inner {
+  position: absolute;
+  top: 34.5px;
+  left: -0.5px;
+  border-top: 1px solid #fff;
+  box-sizing: border-box;
+  width: 167px;
+  height: 1px;
+}
+.icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.thisisouremailgmailcom {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+.icon-container,
+.icon-group,
+.icon-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.icon-container,
+.icon-group {
+  top: 28px;
+}
+.icon-container {
+  top: 56px;
+}
+.frame-parent {
+  position: absolute;
+  top: 53px;
+  left: 0;
+  width: 274px;
+  height: 72px;
+  text-align: justify;
+  font-size: 12px;
+  font-family: Nunito;
+}
+.contact-us-parent {
+  position: relative;
+  width: 274px;
+  height: 125px;
+  font-size: 24px;
+  font-family: Montserrat;
+}
+.contact-our-medias {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+  display: inline-block;
+  width: 533px;
+}
+.icon3,
+.icon4,
+.icon5 {
+  position: absolute;
+  top: 28px;
+  left: 257px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.icon4,
+.icon5 {
+  left: 205px;
+}
+.icon5 {
+  left: 309px;
+}
+.contact-our-medias-parent {
+  position: relative;
+  width: 533px;
+  height: 48px;
+  text-align: center;
+}
+.footer {
+  position: relative;
+  background-color: #181818;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 100px;
+  box-sizing: border-box;
+  gap: 64px;
+  text-align: left;
+  font-size: 12px;
+  color: #fff;
+  font-family: Nunito;
+}

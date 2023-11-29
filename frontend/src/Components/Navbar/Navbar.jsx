@@ -2,9 +2,6 @@
 import React, { useState } from 'react';
 import logo from '../Assets/Logo.png';
 import streamline from '../Assets/streamline.svg';
-import cart_icon from '../Assets/cart_icon.svg';
-import search_icon from '../Assets/bi_search.svg';
-import people_icon from '../Assets/icon_people.svg';
 import './Navbar.css';
 import './Global.css';
 
@@ -16,11 +13,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
+    <div className="navigation">
       <div className="logo">
         <img className="logo-icon" src={logo} alt="logo" />
       </div>
-      <div className="frame-parent">
+      <div className="nav-parent">
         <div className="s-button" onClick={handleSButtonClick}>
           <img className="streamline_icon" alt="" src={streamline} />
           <div className="text">COLLECTION</div>
@@ -61,30 +58,31 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <div className="s-button1">
+        <div className="nav-button">
           <div className="text">HOT DEAL</div>
         </div>
-        <div className="s-button1">
+        <div className="nav-button">
           <div className="text">BEST SELLER</div>
         </div>
-        <div className="s-button1">
+        <div className="nav-button">
           <div className="text">ABOUT US</div>
         </div>
-        <div className="s-button1">
+        <div className="nav-button">
           <div className="text">POLICY</div>
         </div>
-        <div className="icon-parent">
-          <div className="s-button2">
-            <img className="icon" alt="" src={cart_icon} />
+        
+      </div>
+      <div className="icon-nav">
+          <div className="icon-button">
+          <i className=" bi bi-bag"></i>
           </div>
-          <div className="s-button2">
-            <img className="icon" alt="" src={search_icon} />
+          <div className="icon-button">
+          <i className=" bi bi-people"></i>
           </div>
-          <div className="s-button2">
-            <img className="icon" alt="" src={people_icon} />
+          <div className="icon-button">
+          <i className=" bi bi-search"></i>
           </div>
         </div>
-      </div>
     </div>
   );
 };
