@@ -1,0 +1,316 @@
+/* Button: Buy now */
+/* At display */
+.buy-now-button {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 242px;
+    height: 49px;
+}
+
+.buy-now-button svg {
+    margin-right: 10px;
+}
+
+.icon-bg {
+    background-color: #F1EBE4;
+    border-radius: 100%;
+    background-clip: padding-box;
+    width: 30px;
+    height: 30px;
+}
+
+/* When Pointing the Mouse */
+.buy-now-button:hover {
+    background-color: #F1EBE4;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+/* When pressing the button */
+.buy-now-button:active {
+    background-color: #FFE5C6;
+    transform: translateY(4px);
+}
+
+.buy-now-button:active .icon-bg {
+    background-color: #FFE5C6;
+    transition-duration: 0.4s;
+}
+
+/* ------------------------------------------------ */
+/* Button: Blod font */
+/* At display */
+.button_1 {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFFCF8;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 180px;
+    height: 60px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+/* When Pointing the Mouse */
+.button_1:hover {
+    color: #000000;
+    background-color: #FFFCF8;
+    border-color: #000000;
+}
+
+/* When pressing the button */
+.button_1:active {
+    color: #ffffff;
+    background-color: #000000;
+    transform: translateY(4px);
+}
+
+/* ------------------------------------------------ */
+/* Button: Not blod font */
+/* At display */
+.button_2 {
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: #FFFCF8;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 180px;
+    height: 60px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+/* When Pointing the Mouse */
+.button_2:hover {
+    color: #000000;
+    background-color: #FFFCF8;
+    border-color: #000000;
+}
+
+/* When pressing the button */
+.button_2:active {
+    color: #ffffff;
+    background-color: #000000;
+    transform: translateY(4px);
+}
+
+/* ------------------------------------------------ */
+/* Button: Logo facebook + Blod font */
+/* At display */
+.button_3 {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFFCF8;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 180px;
+    height: 60px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+.button_3 svg {
+    margin-right: 10px;
+}
+
+/* When Pointing the Mouse */
+.button_3:hover {
+    color: #000000;
+    background-color: #FFFCF8;
+    border-color: #000000;
+}
+
+/* When pressing the button */
+.button_3:active {
+    color: #ffffff;
+    background-color: #000000;
+    transform: translateY(4px);
+}
+
+/* ------------------------------------------------ */
+/* Button: Logo facebook + Not blod font */
+/* At display */
+.button_4 {
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: #FFFCF8;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 180px;
+    height: 60px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+.button_4 svg {
+    margin-right: 10px;
+}
+
+/* When Pointing the Mouse */
+.button_4:hover {
+    color: #000000;
+    background-color: #FFFCF8;
+    border-color: #000000; 
+}
+
+/* When pressing the button */
+.button_4:active {
+    color: #ffffff;
+    background-color: #000000;
+    transform: translateY(4px);
+}
+
+/* ------------------------------------------------ */
+/* Button: Logo facebook + Not blod font */
+/* At display */
+.button_5 {
+    font-family: Montserrat;
+    font-size: 14px;
+    background-color: #FFFCF8;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 36px;
+    height: 36px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+/* When Pointing the Mouse */
+.button_5:hover {
+    color: #000000;
+    background-color: #FFFCF8;
+    border-color: #000000; /* Thay đổi màu viền khi hover */
+}
+
+/* When pressing the button */
+.button_5:active {
+    color: #ffffff;
+    background-color: #000000;
+    transform: translateY(4px);
+}
+
+/* ------------------------------------------------ */
+/* Button: Collection */
+/* At display */
+.collection-button {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFFCF8;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 180px;
+    height: 60px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+.collection-button svg {
+    margin-right: 10px;
+}
+
+/* CSS list */
+.collection-dropdown-content {
+    font-family: Montserrat;
+    font-size: 14px;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 0px;
+    padding: 0;
+    display: none;
+    justify-content: space-between;
+}
+
+.title-list {
+    font-weight: bold;
+    color: 4F4F4F;
+    font-size: 16px;
+    margin-bottom: 5%;
+}
+
+.collection-dropdown-content li{
+    list-style: none;
+}
+
+.collection-dropdown-content li a {
+    color: #5D5D5D;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.collection-dropdown-content > li {
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+/* When Pointing the Mouse */
+.collection-button:hover {
+    color: #000000;
+    background-color: #FFFCF8;
+    border-color: #000000;
+}
+
+/* When pressing the button */
+.collection-button:focus {
+    color: #ffffff;
+    background-color: #000000;
+    transform: translateY(4px);
+}
+
+.collection-button:focus + .collection-dropdown-content,
+.collection-dropdown-content:focus-within {
+    display: flex;
+}
