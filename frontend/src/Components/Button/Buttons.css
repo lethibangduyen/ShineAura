@@ -348,9 +348,9 @@
     margin-top: 15px;
     padding: 0;
     display: none;
-    justify-content: space-between;
     width: 449px;
     height: 315px;
+    border: 0.5px solid #000000;
 }
 
 .title-list {
@@ -358,6 +358,7 @@
     color: #4F4F4F;
     font-size: 16px;
     margin-bottom: 5%;
+    text-align: left;
 }
 
 .collection-dropdown-content li{
@@ -371,7 +372,7 @@
     display: block;
 }
 
-.collection-dropdown-content > li {
+.collection-dropdown-content li {
     margin-bottom: 10%;
     text-align: left;
 }
