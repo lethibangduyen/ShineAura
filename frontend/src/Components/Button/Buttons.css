@@ -343,7 +343,7 @@
     font-size: 14px;
     position: absolute;
     background-color: #F9F6F3;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
     z-index: 1;
     margin-top: 15px;
     padding: 0;
@@ -351,6 +351,7 @@
     width: 449px;
     height: 315px;
     border: 0.5px solid #000000;
+    border-radius: 2px;
 }
 
 .title-list {
