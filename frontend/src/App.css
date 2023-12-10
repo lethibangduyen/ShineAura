@@ -1,7 +1,82 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap");
+/* Fonts and Imports */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap");
 
-.App {
-  text-align: center;
+/* Base Styles */
+body {
+  margin: 0;
+  line-height: normal;
 }
 
+/* Global Variables */
+:root {
+  /* Fonts */
+  --font-archivo: Archivo;
+  --body: Nunito;
+  --h2: Montserrat;
+  --bold: Nunito;
+  --title-h1: Montserrat;
+  --font-inter: Inter;
+  --font-playfair-display: "Playfair Display";
+
+  /* Font Sizes */
+  --light-body-size: 12px;
+  --h4-size: 24px;
+  --body-size: 16px;
+  --h2-size: 40px;
+  --pre-title-size: 20px;
+  --title-h1-size: 64px;
+  --subtitle-size: 24px;
+  --bold-size: 16px;
+  --h3-size: 32px;
+  --font-size-4xs-2: 8.2px;
+  --font-size-3xs-9: 9.9px;
+  --font-size-3xs: 10px;
+  --font-size-sm: 14px;
+  --font-size-13xl: 32px;
+
+  /* Colors */
+  --color-white: #fff;
+  --dark-brown: #3b3023;
+  --rodeo-dust-50: #f9f6f3;
+  --shark-950: #1f1f1f;
+  --color-black: #000;
+  --light-element-backgrounds: #eae0d5;
+  --color-darkslategray-100: #333;
+  --rodeo-dust-100: #f1ebe3;
+  --color-linen-100: #eee6dd;
+  --color-snow: #fffcf8;
+  --ivory: #f9f6f3;
+  --color-gainsboro: #d9d9d9;
+
+  /* Gaps */
+  --gap-45xl: 64px;
+  --gap-7xs: 6px;
+  --gap-5xs: 8px;
+  --gap-5xl: 24px;
+  --gap-9xs: 4px;
+  --gap-base: 16px;
+  --gap-xs: 12px;
+  --gap-xl: 20px;
+
+  /* Paddings */
+  --padding-31xl: 50px;
+  --padding-9xs: 4px;
+  --padding-5xs: 8px;
+  --padding-11xs: 2px;
+  --padding-mid-3: 17.3px;
+  --padding-45xl: 64px;
+  --padding-base: 16px;
+  --padding-xs: 12px;
+  --padding-7xs: 6px;
+  --padding-43xl: 62px;
+  --padding-12xl: 31px;
+  --padding-3xs: 10px;
+
+  /* Border Radiuses */
+  --br-11xs: 2px;
+  --br-8xs-1: 4.1px;
+  --br-8xs: 5px;
+}

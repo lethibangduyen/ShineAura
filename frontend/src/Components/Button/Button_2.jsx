@@ -1,15 +1,16 @@
 import React from 'react';
 import './Buttons.css';
 
-const Button_2 = () => {
+const Button_2 = ({ buttonText }) => {
     return (
-        <div  >
-            <button class="button_2">
-                <div class="child-box_2"></div>
-                <span>BUTTON</span>
-            </button>
-        </div>
+      <div>
+        <button className="button_2">
+          <div className="child-box_2"></div>
+          <span>{buttonText}</span>
+        </button>
+      </div>
     );
-}
-
-export default Button_2;
+  }
+  
+  export default Button_2;
+  
