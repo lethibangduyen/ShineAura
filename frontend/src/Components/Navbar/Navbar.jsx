@@ -1,6 +1,6 @@
 // Navbar.jsx
 import React, { useState } from 'react';
-import logo from '../Assets/Logo.svg';
+import logo from '../Assets/Media/Logo.svg';
 import './Navbar.css';
 import ButtonCollectionButton from '../Button/Button_collection.jsx'; 
 import Button2 from '../Button/Button_2.jsx';

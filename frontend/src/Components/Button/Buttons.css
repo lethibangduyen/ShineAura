@@ -402,3 +402,441 @@
 .collection-dropdown-content:focus-within {
     display: flex;
 }
+
+/* --------------------------------------- */
+/* Button 6: BUTTON BLACK*/
+.button_6 {
+    font-family: montserrat;
+    font-size: 12px;
+    background-color: transparent;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 66px;
+    height: 28px;
+    border-radius: 2px;
+}
+
+.child-box_6 {
+    width: 50px;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* When Pointing the Mouse */
+.button_6:hover {
+    position: relative;
+    .child-box_6 {
+        background-color: #333333;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_6:active {
+    background-color: transparent;
+    color: rgba(51, 51, 51, 0.5);
+    transform: translateY(4px);
+    .child-box_6 {
+        background-color: rgba(51, 51, 51, 0.5);
+    }
+}
+
+/* --------------------------------------- */
+/* Button 7: BUTTON BLACK + ICON Arrow up-right */
+.button_7 {
+    font-family: montserrat;
+    font-size: 12px;
+    background-color: transparent;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 28px;
+    border-radius: 2px;
+}
+
+.child-box_7 {
+    width: 74px;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+}
+
+.button_7 SVG {
+    margin-left: 8px;
+}
+
+
+/* When Pointing the Mouse */
+.button_7:hover {
+    position: relative;
+    .child-box_7 {
+        background-color: #333333;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_7:active {
+    color: rgba(51, 51, 51, 0.5);
+    background-color: transparent;
+    transform: translateY(4px);
+    .child-box_7 {
+        background-color: rgba(51, 51, 51, 0.5);
+    }
+}
+
+/* --------------------------------------- */
+/* Button 8: ICON Arrow up-right + BUTTON BLACK */
+.button_8 {
+    font-family: montserrat;
+    font-size: 12px;
+    background-color: transparent;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 28px;
+    border-radius: 2px;
+}
+
+.child-box_8 {
+    width: 74px;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+}
+
+.button_8 SVG {
+    margin-right: 8px;
+}
+
+
+/* When Pointing the Mouse */
+.button_8:hover {
+    position: relative;
+    .child-box_8 {
+        background-color: #333333;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_8:active {
+    background-color: transparent;
+    color: rgba(51, 51, 51, 0.5);
+    transform: translateY(4px);
+    .child-box_8 {
+        background-color: rgba(51, 51, 51, 0.5);
+    }
+}
+
+/* --------------------------------------- */
+/* Button 9: BUTTON WHITE*/
+.button_9 {
+    font-family: montserrat;
+    font-size: 12px;
+    background-color: transparent;
+    color: #F9F6F3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 66px;
+    height: 28px;
+    border-radius: 2px;
+}
+
+.child-box_9 {
+    width: 50px;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* When Pointing the Mouse */
+.button_9:hover {
+    position: relative;
+    .child-box_9 {
+        background-color: #F9F6F3;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_9:active {
+    color: rgba(249, 246, 2433, 0.5);
+    background-color: transparent;
+    transform: translateY(4px);
+    .child-box_9 {
+        background-color: rgba(249, 246, 2433, 0.5);
+    }
+}
+
+/* --------------------------------------- */
+/* Button 10: BUTTON WHITE + ICON Arrow up-right */
+.button_10 {
+    font-family: montserrat;
+    font-size: 12px;
+    background-color: transparent;
+    color: #F9F6F3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 28px;
+    border-radius: 2px;
+}
+
+.child-box_10 {
+    width: 74px;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+}
+
+.button_10 svg {
+    margin-left: 8px;
+}
+
+
+/* When Pointing the Mouse */
+.button_10:hover {
+    position: relative;
+    .child-box_10 {
+        background-color: #F9F6F3;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_10:active {
+    color: rgba(249, 246, 2433, 0.5);
+    background-color: transparent;
+    transform: translateY(4px);
+    .child-box_10 {
+        background-color: rgba(249, 246, 2433, 0.5);
+    }
+}
+
+/* --------------------------------------- */
+/* Button 11: ICON Arrow up-right + BUTTON WHITE */
+.button_11 {
+    font-family: montserrat;
+    font-size: 12px;
+    background-color: transparent;
+    color: #F9F6F3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 28px;
+    border-radius: 2px;
+}
+
+.child-box_11 {
+    width: 74px;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+}
+
+.button_11 svg {
+    margin-right: 8px;
+}
+
+
+/* When Pointing the Mouse */
+.button_11:hover {
+    position: relative;
+    .child-box_11 {
+        background-color: #F9F6F3;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_11:active {
+    color: rgba(249, 246, 2433, 0.5);
+    background-color: transparent;
+    transform: translateY(4px);
+    .child-box_11 {
+        background-color: rgba(249, 246, 2433, 0.5);
+    }
+}
+
+/* --------------------------------------- */
+/* BUTTON USER INFORMATION */
+
+.button_user_information {
+    font-family: montserrat;
+    background-color: #3B3023;
+    color: #F9F6F3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width:  36px;
+    height: 36px;
+    border-radius: 2px;
+}
+
+.child-box_user_information {
+    width: 20px;
+    height: 2px;
+    background-color: #3B3023;
+    position: absolute;
+    bottom: 0;
+}
+
+/* When Pointing the Mouse */
+.button_user_information:hover {
+    position: relative;
+    .child-box_user_information {
+        background-color: #F9F6F3;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_user_information:focus {
+    color: #5E503F;
+    background-color: #F9F6F3;
+    transform: translateY(4px);
+    .child-box_user_information {
+        background-color: #5E503F;
+    }
+}
+
+/* ------ */
+.container_12 {
+    font-family: montserrat;
+    font-size: 10px;
+    position: relative;
+    color: #5E503F;
+    background-color: #F9F6F3;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 10px;
+    padding: 0;
+    width: 188px;
+    height: 274px;
+    border: 2px solid #3B3023;
+    border-radius: 2px;
+    display: none;
+}
+
+.child-box_12 {
+    width: 54px;
+    height: 54px;
+    background-color: #F1EBE3;
+    position: absolute;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: -10.18px;
+    
+}
+
+.container_12_1 {
+    display: flex;
+    margin-top: 25px;
+    z-index: 1;
+    
+}
+
+.container_12_1 svg {
+    margin-left: 29px;
+    margin-right: 26px;
+    color: #000000;
+    z-index: 2;
+}
+
+.container_content_12_1 div {
+    margin-bottom: 15px;
+    
+}
+
+/* ------------------ */
+
+.container_12_2 {
+    margin-top: 15px;
+    margin-left: 26px;
+    text-align: left;
+}
+
+.container_12_2 div {
+    margin-bottom: 15px;
+    
+}
+
+.container_12_2 svg {
+    margin-right: 6px;
+}
+
+.container_12 a {
+    text-decoration: none;
+    color: #5E503F;
+}
+
+/* ------------------------- */
+.button_user_information:focus + .container_12,
+.container_12:focus-within {
+    display: block;
+}

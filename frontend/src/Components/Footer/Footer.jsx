@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../Assets/Logo.svg';
+import logo from '../Assets/Media/Logo.svg';
 import "./Footer.css";
 import "./Footer.css";
 

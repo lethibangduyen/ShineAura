@@ -1,10 +1,8 @@
 import React from 'react';
 import NavBar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
-import Pic1 from '../../Components/Assets/Pic_1.png';
+import Pic1 from '../../Components/Assets/Media/Homepage/Pic_1.png';
 import "./Homepage.css";
-// import Pic2 from '../../Components/Assets/Pic_2.png';
-// import Pic3 from '../../Components/Assets/Pic_3.png';
 
 const Homepage = () => {
   return (
@@ -35,11 +33,11 @@ const Homepage = () => {
           </div>
           <div className="rectangle-parent">
             <div className="group-child" />
-            <i className="bi bi-chevron-compact-left"></i>
+            <i className="next bi bi-chevron-compact-left"></i>
           </div>
           <div className="rectangle-group">
             <div className="group-child" />
-            <i class="bi bi-chevron-compact-right"></i>
+            <i class="next bi bi-chevron-compact-right"></i>
           </div>
           <div className="product-card-parent">
             <div className="product-card">
@@ -54,7 +52,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="product-card-child" />
-              <img className="image-52-icon" alt="" src="../../Components/Assets/product.png" />
+              <img className="image-52-icon" alt="" src="../../Components/Assets/Media/Product/product.png" />
               <img className="product-card-item" alt="" src="../../Components/Assets/color.png" />
             </div>
           </div>
