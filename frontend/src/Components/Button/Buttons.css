@@ -756,7 +756,7 @@
 }
 
 /* When pressing the button */
-.button_user_information:active {
+.button_user_information:focus {
     color: #5E503F;
     background-color: #F9F6F3;
     transform: translateY(4px);
