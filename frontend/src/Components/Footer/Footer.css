@@ -214,8 +214,8 @@
   font-family: var(--light-body);
 }
 .footer {
-  /* position: relative; */
-  position: fixed;
+  position: relative;
+  /* position: fixed; */
   bottom: 0;
   left: 0;
   background-color: var(--dark-brown);
