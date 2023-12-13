@@ -1,4 +1,4 @@
-.vector-icon {
+.footer-vector-icon {
   align-self: stretch;
   flex: 1;
   position: relative;
@@ -6,7 +6,7 @@
   overflow: hidden;
   max-height: 100%;
 }
-.logo {
+.footer-logo {
   width: 280.05px;
   height: 72px;
   overflow: hidden;
@@ -18,162 +18,126 @@
   padding: 17.328521728515625px;
   box-sizing: border-box;
 }
-.collection,
-.contact,
-.product,
-.site-map,
-.term-condition {
-  position: absolute;
-  top: 81px;
-  left: 0;
-  letter-spacing: 0.02em;
-  font-weight: 300;
-}
-.collection,
-.contact,
-.site-map,
-.term-condition {
-  top: 165px;
-}
-.collection,
-.site-map,
-.term-condition {
-  top: 109px;
-}
-.site-map,
-.term-condition {
-  top: 193px;
-}
 .site-map {
-  top: 0;
-  font-size: 24px;
+  position: relative;
   letter-spacing: 0.01em;
   font-weight: 600;
-  font-family: Montserrat;
 }
-.about-us,
-.home {
-  position: absolute;
-  top: 53px;
-  left: 0;
-  letter-spacing: 0.02em;
-  font-weight: 300;
-}
-.about-us {
-  top: 137px;
-}
-.group-child {
-  position: absolute;
-  top: 34.5px;
-  left: -0.5px;
-  border-top: 1px solid #fff;
+.footer-frame-child {
+  position: relative;
+  border-top: 1px solid var(--ivory);
   box-sizing: border-box;
   width: 160px;
   height: 1px;
 }
-.product-parent {
+.footer-button {
   position: relative;
-  width: 159px;
-  height: 209px;
+  letter-spacing: 0.02em;
+  font-weight: 300;
 }
-.group-item {
+.footer-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0;
+}
+.underline-button,
+.underline-button1,
+.underline-button2,
+.underline-button3,
+.underline-button4,
+.underline-button5 {
   position: absolute;
-  top: 34.5px;
-  left: -0.5px;
-  border-top: 1px solid #fff;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) var(--padding-5xs);
+}
+.underline-button1,
+.underline-button2,
+.underline-button3,
+.underline-button4,
+.underline-button5 {
+  top: 28px;
+}
+.underline-button2,
+.underline-button3,
+.underline-button4,
+.underline-button5 {
+  top: 56px;
+}
+.underline-button3,
+.underline-button4,
+.underline-button5 {
+  top: 84px;
+}
+.underline-button4,
+.underline-button5 {
+  top: 112px;
+}
+.underline-button5 {
+  top: 140px;
+}
+.underline-button-parent {
+  position: relative;
+  width: 112px;
+  height: 168px;
+  text-align: center;
+  font-size: var(--light-body-size);
+  font-family: var(--light-body);
+}
+.site-map-parent {
+  width: 159px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.footer-frame-item {
+  position: relative;
+  border-top: 1px solid var(--ivory);
   box-sizing: border-box;
   width: 159px;
   height: 1px;
 }
-.exfoliating-scrub,
-.foundation,
-.lipstick,
-.nourishing-face-mask {
-  position: absolute;
-  top: 221px;
-  left: 0;
-  letter-spacing: 0.02em;
-  font-weight: 300;
+.underline-button6 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) var(--padding-5xs);
 }
-.foundation,
-.lipstick,
-.nourishing-face-mask {
-  top: 249px;
+.underline-button-group {
+  flex-direction: column;
+  gap: var(--gap-9xs);
 }
-.foundation,
-.lipstick {
-  top: 53px;
-  left: 152px;
+.collection-parent,
+.footer-frame-parent,
+.underline-button-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.foundation {
-  top: 81px;
-}
-.blush,
-.eyeliner,
-.eyeshadow,
-.face-powder,
-.lip-pencil,
-.loose-powder,
-.mascara {
-  position: absolute;
-  top: 109px;
-  left: 152px;
-  letter-spacing: 0.02em;
-  font-weight: 300;
-}
-.blush,
-.eyeliner,
-.eyeshadow,
-.lip-pencil,
-.loose-powder,
-.mascara {
-  top: 137px;
-}
-.blush,
-.eyeliner,
-.eyeshadow,
-.lip-pencil,
-.loose-powder {
-  top: 165px;
-}
-.blush,
-.eyeliner,
-.lip-pencil,
-.loose-powder {
-  top: 193px;
-}
-.eyeliner,
-.lip-pencil,
-.loose-powder {
-  top: 221px;
-}
-.lip-pencil,
-.loose-powder {
-  top: 249px;
-}
-.loose-powder {
-  top: 277px;
+.footer-frame-parent {
+  flex-direction: row;
+  gap: var(--gap-5xl);
+  text-align: center;
+  font-size: var(--light-body-size);
+  font-family: var(--light-body);
 }
 .collection-parent {
+  flex-direction: column;
+  gap: var(--gap-7xs);
+}
+.footer-frame-inner {
   position: relative;
-  width: 231px;
-  height: 293px;
-}
-.contact-us {
-  position: absolute;
-  top: 0;
-  left: 0;
-  letter-spacing: 0.01em;
-  font-weight: 600;
-  display: inline-block;
-  width: 136px;
-  height: 23px;
-}
-.group-inner {
-  position: absolute;
-  top: 34.5px;
-  left: -0.5px;
-  border-top: 1px solid #fff;
+  border-top: 1px solid var(--ivory);
   box-sizing: border-box;
   width: 167px;
   height: 1px;
@@ -185,46 +149,35 @@
   overflow: hidden;
   flex-shrink: 0;
 }
-.thisisouremailgmailcom {
-  position: relative;
-  letter-spacing: 0.02em;
-  font-weight: 300;
-}
-.icon-container,
-.icon-group,
-.icon-parent {
-  position: absolute;
-  top: 0;
-  left: 0;
+.footer-icon-parent {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0;
+  gap: var(--gap-5xs);
 }
-.icon-container,
-.icon-group {
-  top: 28px;
+.underline-button17 {
+  overflow: hidden;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) var(--padding-5xs);
 }
-.icon-container {
-  top: 56px;
+.contact-us-parent,
+.underline-button-parent1,
+.underline-button17 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.frame-parent {
-  position: absolute;
-  top: 53px;
-  left: 0;
-  width: 274px;
-  height: 72px;
-  text-align: justify;
-  font-size: 12px;
-  font-family: Nunito;
+.underline-button-parent1 {
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--light-body-size);
+  font-family: var(--light-body);
 }
 .contact-us-parent {
-  position: relative;
-  width: 274px;
-  height: 125px;
-  font-size: 24px;
-  font-family: Montserrat;
+  justify-content: center;
+  gap: var(--gap-7xs);
 }
 .contact-our-medias {
   position: absolute;
@@ -257,10 +210,15 @@
   width: 533px;
   height: 48px;
   text-align: center;
+  font-size: var(--light-body-size);
+  font-family: var(--light-body);
 }
 .footer {
-  position: relative;
-  background-color: #181818;
+  /* position: relative; */
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  background-color: var(--dark-brown);
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -268,11 +226,11 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  padding: 80px 100px;
+  padding: var(--padding-31xl);
   box-sizing: border-box;
-  gap: 64px;
+  gap: var(--gap-45xl);
   text-align: left;
-  font-size: 12px;
-  color: #fff;
-  font-family: Nunito;
+  font-size: var(--h4-size);
+  color: var(--ivory);
+  font-family: var(--h4);
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import './Buttons.css';
 
-/* Button normal: Not blod font */
-const Button_normal = () => {
+/* Button normal: Not bold font */
+const Button_normal = ({ buttonText }) => {
     return (
-        <div  >
-        <button class="button_2">
-            <div class="child-box_2"></div>
-            <span>BUTTON</span>
-        </button>
-    </div>
+        <div>
+            <button className="button_2">
+                <div className="child-box_2"></div>
+                <span>{buttonText}</span>
+            </button>
+        </div>
     );
 }
 
