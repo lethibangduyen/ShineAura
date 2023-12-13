@@ -39,23 +39,6 @@ const Homepage = () => {
             <div className="group-child" />
             <i class="next bi bi-chevron-compact-right"></i>
           </div>
-          <div className="product-card-parent">
-            <div className="product-card">
-              <div className="rectangle-container">
-                <div className="group-inner" />
-                <div className="ce-hazy-lip">3CE HAZY LIP CLAY</div>
-                <i className="usd">$20 USD</i>
-                <div className='group-icon'>
-                  <i className="bi bi-heart"></i>
-                  <i className="bi bi-cart-plus"></i>
-                  <i className="bi bi-check2-square"></i>
-                </div>
-              </div>
-              <div className="product-card-child" />
-              <img className="image-52-icon" alt="" src="../../Components/Assets/Media/Product/product.png" />
-              <img className="product-card-item" alt="" src="../../Components/Assets/color.png" />
-            </div>
-          </div>
           <div className="underline-button">
             <div className="button-parent">
               <div className="button">See more</div>
