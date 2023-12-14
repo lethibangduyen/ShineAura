@@ -33,6 +33,8 @@
     --spc-tk-3xl: var(--spc-prt-14);
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -308,6 +310,7 @@
 .flex-bottom-align,
 .flex-right-align {
     justify-content: flex-end;
+
 }
 
 .align-left {
@@ -325,4 +328,3 @@
 
 .bg-ivory {
     background-color: #F9F6F3;
-}
