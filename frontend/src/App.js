@@ -1,12 +1,13 @@
 import './App.css';
-// import Navbar from './Components/Navbar/Navbar';
-// import Footer from './Components/Footer/Footer';
-import Homepage from './Pages/Homepage/Homepage';
+// import Homepage from './Pages/Homepage/Homepage';
+// import AboutUsPage from './pages/AboutUs/AboutUsPage';
+import ProductCard from './Components/Product Card/product-card';
+
 function App() {
   return (
     <div className="app">
-   <Homepage/>
-  </div>
+      <ProductCard />
+    </div>
   );
 }
 

@@ -318,11 +318,14 @@
     align-items: flex-end;
 }
 
-.bi {
+.square-icon {
     width: 1em;
     height: 1em;
+    line-height: 1em;
+    flex-shrink: 0;
 }
 
 .bg-ivory {
     background-color: #F9F6F3;
+
 }
