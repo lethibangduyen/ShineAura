@@ -80,3 +80,8 @@ body {
   --br-8xs-1: 4.1px;
   --br-8xs: 5px;
 }
+
+.app {
+  display: flex;
+  justify-content: center;
+}
