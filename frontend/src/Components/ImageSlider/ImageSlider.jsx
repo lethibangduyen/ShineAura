@@ -1,4 +1,3 @@
-// ImageSlider.jsx
 
 import React, { useState, useEffect } from 'react';
 import './ImageSlider.css';

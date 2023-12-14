@@ -1,3 +1,4 @@
+
     import React from "react";
     import NavBar from "../../Components/Navbar/Navbar";
     import Footer from "../../Components/Footer/Footer";
@@ -86,13 +87,22 @@
                                     style={{ width: imageWidth }}
                                     />
                                 ))}
+
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <Footer />
             </div>
         )
     };
 
-    export default AboutUsPage;
+            </div>
+            <Footer />
+        </div>
+    )
+};
+
+export default AboutUsPage;
+
