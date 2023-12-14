@@ -4,7 +4,7 @@ import logo from '../Assets/Logo.svg';
 import './Navbar.css';
 import ButtonCollectionButton from '../Button/Button_collection.jsx'; 
 import Button from '../Button/Button_normal.jsx';
-
+import ButtonUser from '../Button/Button_user_information.jsx';
 const Navbar = () => {
   const [showAllParent, setShowAllParent] = useState(false);
 
@@ -18,7 +18,7 @@ const Navbar = () => {
         <img className="nav-logo-icon" src={logo} alt="logo" />
       </div>
       <div className="nav-parent">
-        <div className=" nav-button Dropdown">
+        <div className=" nav-button">
           <ButtonCollectionButton />
         </div>
         <div className="nav-button">
@@ -40,7 +40,7 @@ const Navbar = () => {
           <i className=" bi bi-bag"></i>
           </div>
           <div className="icon-button">
-          <i className=" bi bi-people"></i>
+          <ButtonUser />
           </div>
           <div className="icon-button">
           <i className=" bi bi-search"></i>

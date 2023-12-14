@@ -2,12 +2,12 @@ import React from 'react';
 import './Buttons.css';
 
 /* Button 9: BUTTON WHITE + TRANSPARENT BG*/
-const Button_whitefont_transBG = () => {
+const Button_whitefont_transBG = ({ buttonText }) => {
     return (
         <div>
-            <button class="button_9">
-                <div class="child-box_9"></div>
-                <span>BUTTON</span>
+            <button className="button_9">
+                <div className="child-box_9"></div>
+                <span>{buttonText}</span>
             </button>
         </div>
     );
