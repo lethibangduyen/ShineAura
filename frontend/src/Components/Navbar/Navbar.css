@@ -1,30 +1,24 @@
 .navigation {
   display: flex;
-  height: 76px;
+  width: 1440px;
+  height: auto;
+  padding: 0px var(--spacing-spc-xl, 64px);
   justify-content: space-between;
   align-items: center;
-  text-align: center;
-  flex-shrink: 0;
-  opacity: var(--Inc---Dec, 1);
-  position: relative;
-  background-color: var(--dark-brown);
-  width: 100%;
-  padding: 0 var(--padding-45xl);
-  box-sizing: border-box;
-  font-size: var(--pre-title-size);
-  color: var(--ivory);
+  background: var(--Dark-Brown, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #3B3023);
 }
+
 
 
 .nav-logo {
   display: flex;
-  width: 194.479px;
-  height: 50px;
-  padding: 12.034px;
+  width: 233.375px;
+  height: 60px;
+  padding: 14.44px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30.084px;
+  gap: 36.101px;
   flex-shrink: 0;
 }
 
@@ -35,13 +29,11 @@
 
 .nav-parent {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  opacity: var(--Inc---Dec, 1);
-  justify-content: center;
-  gap: var(--gap-9xs);
-  z-index: 1;
+padding: var(--spacing-spc-none, 0px);
+justify-content: center;
+align-items: center;
+gap: var(--spacing-spc-2xs, 4px);
+border-radius: var(--spacing-spc-none, 0px);
 }
 
 .nav-icon {
@@ -55,10 +47,10 @@
 }
 
 .icon-button {
+  color: white;
   display: flex;
-  width: 36px;
-  height: 36px;
-  padding: 0px 8px;
+  padding: var(--spacing-spc-none, 0px);
   justify-content: center;
   align-items: center;
+  gap: 8.968px;
 }
