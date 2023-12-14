@@ -33,6 +33,14 @@
     --spc-tk-3xl: var(--spc-prt-14);
 }
 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .h1 {
     font-family: var(--display-font);
     font-size: 64px;
@@ -302,4 +310,21 @@
 .flex-bottom-align,
 .flex-right-align {
     justify-content: flex-end;
+
 }
+
+.align-left {
+    align-items: flex-start;
+}
+
+.align-right {
+    align-items: flex-end;
+}
+
+.bi {
+    width: 1em;
+    height: 1em;
+}
+
+.bg-ivory {
+    background-color: #F9F6F3;

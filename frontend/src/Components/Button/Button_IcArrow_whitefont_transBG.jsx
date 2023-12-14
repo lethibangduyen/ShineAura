@@ -1,12 +1,12 @@
 import React from 'react';
 import './Buttons.css';
 
-/* Button 8: ICON Arrow up-right + BUTTON BLACK */
-const Button_8 = () => {
+/* Button 11: ICON Arrow up-right + BUTTON WHITE */
+const Button_IcArrow_whitefont_transBG = () => {
     return (
         <div>
-            <button class="button_8">
-                <div class="child-box_8"></div>
+            <button class="button_11">
+                <div class="child-box_11"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-up-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -18,4 +18,4 @@ const Button_8 = () => {
     );
 }
 
-export default Button_8;
+export default Button_IcArrow_whitefont_transBG;

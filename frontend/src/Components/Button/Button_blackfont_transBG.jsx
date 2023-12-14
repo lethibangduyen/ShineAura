@@ -1,8 +1,8 @@
 import React from 'react';
 import './Buttons.css';
 
-/* Button 6: BUTTON BLACK*/
-const Button_6 = () => {
+/* Button 6: BUTTON BLACK FONT + TRANSPARENT BG*/
+const Button_blackfont_transBG = () => {
     return (
         <div>
             <button class="button_6">
@@ -13,4 +13,4 @@ const Button_6 = () => {
     );
 }
 
-export default Button_6;
+export default Button_blackfont_transBG;

@@ -4,7 +4,7 @@ import './Buttons.css';
 
 const Button_collection = () => {
     return (
-        <div class="collection">
+        <div class="nav-collection">
             <button class="collection-button">
                 <div class="child-box_collection"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">

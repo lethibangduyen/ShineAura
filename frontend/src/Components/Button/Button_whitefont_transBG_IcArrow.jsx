@@ -2,7 +2,7 @@ import React from 'react';
 import './Buttons.css';
 
 /* Button 10: BUTTON WHITE + ICON Arrow up-right */
-const Button_10 = () => {
+const Button_whitefont_transBG_IcArrow = () => {
     return (
         <div>
             <button class="button_10">
@@ -18,4 +18,4 @@ const Button_10 = () => {
     );
 }
 
-export default Button_10;
+export default Button_whitefont_transBG_IcArrow;
