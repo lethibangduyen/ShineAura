@@ -840,3 +840,57 @@
 .container_12:focus-within {
     display: block;
 }
+.sign-in-button {
+    display: flex;
+    width: 340px;
+    height: 48px;
+    padding: 20px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #5E503F;
+    background: var(--light-element-backgrounds, #EAE0D5);
+    transition: background-color 0.3s ease;  
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+    color: #5E503F;
+}
+
+.sign-in-button:hover {
+    background-color: #5E503F;  
+    color: #fff;  
+}
+
+.google-sign-in-button,
+.facebook-sign-in-button {
+  display: flex;
+  width: 153px;
+  height: 48px;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #5E503F;
+  background: #EAE0D5;
+  transition: background 0.3s, color 0.3s;
+  font-size: var(--bold-size);
+  font-family: var(--h2);
+  font-weight: 700;
+letter-spacing: 0.48px;
+    text-transform: uppercase;
+    color: #5E503F;
+}
+
+.google-sign-in-button:hover,
+.facebook-sign-in-button:hover {
+  background: #5E503F;
+  color: #ffffff;
+}
