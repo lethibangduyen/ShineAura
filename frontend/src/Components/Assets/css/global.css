@@ -279,4 +279,27 @@
 .gap-3xl {
     gap: var(--spc-tk-3xl);
 }
-  
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-top-align,
+.flex-left-align {
+    justify-content: flex-start;
+}
+
+.flex-bottom-align,
+.flex-right-align {
+    justify-content: flex-end;
+}
