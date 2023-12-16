@@ -3,6 +3,7 @@ import NavBar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import ImageSlider from "../../Components/ImageSlider/ImageSlider";
 import "../../Components/Assets/css/global.css";
+import Button from "../../Components/Button/NewButton/button";
 
 import UsImage from "../../Components/Assets/Media/About_us/Us.png"
 import "./AboutUsPage.css";
@@ -50,6 +51,7 @@ const AboutUsPage = () => {
                                     <div className="md-spc gap-ms flex-col ivory-bg">
                                         <h3 className="h3">Skincare</h3>
                                         <p className="body">Excepteur consequat labore voluptate adipisicing elit nostrud quis commodo. Ad cillum nostrud mollit </p>
+                                        <Button text="Shop Skincare" btnStyle="underline-btn"/>
                                     </div>
                                 </div>
                                 <div className="flex-col">
@@ -57,6 +59,7 @@ const AboutUsPage = () => {
                                     <div className="md-spc gap-ms flex-col ivory-bg">
                                         <h3 className="h3">Makeup</h3>
                                         <p className="body">Excepteur consequat labore voluptate adipisicing elit nostrud quis commodo. Ad cillum nostrud mollit </p>
+                                        <Button text="Shop Makeup" btnStyle="nav-btn"/>
                                     </div>
                                 </div>
                             </div>
