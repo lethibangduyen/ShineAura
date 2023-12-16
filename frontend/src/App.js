@@ -2,13 +2,13 @@ import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 // import Homepage from './Pages/Homepage/Homepage';
-import Policy from './Pages/Policy/Policy'; // Đảm bảo bạn import trang Policy từ đúng đường dẫn
+import Policy from './Pages/Policy/Policy'; 
 
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="app">
+    <div className="app"
 
       <Navbar />
       <Policy/>
@@ -17,7 +17,6 @@ function App() {
       {/* <Route path="/Policy" element={<Policy />} /> */}
 
       <Footer />
-
     </div>
   );
 }

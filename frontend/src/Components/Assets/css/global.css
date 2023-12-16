@@ -33,6 +33,15 @@
     --spc-tk-3xl: var(--spc-prt-14);
 }
 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .h1 {
     font-family: var(--display-font);
     font-size: 64px;
@@ -60,6 +69,16 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1%;
+}
+.h3-in{
+    color: #333;
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.64px;
+text-transform: uppercase;
 }
 
 /* H4 */
@@ -280,10 +299,52 @@
     gap: var(--spc-tk-3xl);
 }
 
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .flex-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-  
+
+
+.flex-top-align,
+.flex-left-align {
+    justify-content: flex-start;
+}
+
+.flex-bottom-align,
+.flex-right-align {
+    justify-content: flex-end;
+
+}
+
+.align-left {
+    align-items: flex-start;
+}
+
+.align-right {
+    align-items: flex-end;
+}
+.align-self {
+    align-self: stretch;
+}
+.square-icon {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    flex-shrink: 0;
+}
+
+.bg-ivory {
+  background-color: #F9F6F3;}
+
+
