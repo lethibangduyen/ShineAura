@@ -427,16 +427,15 @@
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     transition-duration: 0.4s;
-    width: 66px;
+    width: 150px;
     height: 28px;
     border-radius: 2px;
 }
 
 .child-box_6 {
-    width: 50px;
+    width: 80px;
     height: 1px;
     background-color: transparent;
     position: absolute;

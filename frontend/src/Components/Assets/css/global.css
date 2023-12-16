@@ -1,5 +1,6 @@
 /* Title (h1) */
 :root {
+    
     --display-font: Montserrat;
     --body-font: Nunito;
 
@@ -69,7 +70,16 @@
     line-height: normal;
     letter-spacing: 1%;
 }
-
+.h3-in{
+    color: #333;
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.64px;
+text-transform: uppercase;
+}
 /* H4 */
 .h4 {
     font-family: var(--display-font);
@@ -320,7 +330,9 @@
 .align-right {
     align-items: flex-end;
 }
-
+.align-self {
+    align-self: stretch;
+}
 .square-icon {
     width: 1em;
     height: 1em;

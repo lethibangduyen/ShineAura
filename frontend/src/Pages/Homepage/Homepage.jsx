@@ -11,6 +11,7 @@ import About4 from '../../Components/Assets/Media/Homepage/About_4.png';
 import './Homepage.css'
 import Collection from '../../Components/Pagecomponents/Homepage_com/Collections.jsx';
 import '../../Components/Assets/css/global.css';
+import Productcard from '../../Components/Productcard/product-card.jsx';
 
 const Homepage = () => {
   return (
@@ -26,32 +27,37 @@ const Homepage = () => {
           <div className="shineaura h1">SHINEAURA</div>
           <div className="connect-with-radiant subtitle ">CONNECT WITH RADIANT BEAUTY</div>
           <div className="text body">
-            In a world where beauty never stops evolving, ShineAura is your
-            destination to transform beauty into an art form. We bring diversity,
-            quality, and style from renowned cosmetics brands worldwide. Join us
+            In a world where beauty never stops evolving, ShineAura is your destination to transform beauty into an art form. We bring diversity, quality, and style from renowned cosmetics brands worldwide. Join us
             in experiencing and expressing your unique beauty through the
             limitless choices at ShineAura.
           </div>
         </div>
       </div>
       <div className="home-product">
-        <div className="text-product">
-          <div className="products h1">PRODUCTS</div>
-          <div className="at-shineaura-we body">
-            At ShineAura, we take pride in offering a diverse collection of beauty
-            products from world-renowned brands. Embrace and express your individual
-            beauty with limitless choices from ShineAura.
+        <div className="home-product-container flex-col gap-md">
+          <div className="text-product">
+            <div className="products h1">PRODUCTS</div>
+            <div className="at-shineaura-we body">
+              At ShineAura, we take pride in offering a diverse collection of beauty
+              products from world-renowned brands. Embrace and express your individual
+              beauty with limitless choices from ShineAura.
+            </div>
           </div>
-        </div>
-        <div className="product-parent">
-          <div className="buttons">
-            <button class="btn left">
-              <i class="bi bi-chevron-left"></i>
+          <div className="product-parent-detail flex-row gap-md">
+            <button className="home-btn left">
+              <i className="bi bi-chevron-left"></i>
             </button>
-            <button class="btn right">
-              <i class="bi bi-chevron-right"></i>
+            <div className="home-list-product flex-row">
+              <Productcard />
+              <Productcard />
+              <Productcard />
+              <Productcard />
+            </div>
+            <button className="home-btn right">
+              <i className="bi bi-chevron-right"></i>
             </button>
           </div>
+
         </div>
       </div>
       <div class="home-aboutus flex-row ">
@@ -94,8 +100,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className="wireframe-5">
-        <div className="collection-contaniner">
+      <div className="wireframe-5 flex-col align-left gap-3xl">
+        <div className="collection-contaniner flex-col align-left gap-md">
           <div className="text-coll h1"> COLLECTIONS</div>
           <Collection />
         </div>
@@ -126,8 +132,8 @@ const Homepage = () => {
 
             </div>
             <div className="contact-our-media flex-col gap-sm">
-              <div  className='gap-sm'>Contact our medias:</div>
-              <div className ="flex-row gap-sm">
+              <div className='gap-sm'>Contact our medias:</div>
+              <div className="flex-row gap-sm">
                 <i className="bi bi-facebook"></i>
                 <i className="bi bi-messenger"></i>
                 <i className="bi bi-instagram"></i>

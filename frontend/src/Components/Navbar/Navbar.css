@@ -1,6 +1,6 @@
 .navigation {
   display: flex;
-  width: 1440px;
+  width: 100%;
   height: auto;
   padding: 0px var(--spacing-spc-xl, 64px);
   justify-content: space-between;
