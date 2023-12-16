@@ -2,7 +2,7 @@ import React from 'react';
 import './Contactpage.css';
 import NavBar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
-import Logo from '../../Components/Assets/Logo.png';
+import Logo from '../../Components/Assets/Media/Logo.svg';
 
 const Contactpage = () => {
     return (

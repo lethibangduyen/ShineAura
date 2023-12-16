@@ -1,22 +1,15 @@
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import Footer from './Components/Footer/Footer';
-// import Homepage from './Pages/Homepage/Homepage';
-import Policy from './Pages/Policy/Policy'; 
 
-
-
+// import Policy from './Pages/Policy/Policy'; 
+import Contact from './Pages/Contactpage/Contactpage';
 function App() {
   return (
-    <div className="app"
+    <div className="app">
 
-      <Navbar />
-      <Policy/>
+      <Contact/>
+      {/* <Policy/> */}
+      
 
-      {/* <Route path="/" element={<Homepage />} /> */}
-      {/* <Route path="/Policy" element={<Policy />} /> */}
-
-      <Footer />
     </div>
   );
 }
