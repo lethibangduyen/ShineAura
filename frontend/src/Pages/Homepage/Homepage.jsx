@@ -142,6 +142,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

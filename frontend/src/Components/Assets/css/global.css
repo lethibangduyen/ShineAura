@@ -1,6 +1,5 @@
 /* Title (h1) */
 :root {
-    
     --display-font: Montserrat;
     --body-font: Nunito;
 
@@ -42,6 +41,7 @@
     box-sizing: border-box;
 }
 
+
 .h1 {
     font-family: var(--display-font);
     font-size: 64px;
@@ -80,6 +80,7 @@ line-height: normal;
 letter-spacing: 0.64px;
 text-transform: uppercase;
 }
+
 /* H4 */
 .h4 {
     font-family: var(--display-font);
@@ -298,6 +299,7 @@ text-transform: uppercase;
     gap: var(--spc-tk-3xl);
 }
 
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -305,12 +307,14 @@ text-transform: uppercase;
     align-items: center;
 }
 
+
 .flex-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 
 .flex-top-align,
 .flex-left-align {
@@ -342,4 +346,5 @@ text-transform: uppercase;
 
 .bg-ivory {
   background-color: #F9F6F3;}
+
 
