@@ -11,18 +11,19 @@ const ProductCard = ({ product }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const handleExpandClick = () => {
-      setIsExpanded((prevExpanded) => !prevExpanded);
+        setIsExpanded((prevExpanded) => !prevExpanded);
     };
-  
+
     const containerClassName = isExpanded
-      ? 'flex-row prod-container prod-exp'
-      : 'flex-row prod-container prod-c';
+        ? 'flex-row prod-container prod-exp'
+        : 'flex-row prod-container prod-c';
+
 
     return (
         <div className={containerClassName}>
             <div className='flex-col'>
                 <div className='flex-row prod-img-container'>
-                    <img src={ProductImage} alt="Product Image" className='prod-img'/>
+                    <img src={ProductImage} alt="Product" className='prod-img'/>
                 </div>
                 <div className='flex-row prod-info bg-ivory'>
                     <div className='flex-col gap-sm left-bar'>
@@ -90,7 +91,7 @@ const ProductCard = ({ product }) => {
                 </div>
             </div>
         </div>
-        
+
     )
 }
 
