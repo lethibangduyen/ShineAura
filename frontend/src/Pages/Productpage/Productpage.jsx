@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from '../../Components/Navbar/Navbar';
-import Footer from '../../Components/Footer/Footer';
 import './Productpage.css';
 import '../../Components/Assets/css/global.css';
 import Heropic from '../../Components/Assets/Media/Product/Hero.png';
@@ -10,8 +8,7 @@ import Buttonpro from '../../Components/Button/Button_blackfont_transBG.jsx';
 
 const Productpage = () => {
     return (
-        <div>
-            <NavBar />
+        <div className='productpage-shine'>
             <div className="productpage-first">
 
                 <div className="productpage-collection-first flex-row">
@@ -203,7 +200,6 @@ const Productpage = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

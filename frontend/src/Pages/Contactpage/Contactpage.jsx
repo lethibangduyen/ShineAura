@@ -1,15 +1,11 @@
 import React from 'react';
 import './Contactpage.css';
-import NavBar from '../../Components/Navbar/Navbar';
-import Footer from '../../Components/Footer/Footer';
 import Logo from '../../Components/Assets/Media/Logo.svg';
 
 const Contactpage = () => {
     return (
+        <div className='contact-shine'>
         <div>
-            <div>
-                <NavBar />
-            </div>
             <div class="C-container_1">
                 <p class="C-container_title_1">GET IN TOUCH</p>
                 <div class="C-sub-container_1">
@@ -247,10 +243,8 @@ const Contactpage = () => {
             </div>
             </div>
             </div>
-            <div>
-                <Footer />
-            </div>
 
+        </div>
         </div>
     );
 }

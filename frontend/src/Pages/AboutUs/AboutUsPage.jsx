@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
 import ImageSlider from "../../Components/ImageSlider/ImageSlider";
 import "../../Components/Assets/css/global.css";
 import Button from "../../Components/Button/NewButton/button";
@@ -35,8 +33,7 @@ const AboutUsPage = () => {
     const imageWidth = `calc(100% / ${valueImages.length} - 32px)`;
 
     return (
-        <div>
-            <NavBar />
+        <div className = 'AboutUsPage-shine'>
             <div className="flex-col content-container">
                 <div className="hero-image">
                     <img src={UsImage} alt="us" />
@@ -93,7 +90,6 @@ const AboutUsPage = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 };

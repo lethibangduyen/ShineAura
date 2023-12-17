@@ -1,21 +1,32 @@
-// Navbar.jsx
-import React, { useState } from 'react';
-import '../Assets/css/global.css'
+import React, { useState, useEffect } from 'react';
+import '../Assets/css/global.css';
 import logo from '../Assets/Logo.svg';
 import './Navbar.css';
 import ButtonCollectionButton from '../Button/Button_collection.jsx'; 
-import btnStyle from '../Button/NewButton/button.jsx';
 import Button from '../Button/NewButton/button.jsx';
 import ButtonUser from '../Button/Button_user_information.jsx';
-const Navbar = () => {
-  const [showAllParent, setShowAllParent] = useState(false);
 
-  const handleSButtonClick = () => {
-    setShowAllParent(!showAllParent);
-  };
+function Navbar() {
+  const [navColour, updateNavbar] = useState(false);
+
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      updateNavbar(true);
+    } else {
+      updateNavbar(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []); 
 
   return (
-    <div className="navigation flex-row flex-center-align ">
+    <div className={`navigation flex-row flex-center-align ${navColour ? 'nav-scroll' : ''}`}>
       <div className="nav-logo flex-col">
         <img className="nav-logo-icon" src={logo} alt="logo" />
       </div>
