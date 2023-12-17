@@ -1,0 +1,50 @@
+/* Button: Buy now */
+/* At display */
+.buy-now-button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 242px;
+    height: 49px;
+}
+
+.buy-now-button svg {
+    margin-right: 10px;
+}
+
+.icon-bg {
+    background-color: #F1EBE4;
+    border-radius: 100%;
+    background-clip: padding-box;
+    width: 30px;
+    height: 30px;
+}
+
+/* When Pointing the Mouse */
+.buy-now-button:hover {
+    background-color: #F1EBE4;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+/* When pressing the button */
+.buy-now-button:active {
+    background-color: #FFE5C6;
+    transform: translateY(4px);
+}
+
+.buy-now-button:active .icon-bg {
+    background-color: #FFE5C6;
+    transition-duration: 0.4s;
+}
