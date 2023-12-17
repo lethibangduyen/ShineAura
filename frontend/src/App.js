@@ -1,16 +1,13 @@
 import './App.css';
-
-// import Policy from './Pages/Policy/Policy'; 
-import Contact from './Pages/Contactpage/Contactpage';
+import Navbar from './Components/Navbar/Navbar';
+import Signin from './Pages/Signin/Signin';
+import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
+import Signup from './Pages/Signup/Signup';
 function App() {
   return (
     <div className="app">
-
-      <Contact/>
-      {/* <Policy/> */}
-      
-
-    </div>
+    <Navbar/>
+    <Signup/>
   );
 }
 

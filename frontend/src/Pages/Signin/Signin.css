@@ -1,0 +1,104 @@
+
+
+.signin-container{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: hex(F9F6F3);
+}
+.signin-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.signin-logo > img {
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto; 
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+.main{
+    width: 448px;
+    height: 547px;
+    flex-shrink: 0;
+    margin: 66px 193px 143px 0px;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1px solid var(--pearl-bush-900, #593C35);
+    background: var(--rodeo-dust-100, #F1EBE3);
+    float: right;
+    margin-left: auto;
+}
+.signin-form-title{
+    font-size: var(--h4-size);
+  color: var(--dark-brown);
+  font-family: var(--title-h1);
+  margin: 28px 48px 34px 48px;
+  font-weight:600;
+}
+
+.signin-form{
+    text-align: center;
+}
+.signin-form-input>input{
+    width: 340px;
+    height: 47.695px;
+    flex-shrink: 0;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1.703px solid rgba(94, 80, 63, 0.48);
+    background: #FFF;
+    margin-top: 10.97px;
+    padding-left: 10px;
+}
+.remember-me{
+    color: var(--Accent-Color, #5E503F);
+}
+.additional-function{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 18.79px 0px 18.79px 0px;
+    font-size:  var(--font-size-sm);
+    padding: 0px 48px 0px 48px;
+}
+.forgot-pw{
+    width: 120px;
+    height: 13.627px;
+    color: var(--Accent-Color, #5E503F);
+    margin-left: auto;
+}
+a{
+    text-decoration: none;
+    color: var(--Accent-Color, #5E503F);
+}
+.sign-in-button{
+    display: flex;
+    margin: 0 auto;
+}
+.signup-transfer{
+    color: rgba(94, 80, 63, 0.71);
+    text-align: center;
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 16px 0px 16px 0px;
+}
+hr{
+    width: 65%;
+}
+.another-signin-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.google-sign-in-button{
+    margin-right: 18px;
+}
+.facebook-sign-in-button{
+    margin-left: 18px;
+}
