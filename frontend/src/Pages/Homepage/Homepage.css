@@ -90,7 +90,8 @@ gap: 12px;
       margin-left: 0;
   }
 }
-
+.wireframe-5{
+padding: var(--spacing-spc-3xl, 128px) 123px;}
 .home-aboutus {
   position: relative;
   overflow: hidden;

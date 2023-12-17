@@ -1,14 +1,11 @@
 .footer {
-  display: flex;
   width: 100%;
   color: white;
   padding: var(--spacing-spc-lg, 48px) var(--spacing-spc-xl, 64px);
-  justify-content: space-between;
-  align-items: flex-start;
   align-content: flex-start;
   row-gap: 64px;
   flex-wrap: wrap;
-  background: var(--Dark-Brown, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #3B3023);
+  background:  #3B3023;
 }
 .footer-vector-icon {
   align-self: stretch;
@@ -23,12 +20,14 @@
   height: 72px;
   overflow: hidden;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 17.328521728515625px;
   box-sizing: border-box;
+}
+.footer-container {
+  align-content: flex-start;
+gap: 64px;
+
+flex-wrap: wrap;
 }
 .footer-sitemap {
   display: flex;
@@ -38,9 +37,6 @@ flex-direction: column;
 align-items: flex-start;
 gap: var(--spacing-spc-2xs, 4px);
 }
-.footer-sitemap-content {
-  align-items: flex-start;
-}
 
 .footer-collection-content {
   align-items: unset;
@@ -49,7 +45,4 @@ gap: var(--Spacing-2, 16px);
 }
 .footer-contact-content{
   padding: 4px 8px;
-  align-items: flex-start;
-padding: var(--spacing-spc-none, 0px);
-gap: var(--spacing-spc-none, 0px);
 }

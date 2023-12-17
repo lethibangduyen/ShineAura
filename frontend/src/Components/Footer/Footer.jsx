@@ -5,12 +5,12 @@ import Buttonfooter from '../Button/Button_whitefont_transBG';
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="footer-logo">
+    <div className="footer align-left flex-center-align flex-row  ">
+      <div className="footer-logo flex-col ">
         <img className="footer-vector-icon" alt="" src={logo} />
       </div>
-      <div className="footer-container">
-        <div className="footer-sitemap">
+      <div className="footer-container flex-row align-left ">
+        <div className="footer-sitemap flex-col align-left gap-2xs">
           <div className="footer-sitemap-title h4">
             <p>Sitemap</p> <hr />
           </div>
@@ -33,13 +33,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-collection">
-        <div className="footer-collection">
+        <div className="footer-collection flex-col align-left gap-2xs">
           <div className="footer-collection-title h4">
             <p>Collections</p> <hr />
           </div>
-          <div className=" footer-collection-content flex-row align-left ">
-            <div className="footer-button-left">
+          <div className=" footer-collection-content flex-row align-left flex-left-align  ">
+            <div className="footer-button-left flex-col align-left gap-2xs ">
               <div className="footer-button">
                 <Buttonfooter buttonText="Cleanser" />
               </div>
@@ -53,7 +52,7 @@ const Footer = () => {
                 <Buttonfooter buttonText="Mask" />
               </div>
             </div>
-            <div className="footer-button-right">
+            <div className="footer-button-right flex-col align-left gap-2xs">
               <div className="footer-button">
                 <Buttonfooter buttonText="Lipstick " />
               </div>
@@ -78,8 +77,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="footer-contact">
+      <div className="footer-contact flex-col align-left gap-2xs">
       <div className="footer-contact-title h4">
             <p>Contact Us</p> <hr />
           </div>

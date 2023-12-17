@@ -2,9 +2,11 @@ import React from'react';
 import Logo from '../../Components/Assets/Media/logo_black.png';
 import './ForgotPassword.css'
 import SignInButton from '../../Components/Button/Button_sign_in';
-
+import NavBar from '../../Components/Navbar/Navbar';
 const ForgotPassword = () => {
     return (
+        <div>
+            <NavBar />
         <div className="signin">
             <div className="signin-container">
                 <div className="signin-logo">
@@ -39,6 +41,7 @@ const ForgotPassword = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 }

@@ -326,7 +326,9 @@ text-transform: uppercase;
     justify-content: flex-end;
 
 }
-
+.flex-center-align {
+    justify-content:space-between;
+}
 .align-left {
     align-items: flex-start;
 }

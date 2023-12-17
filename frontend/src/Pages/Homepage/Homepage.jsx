@@ -100,7 +100,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className="wireframe-5 flex-col align-left gap-3xl">
+      <div className="wireframe-5 flex-col gap-3xl">
         <div className="collection-contaniner flex-col align-left gap-md">
           <div className="text-coll h1"> COLLECTIONS</div>
           <Collection />

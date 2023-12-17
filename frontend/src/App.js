@@ -1,14 +1,18 @@
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
+// import Signup from './Pages/Signup/Signup';
+// import Navbar from './Components/Navbar/Navbar';
+// import Homepage from './Pages/Homepage/Homepage';
 import Signin from './Pages/Signin/Signin';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
-import Signup from './Pages/Signup/Signup';
 function App() {
-  return (
-    <div className="app">
-    <Navbar/>
-    <Signup/>
-  );
+    return (
+        // <Homepage />
+        // <Navbar />
+        // <Signup />
+        // <ForgotPassword />
+        // <Login />
+        <Signin />
+    );
 }
 
 export default App;

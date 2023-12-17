@@ -107,7 +107,7 @@
 .button_2 {
     font-family: montserrat;
     font-size: 20px;
-    background: var(--Dark-Brown, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #3B3023);
+    background-color: #3B3023;
     color: #F9F6F3;
     border: none;
     cursor: pointer;
@@ -320,7 +320,7 @@
 .collection-button {
     font-family: montserrat;
     font-size: 20px;
-    background: var(--Dark-Brown, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #3B3023);
+    background-color: #3B3023;
     color: #F9F6F3;
     border: none;
     cursor: pointer;
@@ -356,12 +356,16 @@
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
     z-index: 1;
     margin-top: 15px;
-    padding: 0;
     display: none;
-    width: 449px;
-    height: 315px;
+    width: 500px;
+    height: 320px;
     border: 2px solid #3B3023;
     border-radius: 2px;
+    display: flex;
+padding: 24px 32px;
+
+align-items: flex-start;
+gap: 48px;
 }
 
 .title-list {
@@ -753,8 +757,8 @@
     justify-content: center;
     position: relative;
     transition-duration: 0.4s;
-    width: 36px;
-    height: 36px;
+    /* width: 36px;
+    height: 36px; */
     border-radius: 2px;
 }
 
@@ -862,7 +866,6 @@
 .button_user_information:focus+.container_12,
 .container_12:focus-within {
     display: block;
-}
 }
 .sign-in-button {
     display: flex;
