@@ -1,14 +1,13 @@
 import './App.css';
-import AboutUsPage from './Pages/AboutUs/AboutUsPage';
-// import Homepage from './Pages/Homepage/Homepage';
-// import ProductCard from './Components/Product Card/product-card';
-
-
+import Navbar from './Components/Navbar/Navbar';
+import Signin from './Pages/Signin/Signin';
+import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
+import Signup from './Pages/Signup/Signup';
 function App() {
   return (
     <div className="app">
-      <AboutUsPage />
-    </div>
+    <Navbar/>
+    <Signup/>
   );
 }
 
