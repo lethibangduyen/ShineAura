@@ -121,6 +121,15 @@ text-transform: uppercase;
     line-height: normal;
     letter-spacing: 2%;
 }
+.body-white {
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 2%;
+    color: white;
+}
 
 /* Bold */
 .body-bld {
@@ -130,6 +139,15 @@ text-transform: uppercase;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 2%;
+}
+.body-bld-white {
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2%;
+    color: white;
 }
 
 /* Emphasize */
