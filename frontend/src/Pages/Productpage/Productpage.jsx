@@ -164,7 +164,6 @@ const Productpage = () => {
                 </div>
              </div>
             </div>
-        </div>
     );
 }
 export default Productpage;
