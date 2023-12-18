@@ -193,7 +193,7 @@ text-transform: uppercase;
 }
 
 /* Button */
-.btt-text {
+.btn-text {
     font-family: var(--display-font);
     font-size: 16px;
     font-style: normal;
@@ -204,7 +204,7 @@ text-transform: uppercase;
 }
 
 /* Light Button */
-.btt-text-lgt {
+.btn-text-lgt {
     font-family: var(--display-font);
     font-size: 14px;
     font-style: normal;

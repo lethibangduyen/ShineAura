@@ -1,0 +1,53 @@
+/* --------------------------------------- */
+/* Button 11: ICON Arrow up-right + BUTTON WHITE */
+.button_11 {
+    font-family: montserrat;
+    font-size: 12px;
+    background-color: transparent;
+    color: #F9F6F3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 90px;
+    height: 28px;
+    border-radius: 2px;
+}
+
+.child-box_11 {
+    width: 74px;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+}
+
+.button_11 svg {
+    margin-right: 8px;
+}
+
+
+/* When Pointing the Mouse */
+.button_11:hover {
+    position: relative;
+    .child-box_11 {
+        background-color: #F9F6F3;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button_11:active {
+    color: rgba(249, 246, 2433, 0.5);
+    background-color: transparent;
+    transform: translateY(4px);
+    .child-box_11 {
+        background-color: rgba(249, 246, 2433, 0.5);
+    }
+}
