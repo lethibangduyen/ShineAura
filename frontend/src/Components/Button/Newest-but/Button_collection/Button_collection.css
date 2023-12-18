@@ -1,0 +1,102 @@
+/* ------------------------------------------------ */
+/* Button: Collection */
+/* At display */
+.but-collection {
+    font-family: montserrat;
+    font-size: 20px;
+    background-color: #3B3023;
+    color: #F9F6F3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width:  198px;
+    height: 56px;
+    border-radius: 2px;
+}
+
+.child-box_but-collection {
+    width: 166px;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    background-color: #3B3023;
+}
+
+.but-collection svg {
+    margin-right: 10px;
+}
+
+/* CSS list */
+.but-collection_dropdown-content {
+    font-family: montserrat;
+    font-size: 14px;
+    position: absolute;
+    background-color: #F9F6F3;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 10px;
+    padding: 0;
+    display: none;
+    width: 505px;
+    height: 350px;
+    border: 2px solid #3B3023;
+    border-radius: 2px;
+    padding: 24px 32px;
+    align-items: flex-start;
+    padding-left: 55px;
+    gap: 55px;
+}
+
+.but_title-list {
+    font-weight: bold;
+    color: #4F4F4F;
+    font-size: 16px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.but-collection_dropdown-content li{
+    list-style: none;
+}
+
+.but-collection_dropdown-content li a {
+    color: #5E503F;
+    padding-top: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.but-collection_dropdown-content li {
+    margin-bottom: 10%;
+    text-align: left;
+}
+
+/* When Pointing the Mouse */
+.but-collection:hover {
+    position: relative;
+    .child-box_but-collection {
+        background-color: #F9F6F3;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.but-collection:focus {
+    color: rgba(249, 246, 2433, 0.5);
+    background-color: #3B3023;
+    transform: translateY(4px);
+    .child-box_but-collection {
+        background-color: rgba(249, 246, 2433, 0.5);
+    }
+}
+
+.but-collection:focus + .but-collection_dropdown-content,
+.but-collection_dropdown-content:focus-within {
+    display: flex;
+}

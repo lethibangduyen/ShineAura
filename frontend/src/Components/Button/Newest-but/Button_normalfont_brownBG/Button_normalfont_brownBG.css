@@ -1,0 +1,63 @@
+/* --------------------------------------- */
+.button-normalfont-brownBG {
+    font-family: montserrat;
+    font-size: 20px;
+    background-color: #3B3023;
+    color: #F9F6F3;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.4s;
+    width: 150px;
+    height: 56px;
+}
+
+.button-wrapper-normalfont-brownBG {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.child-box-normalfont-brownBG {
+    height: 4px;
+    background-color: #3B3023;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+/* Điều kiện cho icon bên phải */
+.button-normalfont-brownBG .button-wrapper-normalfont-brownBG .button-icon_right {
+    margin-left: 10px;
+}
+
+/* Điều kiện cho icon bên trái */
+.button-normalfont-brownBG .button-wrapper-normalfont-brownBG .button-icon_left {
+    margin-right: 10px;
+}
+
+/* When Pointing the Mouse */
+.button-normalfont-brownBG:hover {
+    position: relative;
+    .child-box-normalfont-brownBG {
+        background-color: #F9F6F3;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* When pressing the button */
+.button-normalfont-brownBG:active {
+    color: rgba(249, 246, 243, 0.5);
+    background-color: #3B3023;
+    transform: translateY(4px);
+    .child-box-normalfont-brownBG {
+        background-color: rgba(249, 246, 243, 0.5);
+    }
+}
