@@ -6,7 +6,7 @@ import logo from '../Assets/Logo.svg';
 import './Navbar.css';
 import ButtonCollectionButton from '../Button/Newest-but/Button_collection/Button_collection.jsx'; 
 import Button from '../Button/Newest-but/Button_normalfont_brownBG/Button_normalfont_brownBG.jsx'; 
-import btnStyle from '../Button/NewButton/button.jsx';
+// import btnStyle from '../Button/NewButton/button.jsx';
 // import Button from '../Button/NewButton/button.jsx';
 
 import ButtonUser from '../Button/Newest-but/Button_user_information/Button_user_information.jsx';

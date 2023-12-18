@@ -1,6 +1,5 @@
 import React from "react";
 import "./button.css";
-// import '../../Assets/css/global.css'
 
 const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon="", textStyle="", frameStyle="" }) => {
     if (btnStyle === "nav-btn") {

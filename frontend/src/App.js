@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import {
   BrowserRouter as Router,
@@ -30,5 +28,5 @@ function App() {
       </div>
     </Router>
   );
-
+}
 export default App;

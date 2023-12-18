@@ -5,9 +5,9 @@ import '../Assets/css/global.css';
 import logo from '../Assets/Logo.svg';
 import './Navbar.css';
 import ButtonCollectionButton from '../Button/Button_collection.jsx'; 
-import btnStyle from '../Button/NewButton/button.jsx';
+// import btnStyle from '../Button/NewButton/button.jsx';
 import Button from '../Button/NewButton/button.jsx';
-import ButtonUser from '../Button/Button_user_information.jsx';
+import ButtonUser from '../Button/Newest-but/Button_user_information/Button_user_information.jsx';
 
 function Navbar() {
   const [navColour, updateNavbar] = useState(false);

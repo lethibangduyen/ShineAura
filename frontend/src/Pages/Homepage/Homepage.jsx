@@ -10,7 +10,8 @@ import './Homepage.css'
 import Collection from '../../Components/Pagecomponents/Homepage_com/Collections.jsx';
 import '../../Components/Assets/css/global.css';
 import Productcard from '../../Components/Productcard/product-card.jsx';
-import Button from '../../Components/Button/Button_blackfont_transBG_IcArrow.jsx';
+import Button from '../../Components/Button/Button_IcArrow_blackfont_transBG/Button_IcArrow_blackfont_transBG.jsx';
+
 const Homepage = () => {
   return (
     <div className='homepage-shine'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../Assets/Logo.svg';
 import "./Footer.css";
-import Buttonfooter from '../Button/Button_whitefont_transBG';
+import Buttonfooter from '../Button/Button_whitefont_transBG/Button_whitefont_transBG';
 
 const Footer = () => {
   return (
