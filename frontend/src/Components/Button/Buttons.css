@@ -35,7 +35,7 @@
 .buy-now-button:hover {
     background-color: #F1EBE4;
     /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* When pressing the button */
@@ -82,6 +82,7 @@
 /* When Pointing the Mouse */
 .button_1:hover {
     position: relative;
+
     .child-box_1 {
         background-color: #F9F6F3;
         position: absolute;
@@ -94,6 +95,7 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: #3B3023;
     transform: translateY(4px);
+
     .child-box_1 {
         background-color: rgba(249, 246, 2433, 0.5);
     }
@@ -105,7 +107,7 @@
 .button_2 {
     font-family: montserrat;
     font-size: 20px;
-    background-color: #3B3023;
+    background: var(--Dark-Brown, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #3B3023);
     color: #F9F6F3;
     border: none;
     cursor: pointer;
@@ -131,6 +133,7 @@
 /* When Pointing the Mouse */
 .button_2:hover {
     position: relative;
+
     .child-box_2 {
         background-color: #F9F6F3;
         position: absolute;
@@ -143,6 +146,7 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: #3B3023;
     transform: translateY(4px);
+
     .child-box_2 {
         background-color: rgba(249, 246, 2433, 0.5);
     }
@@ -185,6 +189,7 @@
 /* When Pointing the Mouse */
 .button_3:hover {
     position: relative;
+
     .child-box_3 {
         background-color: #F9F6F3;
         position: absolute;
@@ -197,6 +202,7 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: #3B3023;
     transform: translateY(4px);
+
     .child-box_3 {
         background-color: rgba(249, 246, 2433, 0.5);
     }
@@ -238,6 +244,7 @@
 /* When Pointing the Mouse */
 .button_4:hover {
     position: relative;
+
     .child-box_4 {
         background-color: #F9F6F3;
         position: absolute;
@@ -250,6 +257,7 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: #3B3023;
     transform: translateY(4px);
+
     .child-box_4 {
         background-color: rgba(249, 246, 2433, 0.5);
     }
@@ -271,7 +279,7 @@
     justify-content: center;
     position: relative;
     transition-duration: 0.4s;
-    width:  36px;
+    width: 36px;
     height: 36px;
     border-radius: 2px;
 }
@@ -287,6 +295,7 @@
 /* When Pointing the Mouse */
 .button_5:hover {
     position: relative;
+
     .child-box_5 {
         background-color: #F9F6F3;
         position: absolute;
@@ -299,6 +308,7 @@
     color: #5E503F;
     background-color: #F9F6F3;
     transform: translateY(4px);
+
     .child-box_5 {
         background-color: #5E503F;
     }
@@ -310,7 +320,7 @@
 .collection-button {
     font-family: montserrat;
     font-size: 20px;
-    background-color: #3B3023;
+    background: var(--Dark-Brown, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #3B3023);
     color: #F9F6F3;
     border: none;
     cursor: pointer;
@@ -320,7 +330,7 @@
     justify-content: center;
     position: relative;
     transition-duration: 0.4s;
-    width:  198px;
+    width: 198px;
     height: 56px;
     border-radius: 2px;
 }
@@ -343,7 +353,7 @@
     font-size: 14px;
     position: absolute;
     background-color: #F9F6F3;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
     z-index: 1;
     margin-top: 15px;
     padding: 0;
@@ -362,7 +372,7 @@
     text-align: left;
 }
 
-.collection-dropdown-content li{
+.collection-dropdown-content li {
     list-style: none;
 }
 
@@ -381,6 +391,7 @@
 /* When Pointing the Mouse */
 .collection-button:hover {
     position: relative;
+
     .child-box_collection {
         background-color: #F9F6F3;
         position: absolute;
@@ -393,12 +404,13 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: #3B3023;
     transform: translateY(4px);
+
     .child-box_collection {
         background-color: rgba(249, 246, 2433, 0.5);
     }
 }
 
-.collection-button:focus + .collection-dropdown-content,
+.collection-button:focus+.collection-dropdown-content,
 .collection-dropdown-content:focus-within {
     display: flex;
 }
@@ -415,16 +427,15 @@
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     transition-duration: 0.4s;
-    width: 66px;
+    width: 150px;
     height: 28px;
     border-radius: 2px;
 }
 
 .child-box_6 {
-    width: 50px;
+    width: 80px;
     height: 1px;
     background-color: transparent;
     position: absolute;
@@ -435,6 +446,7 @@
 /* When Pointing the Mouse */
 .button_6:hover {
     position: relative;
+
     .child-box_6 {
         background-color: #333333;
         position: absolute;
@@ -447,6 +459,7 @@
     background-color: transparent;
     color: rgba(51, 51, 51, 0.5);
     transform: translateY(4px);
+
     .child-box_6 {
         background-color: rgba(51, 51, 51, 0.5);
     }
@@ -489,6 +502,7 @@
 /* When Pointing the Mouse */
 .button_7:hover {
     position: relative;
+
     .child-box_7 {
         background-color: #333333;
         position: absolute;
@@ -501,6 +515,7 @@
     color: rgba(51, 51, 51, 0.5);
     background-color: transparent;
     transform: translateY(4px);
+
     .child-box_7 {
         background-color: rgba(51, 51, 51, 0.5);
     }
@@ -543,6 +558,7 @@
 /* When Pointing the Mouse */
 .button_8:hover {
     position: relative;
+
     .child-box_8 {
         background-color: #333333;
         position: absolute;
@@ -555,6 +571,7 @@
     background-color: transparent;
     color: rgba(51, 51, 51, 0.5);
     transform: translateY(4px);
+
     .child-box_8 {
         background-color: rgba(51, 51, 51, 0.5);
     }
@@ -572,10 +589,8 @@
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     transition-duration: 0.4s;
-    width: 66px;
     height: 28px;
     border-radius: 2px;
 }
@@ -592,6 +607,7 @@
 /* When Pointing the Mouse */
 .button_9:hover {
     position: relative;
+
     .child-box_9 {
         background-color: #F9F6F3;
         position: absolute;
@@ -604,6 +620,7 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: transparent;
     transform: translateY(4px);
+
     .child-box_9 {
         background-color: rgba(249, 246, 2433, 0.5);
     }
@@ -646,6 +663,7 @@
 /* When Pointing the Mouse */
 .button_10:hover {
     position: relative;
+
     .child-box_10 {
         background-color: #F9F6F3;
         position: absolute;
@@ -658,6 +676,7 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: transparent;
     transform: translateY(4px);
+
     .child-box_10 {
         background-color: rgba(249, 246, 2433, 0.5);
     }
@@ -700,6 +719,7 @@
 /* When Pointing the Mouse */
 .button_11:hover {
     position: relative;
+
     .child-box_11 {
         background-color: #F9F6F3;
         position: absolute;
@@ -712,6 +732,7 @@
     color: rgba(249, 246, 2433, 0.5);
     background-color: transparent;
     transform: translateY(4px);
+
     .child-box_11 {
         background-color: rgba(249, 246, 2433, 0.5);
     }
@@ -732,7 +753,7 @@
     justify-content: center;
     position: relative;
     transition-duration: 0.4s;
-    width:  36px;
+    width: 36px;
     height: 36px;
     border-radius: 2px;
 }
@@ -748,6 +769,7 @@
 /* When Pointing the Mouse */
 .button_user_information:hover {
     position: relative;
+
     .child-box_user_information {
         background-color: #F9F6F3;
         position: absolute;
@@ -760,6 +782,7 @@
     color: #5E503F;
     background-color: #F9F6F3;
     transform: translateY(4px);
+
     .child-box_user_information {
         background-color: #5E503F;
     }
@@ -772,7 +795,7 @@
     position: relative;
     color: #5E503F;
     background-color: #F9F6F3;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
     z-index: 1;
     margin-top: 10px;
     padding: 0;
@@ -791,14 +814,14 @@
     border-radius: 50%;
     margin-left: 20px;
     margin-top: -10.18px;
-    
+
 }
 
 .container_12_1 {
     display: flex;
     margin-top: 25px;
     z-index: 1;
-    
+
 }
 
 .container_12_1 svg {
@@ -810,7 +833,7 @@
 
 .container_content_12_1 div {
     margin-bottom: 15px;
-    
+
 }
 
 /* ------------------ */
@@ -823,7 +846,7 @@
 
 .container_12_2 div {
     margin-bottom: 15px;
-    
+
 }
 
 .container_12_2 svg {
@@ -836,9 +859,10 @@
 }
 
 /* ------------------------- */
-.button_user_information:focus + .container_12,
+.button_user_information:focus+.container_12,
 .container_12:focus-within {
     display: block;
+}
 }
 .sign-in-button {
     display: flex;
@@ -894,3 +918,4 @@ letter-spacing: 0.48px;
   background: #5E503F;
   color: #ffffff;
 }
+

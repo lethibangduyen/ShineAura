@@ -1,4 +1,3 @@
-
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Signin from './Pages/Signin/Signin';
@@ -9,7 +8,6 @@ function App() {
     <div className="app">
     <Navbar/>
     <Signup/>
-  </div>
   );
 }
 
