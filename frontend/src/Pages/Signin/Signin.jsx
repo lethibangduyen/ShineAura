@@ -4,11 +4,8 @@ import './Signin.css'
 import SignInButton from '../../Components/Button/Button_sign_in';
 import FacebookSignInButton from '../../Components/Button/Button_facebook_sign_in';
 import GoogleSignInButton from '../../Components/Button/Button_google_sign_in';
-import NavBar from '../../Components/Navbar/Navbar';
 const Signin = () => {
     return (
-        <div>
-            <NavBar />
         <div className="signin">
             <div className="signin-container">
                 <div className="signin-logo">
@@ -54,7 +51,6 @@ const Signin = () => {
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 }

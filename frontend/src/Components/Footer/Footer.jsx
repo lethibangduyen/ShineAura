@@ -38,7 +38,7 @@ const Footer = () => {
             <p>Collections</p> <hr />
           </div>
           <div className=" footer-collection-content flex-row align-left flex-left-align  ">
-            <div className="footer-button-left flex-col align-left gap-2xs ">
+            <div className="footer-button-left flex-col align-left gap-2xs  flex-left-align ">
               <div className="footer-button">
                 <Buttonfooter buttonText="Cleanser" />
               </div>
@@ -83,16 +83,16 @@ const Footer = () => {
           </div>
           <div className=" flex-col footer-contact-content align-left gap-xs">
           <div className='flex-row gap-xs body-lgt'>
-                  <i class="bi bi-envelope"></i>
+                  <i className="bi bi-envelope"></i>
                   <p>shineaura.cosmetic@gmail.com</p>
                 </div>
                 <div className='flex-row gap-xs body-lgt'>
-                  <i class=" bi bi-telephone"></i>
+                  <i className=" bi bi-telephone"></i>
                   <p>+84 123 456 789</p>
 
                 </div>
                 <div className='flex-row gap-xs body-lgt '>
-                  <i class="bi bi-geo-alt"></i>
+                  <i className="bi bi-geo-alt"></i>
                   <p>Thu Duc Viet Nam</p>
                 </div>
           </div>
