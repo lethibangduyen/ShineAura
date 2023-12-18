@@ -14,6 +14,11 @@ button {
     gap: var(--spacing-spc-none, 0px);
 }
 
+.nav-btn:hover .nav-btn-frame {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid var(--Ivory, #F9F6F3);
+}
+
 .nav-btn-frame {
     display: flex;
     color: #F9F6F3;
@@ -22,11 +27,8 @@ button {
     justify-content: center;
     align-items: flex-start;
     gap: var(--spacing-spc-xs, 8px);
-    border-radius: var(--spacing-spc-none, 0px);
-    border-top: var(--spacing-spc-none, 0px) solid var(--Ivory, #F9F6F3);
-    border-right: var(--spacing-spc-none, 0px) solid var(--Ivory, #F9F6F3);
-    border-bottom: 4px solid var(--Ivory, #F9F6F3);
-    border-left: var(--spacing-spc-none, 0px) solid var(--Ivory, #F9F6F3);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
 }
 
 
@@ -38,14 +40,37 @@ button {
     gap: var(--spacing-spc-none, 0px);
 }
 
+.underline-btn:hover .underline-btn-frame {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #333;
+}
+
 .underline-btn-frame {
     display: flex;
     padding: 2px var(--spacing-spc-none, 0px);
     align-items: flex-start;
     gap: var(--spacing-spc-xs, 8px);
-    border-radius: var(--spacing-spc-none, 0px);
-    border-top: var(--spacing-spc-none, 0px) solid #333;
-    border-right: var(--spacing-spc-none, 0px) solid #333;
-    border-bottom: 1px solid #333;
-    border-left: var(--spacing-spc-none, 0px) solid #333;}
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
 
+.auth-btn {
+    box-sizing: content-box;
+    display: inline-flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #5E503F;
+    background: var(--Light-element-backgrounds, #EAE0D5);
+}
+
+.auth-btn:hover {
+    border: 2px solid #5E503F;
+}
+
+.auth-frame {
+    display: flex;
+    gap: 8px;
+    color: #5E503F;
+}
