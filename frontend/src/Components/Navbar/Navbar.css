@@ -1,9 +1,18 @@
 .navigation {
+  width: 100%;
   padding: 0px var(--spacing-spc-xl, 64px);
-  background: var(--Dark-Brown, #3B3023);
+  background: var(--Dark-Brown, rgb(59, 48, 35));
+  position: fixed !important;
+  top: 0px;
+  transition: all 0.3s ease-out 0s !important;
+  z-index: 1000;
+  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171);
 }
 
-
+.navigation.nav-scroll {
+  background: var(--Dark-Brown, rgb(59, 48, 35, 0.99));
+  box-shadow: 0px 20px 10px 0px rgba(9, 5, 29, 0.171);
+}
 
 .nav-logo {
   padding: 14.44px;

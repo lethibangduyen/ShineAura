@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import hero from '../../Components/Assets/Media/Policy/Cover.png';
 import "./Policy.css";
-import NavBar from '../../Components/Navbar/Navbar';
-import Footer from '../../Components/Footer/Footer';
 import '../../Components/Assets/css/global.css';
 
 // Import your Policy.json data
@@ -18,8 +16,7 @@ const Policy = () => {
     };
 
     return (
-        <div>
-<NavBar />
+
        
         <div className='policy-page'>
             {/* <NavBar /> */}
@@ -58,8 +55,6 @@ const Policy = () => {
                     </ol>
                 </div>
             </div>
-        </div>
-        <Footer />
         </div>
     );
 };

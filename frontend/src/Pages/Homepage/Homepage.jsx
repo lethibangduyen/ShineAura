@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from '../../Components/Navbar/Navbar';
-import Footer from '../../Components/Footer/Footer';
 import Pic1 from '../../Components/Assets/Media/Homepage/Hero_1.png';
 import Pic2 from '../../Components/Assets/Media/Homepage/Hero_2.png';
 import Pic3 from '../../Components/Assets/Media/Homepage/Hero_3.png';
@@ -12,11 +10,10 @@ import './Homepage.css'
 import Collection from '../../Components/Pagecomponents/Homepage_com/Collections.jsx';
 import '../../Components/Assets/css/global.css';
 import Productcard from '../../Components/Productcard/product-card.jsx';
-
+import Button from '../../Components/Button/Button_blackfont_transBG_IcArrow.jsx';
 const Homepage = () => {
   return (
-    <div>
-      <NavBar />
+    <div className='homepage-shine'>
       <div className="homepage-first">
         <div className="pic-parent">
           <img className="pic-1" alt="" src={Pic1} />
@@ -57,8 +54,11 @@ const Homepage = () => {
               <i className="bi bi-chevron-right"></i>
             </button>
           </div>
-
+          <Button buttonText="See More" IconClass="bi bi-arrow-right"/>
         </div>
+        </div>
+        <div className = 'home-btn-see'>
+       
       </div>
       <div class="home-aboutus flex-row ">
         <div class="about-us-parent flex-col">
@@ -116,16 +116,16 @@ const Homepage = () => {
               <p className="text-contact2 body">Need assistance or have questions? Don't hesitate to get in touch with us. ShineAura's customer care team is available 24/7 to assist you. Let us know how we can help. We're here to listen and ensure you have the best shopping experience on ShineAura.</p>
               <div className="flex-col text-contact-icon  align-left gap-xs ">
                 <div className='flex-row gap-xs body-bld'>
-                  <i class="bi bi-envelope-fill"></i>
+                  <i className="bi bi-envelope-fill"></i>
                   <p>shineaura.cosmetic@gmail.com</p>
                 </div>
                 <div className='flex-row gap-xs body-bld'>
-                  <i class=" bi bi-telephone-fill"></i>
+                  <i className=" bi bi-telephone-fill"></i>
                   <p>+84 123 456 789</p>
 
                 </div>
                 <div className='flex-row gap-xs  '>
-                  <i class="bi bi-geo-alt-fill"></i>
+                  <i className="bi bi-geo-alt-fill"></i>
                   <p>Thu Duc Viet Nam</p>
                 </div>
               </div>
@@ -142,9 +142,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+      </div>
 
-      <Footer />
-    </div>
   );
 }
 export default Homepage;

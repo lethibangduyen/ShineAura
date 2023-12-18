@@ -1,38 +1,34 @@
-import './App.css';
-// import Signup from './Pages/Signup/Signup';
-// import Navbar from './Components/Navbar/Navbar';
-// import Homepage from './Pages/Homepage/Homepage';
-<<<<<<< Updated upstream
-import Signin from './Pages/Signin/Signin';
-import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
-function App() {
-    return (
-        // <Homepage />
-        // <Navbar />
-        // <Signup />
-        // <ForgotPassword />
-        // <Login />
-        <Signin />
-    );
-=======
-import Payment from './Pages/Payment/Payment'; // Đảm bảo bạn import trang Policy từ đúng đường dẫn
 
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
+import Homepage from './Pages/Homepage/Homepage';
+import ScrollToTop from "./Components/ScrollToTop";
+import AboutUsPage from './Pages/AboutUs/AboutUsPage';
+import PolicyPage from './Pages/Policy/Policy';
 
 function App() {
+  const [load] = useState(true);
+
   return (
-    <div className="app">
-
-      <Navbar />
-      {/* <Policy/> */}
-      <Payment/>
-
-
-      {/* <Footer /> */}
-
-    </div>
+    <Router>
+      <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/policy" element={<PolicyPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
->>>>>>> Stashed changes
-}
 
 export default App;
