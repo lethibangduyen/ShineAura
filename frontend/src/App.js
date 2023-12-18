@@ -1,17 +1,35 @@
-import './App.css';
-// import Signup from './Pages/Signup/Signup';
-// import Navbar from './Components/Navbar/Navbar';
-// import Homepage from './Pages/Homepage/Homepage';
-// import Signin from './Pages/Signin/Signin';
-// import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
-import Productpage from './Pages/Productpage/Productpage';
+
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
+import Homepage from './Pages/Homepage/Homepage';
+import ScrollToTop from "./Components/ScrollToTop";
+import AboutUsPage from './Pages/AboutUs/AboutUsPage';
+import PolicyPage from './Pages/Policy/Policy';
 
 function App() {
-    return (
-        <div className="App">
-            <Productpage />
-        </div>
-    );
+  const [load] = useState(true);
+
+  return (
+    <Router>
+      <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/policy" element={<PolicyPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
+
 }
 
 export default App;
