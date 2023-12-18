@@ -59,7 +59,7 @@ const AboutUsPage = () => {
                                     <div className="md-spc gap-ms flex-col ivory-bg">
                                         <h3 className="h3">Makeup</h3>
                                         <p className="body">Excepteur consequat labore voluptate adipisicing elit nostrud quis commodo. Ad cillum nostrud mollit </p>
-                                        <Button text="Shop Makeup" btnStyle="nav-btn"/>
+                                        <Button text="Shop Makeup" btnStyle="auth-btn"/>
                                     </div>
                                 </div>
                             </div>

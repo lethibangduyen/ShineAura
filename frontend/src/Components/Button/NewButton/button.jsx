@@ -17,7 +17,14 @@ const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon=""
             textStyle = "body-lgt";
         } 
         frameStyle = "underline-btn-frame " + frameStyle;
-    }
+    } else if (btnStyle === "auth-btn") {
+        if (textStyle !== "") {
+            textStyle = textStyle;
+        } else {
+            textStyle = "btn-text";
+        } 
+        frameStyle = "auth-frame " + frameStyle;
+    } 
 
     let iconState = "";
     if (icon !== "") {
