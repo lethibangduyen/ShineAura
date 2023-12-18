@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../Assets/Logo.svg';
 import "./Footer.css";
 import Buttonfooter from '../Button/Button_whitefont_transBG/Button_whitefont_transBG';
+import Button from '../Button/NewButton/button';
 
 const Footer = () => {
   return (
@@ -16,19 +17,19 @@ const Footer = () => {
           </div>
           <div className=" flex-col footer-sitemap-content align-left ">
             <div className="footer-button">
-              <Buttonfooter buttonText="Home" />
+              <Button text="Home" btnStyle="footer-btn"/>
+            </div>  
+            <div className="footer-button">
+              <Button text="Product" btnStyle="footer-btn"/>
             </div>
             <div className="footer-button">
-              <Buttonfooter buttonText="Product" />
+              <Button text="Collection" btnStyle="footer-btn"/>
             </div>
             <div className="footer-button">
-              <Buttonfooter buttonText="Collection" />
+              <Button text="Contact" btnStyle="footer-btn"/>
             </div>
             <div className="footer-button">
-              <Buttonfooter buttonText="Contact" />
-            </div>
-            <div className="footer-button">
-              <Buttonfooter buttonText="Term & Condition" />
+              <Button text="Term & Condition"btnStyle="footer-btn" />
             </div>
           </div>
         </div>

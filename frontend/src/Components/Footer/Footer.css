@@ -7,6 +7,7 @@
   flex-wrap: wrap;
   background:  #3B3023;
 }
+
 .footer-vector-icon {
   align-self: stretch;
   flex: 1;
@@ -43,6 +44,8 @@ gap: var(--spacing-spc-2xs, 4px);
 padding: var(--spacing-spc-none, 0px);
 gap: var(--Spacing-2, 16px);
 }
+
 .footer-contact-content{
   padding: 4px 8px;
 }
+
