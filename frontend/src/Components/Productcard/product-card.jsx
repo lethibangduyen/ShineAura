@@ -47,7 +47,7 @@ const ProductCard = ({ product }) => {
             <div className='flex-col align-left prod-info-exp'>
                 <div className='flex-col gap-xs align-left'>
                     <div className='flex-col gap-2xs prod-n-pr-review align-left'>
-                        <p className='prod-collection'>COLLECTION NAME</p>
+                        <p className='prod-brand'>COLLECTION NAME</p>
                         <p className='prod-name'>3CE HAZY LIP CLAY</p>
                         <div className='flex-row prod-review gap-2xs'>
                             <div className='review-stars flex-row'>
