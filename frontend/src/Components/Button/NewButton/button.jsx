@@ -1,14 +1,22 @@
 import React from "react";
 import "./button.css";
-import '../../Assets/css/global.css'
+// import '../../Assets/css/global.css'
 
 const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon="", textStyle="", frameStyle="" }) => {
     if (btnStyle === "nav-btn") {
-        textStyle = "pre-title" + textStyle;
-        frameStyle = "nav-btn-frame" + frameStyle;
+        if (textStyle !== "") {
+            textStyle = textStyle;
+        } else {
+            textStyle = "pre-title";
+        }
+        frameStyle = "nav-btn-frame " + frameStyle;
     } else if (btnStyle === "underline-btn") {
-        textStyle = "body-lgt" + textStyle;
-        frameStyle = "underline-btn-frame" + frameStyle;
+        if (textStyle !== "") {
+            textStyle = textStyle;
+        } else {
+            textStyle = "body-lgt";
+        } 
+        frameStyle = "underline-btn-frame " + frameStyle;
     }
 
     let iconState = "";
@@ -27,7 +35,7 @@ const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon=""
         >
         <div className={frameStyle}>
             {iconState}
-            <span className={textStyle}>{text}</span>
+            <p className={textStyle}>{text}</p>
         </div>
         </button>
     );

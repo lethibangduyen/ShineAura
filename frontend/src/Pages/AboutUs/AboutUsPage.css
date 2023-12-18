@@ -91,3 +91,7 @@
     align-items: flex-start;
     flex: 1 0 0;
 }
+
+.testframe {
+    padding: 48px;
+}
