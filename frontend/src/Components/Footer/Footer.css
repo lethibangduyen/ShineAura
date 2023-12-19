@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   color: white;
-  padding: var(--spacing-spc-lg, 48px) var(--spacing-spc-xl, 64px);
+  padding: var(--spacing-spc-lg, 48px);
   align-content: flex-start;
   row-gap: 64px;
   flex-wrap: wrap;
