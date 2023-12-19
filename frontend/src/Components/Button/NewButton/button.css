@@ -31,7 +31,7 @@ button {
     border-bottom: 4px solid transparent;
 }
 
-.footer-btn,
+
 .underline-btn {
     display: inline-flex;
     padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-xs, 8px);
@@ -40,13 +40,11 @@ button {
     gap: var(--spacing-spc-none, 0px);
 }
 
-.footer-btn:hover .footer-btn-frame,
 .underline-btn:hover .underline-btn-frame {
     border-top: 1px solid transparent;
     border-bottom: 1px solid #333;
 }
 
-.footer-btn-frame,
 .underline-btn-frame {
     display: flex;
     padding: 2px var(--spacing-spc-none, 0px);
@@ -54,14 +52,6 @@ button {
     gap: var(--spacing-spc-xs, 8px);
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
-}
-
-.footer-btn:hover .footer-btn-frame {
-    border-bottom: 1px solid #F9F6F3;
-}
-
-.footer-btn-frame {
-    color: #F9F6F3;
 }
 
 .auth-btn {

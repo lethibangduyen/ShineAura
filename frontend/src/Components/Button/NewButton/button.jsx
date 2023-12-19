@@ -23,13 +23,6 @@ const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon=""
             textStyle = "btn-text";
         } 
         frameStyle = "auth-frame " + frameStyle;
-    } else if (btnStyle === "footer-btn") {
-        if (textStyle !== "") {
-            textStyle = textStyle;
-        } else {
-            textStyle = "body-lgt";
-        } 
-        frameStyle = "footer-btn-frame" + frameStyle;
     } 
 
     let iconState = "";
