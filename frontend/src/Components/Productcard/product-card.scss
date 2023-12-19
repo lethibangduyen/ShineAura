@@ -207,8 +207,9 @@
 }
 
 .prod-img {
-    width: 100%;
-    flex: 1 0 0;
+    height: unset;
+    flex-shrink: 0;
+    align-self: stretch;
 }
 
 .prod-info {
@@ -263,7 +264,7 @@
 
 .prod-info-exp {
     height: 320px;
-    width: 484px;
+    width: 718px;
     padding: var(--spc-tk-ms);
     background-color: #FFFCF8;
     position: relative;
@@ -321,8 +322,8 @@
     }
     
     .prod-img {
-        width: 100%;
-        flex: 1 0 0;
+        flex-shrink: 0;
+        align-self: stretch;
     }
 
     .prod-info {
