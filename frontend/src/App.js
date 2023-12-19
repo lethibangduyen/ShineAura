@@ -10,7 +10,8 @@ import Homepage from './Pages/Homepage/Homepage';
 import ScrollToTop from "./Components/ScrollToTop";
 import AboutUsPage from './Pages/AboutUs/AboutUsPage';
 import PolicyPage from './Pages/Policy/Policy';
-
+// import  Contact from "./Pages/Contactpage/Contactpage";
+// import Productpage from "./Pages/Productpage/Productpage";
 function App() {
   const [load] = useState(true);
 

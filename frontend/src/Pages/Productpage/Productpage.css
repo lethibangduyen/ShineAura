@@ -240,3 +240,36 @@ padding: var(--spacing-spc-2xl, 80px) var(--spacing-spc-lg, 48px);
 .prod-query-content .vt-divider {
     border-width: 0.1px;
 }
+.product-collect3-search-bar {
+    display: flex;
+    align-items: center;
+    background: #D9D9D9;
+}
+
+
+.product-collect3-search-btn {
+    width: 40px; 
+    height: 40px; 
+    background: transparent; /* Nền trong suốt */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-collect3-search-input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: transparent; 
+}
+
+#sort {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background: #D9D9D9;
+    border: none;
+}

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import '../Assets/css/global.css';
 import logo from '../Assets/Logo.svg';
 import './Navbar.css';
-import ButtonCollectionButton from '../Button/Button_collection.jsx'; 
+import ButtonCollectionButton from '../Button/Newest-but/Button_collection/Button_collection.jsx'; 
 // import btnStyle from '../Button/NewButton/button.jsx';
 import Button from '../Button/NewButton/button.jsx';
 import ButtonUser from '../Button/Newest-but/Button_user_information/Button_user_information.jsx';
-
+import ButtonLogo from '../Button/Newest-but/Button_logo_brownBG/Button_logo_brownBG.jsx'
 function Navbar() {
   const [navColour, updateNavbar] = useState(false);
 
@@ -52,10 +52,10 @@ function Navbar() {
       </div>
       <div className="nav-icon flex-row gap-xs">
         <div className="icon-button">
-          <i className="bi bi-search"></i>
+        <ButtonLogo IconClass="bi bi-search"/>
         </div>
         <div className="icon-button">
-          <i className="bi bi-cart"></i>
+        <ButtonLogo IconClass="bi bi-cart"/>
         </div>
         <div className="icon-button">
           <ButtonUser />

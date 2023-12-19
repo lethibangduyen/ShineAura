@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../Assets/Logo.svg';
 import "./Footer.css";
-import Buttonfooter from '../Button/Button_whitefont_transBG/Button_whitefont_transBG';
 import Button from '../Button/NewButton/button';
 
 const Footer = () => {
@@ -39,41 +38,44 @@ const Footer = () => {
             <p>Collections</p> <hr />
           </div>
           <div className=" footer-collection-content flex-row align-left flex-left-align  ">
-            <div className="footer-button-left flex-col align-left gap-2xs  flex-left-align ">
+            <div className="footer-button-left flex-left-align  flex-col align-left gap-2xs  ">
               <div className="footer-button">
-                <Buttonfooter buttonText="Cleanser" />
+              <Button text="Cleanser"btnStyle="footer-btn" />
+            </div>
+              <div className="footer-button">
+              <Button text="Sunscreen Cream"btnStyle="footer-btn" />
+            </div>
+              <div className="footer-button">
+              <Button text="Moisturizer" btnStyle="footer-btn" />
+            </div>
+              <div className="footer-button">
+                <Button text="Mask" btnStyle="footer-btn"/>
               </div>
               <div className="footer-button">
-                <Buttonfooter buttonText="Sunscreen Cream" />
-              </div>
-              <div className="footer-button">
-                <Buttonfooter buttonText="Moisturizer" />
-              </div>
-              <div className="footer-button">
-                <Buttonfooter buttonText="Mask" />
-              </div>
+              <Button text="Mask" btnStyle="footer-btn" />
+            </div>
             </div>
             <div className="footer-button-right flex-col align-left gap-2xs">
               <div className="footer-button">
-                <Buttonfooter buttonText="Lipstick " />
+                <Button text="Lipstick" btnStyle="footer-btn" />
               </div>
               <div className="footer-button">
-                <Buttonfooter buttonText="Foundation " />
+                <Button text="Foundation "btnStyle="footer-btn" />
               </div>
               <div className="footer-button">
-                <Buttonfooter buttonText="Face Powder " />
+                <Button text="Face Powder " btnStyle="footer-btn"/>
               </div>
               <div className="footer-button">
-                <Buttonfooter buttonText="Mascara " />
+                <Button text="Mascara "btnStyle="footer-btn" />
               </div>
               <div className="footer-button">
-                <Buttonfooter buttonText="Eyeshadow " />
+                <Button text="Eyeshadow "btnStyle="footer-btn" />
               </div>
               <div className="footer-button">
-                <Buttonfooter buttonText="Blush " />
+                <Button text="Blush " btnStyle="footer-btn"/>
               </div>
               <div className="footer-button">
-                <Buttonfooter buttonText="Eyeliner " />
+                <Button text="Eyeliner " btnStyle="footer-btn"/>
               </div>
             </div>
           </div>
