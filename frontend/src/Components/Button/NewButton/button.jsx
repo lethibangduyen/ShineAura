@@ -1,7 +1,8 @@
 import React from "react";
 import "./button.css";
+import CollectionDropdown from "../../Dropdown/CollectionDropdown/CollectionDropdown";
 
-const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon="", textStyle="", frameStyle="" }) => {
+const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon="", textStyle="", frameStyle="", dropDown=""}) => {
     if (btnStyle === "nav-btn") {
         if (textStyle !== "") {
             textStyle = textStyle;
@@ -29,8 +30,27 @@ const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon=""
         } else {
             textStyle = "body-lgt";
         } 
-        frameStyle = "footer-btn-frame" + frameStyle;
-    } 
+        frameStyle = "footer-btn-frame " + frameStyle;
+    } else if (btnStyle === "dropdown-btn") {
+        if (textStyle !== "") {
+            textStyle = textStyle;
+        } else {
+            textStyle = "pre-title";
+        } 
+        frameStyle = "dropdown-btn-frame " + frameStyle;
+    }
+
+    let dropdownSct = (
+        <div className="dropdown-sct">
+        </div>
+    );
+
+    if (dropDown === "") {
+        dropdownSct = (
+            <div className="dropdown-sct">
+            </div>
+        );
+    }
 
     let iconState = "";
     if (icon !== "") {
@@ -49,6 +69,9 @@ const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon=""
         <div className={frameStyle}>
             {iconState}
             <p className={textStyle}>{text}</p>
+        </div>
+        <div className="dropdown-sct">
+            <CollectionDropdown/>
         </div>
         </button>
     );

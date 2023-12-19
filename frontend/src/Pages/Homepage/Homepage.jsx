@@ -94,10 +94,10 @@ const Homepage = () => {
         </div>
         <div class="img-container">
           <div class="image-box">
-            <img class="img1" src={About1} />
-            <img class="img2" src={About2} />
-            <img class="img3" src={About3} />
-            <img class="img4" src={About4} />
+            <img class="img1" alt="" src={About1} />
+            <img class="img2" alt="" src={About2} />
+            <img class="img3" alt="" src={About3} />
+            <img class="img4" alt="" src={About4} />
           </div>
         </div>
       </div>

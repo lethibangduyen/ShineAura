@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/policy" element={<PolicyPage />} />
-        </Routes>
+        </Routes> */
         <Footer />
       </div>
     </Router>

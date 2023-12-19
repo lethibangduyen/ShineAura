@@ -82,7 +82,7 @@ const AboutUsPage = () => {
                                 <img
                                 key={index}
                                 src={image}
-                                alt={`Image ${index + 1}`}
+                                alt={`${index + 1}`}
                                 style={{ width: imageWidth }}
                                 />
                             ))}

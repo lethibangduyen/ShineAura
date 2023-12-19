@@ -4,7 +4,9 @@ button {
     cursor: pointer;
 }
 
+.dropdown-btn,
 .nav-btn {
+    position: relative;
     display: inline-flex;
     padding: var(--spacing-spc-none, 0px) var(--spacing-spc-sm, 16px);
     justify-content: center;
@@ -14,11 +16,13 @@ button {
     gap: var(--spacing-spc-none, 0px);
 }
 
+.dropdown-btn:hover .dropdown-btn-frame,
 .nav-btn:hover .nav-btn-frame {
     border-top: 4px solid transparent;
     border-bottom: 4px solid var(--Ivory, #F9F6F3);
 }
 
+.dropdown-btn-frame,
 .nav-btn-frame {
     display: flex;
     color: #F9F6F3;
@@ -33,6 +37,7 @@ button {
 
 .footer-btn,
 .underline-btn {
+    position: relative;
     display: inline-flex;
     padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-xs, 8px);
     flex-direction: column;
@@ -65,6 +70,7 @@ button {
 }
 
 .auth-btn {
+    position: relative;
     box-sizing: content-box;
     display: inline-flex;
     padding: 20px;
@@ -83,4 +89,18 @@ button {
     display: flex;
     gap: 8px;
     color: #5E503F;
+}
+
+.dropdown-sct {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.turn-off-dropdown {
+    display: none;
+}
+
+.dropdown-btn:hover .turn-off-dropdown {
+    display: block;
 }
