@@ -163,6 +163,17 @@ text-transform: uppercase;
     letter-spacing: 1%;
 }
 
+/* Body Smxl */
+.body-smxl {
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-style: normal; 
+    font-weight: 400;
+    letter-spacing: unset;
+    line-height: normal;
+    letter-spacing: 1%;
+}
+
 /* Pre-title */
 .pre-title {
     font-family: var(--display-font);
@@ -348,3 +359,6 @@ text-transform: uppercase;
   background-color: #F9F6F3;}
 
 
+.spc {
+    justify-content: space-between;
+}

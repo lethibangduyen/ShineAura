@@ -1,49 +1,40 @@
+.signin-button {
+    width: 320px;
+}
 
+.title-form, .commision{
+    width: 323.642px;
+    align-items: start;
+    justify-content: left;
+    color: var(--pearl-bush-900, #593C35);
+}
 
-.signin-container{
+.section-signup-container{
     display: flex;
-    flex-direction: row;
+    padding: 128px;
     height: 100%;
     background-color: hex(F9F6F3);
 }
-.signin-logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
+.signin-logo img {
+    margin: 0;
+    flex: 1 0 0;
 }
-
-.signin-logo > img {
-    display: flex;
-    max-width: 80%;
-    margin: 0 auto; 
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-  }
-.main{
+.signin-form-container{
     width: 448px;
     height: 547px;
     flex-shrink: 0;
-    margin: 66px 193px 143px 0px;
     border-radius: var(--spacing-spc-none, 0px);
-    border: 1px solid var(--pearl-bush-900, #593C35);
-    background: var(--rodeo-dust-100, #F1EBE3);
-    float: right;
-    margin-left: auto;
+    border: 1px solid var(--Pearl-Bush-900, #593C35);
+    background: var(--Rodeo-Dust-100, #F1EBE3);
+
 }
-.signin-form-title{
-    font-size: var(--h4-size);
-  color: var(--dark-brown);
-  font-family: var(--title-h1);
-  margin: 28px 48px 34px 48px;
-  font-weight:600;
+.signin-form{
+    width: 324px;
+    height: 371px;
+    
 }
 
-.signin-form{
-    text-align: center;
-}
-.signin-form-input>input{
+.signup-form-input>input{
     width: 340px;
     height: 47.695px;
     flex-shrink: 0;
@@ -53,52 +44,36 @@
     margin-top: 10.97px;
     padding-left: 10px;
 }
-.remember-me{
-    color: var(--Accent-Color, #5E503F);
-}
-.additional-function{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 18.79px 0px 18.79px 0px;
-    font-size:  var(--font-size-sm);
-    padding: 0px 48px 0px 48px;
-}
-.forgot-pw{
-    width: 120px;
-    height: 13.627px;
-    color: var(--Accent-Color, #5E503F);
-    margin-left: auto;
-}
-a{
-    text-decoration: none;
-    color: var(--Accent-Color, #5E503F);
-}
-.sign-in-button{
-    display: flex;
-    margin: 0 auto;
-}
-.signup-transfer{
-    color: rgba(94, 80, 63, 0.71);
-    text-align: center;
-    font-family: Nunito;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 16px 0px 16px 0px;
-}
-hr{
-    width: 65%;
-}
-.another-signin-button{
-    display: flex;
-    flex-direction: row;
+
+.signup-btn{
+    width: 290.22px;
     justify-content: center;
 }
-.google-sign-in-button{
-    margin-right: 18px;
+
+.signin-transfer>hr{
+    width: 340px;
 }
-.facebook-sign-in-button{
-    margin-left: 18px;
+
+.signup-form-footer{
+    width: 322.79px;
+}
+.ano-btn{
+    width: fit-content;
+}
+.ano-btn>button{
+    width: 145px;
+    padding: 15px;
+}
+.signin-transfer>signup-sub-text>a{
+    text-decoration: none;
+    color: var(--pearl-bush-900, #593C35);
+}
+.additional-function{
+    align-self: stretch;
+    justify-content: space-between;
+    color: var(--Pearl-Bush-900, #593C35);
+}
+.forgot-pw>a{
+    text-decoration: none;
+    color: var(--Pearl-Bush-900, #593C35);
 }

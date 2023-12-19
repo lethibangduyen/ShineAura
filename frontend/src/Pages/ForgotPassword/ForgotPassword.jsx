@@ -21,14 +21,15 @@ const ForgotPassword = () => {
         
                                 <Button text= "SIGN IN" btnStyle="auth-btn" frameStyle='fl-wth'></Button>
                     
-                            <div className="flex-row spc">
+                            <div className=" spc flex-row">
                                 <a  href="#" className='sign-up'>Sign up</a>
                                 <a href="#" className='sign-in'>Sign in</a>
                             </div>
-                        </form>
-                    <div className="forgot-footer body-sml">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste? Architecto numquam nesciunt dicta.</p>
-                    </div>
+                        
+                        <div className="forgot-footer body-sml">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste? Architecto numquam nesciunt dicta.</p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

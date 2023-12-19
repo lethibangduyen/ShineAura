@@ -1,5 +1,6 @@
 import './App.css';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
+import Signin from './Pages/Signin/Signin';
 // import Navbar from './Components/Navbar/Navbar';
 // import Signin from './Pages/Signin/Signin';
 // import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
@@ -11,6 +12,7 @@ function App() {
     <div className="app">
       <ForgotPassword/>
       {/* <Signup/> */}
+      {/* <Signin/> */}
     </div>
   );
 }
