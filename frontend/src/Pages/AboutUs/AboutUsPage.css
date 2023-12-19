@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+button {
+    width: 100%;;
+}
+
 .hero-image img {
     display: block;
     margin: 0 auto;
