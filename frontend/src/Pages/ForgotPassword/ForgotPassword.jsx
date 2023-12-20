@@ -1,4 +1,5 @@
-import React from'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../Components/Assets/Media/logo_black.png';
 import './ForgotPassword.css'
 import '../../Components/Assets/css/global.css'
@@ -17,15 +18,16 @@ const ForgotPassword = () => {
                         <p className='body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus.</p>
                     </div>
                     <form action="" className='flex-col forgot-form gap-sm'>
-                            <input type="text" className='email-input body' placeholder="Email" />
-        
-                                <Button text= "SIGN IN" btnStyle="auth-btn" frameStyle='fl-wth'></Button>
-                    
-                            <div className="flex-center-align flex-row gap-md">
-                                <div  href="#" className='sign-up'>Sign up</div>
-                                <div  href="#" className='sign-in'>Sign in</div>
-                            </div>
-                        
+                        <input type="text" className='email-input body' placeholder="Email" />
+
+                        <Button text="SIGN IN" btnStyle="auth-btn" frameStyle='fl-wth'></Button>
+
+                        <div className="flex-center-align flex-row gap-md">
+                            <Link to="/signup" className='sign-up'>Sign up</Link>
+                            <Link to="/signin" className='sign-in'>Sign in</Link>
+                        </div>
+
+
                         <div className="forgot-footer body-sml">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste? Architecto numquam nesciunt dicta.</p>
                         </div>

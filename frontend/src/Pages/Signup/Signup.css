@@ -1,8 +1,7 @@
-.section-signup-container{
+.signup-shine {
     width: 100%;
-    padding: 128px;
-    height: 100%;
     background-color: hex(F9F6F3);
+    padding: 128px;
 }
 .signin-button {
     width: 320px;

@@ -1,7 +1,7 @@
+
 .homepage-first {
   position: relative;
   background-color: #f0f0f0;
-  width: 100%;
   height: 840px;
   overflow: hidden;
   text-align: left;
@@ -42,17 +42,19 @@
   align-items: center;
   gap: var(--spacing-spc-xs, 8px);
 }
+
 .home-list-product {
   max-width: 1440px;
-overflow: hidden;
-padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-ms, 24px) var(--spacing-spc-2xs, 4px) var(--spacing-spc-2xs, 4px);
-gap: 12px;
+  overflow: hidden;
+  padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-ms, 24px) var(--spacing-spc-2xs, 4px) var(--spacing-spc-2xs, 4px);
+  gap: 12px;
 }
 
 .product-parent-detail {
   max-width: 1440px;
-overflow: hidden;
+  overflow: hidden;
 }
+
 .home-btn {
   background-color: rgba(255, 255, 255, 0.5);
   display: flex;
@@ -80,23 +82,26 @@ overflow: hidden;
 
 @keyframes slideImages {
   0% {
-      margin-left: 0;
+    margin-left: 0;
   }
 
   33.33% {
-      margin-left: -100%;
+    margin-left: -100%;
   }
 
   66.66% {
-      margin-left: -200%;
+    margin-left: -200%;
   }
 
   100% {
-      margin-left: 0;
+    margin-left: 0;
   }
 }
-.wireframe-5{
-padding: var(--spacing-spc-3xl, 128px) 123px;}
+
+.wireframe-5 {
+  padding: var(--spacing-spc-3xl, 128px) 123px;
+}
+
 .home-aboutus {
   position: relative;
   overflow: hidden;
@@ -115,19 +120,20 @@ padding: var(--spacing-spc-3xl, 128px) 123px;}
 }
 
 .text-aboutus {
- width: 500px;
- height: 572px;
- display: flex;
-padding: var(--spacing-spc-none, 0px);
-flex-direction: column;
-align-items: flex-start;
-gap: var(--spacing-spc-md, 32px);
+  width: 500px;
+  height: 572px;
+  display: flex;
+  padding: var(--spacing-spc-none, 0px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-spc-md, 32px);
 }
 
 .img-container {
   width: 695px;
   height: 800px;
 }
+
 .text-coll {
   color: var(--Dark-Brown, #3B3023);
 }
@@ -168,6 +174,7 @@ gap: var(--spacing-spc-md, 32px);
 .text-contact-icon {
   align-items: flex-start;
 }
+
 .text-contact {
-align-items: unset;
+  align-items: unset;
 }

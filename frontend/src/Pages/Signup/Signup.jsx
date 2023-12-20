@@ -1,4 +1,5 @@
 import React from'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../Components/Assets/Media/logo_black.png';
 import './Signup.css'
 import Button from '../../Components/Button/NewButton/button';
@@ -6,7 +7,7 @@ import '../../Components/Assets/css/global.css'
 
 const Signup = () => {
     return (
-        <div className="section-signup-container">
+        <div className="signup-shine flex-col">
             <div className="flex-row section gap-3xl">
                 <div className="signup-logo">
                     <img src={Logo} alt="logo" />
@@ -31,7 +32,9 @@ const Signup = () => {
                             </div>
                             <Button text="SIGN UP" btnStyle="auth-btn" frameStyle='signup-btn'></Button>
                             <div className="signin-transfer flex-col">
-                                <signup-sub-text>You have an account? <a href='#'>Sign in</a></signup-sub-text>
+                                <signup-sub-text>You have an account? 
+                                <Link to="/signin">Sign in</Link>
+                                    </signup-sub-text>
                                 <hr className="spc-vt-2xs" />
                                 <signup-sub-text>or</signup-sub-text>
                             </div>
