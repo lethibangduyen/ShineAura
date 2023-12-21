@@ -1,77 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./button.css";
-import CollectionDropdown from "../../Dropdown/CollectionDropdown/CollectionDropdown";
 
-const Button = ({ text="", onClick = () => {}, type, btnStyle, disabled, icon="", textStyle="", frameStyle="", dropDown=""}) => {
-    if (btnStyle === "nav-btn") {
-        if (textStyle !== "") {
-            textStyle = textStyle;
+const Button = ({ text="", onClick = () => {}, type, btnStyle="", customBtnStyle="", disabled, iconL="", iconR="", iconSide="left", textStyle="", frameStyle="" }) => {
+    const [defaultFrameStyle, setDefaultFrameStyle] = useState("");
+    const [defaultTextStyle, setDefaultTextStyle] = useState("");
+
+    useEffect(() => {
+        if (btnStyle === "nav-btn") {
+            setDefaultFrameStyle("nav-btn-frame");
+            setDefaultTextStyle("pre-title");
+        } else if (btnStyle === "auth-btn") {
+            setDefaultFrameStyle("auth-frame");
+            setDefaultTextStyle("btn-text");
+        } else if (btnStyle === "icon-nav-btn") {
+            setDefaultFrameStyle("icon-nav-frame");
+            setDefaultTextStyle("");
+        } else if (btnStyle === "prod-detail-btn") {
+            setDefaultFrameStyle("prod-detail-frame");
+            setDefaultTextStyle("btn-text-lgt");
         } else {
-            textStyle = "pre-title";
+            setDefaultFrameStyle("underline-btn-frame");
+            setDefaultTextStyle("body-lgt");
         }
-        frameStyle = "nav-btn-frame " + frameStyle;
-    } else if (btnStyle === "underline-btn") {
-        if (textStyle !== "") {
-            textStyle = textStyle;
-        } else {
-            textStyle = "body-lgt";
-        } 
-        frameStyle = "underline-btn-frame " + frameStyle;
-    } else if (btnStyle === "auth-btn") {
-        if (textStyle !== "") {
-            textStyle = textStyle;
-        } else {
-            textStyle = "btn-text";
-        } 
-        frameStyle = "auth-frame " + frameStyle;
-    } else if (btnStyle === "footer-btn") {
-        if (textStyle !== "") {
-            textStyle = textStyle;
-        } else {
-            textStyle = "body-lgt";
-        } 
-        frameStyle = "footer-btn-frame " + frameStyle;
-    } else if (btnStyle === "dropdown-btn") {
-        if (textStyle !== "") {
-            textStyle = textStyle;
-        } else {
-            textStyle = "pre-title";
-        } 
-        frameStyle = "dropdown-btn-frame " + frameStyle;
+    }, [btnStyle]);
+
+    if (btnStyle.includes("icon-nav-btn")) {
+        iconL = iconL + " icon-size-20 square-icon";
     }
 
-    let dropdownSct = (
-        <div className="dropdown-sct">
-        </div>
-    );
+    let iconStateLeft = iconL ? <i className={iconL}></i> : null;
+    let iconStateRight = iconR ? <i className={iconR}></i> : null;
 
-    if (dropDown === "") {
-        dropdownSct = (
-            <div className="dropdown-sct">
-            </div>
-        );
+    const textComponent = text !== "" ? <p className={textStyle || defaultTextStyle}>{text}</p> : null;
+
+    if (iconSide === "left") {
+        iconStateLeft = <i className={iconL}></i>;
+        iconStateRight = null;
+    } else if (iconSide === "right") {
+        iconStateLeft = null;
+        iconStateRight = <i className={iconR}></i>;
+    } else if (iconSide === "both") {
+        iconStateLeft = <i className={iconL}></i>;
+        iconStateRight = <i className={iconR}></i>;
     }
 
-    let iconState = "";
-    if (icon !== "") {
-        iconState = <i className={icon}></i>;
+    if (iconL === "") {
+        iconStateLeft = null;
+    } else if (iconR === "") {
+        iconStateRight = null;
     }
-
-    const handleClick = onClick !== "" ? onClick : undefined;
 
     return (
         <button
-        className={btnStyle}
-        onClick={handleClick}
+        className={`${btnStyle} ${customBtnStyle}`}
+        onClick={onClick}
         type={type}
         disabled={disabled}
         >
-        <div className={frameStyle}>
-            {iconState}
-            <p className={textStyle}>{text}</p>
-        </div>
-        <div className="dropdown-sct">
-            <CollectionDropdown/>
+        <div className={`${defaultFrameStyle} ${frameStyle}`}>
+            {iconStateLeft}
+            {textComponent}
+            {iconStateRight}
         </div>
         </button>
     );

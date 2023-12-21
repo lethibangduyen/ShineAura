@@ -2,6 +2,7 @@ import React from "react";
 import ImageSlider from "../../Components/ImageSlider/ImageSlider";
 import "../../Components/Assets/css/global.css";
 import Button from "../../Components/Button/NewButton/button";
+import DropdownButton from "../../Components/Button/NewButton/dropdownbutton";
 
 import UsImage from "../../Components/Assets/Media/About_us/Us.png"
 import "./AboutUsPage.css";
@@ -48,7 +49,7 @@ const AboutUsPage = () => {
                                     <div className="md-spc gap-ms flex-col ivory-bg">
                                         <h3 className="h3">Skincare</h3>
                                         <p className="body">Excepteur consequat labore voluptate adipisicing elit nostrud quis commodo. Ad cillum nostrud mollit </p>
-                                        <Button text="Shop Skincare" btnStyle="underline-btn"/>
+                                        <DropdownButton iconL="bi bi-person" btnStyle="icon-nav-btn" dropdownStyle="collection-dropdown"/>
                                     </div>
                                 </div>
                                 <div className="flex-col">
@@ -56,7 +57,7 @@ const AboutUsPage = () => {
                                     <div className="md-spc gap-ms flex-col ivory-bg">
                                         <h3 className="h3">Makeup</h3>
                                         <p className="body">Excepteur consequat labore voluptate adipisicing elit nostrud quis commodo. Ad cillum nostrud mollit </p>
-                                        <Button text="Shop Makeup" btnStyle="nav-btn"/>
+                                        <Button text="Shop Makeup" btnStyle="prod-detail-btn"/>
                                     </div>
                                 </div>
                             </div>
