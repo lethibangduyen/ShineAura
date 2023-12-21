@@ -3,7 +3,9 @@ import './UserDetail.css';
 import Button from '../../Components/Button/NewButton/button';
 import '../../Components/Assets/css/global.css';
 import { useState } from 'react';
-
+import momologo from '../../Components/Assets/Media/User_Detail/momo-logo.png';
+import vietcombank from '../../Components/Assets/Media/User_Detail/vietcombank-logo.png';
+import vietinbank from '../../Components/Assets/Media/User_Detail/vietinbank-logo.png';
 
 const UserDetail = () => {
   const [selectedDay, setSelectedDay] = useState('');
@@ -118,7 +120,7 @@ const UserDetail = () => {
             </div>
           )}
           {selectedFunction === 'paymentInformation' && (
-            <div className='pay-container'>
+            <div className='info-container'>
               <div className="pay-title">
                 <h4 className="h4">Payment informations</h4>
                 <p className="body">Account Card</p>
@@ -127,7 +129,7 @@ const UserDetail = () => {
 
                   <div className="pay-item-1">
                     <div className="card-type">
-                        <img src="momologo" alt="" />
+                        <img src={momologo} alt="" />
                         <p className="btn-text">VÍ MOMO</p>
                     </div>
                     <div className="card-info">
@@ -137,7 +139,7 @@ const UserDetail = () => {
                   </div>
                   <div className="pay-item-2">
                   <div className="card-type">
-                        <img src="momologo" alt="" />
+                        <img src={vietcombank} alt="" />
                         <p className="btn-text">VIETCOMBANK</p>
                     </div>
                     <div className="card-info">
@@ -147,7 +149,7 @@ const UserDetail = () => {
                   </div>
                   <div className="pay-item-3">
                   <div className="card-type">
-                        <img src="momologo" alt="" />
+                        <img src={vietinbank} alt="" />
                         <p className="btn-text">VIETTINBANK</p>
                     </div>
                     <div className="card-info">
@@ -156,7 +158,7 @@ const UserDetail = () => {
                     </div>
                   </div>
                   <div className="pay-item-4">
-                    <Button text='ADD NEW CARD' btnStyle='auth-btn'></Button>
+                    <Button text='ADD NEW CARD' btnStyle='auth-btn' icon='bi bi-plus'></Button>
                     <p className='body-lgt'>Link with an existing bank or create a new account</p>
                   </div>
               </div>

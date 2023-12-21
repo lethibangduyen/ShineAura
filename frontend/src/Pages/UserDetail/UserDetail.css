@@ -13,7 +13,6 @@
 .top-container{
     display: flex;
     padding: var(--spacing-spc-none, 0px);
-
     flex-direction: column;
     align-items: center;
     gap: 16px;
@@ -30,7 +29,7 @@
   
   .top-container > Button i {
     position: absolute;
-    top: 29.5%;
+    top: 27%;
     right: 47%;
     transform: translate(50%, -50%);
     color: white;
@@ -67,10 +66,11 @@
     gap: 11px;
     border-radius: var(--spacing-spc-none, 0px);
 
-}.info-container{
+}
+.info-container{
     display: flex;
     width: 827px;
-    height: 525px;
+    height: 573px;
     padding: 51px 137px 3px 79px;
     flex-direction: column;
     align-items: flex-start;
@@ -163,8 +163,8 @@
   }
 .bot-right-btt>Button{
     display: flex;
-    width: 139px;
-
+    width: 129px;
+    padding: 12px 32px;
 }
 .pay-container{
     display: flex;
@@ -239,6 +239,24 @@
     align-items: flex-start;
     gap: var(--spacing-spc-2xs, 4px);
     border-radius: var(--spacing-spc-none, 0px);
+}
+.card-type{
+    display: flex;
+    padding: var(--spacing-spc-none, 0px);
+    align-items: center;
+    gap: var(--spacing-spc-xs, 8px);
+    border-radius: var(--spacing-spc-none, 0px);
+}
+.changePass-container{
+    display: flex;
+    width: 827px;
+    height: 500px;
+    padding: 51px 137px 3px 79px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 34px;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1px solid #000
 }
 .cp-body{
     display: flex;
