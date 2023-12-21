@@ -1,0 +1,78 @@
+.signup-shine {
+    width: 100%;
+    background-color: hex(F9F6F3);
+    padding: 128px;
+}
+.signin-button {
+    width: 320px;
+}
+
+.title-form, .commision{
+    width: 323.642px;
+    align-items: start;
+    justify-content: left;
+    color: var(--pearl-bush-900, #593C35);
+}
+
+
+.signin-logo img {
+    margin: 0;
+    flex: 1 0 0;
+}
+
+.signup-form-container{
+    width: 448px;
+    height: 630px;
+    flex-shrink: 0;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1px solid var(--pearl-bush-900, #593C35);
+    background: var(--rodeo-dust-100, #F1EBE3);
+    float: right;
+    
+}
+
+.signup-form-input>input{
+    width: 340px;
+    height: 47.695px;
+    flex-shrink: 0;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1.703px solid rgba(94, 80, 63, 0.48);
+    background: #FFF;
+    margin-top: 10.97px;
+    padding-left: 10px;
+}
+
+.signup-btn{
+    width: 290.22px;
+    justify-content: center;
+}
+
+.signin-transfer{
+    color: rgba(94, 80, 63, 0.71);
+    text-align: center;
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 16px 0px 16px 0px;
+}
+.signin-transfer>hr{
+    width: 340px;
+}
+
+.signup-form-footer{
+    width: 322.79px;
+}
+.ano-btn{
+    width: fit-content;
+}
+.ano-btn>button{
+    width: 113px;
+}
+.signin-transfer>signup-sub-text>a{
+    text-decoration: none;
+    color: var(--pearl-bush-900, #593C35);
+}
+
+    

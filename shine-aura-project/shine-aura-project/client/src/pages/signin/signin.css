@@ -1,0 +1,78 @@
+.signin-button {
+    width: 320px;
+}
+
+.title-form, .commision{
+    width: 323.642px;
+    align-items: start;
+    justify-content: left;
+    color: var(--pearl-bush-900, #593C35);
+}
+
+.section-signup-container{
+    padding: 128px;
+    height: 100%;
+    background-color: hex(F9F6F3);
+}
+.signin-logo img {
+    margin: 0;
+    flex: 1 0 0;
+}
+.signin-form-container{
+    width: 448px;
+    height: 547px;
+    flex-shrink: 0;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1px solid var(--Pearl-Bush-900, #593C35);
+    background: var(--Rodeo-Dust-100, #F1EBE3);
+
+}
+.signin-form{
+    width: 324px;
+    height: 371px;
+    
+}
+
+.signup-form-input>input{
+    width: 340px;
+    height: 47.695px;
+    flex-shrink: 0;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1.703px solid rgba(94, 80, 63, 0.48);
+    background: #FFF;
+    margin-top: 10.97px;
+    padding-left: 10px;
+}
+
+.signup-btn{
+    width: 290.22px;
+    justify-content: center;
+}
+
+.signin-transfer>hr{
+    width: 340px;
+}
+
+.signup-form-footer{
+    width: 322.79px;
+}
+.ano-btn{
+    width: fit-content;
+}
+.ano-btn>button{
+    width: 145px;
+    padding: 15px;
+}
+.signin-transfer>signup-sub-text>a{
+    text-decoration: none;
+    color: var(--pearl-bush-900, #593C35);
+}
+.additional-function{
+    align-self: stretch;
+    justify-content: space-between;
+    color: var(--Pearl-Bush-900, #593C35);
+}
+.forgot-pw>a{
+    text-decoration: none;
+    color: var(--Pearl-Bush-900, #593C35);
+}
