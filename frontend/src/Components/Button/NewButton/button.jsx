@@ -10,7 +10,7 @@ const Button = ({ text="", onClick = () => {}, type, btnStyle="", customBtnStyle
             setDefaultFrameStyle("nav-btn-frame");
             setDefaultTextStyle("pre-title");
         } else if (btnStyle === "auth-btn") {
-            setDefaultFrameStyle("auth-frame");
+            setDefaultFrameStyle("auth-btn-frame");
             setDefaultTextStyle("btn-text");
         } else if (btnStyle === "icon-nav-btn") {
             setDefaultFrameStyle("icon-nav-frame");

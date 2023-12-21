@@ -84,20 +84,9 @@ button {
     background: var(--Light-element-backgrounds, #EAE0D5);
 }
 
-.auth-btn:hover {
-    border: 2px solid #5E503F;
-}
-
-.auth-frame {
-    display: flex;
-    gap: 8px;
-    color: #5E503F;
-}
-
 .icon-size-20 {
     font-size: 20px;
 }
-
 
 .icon-nav-btn {
     position: relative;
