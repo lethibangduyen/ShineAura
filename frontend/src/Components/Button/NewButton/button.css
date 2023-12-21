@@ -14,11 +14,6 @@ button {
     gap: var(--spacing-spc-none, 0px);
 }
 
-.nav-btn:hover .nav-btn-frame {
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid var(--Ivory, #F9F6F3);
-}
-
 .nav-btn-frame {
     display: flex;
     color: #F9F6F3;
@@ -27,11 +22,14 @@ button {
     justify-content: center;
     align-items: flex-start;
     gap: var(--spacing-spc-xs, 8px);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+    border-radius: var(--spacing-spc-none, 0px);
+    border-top: var(--spacing-spc-none, 0px) solid var(--Ivory, #F9F6F3);
+    border-right: var(--spacing-spc-none, 0px) solid var(--Ivory, #F9F6F3);
+    border-bottom: 4px solid var(--Ivory, #F9F6F3);
+    border-left: var(--spacing-spc-none, 0px) solid var(--Ivory, #F9F6F3);
 }
 
-.footer-btn,
+
 .underline-btn {
     display: inline-flex;
     padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-xs, 8px);
@@ -40,36 +38,24 @@ button {
     gap: var(--spacing-spc-none, 0px);
 }
 
-.footer-btn:hover .footer-btn-frame,
-.underline-btn:hover .underline-btn-frame {
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid #333;
-}
-
-.footer-btn-frame,
 .underline-btn-frame {
     display: flex;
     padding: 2px var(--spacing-spc-none, 0px);
     align-items: flex-start;
     gap: var(--spacing-spc-xs, 8px);
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    border-radius: var(--spacing-spc-none, 0px);
+    border-top: var(--spacing-spc-none, 0px) solid #333;
+    border-right: var(--spacing-spc-none, 0px) solid #333;
+    border-bottom: 1px solid #333;
+    border-left: var(--spacing-spc-none, 0px) solid #333;
 }
-
-.footer-btn:hover .footer-btn-frame {
-    border-bottom: 1px solid #F9F6F3;
-}
-
-.footer-btn-frame {
-    color: #F9F6F3;
-}
-
 .auth-btn {
     box-sizing: content-box;
     display: inline-flex;
-    padding: 20px;
+    padding: 10px;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-radius: 5px;
     border: 1px solid #5E503F;
     background: var(--Light-element-backgrounds, #EAE0D5);
