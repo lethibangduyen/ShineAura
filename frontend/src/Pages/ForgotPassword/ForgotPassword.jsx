@@ -1,42 +1,37 @@
-import React from'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../Components/Assets/Media/logo_black.png';
 import './ForgotPassword.css'
-import SignInButton from '../../Components/Button/Button_sign_in';
+import '../../Components/Assets/css/global.css'
+import Button from '../../Components/Button/NewButton/button';
+
 const ForgotPassword = () => {
     return (
-
-        <div className="signin">
-            <div className="signin-container">
+        <div className="section-container">
+            <div className="flex-row section gap-3xl">
                 <div className="signin-logo">
                     <img src={Logo} alt="logo" />
                 </div>
-                <div className="main">
-                    <div className="forgot-form">
-                        <form action="">
-                            <div className="forgot-form-title">FORGOT PASSWORD</div>
-                            <div className="sub-title">
-                                Please enter your email address and we will send you a link to reset your password.
-                            </div>
-                            <div className="forgot-form-input">
-                                <input type="text" placeholder="Email" />
-                            </div>
-                            <div className="signup-button">
-                                <SignInButton type="submit">Sign Up</SignInButton>
-                            </div>
-                            <div className="additional-function">
-                                <div className="back-signin">
-                                   <a href="">Sign in</a>
-                                </div>
-                                <div className="next-signup">
-                                    <a  href="#">Sign up</a>
-                                </div>
-                            </div>
-    
-                            <div className="footer">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste? Architecto numquam nesciunt dicta.</p>
-                            </div>
-                        </form>
+                <div className="forgot-form-container flex-col gap-md">
+                    <div className="flex-col gap-xs align-left">
+                        <h4 className='h4'>FORGOT PASSWORD</h4>
+                        <p className='body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus.</p>
                     </div>
+                    <form action="" className='flex-col forgot-form gap-sm'>
+                        <input type="text" className='email-input body' placeholder="Email" />
+
+                        <Button text="SIGN IN" btnStyle="auth-btn" frameStyle='fl-wth'></Button>
+
+                        <div className="flex-center-align flex-row gap-md">
+                            <Link to="/signup" className='sign-up'>Sign up</Link>
+                            <Link to="/signin" className='sign-in'>Sign in</Link>
+                        </div>
+
+
+                        <div className="forgot-footer body-sml">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste? Architecto numquam nesciunt dicta.</p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
