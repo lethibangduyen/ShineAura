@@ -1,20 +1,24 @@
-// Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Assets/css/global.css';
 import logo from '../Assets/Logo.svg';
 import './Navbar.css';
 import ButtonCollectionButton from '../Button/Newest-but/Button_collection/Button_collection.jsx'; 
-// import btnStyle from '../Button/NewButton/button.jsx';
 import Button from '../Button/NewButton/button.jsx';
 import ButtonUser from '../Button/Newest-but/Button_user_information/Button_user_information.jsx';
-import ButtonLogo from '../Button/Newest-but/Button_logo_brownBG/Button_logo_brownBG.jsx'
+import ButtonLogo from '../Button/Newest-but/Button_logo_brownBG/Button_logo_brownBG.jsx';
+
 function Navbar() {
   const [navColour, updateNavbar] = useState(false);
+  const [isNavOpen, setNavOpen] = useState(false);
 
   function scrollHandler() {
     updateNavbar(window.scrollY >= 20);
   }
+
+  const toggleNav = () => {
+    setNavOpen(!isNavOpen);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
@@ -27,9 +31,11 @@ function Navbar() {
   return (
     <div className={`navigation flex-row flex-center-align ${navColour ? 'nav-scroll' : ''}`}>
       <div className="nav-logo flex-col">
+        <i className="navOpenBtn bi bi-list" onClick={toggleNav}></i>
         <img className="nav-logo-icon" src={logo} alt="logo" />
       </div>
-      <div className="nav-parent flex-row gap-2xs">
+      <div className={`nav-parent flex-row gap-2xs ${isNavOpen ? 'openNav' : ''}`}>
+        <i className="navCloseBtn bi bi-x-lg" onClick={toggleNav}></i>
         <div className="nav-button">
           <ButtonCollectionButton />
         </div>
@@ -52,10 +58,10 @@ function Navbar() {
       </div>
       <div className="nav-icon flex-row gap-xs">
         <div className="icon-button">
-        <ButtonLogo IconClass="bi bi-search"/>
+          <ButtonLogo IconClass="bi bi-search"/>
         </div>
         <div className="icon-button">
-        <ButtonLogo IconClass="bi bi-cart"/>
+          <ButtonLogo IconClass="bi bi-cart"/>
         </div>
         <div className="icon-button">
           <ButtonUser />
