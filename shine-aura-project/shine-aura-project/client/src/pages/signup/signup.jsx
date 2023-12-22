@@ -16,7 +16,7 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
     console.log({ email, password, confirmPassword });
-    axios.post('http://localhost:5173/signup', { email, password, confirmPassword })
+    axios.post('http://localhost:3000/signup', { email, password, confirmPassword })
     .then((res) => {
       console.log(res);
       navigate('/signin');

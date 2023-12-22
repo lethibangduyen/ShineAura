@@ -14,13 +14,12 @@ import { useNavigate } from 'react-router-dom';
     const handleSignIn = (e) => {
       e.preventDefault();
       console.log({ email, password });
-      axios.post('http://localhost:5173/signin', { email, password })
+      axios.post('http://localhost:3000/signin', { email, password })
         .then((res) => {
           console.log(res);
           if (res.data === 'Success') {
             navigate('/homepage');
           }
-  
         })
         .catch((err) => {
           console.log(err);

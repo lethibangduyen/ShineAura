@@ -50,3 +50,6 @@ gap: var(--Spacing-2, 16px);
   padding: 4px 8px;
 }
 
+.footer-button {
+  color: white;
+}

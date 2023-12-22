@@ -1,21 +1,28 @@
+// index.js
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const cors = require('cors');
-const User = require('./models/User');
-const app = express();
-app.use(cors());
-app.use(express.json());
+const userRoutes = require('./routes/userRoutes');
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/shineaura')
-app.post('/signup', async (req, res) => {
-  try {
-    const user = await User.create(req.body);
-    res.json(user);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+const app = express();
+const PORT = 3000;
+
+app.use(bodyParser.json());
+app.use(cors());
+
+// MongoDB Atlas connection string
+const mongoURI = 'mongodb+srv://baou0508:Phamhoangbao0508@shine-aura-test-db.pf0rcx6.mongodb.net/test?retryWrites=true&w=majority';
+
+mongoose.connect(mongoURI);
+const connection = mongoose.connection;
+
+connection.once('open', () => {
+  console.log('MongoDB Atlas connection established successfully');
 });
 
+app.use('/signup', userRoutes);
 
-app.listen(5173, () => { console.log('Server started') });
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
