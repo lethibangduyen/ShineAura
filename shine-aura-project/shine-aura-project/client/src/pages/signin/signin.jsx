@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
         .then((res) => {
           console.log(res);
           if (res.data === 'Success') {
-            navigate('/homepage');
+            navigate('/');
           }
         })
         .catch((err) => {
