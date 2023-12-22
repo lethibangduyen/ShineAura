@@ -1,17 +1,21 @@
 const express = require('express');
-const app = express();
-const port = 3000;
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://localhost:27017';
+const cors = require('cors');
+const User = require('./models/User');
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
- .then(() => console.log('Database connected successfully'))
- .catch(err => console.log(err));
-
-app.get('/', (req, res) => {
- res.send('Hello World!');
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/shineaura')
+app.post('/signup', async (req, res) => {
+  try {
+    const user = await User.create(req.body);
+    res.json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-app.listen(port, () => {
- console.log(`Server running at http://localhost:${port}`);
-});
+
+app.listen(5173, () => { console.log('Server started') });
