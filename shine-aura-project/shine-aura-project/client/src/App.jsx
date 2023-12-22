@@ -14,6 +14,7 @@ import Signup from './pages/signup/signup';
 import Homepage from './pages/homepage/homepage';
 import AboutUsPage from './pages/about-us/about-us-page';
 import PolicyPage from './pages/policy/policy'
+import ProductDetailPage from "./pages/product-detail/product-detail-page";
 // import  Contact from "./Pages/Contactpage/Contactpage";
 // import Payment from "./Pages/Payment/Payment";
 // import Productpage from "./Pages/Productpage/Productpage";
@@ -32,6 +33,7 @@ function App() {
               <Route path="/forgotpass" element={<ForgotPassword />} />
               <Route path="/about-us" element={<AboutUsPage />} />
               <Route path="/policy" element={<PolicyPage />} />
+              <Route path="/product-detail" element={<ProductDetailPage />} />
           </Routes>
         <Footer />
       </div>
