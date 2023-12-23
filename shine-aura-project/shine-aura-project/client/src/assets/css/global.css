@@ -233,7 +233,15 @@ text-transform: uppercase;
     line-height: normal;
     letter-spacing: 1%;
 }
-
+.input-btn {
+color: var(--Accent-Color, #5E503F);
+text-align: center;
+font-family: var(--body-font);
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.24px;}
 
 /* Vertical Spacing */
 .spc-vt-none {
