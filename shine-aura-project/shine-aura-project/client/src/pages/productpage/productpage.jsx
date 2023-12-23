@@ -1,12 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
-import './Productpage.css';
-import '../../Components/Assets/css/global.css';
+import './productpage.css';
 import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
 import Button from '../../components/common/button/button.jsx';
-import Productcard from '../../Components/Productcard/product-card.jsx';
+import Productcard from '../../components/common/product-card/product-card.jsx';
 const Productpage = () => {
 
     const [isDragging, setIsDragging] = useState(false);
