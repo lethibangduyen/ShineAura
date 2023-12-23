@@ -4,7 +4,9 @@
     border: 2px solid #3B3023;
     background: #F9F6F3;
 }
-
+.collection-titles{
+    color: white
+}
 .user-setting-dropdown {
     color: #5E503F;
     padding: 16px;

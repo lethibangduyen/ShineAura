@@ -32,8 +32,17 @@ button {
     border-bottom: 4px solid transparent;
 }
 
-.footer-btn,
+
 .underline-btn {
+    position: relative;
+    display: inline-flex;
+    padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-xs, 8px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-spc-none, 0px);
+}
+.footer-btn {
+    color: #F9F6F3;
     position: relative;
     display: inline-flex;
     padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-xs, 8px);

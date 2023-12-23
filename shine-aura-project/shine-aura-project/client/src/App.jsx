@@ -14,10 +14,11 @@ import Signup from './pages/signup/signup';
 import Homepage from './pages/homepage/homepage';
 import AboutUsPage from './pages/about-us/about-us-page';
 import PolicyPage from './pages/policy/policy'
-// import  Contact from "./Pages/Contactpage/Contactpage";
-// import Payment from "./Pages/Payment/Payment";
-// import Productpage from "./Pages/Productpage/Productpage";
-
+import  Contact from "./pages/contact/contact-page";
+import Payment from "./pages/payment/paymentpage";
+import User from "./pages/userdetail/userdetail";
+// import Productpage from "./pages/";
+import Cart from "./pages/cartpage/Cartpage"
 function App() {
   const [load] = useState(true);
   return (
@@ -32,6 +33,11 @@ function App() {
               <Route path="/forgotpass" element={<ForgotPassword />} />
               <Route path="/about-us" element={<AboutUsPage />} />
               <Route path="/policy" element={<PolicyPage />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/payment" element={<Payment />} />
+              {/* <Route path="/product" element={<Productpage />} /> */}
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/user" element={<User />} />
           </Routes>
         <Footer />
       </div>
