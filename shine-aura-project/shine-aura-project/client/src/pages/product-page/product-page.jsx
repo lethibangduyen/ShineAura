@@ -1,12 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
-import { animateScroll } from 'react-scroll';
-import './productpage.css';
+import './product-page.css';
 import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
 import Button from '../../components/common/button/button.jsx';
 import Productcard from '../../components/common/product-card/product-card.jsx';
-const Productpage = () => {
+
+const ProductPage = () => {
 
     const [isDragging, setIsDragging] = useState(false);
     const [startPosition, setStartPosition] = useState(0);
@@ -53,7 +52,6 @@ const Productpage = () => {
 
     return (
         <div className='productpage -shi'>
-
             <div className='main-container flex-col'>
                 <div className='section-container flex-col'>
                     <div className='hero-sct section flex-col'>
@@ -81,7 +79,7 @@ const Productpage = () => {
                                     </div>
 
                                 </div>
-                                <p className='lgt-body collection-description'>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus. Sed sagittis, risus vitae dignissim semper, turpis arcu congue augue, eget ornare orci libero nec enim. Aenean a aliquam nunc.</p>
+                                <p className='body-lgt collection-description'>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus. Sed sagittis, risus vitae dignissim semper, turpis arcu congue augue, eget ornare orci libero nec enim. Aenean a aliquam nunc.</p>
                             </div>
                         </div>
                         <div className='prod-query-content flex-row align-left'>
@@ -181,4 +179,4 @@ const Productpage = () => {
         </div>
     );
 }
-export default Productpage;
+export default ProductPage;

@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.productpage .section-container {
+    padding: unset;
+}
+
 .section {
     max-width: 1440px;
 }

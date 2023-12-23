@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Signin.css';
+import './signin.scss';
 import Logo from '../../assets/img/logo-black.png';
 import Button from '../../components/common/button/button';
 import axios from 'axios';
@@ -28,57 +28,40 @@ import { useNavigate } from 'react-router-dom';
     };
   
     return (
-      <div className="signin-shine">
-        <div className="section-signup-container">
-          <div className="flex-row section gap-3xl">
-            <div className="signup-logo">
-              <img src={Logo} alt="logo" />
+      <div className="section-container flex-col signin-page">
+        <div className='flex-row section gap-xl flex-wrap'>
+          <div className="logo">
+            <img src={Logo} alt="logo" />
+          </div>
+          <div className="signin-form-container max-wdth flex-col align-left gap-sm">
+            <div className="title flex-col align-left gap-xs uppercase">
+              <h3 className="h3">signin</h3>
             </div>
-            <div className="signin-form-container flex-col">
-              <div className="title-form flex-col gap-xs">
-                <h3 className="h3">SIGN IN</h3>
+            <form onSubmit={handleSignIn} className="flex-col max-wdth align-left gap-sm">
+              <input className="body auth-input max-wdth" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input className="body auth-input max-wdth" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              <div className="additional-function flex-row body-sml flex-center-align max-wdth">
+                <div className="remember-user flex-row gap-xs body">
+                  <input type="checkbox"/>
+                  <p>Remember me</p>
+                </div>
+                <div className="forgot-pw body">
+                  <Link to="/forgot-password">Forgot passwords?</Link>
+                </div>
               </div>
-              <form onSubmit={handleSignIn} className="flex-col signin-form">
-                <div className="signup-form-input">
-                  <input
-                    className="body"
-                    type="text"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="signup-form-input">
-                  <input
-                    className="body"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <div className="additional-function flex-row spc-vt-sm body-smxl">
-                  <div className="remember-me">
-                    <input type="checkbox" /> Remember me
-                  </div>
-                  <div className="forgot-pw">
-                    <Link to="/forgotpass">Forgot passwords?</Link>
-                  </div>
-                </div>
-                <Button type="submit" text="SIGN IN" btnStyle="auth-btn" frameStyle="signup-btn"></Button>
-                <div className="signin-transfer flex-col">
-                  <signup-sub-text>You have an account?
-                    <Link to="/signup">Sign up</Link>
-                  </signup-sub-text>
-                  <hr className="spc-vt-2xs" />
-                  <signup-sub-text>or</signup-sub-text>
-                </div>
-                <div className="flex-row ano-btn gap-sm">
-                  <Button text="GOOGLE" btnStyle="auth-btn" icon='bi bi-google'></Button>
-                  <Button text="FACEBOOK" btnStyle="auth-btn" icon='bi bi-facebook'></Button>
-                </div>
-              </form>
-            </div>
+              <Button type="submit" text="SIGN IN" btnStyle="auth-btn" frameStyle='max-wdth' customBtnStyle='max-wdth'></Button>
+              <div className="signup-opts flex-col max-wdth body">
+                <signup-sub-text>You have an account?
+                  <Link to="/signup"> Sign up</Link>
+                </signup-sub-text>
+                <hr className="margin-hr-5-per" />
+                <signup-sub-text>or</signup-sub-text>
+              </div>
+              <div className="flex-row gap-sm max-wdth">
+                <Button text="GOOGLE" btnStyle="auth-btn" icon='bi bi-google' frameStyle='max-wdth' customBtnStyle='max-wdth'></Button>
+                <Button text="FACEBOOK" btnStyle="auth-btn" icon='bi bi-facebook' frameStyle='max-wdth' customBtnStyle='max-wdth'></Button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

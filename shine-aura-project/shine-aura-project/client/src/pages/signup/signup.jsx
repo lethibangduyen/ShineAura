@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './signup.css'
+import './signup.scss'
 import Logo from '../../assets/img/logo-black.png';
 import Button from '../../components/common/button/button';
 import axios from 'axios';
@@ -29,73 +29,34 @@ const Signup = () => {
   };
   
   return (
-    <div className="signup-shine flex-col">
-      <div className="flex-row section gap-3xl">
-        <div className="signup-logo">
+    <div className="signup-page flex-col section-container">
+      <div className="flex-row section gap-xl flex-wrap">
+        <div className="logo">
           <img src={Logo} alt="logo" />
         </div>
-        <div className="signup-form-container flex-col">
-          <div className="title-form flex-col gap-xs">
-            <h3 className="h3">SIGN UP</h3>
+        <div className="signup-form-container max-wdth flex-col align-left gap-sm">
+          <div className="title flex-col align-left gap-xs uppercase">
+            <h3 className="h3">signup</h3>
           </div>
-          <form onSubmit={handleSignup} className="flex-col forgot-form">
-            <div className="signup-form-input">
-              <input
-                className="body"
-                type="text"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="signup-form-input">
-              <input
-                className="body"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className="signup-form-input">
-              <input
-                className="body"
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
-            <div className="flex-row commision gap-2xs spc-vt-sm body-lgt">
+          <form onSubmit={handleSignup} className="flex-col max-wdth align-left gap-sm">
+            <input className="body max-wdth auth-input" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className="body max-wdth auth-input" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input className="body max-wdth auth-input" type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+            <div className="commitment flex-row gap-xs body">
               <input className="body" type="checkbox" />
-              <p>“I accept the terms and conditions”.</p>
+              <p>“I accept the terms and conditions.”</p>
             </div>
-            <Button
-              text="SIGN UP"
-              btnStyle="auth-btn"
-              frameStyle="signup-btn"
-              type="submit"
-            ></Button>
-            <div className="signin-transfer flex-col">
-              <signup-sub-text>
-                You have an account? <Link to="/signin">Sign in</Link>
-              </signup-sub-text>
-              <hr className="spc-vt-2xs" />
-              <signup-sub-text>or</signup-sub-text>
+            <Button text="SIGN UP" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' type="submit"></Button>
+            <div className="signin-opts flex-col body max-wdth gap-2xs">
+              <p>You have an account? <Link to="/signin">Sign in</Link></p>
+              <hr className='hr-divider'/>
+              <p>or</p>
             </div>
-            <div className="flex-row ano-btn gap-sm">
-              <Button
-                text="GOOGLE"
-                btnStyle="auth-btn"
-                icon="bi bi-google"
-              ></Button>
-              <Button
-                text="FACEBOOK"
-                btnStyle="auth-btn"
-                icon="bi bi-facebook"
-              ></Button>
+            <div className="flex-row gap-sm max-wdth">
+              <Button text="GOOGLE" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' icon="bi bi-google" ></Button>
+              <Button text="FACEBOOK" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' icon="bi bi-facebook" ></Button>
             </div>
-            <div className="signup-form-footer body-sml spc-vt-sm">
+            <div className="body-sml">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Expedita quo ut incidunt facilis laboriosam delectus, veritatis

@@ -18,7 +18,7 @@ function Navbar() {
 
   const toggleNav = () => {
     setNavOpen(!isNavOpen);
-    setSearchOpen(false); // Close the search box when toggling navigation
+    setSearchOpen(false);
   };
 
   useEffect(() => {
@@ -33,30 +33,33 @@ function Navbar() {
     <div className={`navigation flex-row flex-center-align ${navColour ? 'nav-scroll' : ''}`}>
       <div className="nav-logo flex-col">
         <i className="navOpenBtn bi bi-list" onClick={toggleNav}></i>
-        <img className="nav-logo-icon" src={Logo} alt="logo" />
+        <Link to="/" className="nav-link logo-img">
+          <img className="nav-logo-icon" src={Logo} alt="logo" />
+        </Link>
       </div>
       <div className={`nav-parent flex-row gap-2xs ${isNavOpen ? 'openNav' : ''}`}>
         <i className="navCloseBtn bi bi-x-lg" onClick={toggleNav}></i>
         {isSearchOpen ? (
-          // Render nothing when the search box is open
           null
         ) : (
           <>
-            <div className="nav-button">
-              <DropdownButton btnStyle='nav-btn' text='COLLECTION' iconL='bi bi-list icon-size-20 square-icon' dropdownStyle='collection-dropdown'/>
+            <div className="">
+              <Link to="/product" className="nav-link">
+                <DropdownButton btnStyle='nav-btn' text='COLLECTION' iconL='bi bi-list icon-size-20 square-icon' dropdownStyle='collection-dropdown'/>
+              </Link> 
             </div>
-            <div className="nav-button">
+            <div className="">
               <Button text="HOT DEAL" btnStyle="nav-btn" />
             </div> 
-            <div className="nav-button">
+            <div className="">
               <Button text="BEST SELLER" btnStyle="nav-btn" />
             </div>
-            <div className="nav-button">
+            <div className="">
               <Link to="/about-us" className="nav-link">
                 <Button text="ABOUT US" btnStyle="nav-btn" />
               </Link>
             </div>
-            <div className="nav-button">
+            <div className="">
               <Link to="/policy" className="nav-link">
                 <Button text="POLICY" btnStyle="nav-btn" />
               </Link>

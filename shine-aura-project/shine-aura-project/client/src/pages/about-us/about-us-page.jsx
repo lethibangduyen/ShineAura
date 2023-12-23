@@ -33,7 +33,7 @@ const AboutUsPage = () => {
     const imageWidth = `calc(100% / ${valueImages.length} - 32px)`;
     
     return (
-        <div className = 'AboutUsPage-shine'>
+        <div className = 'AboutUsPage-shine about-us-page'>
             <div className="flex-col content-container">
                 <div className="hero-image">
                     <img src={UsImage} alt="us" />

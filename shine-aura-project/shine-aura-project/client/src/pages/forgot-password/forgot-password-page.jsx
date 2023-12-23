@@ -1,36 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/img/logo-black.png';
-import './forgot-password-page.css'
+import './forgot-password-page.scss'
 import Button from '../../components/common/button/button';
 
 const ForgotPassword = () => {
+    const handleForgot = (e) => {};
+    
     return (
-        <div className="section-container">
-            <div className="flex-row section gap-3xl">
-                <div className="signin-logo">
+        <div className="section-container flex-row forgot-password-page">
+            <div className="flex-row section gap-xl flex-wrap">
+                <div className="logo">
                     <img src={Logo} alt="logo" />
                 </div>
-                <div className="forgot-form-container flex-col gap-md">
-                    <div className="flex-col gap-xs align-left">
-                        <h4 className='h4'>FORGOT PASSWORD</h4>
-                        <p className='body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus.</p>
+                <div className="forgot-form-container max-wdth flex-col align-left gap-sm">
+                <div className="title flex-col align-left gap-xs">
+                    <h4 className='h3 uppercase'>FORGOT PASSWORD</h4>
+                    <p className='body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus.</p>
+                </div>
+                <form onSubmit={handleForgot} className="flex-col max-wdth align-left gap-sm">
+                    <input type="text" className='auth-input body max-wdth' placeholder="Email" />
+                    <Button text="submit" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' type="submit"></Button>
+                    <div className="flex-center-align flex-row gap-md auth-opts max-wdth">
+                        <Link to="/signup" className='sign-up body'>Sign up</Link>
+                        <Link to="/signin" className='sign-in body'>Sign in</Link>
                     </div>
-                    <form action="" className='flex-col forgot-form gap-sm'>
-                        <input type="text" className='email-input body' placeholder="Email" />
-
-                        <Button text="SIGN IN" btnStyle="auth-btn" frameStyle='fl-wth'></Button>
-
-                        <div className="flex-center-align flex-row gap-md">
-                            <Link to="/signup" className='sign-up'>Sign up</Link>
-                            <Link to="/signin" className='sign-in'>Sign in</Link>
-                        </div>
-
-
-                        <div className="forgot-footer body-sml">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste? Architecto numquam nesciunt dicta.</p>
-                        </div>
-                    </form>
+                    <div className="body-sml">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste? Architecto numquam nesciunt dicta.</p>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>

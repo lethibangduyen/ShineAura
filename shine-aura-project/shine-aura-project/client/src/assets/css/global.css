@@ -70,15 +70,15 @@
     line-height: normal;
     letter-spacing: 1%;
 }
-.h3-in{
+.h3-in {
     color: #333;
-font-family: Inter;
-font-size: 32px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-letter-spacing: 0.64px;
-text-transform: uppercase;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    text-transform: uppercase;
 }
 
 /* H4 */
@@ -233,15 +233,17 @@ text-transform: uppercase;
     line-height: normal;
     letter-spacing: 1%;
 }
+
 .input-btn {
-color: var(--Accent-Color, #5E503F);
-text-align: center;
-font-family: var(--body-font);
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: 0.24px;}
+    color: var(--Accent-Color, #5E503F);
+    text-align: center;
+    font-family: var(--body-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.24px;
+}
 
 /* Vertical Spacing */
 .spc-vt-none {
@@ -325,14 +327,12 @@ letter-spacing: 0.24px;}
     gap: var(--spc-tk-3xl);
 }
 
-
 .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
 
 .flex-col {
     display: flex;
@@ -341,6 +341,9 @@ letter-spacing: 0.24px;}
     align-items: center;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
 
 .flex-top-align,
 .flex-left-align {
@@ -350,11 +353,12 @@ letter-spacing: 0.24px;}
 .flex-bottom-align,
 .flex-right-align {
     justify-content: flex-end;
+}
 
-}
 .flex-center-align {
-    justify-content:space-between;
+    justify-content: space-between;
 }
+
 .align-left {
     align-items: flex-start;
 }
@@ -379,4 +383,39 @@ letter-spacing: 0.24px;}
 
 .icon-size-20 {
     font-size: 20px;
+}
+
+.site-mx-wdth {
+    max-width: 2000px;
+}
+
+.section-container {
+    width: 100%;
+}
+
+.bg-desert {
+    background-color: #F1EBE3;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.auth-input {
+    padding: 12px;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 2px solid rgba(94, 80, 63, 0.48);
+    background: #FFF;
+}
+
+.max-wdth {
+    width: 100%;
 }

@@ -100,40 +100,38 @@
   padding: var(--spacing-spc-3xl, 128px) 123px;
 }
 
-.home-aboutus {
+.content-holder {
+  align-self: stretch;
+  padding: 64px;
+}
+
+.home-about-us {
   position: relative;
   overflow: hidden;
-  padding: var(--spacing-spc-none, 0px);
-  gap: var(--spacing-spc-none, 0px);
-
-  border-radius: var(--spacing-spc-none, 0px);
-  background: var(--rodeo-dust-100, #F1EBE3);
+  max-width: 1440px;
 }
 
-.about-us-parent {
-  width: 745px;
-  height: 800px;
-  padding: var(--spacing-spc-none, 0px);
-  gap: var(--spacing-spc-none, 0px);
-}
-
-.text-aboutus {
-  width: 500px;
-  height: 572px;
-  display: flex;
-  padding: var(--spacing-spc-none, 0px);
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-spc-md, 32px);
+.about-us-content {
+  max-width: 800px;
 }
 
 .img-container {
-  width: 695px;
-  height: 800px;
+  max-width: 645px;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  aspect-ratio: 645/800;
 }
 
 .text-coll {
   color: var(--Dark-Brown, #3B3023);
+}
+
+.collection-container {
+   padding: 128px 0px;
 }
 
 .wireframe-6 {
@@ -147,7 +145,6 @@
 .contact-container {
   width: 1192px;
   height: 536px;
-  padding: var(--spacing-spc-none, 0px);
   text-align: unset;
 
 }
