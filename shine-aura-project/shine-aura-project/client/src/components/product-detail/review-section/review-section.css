@@ -1,0 +1,21 @@
+.review-container {
+    width: 440px;
+    padding: 32px 24px 24px 24px;
+    border-radius: var(--spacing-spc-none, 0px);
+    border: 1px solid #855B49;
+    background: #F9F6F3;
+}
+
+.rating i {
+    font-size: 14px;
+}
+
+.rating-num {
+    position: absolute;
+    right: -60px;
+    top: 0;
+}
+
+.rating-info {
+    position: relative;
+}
