@@ -357,6 +357,7 @@ text-transform: uppercase;
 .align-self {
     align-self: stretch;
 }
+
 .square-icon {
     width: 1em;
     height: 1em;
@@ -365,4 +366,9 @@ text-transform: uppercase;
 }
 
 .bg-ivory {
-  background-color: #F9F6F3;}
+  background-color: #F9F6F3;
+}
+
+.icon-size-20 {
+    font-size: 20px;
+}
