@@ -12,6 +12,7 @@ import Contact from '../../assets/img/homepage/contact-us.png';
 import Collection from '../../components/homepage/collection/collection.jsx';
 import Productcard from '../../components/common/product-card/product-card.jsx';
 import Button from '../../components/common/button/button.jsx';
+import Products from '../../data/products.json'
 
 const Homepage = () => {
   return (
@@ -50,10 +51,10 @@ const Homepage = () => {
                 <i className="bi bi-chevron-left"></i>
               </button>
               <div className="home-list-product flex-row">
-                <Productcard />
-                <Productcard />
-                <Productcard />
-                <Productcard />
+                <Productcard product={Products[0]}/>
+                <Productcard product={Products[1]}/>
+                <Productcard product={Products[2]}/>
+                <Productcard product={Products[3]}/>
               </div>
               <button className="home-btn right">
                 <i className="bi bi-chevron-right"></i>
