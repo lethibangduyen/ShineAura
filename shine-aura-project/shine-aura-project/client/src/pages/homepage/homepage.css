@@ -17,20 +17,18 @@
   align-self: stretch;
 }
 
-.text-1 {
-
-  display: flex;
-  padding: var(--spacing-spc-none, 0px);
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-spc-md, 32px);
+.hero-text {
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 260px;
   position: absolute;
   right: 133px;
-  bottom: 256px;
+  bottom: 120px;
   width: 521px;
-  height: 281px;
-  text-align: justify;
+  height: 521px;
+  text-align: center;
 }
+
 
 .text-product {
   width: 632px;
@@ -177,4 +175,8 @@
 
 .text-contact {
   align-items: unset;
+}
+
+.media-icon {
+  font-size: 26px;
 }

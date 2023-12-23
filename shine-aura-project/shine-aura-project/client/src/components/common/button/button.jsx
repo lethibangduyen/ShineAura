@@ -18,6 +18,9 @@ const Button = ({ text="", onClick = () => {}, type, btnStyle="", customBtnStyle
         } else if (btnStyle === "prod-detail-btn") {
             setDefaultFrameStyle("prod-detail-frame");
             setDefaultTextStyle("btn-text-lgt");
+        } else if (btnStyle === "footer-btn") {
+            setDefaultFrameStyle("footer-btn-frame");
+            setDefaultTextStyle("body-lgt");
         } else {
             setDefaultFrameStyle("underline-btn-frame");
             setDefaultTextStyle("body-lgt");
