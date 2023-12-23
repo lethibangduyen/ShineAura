@@ -58,3 +58,17 @@ gap: var(--Spacing-2, 16px);
 .footer-contact-content{
   padding: 4px 8px;
 }
+
+
+@media screen and (max-width: 1080px) {
+  .footer-logo {
+    width: 100px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-vector-icon {
+    display: none;
+  }
+}
