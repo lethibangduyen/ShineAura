@@ -21,7 +21,7 @@ import Productpage from "./pages/product-page/product-page";
 import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import ProductCard from "./components/common/product-card/product-card";
-import ProductCarousel from "./pages/test";
+import ProductCarousel from "./components/common/carousel/carousel";
 // import  Contact from "./Pages/Contactpage/Contactpage";
 // import Payment from "./Pages/Payment/Payment";
 // import Productpage from "./Pages/Productpage/Productpage";
