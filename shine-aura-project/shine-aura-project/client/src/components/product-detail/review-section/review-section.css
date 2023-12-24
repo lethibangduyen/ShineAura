@@ -4,18 +4,99 @@
     border-radius: var(--spacing-spc-none, 0px);
     border: 1px solid #855B49;
     background: #F9F6F3;
-}
-
-.rating i {
+  }
+  
+  .rating i {
     font-size: 14px;
-}
-
-.rating-num {
+  }
+  
+  .rating-num {
     position: absolute;
     right: -60px;
     top: 0;
-}
-
-.rating-info {
+  }
+  
+  .rating-info {
     position: relative;
-}
+  }
+  
+
+    /* .review-item {
+      display: flex;
+      padding: var(--spacing-spc-none, 0px);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.3282em; 
+      align-self: stretch;
+      border-radius: var(--spacing-spc-none, 0px);
+    }
+    .rating-info {
+      display: flex;
+      width: 53%;
+      padding: var(--spacing-spc-none, 0px);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-spc-none, 0px);
+      border-radius: var(--spacing-spc-none, 0px);
+    }
+    .user-name > .body-bld,
+    .review-date > .input-i-lgt,
+    .review-content > .body-lgt,
+    .paging > .body-lgt {
+      color: #333;
+      font-family: Nunito;
+      font-size: 1.6565em;
+      line-height: normal;
+      letter-spacing: 0.0531em;
+    }
+    .user-name > .body-bld {
+      font-size: 2.342em; 
+      font-weight: 700;
+      letter-spacing: 0.0708em; 
+    }
+    .rating-num > .h3 {
+        display: flex;
+        width: 6.3125rem;
+        height: 4.9375rem;
+        flex-direction: column;
+        justify-content: center;
+        color: #333;
+        font-family: Montserrat;
+        font-size: 4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.04rem;
+    }
+    .rating {
+      display: flex;
+      padding: var(--spacing-spc-none, 0px);
+      align-items: center;
+      gap: 0.4427em; 
+      border-radius: var(--spacing-spc-none, 0px);
+    }
+    .rating > i {
+      width: 1.56242em; 
+      height: 1.54992em; 
+      font-size: 1.5em; 
+    }
+    .review-date > .input-i-lgt {
+      font-style: italic;
+      font-weight: 300;
+    }
+  
+    .review-content > .body-lgt,
+    .paging > .body-lgt {
+      word-spacing: 0.25em; 
+    }
+
+    
+  } */
+  @media only screen and (max-width: 1438px){
+    .review-container {
+      width: 80%;
+      justify-content: center;
+      border-radius: var(--spacing-spc-none, 0rem);
+      border: 1.129px solid #5E503F;
+    }
+  }

@@ -31,18 +31,18 @@ function App() {
         <Navbar />
           <ScrollToTop />
           <Routes>
-              <Route path="/" element={<Homepage />} />
+              {/* <Route path="/" element={<Homepage />} />
               <Route path="/signin" element={<Signin />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgotpass" element={<ForgotPassword />} />
               <Route path="/about-us" element={<AboutUsPage />} />
               <Route path="/policy" element={<PolicyPage />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/payment" element={<Payment />} />
+              <Route path="/payment" element={<Payment />} /> */}
               {/* <Route path="/product" element={<Productpage />} /> */}
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/user" element={<User />} />
-              <Route path="/product-detail" element={<ProductDetailPage />} />
+              {/* <Route path="/cart" element={<Cart />} />
+              <Route path="/user" element={<User />} /> */}
+              <Route path="/" element={<ProductDetailPage />}/>
           </Routes>
         <Footer />
       </div>
