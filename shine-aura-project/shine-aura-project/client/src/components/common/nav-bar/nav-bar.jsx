@@ -1,8 +1,7 @@
 // Navbar.jsx
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './nav-bar.css';
-
+import { Link } from 'react-router-dom';
 import Logo from '../../../assets/img/logo.svg';
 import Button from '../button/button';
 import DropdownButton from '../button/dropdown-button';
@@ -11,6 +10,7 @@ function Navbar() {
   const [navColour, updateNavbar] = useState(false);
   const [isNavOpen, setNavOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
+  const [cartItemCount, setCartItemCount] = useState(0);
 
   function scrollHandler() {
     updateNavbar(window.scrollY >= 20);
@@ -77,7 +77,12 @@ function Navbar() {
           )}
         </div>
         <div className="icon-button">
-          <Button btnStyle='icon-nav-btn' iconL='bi bi-cart'/>
+          <Link to="/cart" className="nav-link"> {/* Add Link to the Cart Page */}
+            <Button btnStyle='icon-nav-btn' iconL='bi bi-cart'/>
+            {cartItemCount > 0 && (
+              <span className="cart-item-count">{cartItemCount}</span>
+            )}
+          </Link>
         </div>
         <div className="icon-button">
           <DropdownButton btnStyle='icon-nav-btn' iconL='bi bi-person' dropdownStyle='user-setting-dropdown'/>
