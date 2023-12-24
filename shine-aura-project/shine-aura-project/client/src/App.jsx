@@ -21,6 +21,7 @@ import Productpage from "./pages/product-page/product-page";
 import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import ProductCard from "./components/common/product-card/product-card";
+import ProductCarousel from "./pages/test";
 // import  Contact from "./Pages/Contactpage/Contactpage";
 // import Payment from "./Pages/Payment/Payment";
 // import Productpage from "./Pages/Productpage/Productpage";
@@ -29,7 +30,7 @@ function App() {
   return (
     <Router>
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+        {/* <Navbar />
           <ScrollToTop />
           <Routes>
               <Route path="/" element={<Homepage />} />
@@ -45,7 +46,8 @@ function App() {
               <Route path="/user" element={<User />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
-        <Footer />
+        <Footer /> */}
+        <ProductCarousel />
         {/* <ProductCard product={Products[0]}/> */}
       </div>
     </Router>

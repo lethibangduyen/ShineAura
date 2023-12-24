@@ -5,7 +5,7 @@ import Button from "../../components/common/button/button";
 import ProductDescription from "../../components/product-detail/product-description/product-description";
 import ReviewSection from "../../components/product-detail/review-section/review-section";
 import ProductSlider from "../../components/product-detail/product-slider/product-slider";
-import getProductById from "../../utils/getProductById/getProductById";
+import getProductById from "../../utils/getProductById/getProductById.js";
 
 const ProductDetailPage = () => {
     const { id } = useParams();
