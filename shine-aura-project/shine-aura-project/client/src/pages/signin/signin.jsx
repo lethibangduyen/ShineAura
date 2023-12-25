@@ -12,33 +12,33 @@ const Signin = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const handleSignIn = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-  
-    try {
-      const response = await axios.post('http://localhost:3000/signin', { email, password });
-  
-      if (response.data.token) {
-        // Save the token to local storage
-        localStorage.setItem('token', response.data.token);
-  
-        // Navigate to the home page or any other authenticated route
-        navigate('/');
-      }
-    } catch (err) {
-      console.log(err);
-      if (err.response && err.response.data && err.response.data.message) {
-        setError(err.response.data.message);
-      } else {
-        setError('An error occurred during signin.');
-      }
-    } finally {
-      setLoading(false);
+const handleSignIn = async (e) => {
+  e.preventDefault();
+  setError('');
+  setLoading(true);
+
+  try {
+    const response = await axios.post('http://localhost:3000/signin', { email, password });
+
+    if (response.data.token) {
+      // Save the token to local storage
+      localStorage.setItem('token', response.data.token);
+
+      // Navigate to the home page or any other authenticated route
+      navigate('/users');
     }
-  };
-  
+  } catch (err) {
+    console.log(err);
+    if (err.response && err.response.data && err.response.data.message) {
+      setError(err.response.data.message);
+    } else {
+      setError('An error occurred during signin.');
+    }
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
       <div className="section-container flex-col signin-page">

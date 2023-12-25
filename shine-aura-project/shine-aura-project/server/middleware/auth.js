@@ -1,33 +1,27 @@
 const jwt = require('jsonwebtoken');
-const { ACCESS_TOKEN_SECRET } = require('../env');
+const util = require('util');
 
-function verifyToken(...roles) {
-    return (req, res, next) => {
-        let authHeader = req.headers['authorization'];
-        let token = authHeader && authHeader.split(' ')[1];
-        if (!token) {
-            res.status(401).json({ message: "Invalid token" });
-            return;
-        }
+const verifyAsync = util.promisify(jwt.verify);
 
-        try {
-            const verified = jwt.verify(token, ACCESS_TOKEN_SECRET);
-            if (!verified.exp || (verified.exp < (Date.now() / 1000))) {
-                res.status(401).json({ message: "Token expired" });
-                return;
-            }
-            if (roles.length > 0 && !roles.includes(verified.role)) {
-                res.status(403).json({ message: "Access denied" });
-                return;
-            }
-            req.user = verified;
-            return next();
-        }
-        catch (err) {
-            res.status(401).json({ message: "Token expired | Token is not still valid" });
-            return;
-        }
+const authenticateToken = async (req, res, next) => {
+  const token = req.header('Authorization')?.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ message: 'Không có token xác thực' });
+  }
+
+  try {
+    const user = await verifyAsync(token, 'shineaura');
+    req.user = user;
+    next();
+  } catch (error) {
+    console.error(error);
+    if (error.name === 'TokenExpiredError') {
+      return res.status(401).json({ message: 'Token hết hạn', error: error.message });
+    } else {
+      return res.status(401).json({ message: 'Token không hợp lệ', error: error.message });
     }
-}
+  }
+};
 
-module.exports = { verifyToken };
+module.exports = authenticateToken;

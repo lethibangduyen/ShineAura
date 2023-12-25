@@ -22,18 +22,20 @@ const UserDetail = () => {
   useEffect(() => {
     axios.get('http://localhost:3000/users')
       .then((response) => {
-        setUser(response.data[0]);
-        setFullName(response.data[0].fullName || '');
-        setEmail(response.data[0].email || '');
-        setPhoneNumber(response.data[0].phoneNumber || '');
-        setGender(response.data[0].gender || '');
-        setDateOfBirth(response.data[0].dateOfBirth || '');
-        // Set other state variables as needed
+        console.log('User data:', response.data);
+        const userData = response.data[0] || {};
+        setUser(userData);
+        setFullName(userData.fullName || '');
+        setEmail(userData.email || '');
+        setPhoneNumber(userData.phoneNumber || '');
+        setGender(userData.gender || '');
+        setDateOfBirth(userData.dateOfBirth || '');
       })
       .catch((error) => {
-        console.error(error);
+        console.error('Error fetching user data:', error);
       });
   }, []);
+  
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -76,7 +78,7 @@ const UserDetail = () => {
       // Add other fields as needed
     };
 
-    axios.put(`http://localhost:3000/users/${user._id}`, updatedData)
+    axios.put(`http://localhost:3000/users`, updatedData)
       .then((response) => {
         console.log('User updated successfully:', response.data);
         // Optionally, you can update the local state or perform other actions
@@ -96,6 +98,7 @@ const UserDetail = () => {
   };
 
   return (
+
     <div className="userdetailpage-first">
       <div className="userdetail-container">
         <div className="top-container flex-col">
@@ -147,7 +150,6 @@ const UserDetail = () => {
                     <input type="text" id="name-input" value={fullName} onChange={handleInputChange} />
                     <input type="text" id="email-input" value={email} onChange={handleInputChange} />
                     <input type="number" id="phone-input" value={phoneNumber} onChange={handleInputChange} />
-
                   <div className="gender-choose">
                     <input type="radio" name="gender" id="male" checked={gender === 'male'} onChange={() => setGender('male')} />
                     <label htmlFor="male" id="male-label">Male</label>

@@ -30,7 +30,7 @@ function App() {
   return (
     <Router>
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        {/* <Navbar />
+        <Navbar />
           <ScrollToTop />
           <Routes>
               <Route path="/" element={<Homepage />} />
@@ -46,7 +46,7 @@ function App() {
               <Route path="/users" element={<User />} />
               <Route path="/product-detail" element={<ProductDetailPage />} />
           </Routes>
-        <Footer /> */}
+        <Footer />
         <ProductCard product={Products[0]}/>
       </div>
     </Router>
