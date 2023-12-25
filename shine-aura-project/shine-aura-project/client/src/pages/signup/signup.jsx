@@ -11,23 +11,34 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
-    console.log({ email, password, confirmPassword });
-    axios.post('http://localhost:3000/signup', { email, password, confirmPassword })
-    .then((res) => {
-      console.log(res);
-      navigate('/signin');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    setError(''); // Clear previous errors
   
-
+    axios.post('http://localhost:3000/signup', { email, password, confirmPassword })
+      .then((res) => {
+        const { token } = res.data;
+  
+        // Lưu token vào local storage
+        localStorage.setItem('token', token);
+  
+        console.log('Signup successful. Token:', token);
+        navigate('/signin');
+      })
+      .catch((err) => {
+        console.log(err);
+        if (err.response && err.response.data && err.response.data.message) {
+          setError(err.response.data.message);
+        } else {
+          setError('An error occurred during signup.');
+        }
+      });
   };
   
+
   return (
     <div className="signup-page flex-col section-container">
       <div className="flex-row section gap-xl flex-wrap">
@@ -47,6 +58,7 @@ const Signup = () => {
               <p>“I accept the terms and conditions.”</p>
             </div>
             <Button text="SIGN UP" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' type="submit"></Button>
+            {error && <div className="error-message body-err">{error}</div>}
             <div className="signin-opts flex-col body max-wdth gap-2xs">
               <p>You have an account? <Link to="/signin">Sign in</Link></p>
               <hr className='hr-divider'/>

@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB Atlas connection string
-const mongoURI = 'mongodb+srv://duyen3004:Lethibangduyen3004@shine-aura-test-db.pf0rcx6.mongodb.net/';
+const mongoURI = 'mongodb+srv://baou0508:Phamhoangbao0508@shine-aura-test-db.pf0rcx6.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI);
 const connection = mongoose.connection;

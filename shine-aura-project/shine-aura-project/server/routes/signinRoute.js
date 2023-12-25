@@ -1,6 +1,6 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
@@ -11,16 +11,17 @@ router.post('/signin', async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user) {
-      // Compare the provided password with the hashed password in the database
-      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (user.password === password) {
+        // Tạo token với thông tin userId
+        const token = jwt.sign({ userId: user._id }, 'shineaura', { expiresIn: '1h' });
 
-      if (isPasswordValid) {
-        res.json('Success');
+        // Trả về token
+        res.json({ token });
       } else {
-        res.json('Mật khẩu không đúng');
+        res.status(401).json('Mật khẩu không đúng');
       }
     } else {
-      res.json('Email không tồn tại');
+      res.status(404).json('Email không tồn tại');
     }
   } catch (error) {
     console.error(error);
@@ -28,4 +29,7 @@ router.post('/signin', async (req, res) => {
   }
 });
 
+
 module.exports = router;
+
+

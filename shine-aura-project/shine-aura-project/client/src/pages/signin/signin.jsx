@@ -6,28 +6,41 @@ import Button from '../../components/common/button/button';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
   
-  const Signin = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-    
-    const handleSignIn = (e) => {
-      e.preventDefault();
-      console.log({ email, password });
-      axios.post('http://localhost:3000/signin', { email, password })
-        .then((res) => {
-          console.log(res);
-          if (res.data === 'Success') {
-            navigate('/');
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+const Signin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
   
-    };
+    try {
+      const response = await axios.post('http://localhost:3000/signin', { email, password });
   
-    return (
+      if (response.data.token) {
+        // Save the token to local storage
+        localStorage.setItem('token', response.data.token);
+  
+        // Navigate to the home page or any other authenticated route
+        navigate('/');
+      }
+    } catch (err) {
+      console.log(err);
+      if (err.response && err.response.data && err.response.data.message) {
+        setError(err.response.data.message);
+      } else {
+        setError('An error occurred during signin.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+
+  return (
       <div className="section-container flex-col signin-page">
         <div className='flex-row section gap-xl flex-wrap'>
           <div className="logo">
@@ -49,7 +62,15 @@ import { useNavigate } from 'react-router-dom';
                   <Link to="/forgot-password">Forgot passwords?</Link>
                 </div>
               </div>
-              <Button type="submit" text="SIGN IN" btnStyle="auth-btn" frameStyle='max-wdth' customBtnStyle='max-wdth'></Button>
+              <Button
+        type="submit"
+        text={loading ? 'Signing In...' : 'SIGN IN'}
+        btnStyle="auth-btn"
+        frameStyle="max-wdth"
+        customBtnStyle="max-wdth"
+        disabled={loading}
+      ></Button>
+      {error && <div className="error-message body-err">{error}</div>}
               <div className="signup-opts flex-col max-wdth body">
                 <signup-sub-text>You have an account?
                   <Link to="/signup"> Sign up</Link>
