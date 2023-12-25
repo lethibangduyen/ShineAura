@@ -14,7 +14,7 @@ import Signup from './pages/signup/signup';
 import Homepage from './pages/homepage/homepage';
 import AboutUsPage from './pages/about-us/about-us-page';
 import PolicyPage from './pages/policy/policy'
-import  Contact from "./pages/contact/contact-page";
+import Contact from "./pages/contact/contact-page";
 import Payment from "./pages/payment/paymentpage";
 import User from "./pages/userdetail/userdetail";
 import Productpage from "./pages/product-page/product-page";
@@ -22,15 +22,18 @@ import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import ProductCard from "./components/common/product-card/product-card";
 import ProductCarousel from "./components/common/carousel/carousel";
+import product from "./data/products.json";
+import Carousel from "react-multi-carousel";
 // import  Contact from "./Pages/Contactpage/Contactpage";
 // import Payment from "./Pages/Payment/Payment";
 // import Productpage from "./Pages/Productpage/Productpage";
 function App() {
   const [load] = useState(true);
+  
   return (
     <Router>
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        {/* <Navbar />
+        <Navbar />
           <ScrollToTop />
           <Routes>
               <Route path="/" element={<Homepage />} />
@@ -46,9 +49,8 @@ function App() {
               <Route path="/user" element={<User />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
-        <Footer /> */}
-        <ProductCarousel />
-        {/* <ProductCard product={Products[0]}/> */}
+        <Footer />
+        {/* <ProductCarousel products={product} /> */}
       </div>
     </Router>
   )

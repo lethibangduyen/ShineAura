@@ -4,12 +4,32 @@ import { useParams } from 'react-router-dom';
 import Button from "../../components/common/button/button";
 import ProductDescription from "../../components/product-detail/product-description/product-description";
 import ReviewSection from "../../components/product-detail/review-section/review-section";
-import ProductSlider from "../../components/product-detail/product-slider/product-slider";
 import getProductById from "../../utils/getProductById/getProductById.js";
+import getProductByBrand from "../../utils/getProductByBrand/getProductByBrand.js";
+import ProductCarousel from "../../components/common/carousel/carousel.jsx";
+import products from "../../data/products.json";
+import ProductCard from "../../components/common/product-card/product-card";
+import Carousel from "react-multi-carousel";
 
 const ProductDetailPage = () => {
     const { id } = useParams();
     const product = getProductById(id);
+    const similarProducts = getProductByBrand(product.brands);
+    console.log(similarProducts);
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
+    };
 
     return (
         <div className="flex-col content-container product-detail-page">
@@ -85,9 +105,19 @@ const ProductDetailPage = () => {
             <div className="section-container flex-row prod-detail-section-2 gap-ms align-left">
                 <ProductDescription />
                 <ReviewSection />
+                
             </div>
-            <div className="section-container flex-row">
-                <ProductSlider />
+            <div className="section-container flex-row set-wdth">
+                <Carousel responsive={responsive}>
+                    <div>Item 1</div>
+                    <div>Item 1</div>
+                    <div>Item 1</div>
+                    <div>Item 1</div>
+                    <div>Item 1</div>
+                </Carousel>
+                    {/* {products.map((product) => (
+                        <ProductCard key={product.product_id} product={product} />
+                    ))} */}
             </div>
         </div>
     )
