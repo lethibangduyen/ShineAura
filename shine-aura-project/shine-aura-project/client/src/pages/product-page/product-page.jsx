@@ -10,23 +10,18 @@ import 'react-multi-carousel/lib/styles.css';
 import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 24;
-      
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
- 
-    const handleClick = () => {
-        setCurrentPage(currentPage + 1);
-        const elements = document.getElementsByClassName('prod-query-content');
+    const [page, setPage] = useState(1);
+   const itemsPerPage = 24;
+
+   const handleChange = (event, value) => {
+       setPage(value);
+       const elements = document.getElementsByClassName('prod-query-content');
         if (elements && elements[0]) {
            window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
         }
-    };
+   };
 
-    
-     
+   const currentItems = products.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
     const responsive = {
         desktop: {
@@ -138,20 +133,14 @@ const ProductPage = () => {
                                         </select>
                                     </div>
                                 </div>
-
                                 <div className="prod-grid gap-xs">
-                                    {currentItems.slice(0, 24).map((product) => (
+                                    {currentItems.map((product) => (
                                         <Productcard product={product} key={product.product_id}></Productcard>
                                     ))}
                                 </div>
                                 <div className="pagination flex-col max-wdth">
-                                    <div className='flex-row gap-xs'>
-                                        {[...Array(Math.ceil(products.length / itemsPerPage)).keys()].map(number => (
-                                            <button key={number + 1} id={number + 1} onClick={() => handleClick()}>
-                                                {number + 1}
-                                            </button>
-                                        ))}
-                                        <Pagination count={10} variant="outlined" />
+                                    <div className='flex-row'>
+                                        <Pagination count={Math.ceil(products.length / itemsPerPage)} page={page} onChange={handleChange} />
                                     </div>
                                 </div>
                             </div>

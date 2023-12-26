@@ -165,6 +165,7 @@
     }
 
     .width-reset {
-        width: 242px !important;
+        padding: 0 4px;
+        width: fit-content !important;
     }
 }

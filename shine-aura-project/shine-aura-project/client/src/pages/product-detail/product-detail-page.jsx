@@ -6,8 +6,6 @@ import ProductDescription from "../../components/product-detail/product-descript
 import ReviewSection from "../../components/product-detail/review-section/review-section";
 import getProductById from "../../utils/getProductById/getProductById.js";
 import getProductByBrand from "../../utils/getProductByBrand/getProductByBrand.js";
-import ProductCarousel from "../../components/common/carousel/carousel.jsx";
-import products from "../../data/products.json";
 import ProductCard from "../../components/common/product-card/product-card";
 import Carousel from "react-multi-carousel";
 
@@ -26,11 +24,11 @@ const ProductDetailPage = () => {
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
-          items: 4
+          items: 5
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
-          items: 2
+          items: 3
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
@@ -41,10 +39,10 @@ const ProductDetailPage = () => {
     return (
         <div className="flex-col content-container product-detail-page">
             <div className="section-container flex-col prod-detail-section-1">
-                <div className="section gap-2xl flex-row">
-                    <div className="image-display flex-col gap-xs">
-                        <div className="active-image-holder flex-col">
-                            <img src={product.images[0]} alt="active-image" className="active-img"/>
+                <div className="section gap-2xl flex-row res-width">
+                    <div className="image-display flex-col gap-xs res-width">
+                        <div className="active-image-holder flex-col res-width">
+                            <img src={product.images[0]} alt="active-image res-width" className="active-img"/>
                         </div>
                         <div className="prod-image-slider flex-row">
                             <div className="left-button">
@@ -79,7 +77,7 @@ const ProductDetailPage = () => {
                                 <p className="pre-title">{product.brands}</p>
                             </div>
                             <div className="prod-name">
-                                <h2 className="h2">{product.product_name}</h2>
+                                <p className="h2">{product.product_name}</p>
                             </div>
                         </div>
                         <div className="prod-desc-con">
@@ -116,8 +114,11 @@ const ProductDetailPage = () => {
                 </div>
             </div>
             <div className="section-container flex-row">
-                <div className="section flex-col">
-                    <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} arrows={false} renderButtonGroupOutside={true} customButtonGroup={<CarouselButton />} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                <div className="section flex-col gap-md">
+                    <div className="similar-prod-title">
+                        <p className="h2 uppercase">similar products</p>
+                    </div>
+                    <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} arrows={true} removeArrowOnDeviceType={["mobile"]}>
                         {similarProducts.map((product) => (
                             <ProductCard key={product.produc_id} product={product} />
                         ))}
