@@ -21,7 +21,9 @@ router.post('/signin', async (req, res) => {
     }
 
     // Generate a token with the user's ID
-    const token = jwt.sign({ userId: user._id }, 'shineaura', { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id, email: user.email },
+      'shineaura',
+      { expiresIn: '1h' });
 
     // Send the token in the response
     res.json({ token });

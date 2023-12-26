@@ -21,7 +21,6 @@ const handleSignIn = async (e) => {
     const response = await axios.post('http://localhost:3000/signin', { email, password });
 
     if (response.data.token) {
-      // Save the token to local storage
       localStorage.setItem('token', response.data.token);
 
       // Navigate to the home page or any other authenticated route

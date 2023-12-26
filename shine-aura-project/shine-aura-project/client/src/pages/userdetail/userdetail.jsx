@@ -18,23 +18,27 @@ const UserDetail = () => {
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
   const [selectedFunction, setSelectedFunction] = useState('accountInformation');
+  const [updating, setUpdating] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/users')
+    const authToken = localStorage.getItem('token');
+  
+    axios.get('http://localhost:3000/users', {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+    })
       .then((response) => {
         console.log('User data:', response.data);
-        const userData = response.data[0] || {};
+        const userData = response.data || {};
         setUser(userData);
-        setFullName(userData.fullName || '');
         setEmail(userData.email || '');
-        setPhoneNumber(userData.phoneNumber || '');
-        setGender(userData.gender || '');
-        setDateOfBirth(userData.dateOfBirth || '');
       })
       .catch((error) => {
         console.error('Error fetching user data:', error);
       });
   }, []);
+  
   
 
   const handleInputChange = (e) => {
@@ -68,7 +72,11 @@ const UserDetail = () => {
     }
   };
 
+
+
   const handleUpdate = () => {
+    setUpdating(true);
+  
     const updatedData = {
       fullName,
       email,
@@ -77,16 +85,27 @@ const UserDetail = () => {
       dateOfBirth: `${selectedYear}-${selectedMonth}-${selectedDay}`,
       // Add other fields as needed
     };
-
-    axios.put(`http://localhost:3000/users`, updatedData)
+  
+    const authToken = localStorage.getItem('token');
+    const userId = user.userId; // Ensure that user.userId is correct
+  
+    axios.put(`http://localhost:3000/users/${userId}`, updatedData, {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+    })
       .then((response) => {
         console.log('User updated successfully:', response.data);
         // Optionally, you can update the local state or perform other actions
       })
       .catch((error) => {
         console.error('Error updating user:', error);
+      })
+      .finally(() => {
+        setUpdating(false);
       });
   };
+  
 
   const years = Array.from({ length: new Date().getFullYear() - 1959 }, (_, index) => 1960 + index);
   const handleDayChange = (e) => setSelectedDay(e.target.value);
