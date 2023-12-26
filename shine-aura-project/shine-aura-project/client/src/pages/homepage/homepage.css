@@ -41,12 +41,11 @@
   gap: var(--spacing-spc-xs, 8px);
 }
 
-.home-list-product {
-  max-width: 1440px;
+/* .home-list-product {
+  max-width: 960px;
   overflow: hidden;
-  padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-ms, 24px) var(--spacing-spc-2xs, 4px) var(--spacing-spc-2xs, 4px);
   gap: 12px;
-}
+} */
 
 .product-parent-detail {
   max-width: 1440px;

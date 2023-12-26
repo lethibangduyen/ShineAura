@@ -11,6 +11,13 @@ import products from "../../data/products.json";
 import ProductCard from "../../components/common/product-card/product-card";
 import Carousel from "react-multi-carousel";
 
+const CarouselButton = ({ next, previous, ...rest }) => (
+    <div>
+      <button onClick={previous}><i className="bi bi-chevron-left"></i></button>
+      <button onClick={next}><i className="bi bi-chevron-right"></i></button>
+    </div>
+);
+
 const ProductDetailPage = () => {
     const { id } = useParams();
     const product = getProductById(id);
@@ -19,7 +26,7 @@ const ProductDetailPage = () => {
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
-          items: 1
+          items: 4
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
@@ -54,7 +61,7 @@ const ProductDetailPage = () => {
                         </div>
                     </div>
                     <div className="vt-divider"></div>
-                    <div className="prod-detail-container flex-col gap-ms align-left">
+                    <div className="prod-detail-container flex-col gap-ms align-left ">
                         <div className="prod-br-nm-rv flex-col align-left gap-2xs">
                             <div className="prod-review flex-row gap-xs">
                                 <div className="review-stars">
@@ -102,22 +109,20 @@ const ProductDetailPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="section-container flex-row prod-detail-section-2 gap-ms align-left">
-                <ProductDescription />
-                <ReviewSection />
-                
+            <div className="section-container prod-detail-section-2 flex-col">
+                <div className="section flex-row gap-ms align-left">
+                    <ProductDescription />
+                    <ReviewSection />
+                </div>
             </div>
-            <div className="section-container flex-row set-wdth">
-                <Carousel responsive={responsive}>
-                    <div>Item 1</div>
-                    <div>Item 1</div>
-                    <div>Item 1</div>
-                    <div>Item 1</div>
-                    <div>Item 1</div>
-                </Carousel>
-                    {/* {products.map((product) => (
-                        <ProductCard key={product.product_id} product={product} />
-                    ))} */}
+            <div className="section-container flex-row">
+                <div className="section flex-col">
+                    <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} arrows={false} renderButtonGroupOutside={true} customButtonGroup={<CarouselButton />} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                        {similarProducts.map((product) => (
+                            <ProductCard key={product.produc_id} product={product} />
+                        ))}
+                    </Carousel>
+                </div>
             </div>
         </div>
     )

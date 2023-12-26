@@ -1,6 +1,10 @@
 .product-detail-page {
     margin-top: 90px;
 
+    .section-container {
+        padding: 0 125px;
+    }
+
     .review-rate p {
         font-family: Nunito;
         font-size: 10px;
@@ -54,5 +58,13 @@
 
     .set-wdth {
         width: 1440px;
+    }
+
+    .carousel-container {
+        width: 1210px;
+    }
+
+    .width-reset {
+        width: 242px !important;
     }
 }

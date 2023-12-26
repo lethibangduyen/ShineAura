@@ -1,5 +1,5 @@
 .review-container {
-    width: 440px;
+    min-width: 400px;
     padding: 32px 24px 24px 24px;
     border-radius: var(--spacing-spc-none, 0px);
     border: 1px solid #855B49;

@@ -10,9 +10,10 @@ import About3 from '../../assets/img/homepage/about-3.png';
 import About4 from '../../assets/img/homepage/about-4.png';
 import Contact from '../../assets/img/homepage/contact-us.png';
 import Collection from '../../components/homepage/collection/collection.jsx';
-import Productcard from '../../components/common/product-card/product-card.jsx';
+// import Productcard from '../../components/common/product-card/product-card.jsx';
 import Button from '../../components/common/button/button.jsx';
-import Products from '../../data/products.json'
+import products from '../../data/products.json'
+import ProductCarousel from '../../components/common/carousel/carousel.jsx';
 
 const Homepage = () => {
   return (
@@ -47,18 +48,9 @@ const Homepage = () => {
               </div>
             </div>
             <div className="product-parent-detail flex-row gap-md">
-              <button className="home-btn left">
-                <i className="bi bi-chevron-left"></i>
-              </button>
               <div className="home-list-product flex-row">
-                <Productcard product={Products[0]}/>
-                <Productcard product={Products[1]}/>
-                <Productcard product={Products[2]}/>
-                <Productcard product={Products[3]}/>
+                <ProductCarousel products={products.slice(0, 16)}/>
               </div>
-              <button className="home-btn right">
-                <i className="bi bi-chevron-right"></i>
-              </button>
             </div>
             <div className='home-btn-see'>
               <Button buttonText="See More" IconClass="bi bi-arrow-right" />

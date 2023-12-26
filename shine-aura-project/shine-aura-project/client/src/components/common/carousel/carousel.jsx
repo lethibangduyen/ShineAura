@@ -21,11 +21,13 @@ const ProductCarousel = ({ products }) => {
   };
 
     return (
-      <Carousel responsive={responsive} itemClass="width-reset" sliderClass='flex-row gap-xs' draggable="true" showDots="true" slidesToSlide={1}>
+      <div>
+        <Carousel containerClass="carousel-container" responsive={responsive} itemClass="width-reset flex-col" sliderClass='flex-row' draggable={true} slidesToSlide={1}>
           {products.map((product) => (
             <ProductCard key={product.product_id} product={product} />
           ))}
       </Carousel>
+      </div>
     )
 };
 
