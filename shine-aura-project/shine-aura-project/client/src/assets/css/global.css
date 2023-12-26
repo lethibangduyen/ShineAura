@@ -33,7 +33,9 @@
     --spc-tk-3xl: var(--spc-prt-14);
 }
 
-
+a {
+    text-decoration: none;
+}
 
 * {
     margin: 0;

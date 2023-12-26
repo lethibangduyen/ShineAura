@@ -1,58 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import './product-page.css';
+import React, {useState, useEffect} from 'react';
+import './product-page.scss';
 import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
 import Button from '../../components/common/button/button.jsx';
 import Productcard from '../../components/common/product-card/product-card.jsx';
-import Products from '../../data/products.json';
+import products from '../../data/products.json';
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css';
+import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
-
-    const [isDragging, setIsDragging] = useState(false);
-    const [startPosition, setStartPosition] = useState(0);
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const sensitivity = 2; // Adjust this factor to make it more or less sensitive
-
-    const handleMouseDown = (e) => {
-        e.preventDefault(); // Prevent default text selection behavior
-        setIsDragging(true);
-        setStartPosition(e.clientX - scrollPosition);
-        document.querySelector('.prod-collection-scroll').style.cursor = 'grabbing';
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 24;
+      
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+ 
+    const handleClick = () => {
+        setCurrentPage(currentPage + 1);
+        const elements = document.getElementsByClassName('prod-query-content');
+        if (elements && elements[0]) {
+           window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
+        }
     };
 
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
+    
+     
 
-        requestAnimationFrame(() => {
-            const newX = (e.clientX - startPosition) * sensitivity;
-            setScrollPosition(newX);
-
-            const scrollContainer = document.querySelector('.prod-collection-scroll');
-            scrollContainer.scrollLeft = -newX;
-        });
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 4
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
     };
-
-    const handleMouseUp = () => {
-        setIsDragging(false);
-        document.querySelector('.prod-collection-scroll').style.cursor = 'grab';
-    };
-
-    useEffect(() => {
-        document.addEventListener('mousedown', handleMouseDown);
-        document.addEventListener('mousemove', handleMouseMove);
-        document.addEventListener('mouseup', handleMouseUp);
-
-        return () => {
-            document.removeEventListener('mousedown', handleMouseDown);
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
-        };
-    }, [isDragging]);
-
-
 
     return (
-        <div className='productpage -shi'>
+        <div className='product-page'>
             <div className='main-container flex-col'>
                 <div className='section-container flex-col'>
                     <div className='hero-sct section flex-col'>
@@ -70,15 +62,12 @@ const ProductPage = () => {
                             <div className='vt-divider'></div>
                             <div className='collection-content flex-col gap-ms align-left'>
                                 <h3 className='h3'>GLASTING WATER TINT COLLECTION</h3>
-                                <div className='prod-collection-container prod-collection-scroll' onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-                                    <div className='prod-container-outer flex-row gap-xs'>
-                                        <Productcard product={Products[0]}></Productcard>
-                                        <Productcard product={Products[1]}></Productcard>
-                                        <Productcard product={Products[2]}></Productcard>
-                                        <Productcard product={Products[3]}></Productcard>
-                                        <Productcard product={Products[4]}></Productcard>
-                                    </div>
-
+                                <div className='prod-collection-container prod-collection-scroll'>
+                                        <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                                                    {products.slice(0, 8).map((product) => (
+                                                        <Productcard product={product} key={product.product_id}></Productcard>
+                                                    ))}
+                                        </Carousel>
                                 </div>
                                 <p className='body-lgt collection-description'>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus. Sed sagittis, risus vitae dignissim semper, turpis arcu congue augue, eget ornare orci libero nec enim. Aenean a aliquam nunc.</p>
                             </div>
@@ -141,36 +130,29 @@ const ProductPage = () => {
                                         <input className="product-collect3-search-input" type="text" placeholder="Search" />
                                     </div>
                                     <div>
-                                        <select id="sort" name="sort">
-                                            <option value="Sort" selected>Sort by</option>
-                                            <option value="saab">Saab</option>
-                                            <option value="fiat">Fiat</option>
-                                            <option value="audi">Audi</option>
+                                    <select id="sort" name="sort">
+                                        <option value="Sort">Sort by</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div className="prod-grid gap-xs">
-                                    <Productcard product={Products[5]}></Productcard>
-                                    <Productcard product={Products[6]}></Productcard>
-                                    <Productcard product={Products[7]}></Productcard>
-                                    <Productcard product={Products[8]}></Productcard>
-                                    <Productcard product={Products[9]}></Productcard>
-                                    <Productcard product={Products[10]}></Productcard>
-                                    <Productcard product={Products[11]}></Productcard>
-                                    <Productcard product={Products[12]}></Productcard>
-                                    <Productcard product={Products[13]}></Productcard>
-                                    <Productcard product={Products[14]}></Productcard>
-                                    <Productcard product={Products[15]}></Productcard>
-                                    <Productcard product={Products[16]}></Productcard>
-                                    <Productcard product={Products[17]}></Productcard>
-                                    <Productcard product={Products[18]}></Productcard>
-                                    <Productcard product={Products[19]}></Productcard>
-                                    <Productcard product={Products[20]}></Productcard>
-                                    <Productcard product={Products[21]}></Productcard>
-                                    <Productcard product={Products[22]}></Productcard>
-                                    <Productcard product={Products[23]}></Productcard>
-                                    <Productcard product={Products[24]}></Productcard>
+                                    {currentItems.slice(0, 24).map((product) => (
+                                        <Productcard product={product} key={product.product_id}></Productcard>
+                                    ))}
+                                </div>
+                                <div className="pagination flex-col max-wdth">
+                                    <div className='flex-row gap-xs'>
+                                        {[...Array(Math.ceil(products.length / itemsPerPage)).keys()].map(number => (
+                                            <button key={number + 1} id={number + 1} onClick={() => handleClick()}>
+                                                {number + 1}
+                                            </button>
+                                        ))}
+                                        <Pagination count={10} variant="outlined" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
