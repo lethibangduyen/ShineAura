@@ -3,6 +3,8 @@ import './userdetail.css';
 import Button from '../../components/common/button/button';
 import { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import momologo from '../../Components/Assets/Media/User_Detail/momo-logo.png';
 // import vietcombank from '../../Components/Assets/Media/User_Detail/vietcombank-logo.png';
 // import vietinbank from '../../Components/Assets/Media/User_Detail/vietinbank-logo.png';
@@ -19,7 +21,9 @@ const UserDetail = () => {
   const [selectedYear, setSelectedYear] = useState('');
   const [selectedFunction, setSelectedFunction] = useState('accountInformation');
   const [updating, setUpdating] = useState(false);
-
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [retypeNewPassword, setRetypeNewPassword] = useState('');
   useEffect(() => {
     const authToken = localStorage.getItem('token');
   
@@ -40,7 +44,14 @@ const UserDetail = () => {
   }, []);
   
   
+  const years = Array.from({ length: new Date().getFullYear() - 1959 }, (_, index) => 1960 + index);
+  const handleDayChange = (e) => setSelectedDay(e.target.value);
+  const handleMonthChange = (e) => setSelectedMonth(e.target.value);
+  const handleYearChange = (e) => setSelectedYear(e.target.value);
 
+  const handleFunctionChange = (functionName) => {
+    setSelectedFunction(functionName);
+  };
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     switch (id) {
@@ -65,10 +76,21 @@ const UserDetail = () => {
       case 'year-input':
         setSelectedYear(value);
         break;
-      // Add cases for other input fields
-      // ...
-      default:
-        break;
+        case 'cp-email-input':
+          setEmail(value);
+          break;
+        case 'current-password-input':
+          setCurrentPassword(value);
+          break;
+        case 'new-password-input':
+          setNewPassword(value);
+          break;
+        case 'retype-new-password-input':
+          setRetypeNewPassword(value);
+          break;
+        default:
+          break;
+        
     }
   };
 
@@ -87,35 +109,83 @@ const UserDetail = () => {
     };
   
     const authToken = localStorage.getItem('token');
-    const userId = user.userId; // Ensure that user.userId is correct
-  
-    axios.put(`http://localhost:3000/users/${userId}`, updatedData, {
+    const userId = user.userId; 
+    axios.put('http://localhost:3000/users', updatedData, {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
     })
       .then((response) => {
         console.log('User updated successfully:', response.data);
-        // Optionally, you can update the local state or perform other actions
+        toast.success('User updated successfully', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       })
       .catch((error) => {
         console.error('Error updating user:', error);
+  
+        // Show error notification
+        toast.error('Error updating user', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       })
       .finally(() => {
         setUpdating(false);
       });
   };
+    const handleDeleteAccount = async () => {
+      try {
+        const authToken = localStorage.getItem('token');
+        const response = await axios.delete('http://localhost:3000/users', {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
+        console.log(response.data);
+        toast.success('Account deleted successfully', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
   
+      } catch (error) {
+        console.error('Error deleting account:', error);
+        toast.error('Error deleting account', {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      }
+    };
 
-  const years = Array.from({ length: new Date().getFullYear() - 1959 }, (_, index) => 1960 + index);
-  const handleDayChange = (e) => setSelectedDay(e.target.value);
-  const handleMonthChange = (e) => setSelectedMonth(e.target.value);
-  const handleYearChange = (e) => setSelectedYear(e.target.value);
-
-  const handleFunctionChange = (functionName) => {
-    setSelectedFunction(functionName);
-  };
-
+  
+    const handleUpdatePassword = () => {
+      // Add validation logic here (e.g., check if passwords match)
+  
+      // Make an API request to update the password
+      const updatedPass = {
+        email,
+        currentPassword,
+        newPassword,
+      };
+  
+      const authToken = localStorage.getItem('token');
+    const userId = user.userId; 
+    axios.put('http://localhost:3000/users', updatedPass, {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+    })
+        .then((response) => {
+          console.log('Password updated successfully:', response.data);
+          toast.success('Password updated successfully', {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        })
+        .catch((error) => {
+          console.error('Error updating password:', error);
+          toast.error('Error updating password', {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        });
+    };
+  
   return (
 
     <div className="userdetailpage-first">
@@ -204,7 +274,7 @@ const UserDetail = () => {
               </form>
               <div className="bot-right-btt">
                 <Button text='UPDATE' btnStyle='auth-btn' textStyle='btn-text-sml' frameStyle='bot-right-btt-width' onClick={handleUpdate} />
-                <Button text='DELETE ACCOUNT' btnStyle='auth-btn' frameStyle='bot-right-btt-width' textStyle='btn-text-sml' />
+                <Button text='DELETE ACCOUNT' btnStyle='auth-btn' frameStyle='bot-right-btt-width'textStyle='btn-text-sml'onClick={handleDeleteAccount} />
               </div>
             </div>
           )}
@@ -254,31 +324,31 @@ const UserDetail = () => {
             </div>
           )}
           {selectedFunction === 'changePassword' && (
-            <div className="info-container">
-              <div className="bot-right-title">
-                <h4 className='h4'>Change Password</h4>
-                <p className="body">Change your password account</p>
-              </div>
-              <div className="cp-body">
-                <div className="cp-label">
-                  <label htmlFor="cp-email-input" className="body">Email Address</label>
-                  <label htmlFor="current-password-input" className="body">Current Password</label>
-                  <label htmlFor="new-password-input" className="body">New Password</label>
-                  <label htmlFor="retype-new-password-input" className="body">Re-type New Password</label>
-                </div>
-                <div className="cp-input">
-                  <input type="text" id='cp-email-input' placeholder='Your Email' />
-                  <input type="text" id='current-password-input' placeholder='**************' />
-                  <input type="text" id='new-password-input' placeholder='**************' />
-                  <input type="text" id='retype-new-password-input' placeholder='**************' />
-                </div>
-              </div>
-              <div className="bot-right-btt">
-                <Button text='UPDATE' btnStyle='auth-btn' textStyle='btn-text-sml' frameStyle='bot-right-btt-width'></Button>
-                <Button text='DELETE ACCOUNT' btnStyle='auth-btn' frameStyle='bot-right-btt-width' textStyle='btn-text-sml'></Button>
-              </div>
-            </div>
-          )}
+           <div className="info-container">
+           <div className="bot-right-title">
+             <h4 className='h4'>Change Password</h4>
+             <p className="body">Change your password account</p>
+           </div>
+           <div className="cp-body">
+             <div className="cp-label">
+               <label htmlFor="cp-email-input" className="body">Email Address</label>
+               <label htmlFor="current-password-input" className="body">Current Password</label>
+               <label htmlFor="new-password-input" className="body">New Password</label>
+               <label htmlFor="retype-new-password-input" className="body">Re-type New Password</label>
+             </div>
+             <div className="cp-input">
+               <input type="text" id='cp-email-input' value={email} onChange={handleInputChange} placeholder='Your Email' />
+               <input type="password" id='current-password-input' value={currentPassword} onChange={handleInputChange} placeholder='**************' />
+               <input type="password" id='new-password-input' value={newPassword} onChange={handleInputChange} placeholder='**************' />
+               <input type="password" id='retype-new-password-input' value={retypeNewPassword} onChange={handleInputChange} placeholder='**************' />
+             </div>
+           </div>
+           <div className="bot-right-btt">
+             <Button text='UPDATE' btnStyle='auth-btn' textStyle='btn-text-sml' frameStyle='bot-right-btt-width' onClick={handleUpdatePassword} />
+             <Button text='DELETE ACCOUNT' btnStyle='auth-btn' frameStyle='bot-right-btt-width' textStyle='btn-text-sml'></Button>
+           </div>
+         </div>
+          )} 
         </div>
       </div>
     </div>

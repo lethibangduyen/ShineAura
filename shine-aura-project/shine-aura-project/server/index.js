@@ -6,6 +6,8 @@ const cors = require('cors');
 const signupRoute = require('./routes/signupRoute');
 const userRoute = require('./routes/userRoute');
 const signinRoute = require('./routes/signinRoute');
+const changepass = require('./routes/changepass');
+const authenticateToken = require('./middleware/auth');
 
 const app = express();
 const PORT = 3000;
@@ -30,7 +32,9 @@ connection.once('open', () => {
 app.post('/signup', signupRoute);
 app.post('/signin', signinRoute);
 app.get('/users', userRoute);
-
+app.put('/users', authenticateToken, userRoute);
+app.delete('/users', authenticateToken, userRoute);
+app.put('/users', authenticateToken, changepass);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

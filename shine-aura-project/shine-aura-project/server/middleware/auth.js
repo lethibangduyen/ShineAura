@@ -17,7 +17,7 @@ const authenticateToken = async (req, res, next) => {
         req.user = {
             userId: user.userId,
             email: user.email,
-            // Include other fields as needed
+            password: user.password,
         };
 
         next();

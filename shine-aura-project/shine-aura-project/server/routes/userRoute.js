@@ -16,7 +16,7 @@ router.get('/users', authenticateToken, (req, res) => {
     const userInformation = {
       userId: currentUser.userId,
       email: currentUser.email,
-      // Add other necessary fields
+        password: currentUser.password,
     };
 
     res.json(userInformation);
@@ -28,9 +28,7 @@ router.get('/users', authenticateToken, (req, res) => {
 });
 
 // Update current user information
-// Update current user information
 router.put('/users', authenticateToken, async (req, res) => {
-    // If the user is logged in, req.user will contain the user's information
     const currentUser = req.user;
   
     if (!currentUser) {
@@ -63,4 +61,59 @@ router.put('/users', authenticateToken, async (req, res) => {
     }
   });
 
+  // Delete current user
+router.delete('/users', authenticateToken, async (req, res) => {
+    const currentUser = req.user;
+  
+    if (!currentUser) {
+      return res.status(401).json({ message: 'User not authenticated' });
+    }
+  
+    try {
+      // Assuming User model has a method to delete by user ID
+      const deletedUser = await User.findByIdAndDelete(currentUser.userId);
+  
+      if (!deletedUser) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      res.json({ message: 'User deleted successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  });
+router.put('/change-password', authenticateToken, async (req, res) => {
+  const { email, currentPassword, newPassword, retypeNewPassword } = req.body;
+  const userId = req.user.userId;
+
+  try {
+    // Fetch the user from the database using email
+    const user = await User.findOne({ email });
+
+    // Check if the user with the given email exists
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Check if the provided current password matches the one stored in the database
+    if (currentPassword !== user.password) {
+      return res.status(401).json({ message: 'Current password is incorrect' });
+    }
+
+    // Check if the new password and retype password match
+    if (newPassword !== retypeNewPassword) {
+      return res.status(400).json({ message: 'New password and retype password do not match' });
+    }
+
+    // Update the user's password in the database
+    user.password = newPassword;
+    await user.save();
+
+    res.json({ message: 'Password changed successfully' });
+  } catch (error) {
+    console.error('Error changing password:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 module.exports = router;
