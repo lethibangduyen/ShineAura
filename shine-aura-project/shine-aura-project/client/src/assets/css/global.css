@@ -33,7 +33,9 @@
     --spc-tk-3xl: var(--spc-prt-14);
 }
 
-
+a {
+    text-decoration: none;
+}
 
 * {
     margin: 0;
@@ -70,6 +72,7 @@
     line-height: normal;
     letter-spacing: 1%;
 }
+
 .h3-in {
     color: #333;
     font-family: Inter;

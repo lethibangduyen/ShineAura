@@ -1,5 +1,6 @@
 .review-container {
-    width: 440px;
+    width: 100%;
+    min-width: 400px;
     padding: 32px 24px 24px 24px;
     border-radius: var(--spacing-spc-none, 0px);
     border: 1px solid #855B49;
@@ -18,4 +19,19 @@
 
 .rating-info {
     position: relative;
+}
+
+@media screen and (max-width: 1080px) {
+    .user-name p {
+        font-family: var(--display-font);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 1%;
+    }
+
+    .rating .bi-star-fill {
+        font-size: 20px;
+    }
 }

@@ -61,14 +61,15 @@ gap: var(--Spacing-2, 16px);
 
 
 @media screen and (max-width: 1080px) {
-  .footer-logo {
+  .footer-holder {
+    justify-content: center;
+  }
+  /* .footer-logo {
     width: 100px;
     height: 40px;
-  }
+  } */
 }
 
 @media screen and (max-width: 768px) {
-  .footer-vector-icon {
-    display: none;
-  }
+
 }

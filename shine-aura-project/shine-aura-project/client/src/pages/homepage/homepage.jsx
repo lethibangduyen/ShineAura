@@ -10,11 +10,28 @@ import About3 from '../../assets/img/homepage/about-3.png';
 import About4 from '../../assets/img/homepage/about-4.png';
 import Contact from '../../assets/img/homepage/contact-us.png';
 import Collection from '../../components/homepage/collection/collection.jsx';
-import Productcard from '../../components/common/product-card/product-card.jsx';
 import Button from '../../components/common/button/button.jsx';
-import Products from '../../data/products.json'
+import products from '../../data/products.json';
+import Productcard from '../../components/common/product-card/product-card.jsx';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const Homepage = () => {
+  const responsive = {
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 5
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 390 },
+        items: 2
+      },
+      mobile: {
+        breakpoint: { max: 390, min: 0 },
+        items: 1
+      }
+  };
+
   return (
     <div className='homepage-shine flex-col '>
       <div className='homepage-shine-container site-mx-wdth flex-col'>
@@ -47,18 +64,13 @@ const Homepage = () => {
               </div>
             </div>
             <div className="product-parent-detail flex-row gap-md">
-              <button className="home-btn left">
-                <i className="bi bi-chevron-left"></i>
-              </button>
               <div className="home-list-product flex-row">
-                <Productcard product={Products[0]}/>
-                <Productcard product={Products[1]}/>
-                <Productcard product={Products[2]}/>
-                <Productcard product={Products[3]}/>
+                <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                    {products.slice(0, 8).map((product) => (
+                        <Productcard product={product} key={product.product_id}></Productcard>
+                    ))}
+                </Carousel>
               </div>
-              <button className="home-btn right">
-                <i className="bi bi-chevron-right"></i>
-              </button>
             </div>
             <div className='home-btn-see'>
               <Button buttonText="See More" IconClass="bi bi-arrow-right" />
