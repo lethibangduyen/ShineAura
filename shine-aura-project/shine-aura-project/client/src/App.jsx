@@ -46,7 +46,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/users" element={<User />} />
           <Route path="/product-detail" element={<ProductDetailPage />} />
-          <ProductCarousel />
+          {/* <ProductCarousel /> */}
         </Routes>
         <Footer />
       </div>

@@ -1,4 +1,3 @@
-
 .homepage-first {
   position: relative;
   background-color: #f0f0f0;
@@ -31,6 +30,7 @@
 
 
 .text-product {
+  text-align: center;
   width: 632px;
   height: 138px;
   display: flex;
@@ -41,12 +41,11 @@
   gap: var(--spacing-spc-xs, 8px);
 }
 
-.home-list-product {
-  max-width: 1440px;
+/* .home-list-product {
+  max-width: 960px;
   overflow: hidden;
-  padding: var(--spacing-spc-2xs, 4px) var(--spacing-spc-ms, 24px) var(--spacing-spc-2xs, 4px) var(--spacing-spc-2xs, 4px);
   gap: 12px;
-}
+} */
 
 .product-parent-detail {
   max-width: 1440px;
@@ -131,7 +130,7 @@
 }
 
 .collection-container {
-   padding: 128px 0px;
+  padding: 128px 0px;
 }
 
 .wireframe-6 {
@@ -176,4 +175,53 @@
 
 .media-icon {
   font-size: 26px;
+}
+
+.carousel-container {
+  width: 1210px;
+}
+
+.width-reset {
+  padding: 0 4px;
+  width: fit-content !important;
+}
+
+@media only screen and (max-width: 1366px) {
+  .hero-text {
+    display: flex;
+    width: 27.75rem;
+    padding: var(--spacing-spc-none, 0rem);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.42519rem;
+    position: absolute;
+    right: 5rem;
+    bottom: 8.73044rem;
+    border-radius: var(--spacing-spc-none, 0rem);
+    background-color: transparent;
+  }
+
+  .connect-with-radiant {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 1.1875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.02375rem;
+    text-transform: uppercase;
+  }
+
+  .content {
+    font-weight: bold;
+  }
+
+  .home-product-container {
+    width: 100%;
+  }
+
+  .text-product {
+    margin: 0 auto;
+    text-align: center;
+  }
 }
