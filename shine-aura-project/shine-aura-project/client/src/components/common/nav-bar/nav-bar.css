@@ -65,7 +65,16 @@
   background-color: #fff;
   padding: 0 15px 0 45px;
 }
-
+.cart-item-count {
+  position: absolute;
+  top: -10px; /* Điều chỉnh vị trí theo nhu cầu */
+  right: -10px; /* Điều chỉnh vị trí theo nhu cầu */
+  background-color: white;
+  color: var(--Dark-Brown, rgb(59, 48, 35)); /* Màu của số lượng sản phẩm */
+  font-size: 12px; /* Điều chỉnh kích thước theo nhu cầu */
+  padding: 5px 8px; /* Điều chỉnh padding theo nhu cầu */
+  border-radius: 50%; /* Làm tròn góc */
+}
 @media screen and (max-width: 768px) {
   .nav-parent.openNav {
     left: 0;
