@@ -24,7 +24,7 @@ import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import ProductCard from "./components/common/product-card/product-card";
 import Products from './data/products.json';
-
+import ProductCarousel from "./components/common/carousel/carousel";
 function App() {
   const [load] = useState(true);
   return (
@@ -46,9 +46,9 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/users" element={<User />} />
           <Route path="/product-detail" element={<ProductDetailPage />} />
+          <ProductCarousel />
         </Routes>
         <Footer />
-        <ProductCard product={Products[0]} />
       </div>
     </Router>
   );

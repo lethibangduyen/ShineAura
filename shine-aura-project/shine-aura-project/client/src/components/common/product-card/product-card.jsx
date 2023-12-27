@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './product-card.scss';
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -15,8 +16,8 @@ const ProductCard = ({ product }) => {
     }
 
     const containerClassName = isExpanded
-        ? 'flex-row prod-container prod-exp'
-        : 'flex-row prod-container prod-c';
+        ? 'product-card-com flex-row prod-container prod-exp'
+        : 'product-card-com flex-row prod-container prod-c';
 
     return (
         <div className={containerClassName}>
@@ -27,7 +28,9 @@ const ProductCard = ({ product }) => {
                 <div className='flex-row prod-info bg-ivory align-left gap-xs'>
                     <div className='flex-col gap-sm left-bar'>
                         <div className='flex-col gap-xs prod-n-pr'>
-                            <div className='prod-name' title={product.product_name}>{product.product_name}</div>
+                            <Link to={`/product/${product.product_id}`}>
+                                <div className='prod-name' title={product.product_name}>{product.product_name}</div>
+                            </Link>
                             <div className='prod-price'>{product.price}.000&#x20AB;</div>
                         </div>
                         <div className='flex-row gap-2xs color-vars'>
@@ -46,7 +49,7 @@ const ProductCard = ({ product }) => {
                 </div>
             </div>
             <div className='flex-col align-left prod-info-exp'>
-                <div className='prod-info-exp-holder flex-col gap-sm align-left'>
+                <div className='prod-info-exp-holder flex-col gap-xs align-left'>
                     <div className='flex-col gap-2xs prod-n-pr-review align-left'>
                         <p className='prod-brand'>{product.brands}</p>
                         <p className='prod-name'>{product.product_name}</p>
@@ -64,7 +67,7 @@ const ProductCard = ({ product }) => {
                     </div>
                     <div className='flex-col gap-2xs align-left color-select'>
                         <p className='btn-text-lgt uppercase'>Colors</p>
-                        <div className='flex-row gap-2xs color-vars'>
+                        <div className='flex-row gap-2xs color-vars flex-wrap align-left flex-left-align'>
                             {product.variants.map((variant, index) => (
                                 <div key={index} className='color-var body-lgt'>
                                     {variant}

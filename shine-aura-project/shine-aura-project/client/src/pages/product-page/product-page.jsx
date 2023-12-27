@@ -4,6 +4,7 @@ import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
 import Button from '../../components/common/button/button.jsx';
 import Productcard from '../../components/common/product-card/product-card.jsx';
+import Products from '../../data/products.json';
 
 const ProductPage = () => {
 
@@ -71,11 +72,11 @@ const ProductPage = () => {
                                 <h3 className='h3'>GLASTING WATER TINT COLLECTION</h3>
                                 <div className='prod-collection-container prod-collection-scroll' onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
                                     <div className='prod-container-outer flex-row gap-xs'>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
+                                        <Productcard product={Products[0]}></Productcard>
+                                        <Productcard product={Products[1]}></Productcard>
+                                        <Productcard product={Products[2]}></Productcard>
+                                        <Productcard product={Products[3]}></Productcard>
+                                        <Productcard product={Products[4]}></Productcard>
                                     </div>
 
                                 </div>
@@ -150,26 +151,26 @@ const ProductPage = () => {
                                 </div>
 
                                 <div className="prod-grid gap-xs">
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
+                                    <Productcard product={Products[5]}></Productcard>
+                                    <Productcard product={Products[6]}></Productcard>
+                                    <Productcard product={Products[7]}></Productcard>
+                                    <Productcard product={Products[8]}></Productcard>
+                                    <Productcard product={Products[9]}></Productcard>
+                                    <Productcard product={Products[10]}></Productcard>
+                                    <Productcard product={Products[11]}></Productcard>
+                                    <Productcard product={Products[12]}></Productcard>
+                                    <Productcard product={Products[13]}></Productcard>
+                                    <Productcard product={Products[14]}></Productcard>
+                                    <Productcard product={Products[15]}></Productcard>
+                                    <Productcard product={Products[16]}></Productcard>
+                                    <Productcard product={Products[17]}></Productcard>
+                                    <Productcard product={Products[18]}></Productcard>
+                                    <Productcard product={Products[19]}></Productcard>
+                                    <Productcard product={Products[20]}></Productcard>
+                                    <Productcard product={Products[21]}></Productcard>
+                                    <Productcard product={Products[22]}></Productcard>
+                                    <Productcard product={Products[23]}></Productcard>
+                                    <Productcard product={Products[24]}></Productcard>
                                 </div>
                             </div>
                         </div>
