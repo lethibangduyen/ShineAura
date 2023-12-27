@@ -20,8 +20,11 @@
 .rating-info {
     position: relative;
 }
+.paging{
+    margin: 0 auto;
+}
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1024px) and (min-width: 464px){
     .user-name p {
         font-family: var(--display-font);
         font-size: 24px;
@@ -33,5 +36,17 @@
 
     .rating .bi-star-fill {
         font-size: 20px;
+    }
+}
+@media screen and (max-width: 463px) {
+    .review-container {
+        min-width: 0px;
+    }
+    .user-name p {
+        font-size: 16px;
+    }
+
+    .rating .bi-star-fill {
+        font-size: 14px;
     }
 }

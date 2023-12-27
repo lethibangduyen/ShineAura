@@ -70,12 +70,12 @@
     }
 
     .width-reset {
-        width: 242px !important;
+        width: 242px;
     }
 
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1024px) and (min-width: 464px) {
     .product-detail-page {
         margin-top: 105px;
         gap: 80px;
@@ -116,9 +116,99 @@
 
 
     }
-    }
-  
-  @media screen and (max-width: 768px) {
-  
 }
-
+  
+  @media screen and (max-width: 463px) {
+    .product-detail-page{
+        margin-top: 50px;
+        background-color: #F9F6F3;
+    }
+    .section {
+        flex-wrap: wrap;
+        margin-top: 0px;
+        gap: var(--spc-tk-2xs);
+        padding: 0px 10px 0px 10px;
+    }
+    .product-detail-page .active-img{
+        width: 390px;
+    }
+    .product-detail-page .unactive-img{
+        width: 91px;
+    }
+    .section-container{
+        max-width: 390px;
+        padding: 0px 0px 0px 70px;
+        justify-content: center;
+    }
+    .prod-detail-container{
+        padding: 10px 20px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: relative;
+    }
+    .h2{
+        font-size: 22px;
+    }
+    .prod-desc-con>p, .prod-discount>p{
+        font-size: 11px;
+    }
+    .prod-price>h3{
+        font-size: 24px;
+    }
+    .prod-discount{
+        order: 1;
+    }
+    .prod-price{
+        order: 2;
+    }
+    .prod-br-nm-rv{
+        order: 3;
+    }
+    .button-container{
+        order: 4;
+    }
+    .prod-desc-con{
+        order: 5;
+    }
+    .prod-review{
+        order: 1;
+    }
+    .vt-divider{
+        height: 90px;
+        background-color: #3B3023;
+        position: absolute;
+        top: 520px;
+        width: 100%;
+    }
+    .prod-price, .prod-discount{
+        color: white;
+    }
+    .bi.bi-star-fill, .bi.bi-star-half{
+        font-size: 13px;
+    }
+    .detail-nav{
+        font-size: 10px;
+    }
+    .variant-select-btns>Button>div>p{
+        font-size: 12px;
+    }
+    .product-detail-page .prod-detail-section-2 {
+        padding: 60px 0px 20px 0px;
+        gap: 10px;
+    }
+    .similar-prod-title{
+        width: 400px;
+        text-align: center;
+    }
+    .carousel-container{
+        width: 100%;
+        max-width: 350px;
+    }
+    .width-reset {
+        width: 10px;
+    }
+    .react-multi-carousel-list-carousel-container>ul>li{
+        width: 100px;
+    }
+  }

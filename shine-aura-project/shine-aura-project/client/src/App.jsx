@@ -35,7 +35,7 @@ function App() {
         <Navbar />
           <ScrollToTop />
           <Routes>
-              {/* <Route path="/" element={<Homepage />} />
+              <Route path="/" element={<Homepage />} />
               <Route path="/signin" element={<Signin />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -48,10 +48,9 @@ function App() {
               <Route path="/user" element={<User />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
 }
-
 export default App;
