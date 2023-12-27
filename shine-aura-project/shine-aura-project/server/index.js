@@ -6,6 +6,8 @@ const cors = require('cors');
 const signupRoute = require('./routes/signupRoute');
 const userRoute = require('./routes/userRoute');
 const signinRoute = require('./routes/signinRoute');
+const changepass = require('./routes/changepass');
+const authenticateToken = require('./middleware/auth');
 
 const app = express();
 const PORT = 3000;
@@ -18,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB Atlas connection string
-const mongoURI = 'mongodb+srv://duyen3004:Lethibangduyen3004@shine-aura-test-db.pf0rcx6.mongodb.net/';
+const mongoURI = 'mongodb+srv://baou0508:Phamhoangbao0508@shine-aura-test-db.pf0rcx6.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI);
 const connection = mongoose.connection;
@@ -30,7 +32,9 @@ connection.once('open', () => {
 app.post('/signup', signupRoute);
 app.post('/signin', signinRoute);
 app.get('/users', userRoute);
-
+app.put('/users', authenticateToken, userRoute);
+app.delete('/users', authenticateToken, userRoute);
+app.put('/users', authenticateToken, changepass);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

@@ -4,6 +4,8 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './assets/css/global.css'
 import Navbar from './components/common/nav-bar/nav-bar';
 import Footer from './components/common/footer/footer';
@@ -49,7 +51,7 @@ function App() {
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

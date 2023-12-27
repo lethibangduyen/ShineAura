@@ -1,8 +1,13 @@
 import React from "react";
 import Button from "../button/button";
 import "./dropdown.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const Dropdown = ({ dropdownStyle = ""}) => {
+    const navigate = useNavigate();
+
     const dropdownCollection = (
         <div className="collection-dropdown flex-row gap-lg align-left">
                 <div className="collection-titles flex-col gap-xs align-left">
@@ -43,7 +48,7 @@ const Dropdown = ({ dropdownStyle = ""}) => {
                 </div>
             </div>
             <div className="setting-btns flex-col gap-xs align-left">
-                <Button text="user setting" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-person-gear icon-size-17"/>
+            <Button text="User Setting" btnStyle="underline-btn setting-btn"  textStyle="body"  iconL="bi bi-person-gear icon-size-17" onClick={() => navigate('/users')}/>
                 <Button text="liked items" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-heart icon-size-17"/>
                 <Button text="terms & policies" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-receipt icon-size-17"/>
                 <Button text="purchase history" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-pass icon-size-17"/>

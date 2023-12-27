@@ -183,6 +183,17 @@ a {
     line-height: normal;
     letter-spacing: 1%;
 }
+.body-err {
+    font-family: var(--body-font);
+    color:rgb(168, 25, 25);
+    text-align: center;
+    font-size: 13px;
+    font-style: normal; 
+    font-weight: 900;
+    letter-spacing: unset;
+    line-height: normal;
+    letter-spacing: 1%;
+}
 
 /* Pre-title */
 .pre-title {
