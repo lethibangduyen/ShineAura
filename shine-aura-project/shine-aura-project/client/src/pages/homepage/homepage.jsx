@@ -10,13 +10,31 @@ import About3 from '../../assets/img/homepage/about-3.png';
 import About4 from '../../assets/img/homepage/about-4.png';
 import Contact from '../../assets/img/homepage/contact-us.png';
 import Collection from '../../components/homepage/collection/collection.jsx';
-import Productcard from '../../components/common/product-card/product-card.jsx';
 import Button from '../../components/common/button/button.jsx';
+import products from '../../data/products.json';
+import Productcard from '../../components/common/product-card/product-card.jsx';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const Homepage = () => {
+  const responsive = {
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 5
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 390 },
+        items: 2
+      },
+      mobile: {
+        breakpoint: { max: 390, min: 0 },
+        items: 1
+      }
+  };
+
   return (
-    <div className='homepage-shine'>
-      <div className='homepage-shine-container'>
+    <div className='homepage-shine flex-col '>
+      <div className='homepage-shine-container site-mx-wdth flex-col'>
         <div className="homepage-first">
           <div className="pic-parent">
             <img className="pic-1" alt="" src={Pic1} />
@@ -46,67 +64,61 @@ const Homepage = () => {
               </div>
             </div>
             <div className="product-parent-detail flex-row gap-md">
-              <button className="home-btn left">
-                <i className="bi bi-chevron-left"></i>
-              </button>
               <div className="home-list-product flex-row">
-                <Productcard />
-                <Productcard />
-                <Productcard />
-                <Productcard />
+                <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                    {products.slice(0, 8).map((product) => (
+                        <Productcard product={product} key={product.product_id}></Productcard>
+                    ))}
+                </Carousel>
               </div>
-              <button className="home-btn right">
-                <i className="bi bi-chevron-right"></i>
-              </button>
             </div>
             <div className='home-btn-see'>
               <Button buttonText="See More" IconClass="bi bi-arrow-right" />
             </div>
           </div>
         </div>
-
-        <div className="home-aboutus flex-row ">
-          <div className="about-us-parent flex-col">
-            <div className="text-aboutus">
-              <div className="about-us h1">ABOUT US</div>
-              <div className="text-content body">
-                <p className="content-aboutus">
-                  Discover the pinnacle of beauty at ShineAura, where we redefine the
-                  cosmetic experience beyond ordinary standards. As your discerning
-                  companion on the journey to magnify and honor your innatespirational force, urging you to explore
-                  and indulge in the captivating world of beauty.
-                </p>
-                <p className="content-aboutus">&nbsp;</p>
-                <p className="content-aboutus">
-                  ShineAura not only delivers convenience but also presents a
-                  meticulously chosen array of products, ensuring your diverse beauty
-                  needs are met with unparalleled excellence. Beyond cosmetics, we
-                  prioritize your satisfaction with the highest standards of privacy
-                  and security, guaranteeing a seamless and secure online shopping
-                  experience.
-                </p>
-                <p className="content-aboutus">&nbsp;</p>
-                <p className="content-aboutus">
-                  Join us in this refined and sophisticated beauty expedition, where
-                  ShineAura emerges not only as a provider of exceptional products but
-                  also as a symbol of irresistibly elegant allure. Step into a realm
-                  of perpetual charm and make ShineAura your definitive destination
-                  for an unparalleled beauty experience.
-                </p>
+        <div className="section-container flex-col bg-desert">
+          <div className="home-about-us flex-row flex-center-align">
+            <div className="content-holder flex-col">
+              <div className="about-us-content flex-col gap-md align-left">
+                <p className="h1">ABOUT US</p>
+                <div className="text-content body flex-col gap-sm">
+                  <p>
+                    Discover the pinnacle of beauty at ShineAura, where we redefine the
+                    cosmetic experience beyond ordinary standards. As your discerning
+                    companion on the journey to magnify and honor your innatespirational force, urging you to explore
+                    and indulge in the captivating world of beauty.
+                  </p>
+                  <p>
+                    ShineAura not only delivers convenience but also presents a
+                    meticulously chosen array of products, ensuring your diverse beauty
+                    needs are met with unparalleled excellence. Beyond cosmetics, we
+                    prioritize your satisfaction with the highest standards of privacy
+                    and security, guaranteeing a seamless and secure online shopping
+                    experience.
+                  </p>
+                  <p>
+                    Join us in this refined and sophisticated beauty expedition, where
+                    ShineAura emerges not only as a provider of exceptional products but
+                    also as a symbol of irresistibly elegant allure. Step into a realm
+                    of perpetual charm and make ShineAura your definitive destination
+                    for an unparalleled beauty experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="img-container">
+              <div className="image-box">
+                <img className="img1" src={About1} />
+                <img className="img2" src={About2} />
+                <img className="img3" src={About3} />
+                <img className="img4" src={About4} />
               </div>
             </div>
           </div>
-          <div className="img-container">
-            <div className="image-box">
-              <img className="img1" src={About1} />
-              <img className="img2" src={About2} />
-              <img className="img3" src={About3} />
-              <img className="img4" src={About4} />
-            </div>
-          </div>
         </div>
-        <div className="wireframe-5 flex-col gap-3xl">
-          <div className="collection-contaniner flex-col align-left gap-md">
+        <div className="section-container flex-col gap-3xl">
+          <div className="collection-container flex-col align-left gap-md">
             <div className="text-coll h1"> COLLECTIONS</div>
             <Collection/>
           </div>

@@ -1,15 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .hero-image img {
     display: block;
     margin: 0 auto;
     width: 100vw;
 }
-
 
 .img-size {
     height: 300px;
@@ -26,14 +19,8 @@
     padding: 128px 0px;
 }
 
-.section {
+.about-us-page .section {
     width: 80%;
-}
-
-.flex-col {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
 }
 
 .ourStoryContainer {
