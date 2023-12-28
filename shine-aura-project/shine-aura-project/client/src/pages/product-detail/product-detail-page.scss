@@ -178,7 +178,7 @@
         height: 90px;
         background-color: #3B3023;
         position: absolute;
-        top: 520px;
+        top: 540px;
         width: 100%;
     }
     .prod-price, .prod-discount{
@@ -201,14 +201,35 @@
         width: 400px;
         text-align: center;
     }
-    .carousel-container{
+    .carousel-container {
+        width: 463px;
+    }
+    .product-detail-page .carousel-container  {
+        margin: 0 auto;
+        height: 170px;
+        justify-content: center;
+        width: 350px;
+      }
+    .product-detail-page .carousel-container>ul{
+        margin: 10px;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        
+    }
+      .carousel-item {
         width: 100%;
-        max-width: 350px;
-    }
-    .width-reset {
-        width: 10px;
-    }
-    .react-multi-carousel-list-carousel-container>ul>li{
-        width: 100px;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
+      }
+      .react-multi-carousel-item {
+        transform: scale(0.5); /* Adjust the scale factor as needed */
+      }
+      .react-multi-carousel-list{
+        margin: 0px;
+        width: 350px;
+      }
+      #no-scroll > div.flex-col.content-container.product-detail-page > div.section-container.flex-row > div > div.react-multi-carousel-list.carousel-container > ul > li {
+        margin-left: -120px; /* Điều chỉnh giá trị theo ý muốn của bạn */
     }
   }

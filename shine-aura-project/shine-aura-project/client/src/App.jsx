@@ -35,9 +35,9 @@ function App() {
         <Navbar />
           <ScrollToTop />
           <Routes>
-              <Route path="/" element={<Homepage />} />
+              {/* <Route path="/" element={<Homepage />} />
               <Route path="/signin" element={<Signin />} />
-              <Route path="/signup" element={<Signup />} />
+              <Route path="/signup" element={<Signup />} /> */}
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/about-us" element={<AboutUsPage />} />
               <Route path="/policy" element={<PolicyPage />} />
@@ -48,7 +48,7 @@ function App() {
               <Route path="/user" element={<User />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
