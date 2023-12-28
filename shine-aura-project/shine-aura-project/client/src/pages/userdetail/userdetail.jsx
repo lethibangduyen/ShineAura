@@ -26,7 +26,6 @@ const UserDetail = () => {
   const [retypeNewPassword, setRetypeNewPassword] = useState('');
   useEffect(() => {
     const authToken = localStorage.getItem('token');
-
     axios.get('http://localhost:3000/users', {
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -123,8 +122,6 @@ const UserDetail = () => {
       })
       .catch((error) => {
         console.error('Error updating user:', error);
-
-        // Show error notification
         toast.error('Error updating user', {
           position: toast.POSITION.TOP_RIGHT,
         });

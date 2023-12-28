@@ -219,7 +219,7 @@
     width: 100%;
   }
 
-  .text-product {
+  
   .content{
     font-weight: bold;
   }
@@ -229,5 +229,5 @@
   .text-product{
     margin: 0 auto;
     text-align: center;
-  }
+  } 
 }

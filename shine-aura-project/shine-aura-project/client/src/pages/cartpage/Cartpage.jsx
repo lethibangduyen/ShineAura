@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './Cartpage.css';
 import Logo from '../../assets/img/product/product-image.png';
-
+import { Link } from 'react-router-dom';
+import '../../data/products.json';
 
 const Cartpage = () => {
     const [selectedProducts, setSelectedProducts] = useState([
         // Initialize with some sample data
         { id: 1, name: 'Product 1', price: 9.99, quantity: 1, color: 'Red', version: 'Standard' },
+        { id: 2, name: 'Product 2', price: 6, quantity: 1, color: 'Blue', version: 'Standard' },
+        { id: 3, name: 'Product 3', price: 8, quantity: 2, color: 'Blue', version: 'Standard' },
         // Add more products as needed
     ]);
 
@@ -19,29 +22,73 @@ const Cartpage = () => {
         );
     };
 
+    const [selectedProductIds, setSelectedProductIds] = useState([]);
+    const handleToggleProduct = (productId) => {
+        setSelectedProductIds((prevSelectedProductIds) => {
+            if (prevSelectedProductIds.includes(productId)) {
+                // Deselect
+                return prevSelectedProductIds.filter((id) => id !== productId);
+            } else {
+                // Select
+                return [...prevSelectedProductIds, productId];
+            }
+        });
+    };
+
     const handleRemoveProduct = (productId) => {
-        // Remove the selected product from the cart
         setSelectedProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
     };
 
     const calculateSubtotal = () => {
-        // Calculate the subtotal of the selected products
-        return selectedProducts.reduce((total, product) => total + product.price * product.quantity, 0);
+        return selectedProducts
+            .filter((product) => selectedProductIds.includes(product.id))
+            .reduce((total, product) => total + product.price * product.quantity, 0);
+    };
+
+
+    // 
+    const calculateDelivery = () => {
+        return 5.00;
+    };
+
+    const calculateDiscount = (subtotal) => {
+        return subtotal * 0.20; // 20% discount
+    };
+
+    const calculateTax = (subtotal) => {
+        return subtotal * 0.10; // 10% tax
+    };
+
+    const calculateTotal = () => {
+        const subtotal = calculateSubtotal();
+        const delivery = selectedProductIds.length > 0 ? calculateDelivery() : 0;
+        const discount = calculateDiscount(subtotal);
+        const tax = calculateTax(subtotal);
+        return subtotal + delivery - discount + tax;
     };
 
     return (
         <div className="cartpage-shine">
             <div className="AddressLink">
-                <a href="">HOME</a>
+                <Link className="LinkOB" to="/">
+                    HOME
+                </Link>
                 <span> / </span>
-                <a href="">CART</a>
+                <Link className="LinkOB" to="/cart">
+                    CART
+                </Link>
             </div>
-            <div className="CartPage flex-row align-left gap-ms">
+            <div className="CartPage flex-row align-left">
                 <div>
                     {selectedProducts.map((product) => (
                         <div key={product.id} className="CartPageProduct flex-row">
                             <div>
-                                <input className="ButtonCheckBox" type="checkbox" />
+                                <input
+                                    className="ButtonCheckBox"
+                                    type="checkbox"
+                                    checked={selectedProductIds.includes(product.id)}
+                                    onChange={() => handleToggleProduct(product.id)}
+                                />
                             </div>
                             <div className="ProductArea flex-col">
                                 <div className="ProductDetail flex-row">
@@ -107,8 +154,8 @@ const Cartpage = () => {
                         </div>
                     ))}
                 </div>
-                <div className="SpcaceDiv"></div>
                 <div className="ContainerRight">
+
                     <div className="billing-detail">
                         <div className="bill-title">
                             <div className="h4">Billing Detail</div>
@@ -119,12 +166,14 @@ const Cartpage = () => {
                                 <div className="body-bld">Order Summary</div>
                                 <div className="body-bld">Price</div>
                             </div>
-                            {selectedProducts.map((product) => (
-    <div key={product.id} className="order-detail">
-        <div className="body-sml left-item">{`${product.name} - Color ${product.color} - Version ${product.version}`}</div>
-        <div className="body-sml">{`$${(product.price * product.quantity).toFixed(2)}`}</div>
-    </div>
-))}
+                            {selectedProducts
+                                .filter((product) => selectedProductIds.includes(product.id))
+                                .map((product) => (
+                                    <div key={product.id} className="order-detail">
+                                        <div className="body-sml left-item">{`${product.name} - Color ${product.color} - Version ${product.version}`}</div>
+                                        <div className="body-sml iProduct">{`${(product.price * product.quantity).toFixed(2)}`}</div>
+                                    </div>
+                                ))}
                             {/* Repeat the above block for each product in the cart */}
                         </div>
                         <div className="discount-code">
@@ -135,24 +184,38 @@ const Cartpage = () => {
                             <div className="body-bld">Subtotal</div>
                             <div className="sub-line">
                                 <div className="body-sml left-item">Delivery</div>
-                                <div className="body-sml">5.00</div>
+                                <div className="body-sml">{selectedProductIds.length > 0 ? calculateDelivery().toFixed(2) : '0.00'}</div>
+                            </div>
+                            <div className="sub-line">
+                                <div className="body-sml left-item">Discount</div>
+                                <div className="body-sml">- {calculateDiscount(calculateSubtotal()).toFixed(2)} (20%)</div>
+                            </div>
+                            <div className="sub-line">
+                                <div className="body-sml left-item">Tax</div>
+                                <div className="body-sml">{calculateTax(calculateSubtotal()).toFixed(2)} (10%)</div>
                             </div>
                             {/* Add more sub-line blocks for Discount, Tax, etc. */}
                         </div>
                         <div className="total">
                             <div className="total-title body-bld">Total</div>
-                            <div className="total-cost body-bld">{`$${calculateSubtotal().toFixed(2)}`}</div>
+                            <div className="total-cost body-bld">{`$${calculateTotal().toFixed(2)}`}</div>
                         </div>
                     </div>
+
+
                     <div className="SomeButtons flex-row gap-2xs">
-                        <button className="ButtonBackToShop">
-                            <i className="bi bi-cart-plus IconBut"></i>
-                            <span>BACK TO SHOPPING</span>
-                        </button>
-                        <button className="ButtonBuyNow">
-                            <i className="bi bi-cart-check IconBut"></i>
-                            <span>BUY NOW</span>
-                        </button>
+                        <Link className="LinkOB" to="/product">
+                            <button className="ButtonBackToShop">
+                                <i className="bi bi-cart-plus IconBut"></i>
+                                <span>BACK TO SHOPPING</span>
+                            </button>
+                        </Link>
+                        <Link className="LinkOB" to="/payment">
+                            <button className="ButtonBuyNow">
+                                <i className="bi bi-cart-check IconBut"></i>
+                                <span>BUY NOW</span>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
