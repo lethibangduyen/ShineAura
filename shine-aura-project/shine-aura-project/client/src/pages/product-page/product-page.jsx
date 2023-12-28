@@ -4,19 +4,46 @@ import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
 import Button from '../../components/common/button/button.jsx';
 import Productcard from '../../components/common/product-card/product-card.jsx';
-import products from '../../data/products.json';
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
 import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
+
+    const [products, setProducts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filteredProducts, setFilteredProducts] = useState([]); // Add this line
+ 
+    useEffect(() => {
+        fetch('http://localhost:3000/products')
+          .then(response => response.json())
+          .then(data => {
+              setProducts(data);
+              setFilteredProducts(data); // Update this line
+          })
+          .catch(error => console.error('Error:', error));
+    }, []);
+ 
+    useEffect(() => {
+        if (!searchTerm) {
+            setFilteredProducts(products);
+        } else {
+            const tempFilteredProducts = products.filter(product => 
+                product && product.product_name && product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setFilteredProducts(tempFilteredProducts);
+        }
+     }, [searchTerm, products]);
+
+    const [inputValue, setInputValue] = useState("");
+    
     const [page, setPage] = useState(1);
     const itemsPerPage = 24;
     const [selectedProducts, setSelectedProducts] = useState([]);
     const handleAddToCart = (product) => {
         setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
     };
-    
+
     const handleChange = (event, value) => {
         setPage(value);
         const elements = document.getElementsByClassName('prod-query-content');
@@ -25,7 +52,7 @@ const ProductPage = () => {
             }
     };
 
-   const currentItems = products.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+    const currentItems = filteredProducts.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
     const responsive = {
         desktop: {
@@ -41,6 +68,8 @@ const ProductPage = () => {
           items: 1
         }
     };
+
+
 
     return (
         <div className='product-page'>
@@ -123,10 +152,15 @@ const ProductPage = () => {
                                 <div className = "product-dis-icon flex-row gap-md" >
                                     <h3 className='h3'>PRODUCT SEARCH BY INDEX</h3>
                                     <div className="product-collect3-search-bar ">
-                                        <button className="product-collect3-search-btn">
+                                        <button className="product-collect3-search-btn" onClick={() => setSearchTerm(inputValue)}>
                                             <i className="bi bi-search"></i>
                                         </button>
-                                        <input className="product-collect3-search-input" type="text" placeholder="Search" />
+                                        <input 
+                                        className="product-collect3-search-input" 
+                                        type="text" 
+                                        placeholder="Search"
+                                        onChange={(e) => setInputValue(e.target.value)}
+                                        />
                                     </div>
                                     <div>
                                     <select id="sort" name="sort">

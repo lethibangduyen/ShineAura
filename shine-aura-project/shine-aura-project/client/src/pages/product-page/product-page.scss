@@ -177,4 +177,16 @@
         padding: 0 4px;
         width: fit-content !important;
     }
+
+    .pagination {
+        .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root:hover {
+            color: #fff;
+            background-color: rgba(59, 48, 35, 0.5);
+        }
+
+        .Mui-selected {
+            color: #fff;
+            background-color: rgba(59, 48, 35, 0.88);
+        }
+    }
 }
