@@ -20,7 +20,12 @@ const ForgotPassword = () => {
                 </div>
                 <form onSubmit={handleForgot} className="flex-col max-wdth align-left gap-sm">
                     <input type="text" className='auth-input body max-wdth' placeholder="Email" />
-                    <Button text="submit" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' type="submit"></Button>
+                    <div className="flex-center-align flex-row gap-md auth-opts max-wdth">
+                         <Button text="Try another way" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' type="submit" textStyle='btn-text-lgt'></Button>
+                         <Button text="Next" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' textStyle='btn-text-lgt' type="submit"></Button>
+
+                    </div>
+                   
                     <div className="flex-center-align flex-row gap-md auth-opts max-wdth">
                         <Link to="/signup" className='sign-up body'>Sign up</Link>
                         <Link to="/signin" className='sign-in body'>Sign in</Link>

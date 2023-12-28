@@ -119,7 +119,7 @@ const ReviewSection = () => {
                     <p className="body-lgt">Lorem ipsum dolor sit amet, consectetur interdum diam cursus, placerat mauris. Quisque rhoncus ullamcorper semper.</p>
                 </div>
             </div>
-            <div className="paging">
+            <div className="paging flex-col">
                 <p className="body-lgt">1 2 3 ... 99</p>
             </div>
         </div>

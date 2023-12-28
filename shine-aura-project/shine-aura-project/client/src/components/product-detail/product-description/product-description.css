@@ -58,3 +58,20 @@
 ul.inside {
     list-style-position: inside;
 }
+@media screen and (max-width: 567px) {
+    .detail-nav-btn{
+        width: fit-content;
+        font-size: 9.5px;
+        font-weight: 500;
+    }
+    .detail-nav{
+        top: -36px;
+    }
+    .detail-content-item{
+        font-size: 11px;
+    }
+    .detail-content{
+        width: 100%;
+        min-width: 367px;;
+    }
+}
