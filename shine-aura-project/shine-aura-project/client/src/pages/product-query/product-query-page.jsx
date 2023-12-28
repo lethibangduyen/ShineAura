@@ -6,14 +6,17 @@ import High from '../../Components/Assets/Media/Product/Highlight_Product.png';
 import Button from '../../Components/Button/NewButton/button.jsx';
 import Productcard from '../../Components/Productcard/product-card.jsx';
 const Productpage = () => {
-
+    const [selectedProducts, setSelectedProducts] = useState([]);
+    const handleAddToCart = (product) => {
+        setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
+    };
     const [isDragging, setIsDragging] = useState(false);
     const [startPosition, setStartPosition] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
     const sensitivity = 2;
 
     const handleMouseDown = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         setIsDragging(true);
         setStartPosition(e.clientX - scrollPosition);
         document.querySelector('.prod-collection-scroll').style.cursor = 'grabbing';
@@ -72,11 +75,11 @@ const Productpage = () => {
                                 <h3 className='h3'>GLASTING WATER TINT COLLECTION</h3>
                                 <div className='prod-collection-container prod-collection-scroll' onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
                                     <div className='prod-container-outer flex-row gap-xs'>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
-                                        <Productcard ></Productcard>
+                                        <ProductCard onAddToCart={handleAddToCart} />
+                                        <Productcard onAddToCart={handleAddToCart} />
+                                        <Productcard onAddToCart={handleAddToCart} />
+                                        <Productcard onAddToCart={handleAddToCart} />
+                                        <Productcard onAddToCart={handleAddToCart} />
                                     </div>
 
                                 </div>
@@ -132,7 +135,7 @@ const Productpage = () => {
                             </div>
                             <div className="vt-divider"></div>
                             <div className="prod-display flex-col align-left gap-md">
-                                <div className = "product-dis-icon flex-row gap-md" >
+                                <div className="product-dis-icon flex-row gap-md" >
                                     <h3 className='h3'>PRODUCT SEARCH BY INDEX</h3>
                                     <div className="product-collect3-search-bar ">
                                         <button className="product-collect3-search-btn">
@@ -151,33 +154,35 @@ const Productpage = () => {
                                 </div>
 
                                 <div className="prod-grid gap-xs">
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
-                                    <Productcard></Productcard>
+                                    <ProductCard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <ProductCard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <ProductCard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <ProductCard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
+                                    <Productcard onAddToCart={handleAddToCart} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <Cartpage selectedProducts={selectedProducts} />
         </div>
+
     );
 }
 export default Productpage;

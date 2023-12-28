@@ -149,7 +149,8 @@
 .ProductPrice {
     color: #fdfcfc;
     display: flex;
-    padding: 62px 31px;
+    /* padding: 62px 31px; */
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;

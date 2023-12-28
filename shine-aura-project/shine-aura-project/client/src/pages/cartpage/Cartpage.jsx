@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './Cartpage.css';
 import Logo from '../../assets/img/product/product-image.png';
-import { Link, useNavigate } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 
 const Cartpage = () => {
     const navigate = useNavigate();
 
     const [selectedProducts, setSelectedProducts] = useState([
         // Initialize with some sample data
-        { id: 1, name: 'Product 1', price: 9.99, quantity: 1, color: 'Red'},
-        { id: 2, name: 'Product 2', price: 6, quantity: 1, color: 'Blue' },
-        { id: 3, name: 'Product 3', price: 8, quantity: 2, color: 'Blue' },
+        { id: 1, name: 'Product 1', price: 9.99, quantity: 1, color: 'Red', version: 'Standard' },
+        { id: 2, name: 'Product 2', price: 6, quantity: 1, color: 'Blue', version: 'Standard' },
+        { id: 3, name: 'Product 3', price: 8, quantity: 2, color: 'Blue', version: 'Standard' },
         // Add more products as needed
     ]);
 
@@ -72,6 +73,7 @@ const Cartpage = () => {
         const selectedProductIds = selectedProducts.map(product => product.id);
         const url = `/payment?selectedProductIds=${selectedProductIds.join(',')}`;
         window.location.href = url;
+
     };
 
     return (

@@ -12,7 +12,10 @@ import Pagination from '@mui/material/Pagination';
 const ProductPage = () => {
     const [page, setPage] = useState(1);
    const itemsPerPage = 24;
-
+   const [selectedProducts, setSelectedProducts] = useState([]);
+   const handleAddToCart = (product) => {
+       setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
+   };
    const handleChange = (event, value) => {
        setPage(value);
        const elements = document.getElementsByClassName('prod-query-content');
@@ -60,7 +63,7 @@ const ProductPage = () => {
                                 <div className='prod-collection-container prod-collection-scroll'>
                                         <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
                                                     {products.slice(0, 8).map((product) => (
-                                                        <Productcard product={product} key={product.product_id}></Productcard>
+                                                        <Productcard product={product} key={product.product_id} onAddToCart={handleAddToCart} ></Productcard>
                                                     ))}
                                         </Carousel>
                                 </div>
@@ -135,7 +138,7 @@ const ProductPage = () => {
                                 </div>
                                 <div className="prod-grid gap-xs">
                                     {currentItems.map((product) => (
-                                        <Productcard product={product} key={product.product_id}></Productcard>
+                                        <Productcard product={product} key={product.product_id} onAddToCart={handleAddToCart}></Productcard>
                                     ))}
                                 </div>
                                 <div className="pagination flex-col max-wdth">
