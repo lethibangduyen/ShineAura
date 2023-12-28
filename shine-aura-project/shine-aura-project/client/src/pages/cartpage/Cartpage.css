@@ -8,11 +8,11 @@
 
 .CartPage {
     display: flex;
-    padding: 64px var(--spacing-spc-none, 0px);
+    padding: 7px var(--spacing-spc-none, 0px);
+
 }
 
-.ButtonColor,
-.ButtonVersion {
+.ButtonColor {
     display: flex;
     width: 114px;
     padding: 8px;
@@ -21,6 +21,10 @@
     border-radius: 5px;
     border: 1px solid var(--Accent-Color, #5E503F);
     background: #EAE0D5;
+}
+
+.CartPageProduct {
+    margin-bottom: 16px;
 }
 
 .DropdownButton i {
@@ -186,9 +190,10 @@
     align-items: flex-start;
     gap: 23px;
     border-radius: var(--spacing-spc-none, 0px);
-    border: 1px solid rgba(94, 80, 63, 0.30);
-    padding: 29px 36px 72px 37px;
-    /* padding: 50px; */
+    padding: 29px 36px 33px 37px;
+    border-radius: 2px;
+    border: 1px solid #000;
+    background: #F1EBE3;
     flex: 1;
 }
 
@@ -213,6 +218,7 @@
     border-radius: var(--spacing-spc-none, 0px);
 }
 
+
 .order-sum-title,
 .order-detail,
 .sub-line,
@@ -229,6 +235,12 @@
     gap: 155px;
 }
 
+.order-sum {
+    height: auto;
+    padding-bottom: 24px;
+}
+
+
 .apply-code {
     display: flex;
     padding: 7px 12px;
@@ -236,17 +248,34 @@
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    width: 278px;
+    width: 310px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid rgba(174, 174, 174, 0.50);
+    background: #FFF;
+}
+
+.apply-code::placeholder {
+    color: rgba(0, 0, 0, 0.50);
+    /* Input Light */
+    font-family: Nunito;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.24px;
 }
 
 .SomeButtons {
-    margin-top: 5px;
+    margin-top: 9px;
+    justify-content: space-between;
 }
 
 .ButtonBackToShop,
 .ButtonBuyNow {
     display: flex;
-    width: 172px;
+    width: 185px;
     height: 48px;
     padding: 20px 8px;
     justify-content: center;
@@ -256,4 +285,36 @@
     border-radius: 5px;
     border: 1px solid #5E503F;
     background: #EAE0D5;
+}
+
+.ButtonBackToShop span {
+    color: #5E503F;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+}
+
+.ButtonBuyNow span {
+    color: #5E503F;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+}
+
+.iProduct {
+    margin-left: -35px;
+}
+
+.LinkOB {
+    text-decoration: none;
 }

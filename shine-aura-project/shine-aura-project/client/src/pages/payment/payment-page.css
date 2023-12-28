@@ -7,8 +7,6 @@
     gap: 20px;
 }
 
-
-
 .path {
     display: flex;
     width: 118px;
@@ -18,25 +16,25 @@
     flex-shrink: 0;
 }
 
+
+
 .main-UI {
     display: flex;
     padding: var(--spacing-spc-none, 0px);
-    align-items: center;
+    align-items: top;
     gap: 7px;
     border-radius: var(--spacing-spc-none, 0px);
 }
 
 .payment-detail {
     display: flex;
-    padding: 30px 36px 80px 37px;
+    padding: 30px 36px 20px 37px;
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
     border-radius: var(--spacing-spc-none, 0px);
     border: 1px solid rgba(94, 80, 63, 0.30);
 }
-
-
 
 .payment-table {
     display: flex;
@@ -101,6 +99,22 @@
     border-radius: var(--spacing-spc-none, 0px);
 }
 
+.left-info .VCB,
+.left-info .vietin,
+.left-info .new-card {
+  position: relative;
+}
+
+.left-info .VCB i,
+.left-info .vietin i,
+.left-info .new-card i {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 16px;
+  margin-right: 17px;
+}
+
 .VCB,
 .vietin,
 .new-card {
@@ -122,6 +136,15 @@
     justify-content: center;
     flex-shrink: 0;
     align-self: stretch;
+    color: var(--Dark-Brown, #3B3023);
+
+    /* Body */
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.32px;
 }
 
 
@@ -154,11 +177,10 @@
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    flex: 1 0 0;
+    width: 300px;
     align-self: stretch;
     border: none;
     border-radius: 0%;
-
 }
 
 .card-type-list {
@@ -172,10 +194,12 @@
     background-color: var(--Accent-Color, #5E503F);
     color: white;
     border: none;
+    width: 150px;
 }
+
 .card-type-list option {
     background-color: white;
-    color: #5E503F; 
+    color: #5E503F;
 }
 
 
@@ -187,6 +211,7 @@
     align-items: flex-start;
     gap: 1px;
     align-self: stretch;
+
 }
 
 .form-name-fill {
@@ -198,6 +223,7 @@
     flex: 1 0 0;
     align-self: stretch;
     border: none;
+    width: 100%;
 }
 
 .expi-cvv {
@@ -218,32 +244,24 @@
 
 .expi-fill,
 .cvv-fill {
-    width: 170px;
+    width: 190px;
     height: 32px;
     border: none;
+    padding: var(--Spacing-5, 5px);
 }
 
 .btn {
     display: flex;
     padding: var(--spacing-spc-none, 0px);
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     gap: 21px;
     align-self: stretch;
+
 }
 
 
 /* ________________ */
-/* .billing-detail {
-    display: flex;
-    padding: 30px 25px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 23px;
-    border-radius: var(--spacing-spc-none, 0px);
-    border: var(--spacing-spc-none, 1px) solid rgba(94, 80, 63, 0.30);
-} */
-
 .billing-detail {
     display: flex;
     flex-direction: column;
@@ -254,6 +272,8 @@
     padding: 29px 36px 72px 37px;
     /* padding: 50px; */
     flex: 1;
+    height: auto;
+    width: auto;
 }
 
 .billing-title {
@@ -274,18 +294,31 @@
     align-items: flex-start;
     gap: 8px;
     border-radius: var(--spacing-spc-none, 0px);
-
     border-bottom: 1px dashed var(--Accent-Color, #5E503F);
+}
 
+.OST {
+    width: 119px;
+}
+
+.order-sum-title,
+.order-detail,
+.sub-line,
+.left-item,
+.total {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-self: stretch;
+    border-radius: var(--spacing-spc-none, 0px);
 }
 
 .order-sum-title {
-    display: flex;
-    padding: var(--spacing-spc-none, 0px);
-    align-items: flex-start;
     gap: 155px;
-    align-self: stretch;
-    border-radius: var(--spacing-spc-none, 0px);
+}
+
+.LinkBut{
+    text-decoration: none;
 }
 
 .order-detail {
@@ -297,14 +330,6 @@
     border-radius: var(--spacing-spc-none, 0px);
 
 }
-/* .order-sum-title,
-.order-detail {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    align-self: stretch;
-    border-radius: var(--spacing-spc-none, 0px);
-} */
 
 .discount-code {
     display: flex;
@@ -379,4 +404,66 @@
     justify-content: center;
     color: var(--Rodeo-Dust-900, #4A332E);
     text-align: center;
+}
+
+.LinkADD {
+    display: flex;
+    justify-content: center;
+    left: 104px;
+    margin-top: 38px;
+    margin-bottom: 7px;
+}
+
+.LinkADD a {
+    color: black;
+    text-decoration: none;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    color: #000000;
+}
+
+
+.ButtonConfirm,
+.ButtonCancel {
+    display: flex;
+    width: 185px;
+    height: 48px;
+    padding: 20px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #5E503F;
+    background: #EAE0D5;
+    font-weight: bold;
+}
+
+.ButtonConfirm span {
+    color: #5E503F;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+}
+
+.ButtonCancel span {
+    color: #5E503F;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
 }

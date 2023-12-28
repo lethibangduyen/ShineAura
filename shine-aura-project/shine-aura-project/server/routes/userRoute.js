@@ -1,7 +1,6 @@
 const express = require('express');
 const User = require('../models/User');
 const authenticateToken = require('../middleware/auth');
-
 const router = express.Router();
 
 // Get current user
