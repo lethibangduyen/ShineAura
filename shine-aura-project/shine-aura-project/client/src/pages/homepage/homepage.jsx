@@ -1,6 +1,6 @@
 import React from 'react';
 import './homepage.css'
-
+import { Link } from 'react-router-dom';
 import Pic1 from '../../assets/img/homepage/hero-1.png';
 import Pic2 from '../../assets/img/homepage/hero-2.png';
 import Pic3 from '../../assets/img/homepage/hero-3.png';
@@ -18,18 +18,18 @@ import 'react-multi-carousel/lib/styles.css';
 
 const Homepage = () => {
   const responsive = {
-      desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 5
-      },
-      tablet: {
-        breakpoint: { max: 1024, min: 390 },
-        items: 2
-      },
-      mobile: {
-        breakpoint: { max: 390, min: 0 },
-        items: 1
-      }
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 390 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 390, min: 0 },
+      items: 1
+    }
   };
 
   return (
@@ -66,14 +66,23 @@ const Homepage = () => {
             <div className="product-parent-detail flex-row gap-md">
               <div className="home-list-product flex-row">
                 <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
-                    {products.slice(0, 8).map((product) => (
-                        <Productcard product={product} key={product.product_id}></Productcard>
-                    ))}
+                  
+                  {products.slice(0, 8).map((product) => (
+                    <Productcard product={product} key={product.product_id}></Productcard>
+                  ))}
                 </Carousel>
               </div>
             </div>
             <div className='home-btn-see'>
-              <Button buttonText="See More" IconClass="bi bi-arrow-right" />
+              <Link to="/product">
+                <Button
+                  text="See more"
+                  btnStyle="underline-btn"
+                  disabled={false}
+                  iconR="bi bi-arrow-right"
+                  iconSide="right"
+                />
+              </Link>
             </div>
           </div>
         </div>
@@ -120,7 +129,7 @@ const Homepage = () => {
         <div className="section-container flex-col gap-3xl">
           <div className="collection-container flex-col align-left gap-md">
             <div className="text-coll h1"> COLLECTIONS</div>
-            <Collection/>
+            <Collection />
           </div>
         </div>
         <div className="wireframe-6 flex-col">

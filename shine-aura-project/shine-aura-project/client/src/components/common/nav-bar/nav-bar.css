@@ -98,7 +98,7 @@
     width: 100%;
     row-gap: 30px;
     flex-direction: column;
-    background-color: #3b3023;
+    background-color: rgb(59, 48, 35, 0.99);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.4s ease;
     align-items: flex-start;

@@ -49,14 +49,13 @@ function Navbar() {
               </Link> 
             </div>
             <div className="">
-              <Button text="HOT DEAL" btnStyle="nav-btn" />
-            </div> 
-            <div className="">
-              <Button text="BEST SELLER" btnStyle="nav-btn" />
-            </div>
-            <div className="">
               <Link to="/about-us" className="nav-link">
                 <Button text="ABOUT US" btnStyle="nav-btn" />
+              </Link>
+            </div>
+            <div className="">
+              <Link to="/contact" className="nav-link">
+                <Button text="CONTACT" btnStyle="nav-btn" />
               </Link>
             </div>
             <div className="">

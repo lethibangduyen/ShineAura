@@ -31,9 +31,9 @@ const valueImages = [
 
 const AboutUsPage = () => {
     const imageWidth = `calc(100% / ${valueImages.length} - 32px)`;
-    
+
     return (
-        <div className = 'AboutUsPage-shine about-us-page'>
+        <div className='AboutUsPage-shine about-us-page'>
             <div className="flex-col content-container">
                 <div className="hero-image">
                     <img src={UsImage} alt="us" />
@@ -41,34 +41,35 @@ const AboutUsPage = () => {
                 <div className="sectionContainer flex-col">
                     <div className="section gap-md flex-col">
                         <h2 className="h2">What we do.</h2>
-                        <p className="body">Sit anim in id enim aliqua sint labore non officia mollit esse Lorem amet aliqua laborum excepteur est aliquip elit.</p>
-                            <div className="flex-row">
-                                <div className="flex-col">
-                                    <img className="img-size" src={SkincareImage} alt="" />
-                                    <div className="md-spc gap-ms flex-col ivory-bg">
-                                        <h3 className="h3">Skincare</h3>
-                                        <p className="body">Excepteur consequat labore voluptate adipisicing elit nostrud quis commodo. Ad cillum nostrud mollit </p>
-                                    </div>
-                                </div>
-                                <div className="flex-col">
-                                    <img className="img-size" src={MakeupImage} alt="" />
-                                    <div className="md-spc gap-ms flex-col ivory-bg">
-                                        <h3 className="h3">Makeup</h3>
-                                        <p className="body">Excepteur consequat labore voluptate adipisicing elit nostrud quis commodo. Ad cillum nostrud mollit </p>
-                                    </div>
+                        <p className="body">At ShineAura, we are committed to delivering a comprehensive beauty experience through two primary areas: Skincare and Makeup.</p>
+                        <div className="flex-row">
+                            <div className="flex-col">
+                                <img className="img-size" src={SkincareImage} alt="" />
+                                <div className="md-spc gap-ms flex-col ivory-bg">
+                                    <h3 className="h3">Skincare</h3>
+                                    <p className="body">Revitalize and nurture your skin with our premium skincare products. From gentle cleansers to moisturizing creams, our offerings cater to all skin types. </p>
                                 </div>
                             </div>
+                            <div className="flex-col">
+                                <img className="img-size" src={MakeupImage} alt="" />
+                                <div className="md-spc gap-ms flex-col ivory-bg">
+                                    <h3 className="h3">Makeup</h3>
+                                    <p className="body">Unleash your creativity with our diverse makeup collection. From lipsticks to eyeshadows, our products are designed to enhance your features and let your unique beauty shine. </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="sectionContainer flex-col ourStoryContainer">
                     <div className="section our-story">
                         <div className="right-container flex-row">
-                            <ImageSlider images={sliderImages}/>
+                            <ImageSlider images={sliderImages} />
                         </div>
                         <div className="left-container flex-col flex-align-top md-spc">
                             <p class="pre-title">About  us</p>
                             <h2 className="h2">Our Story</h2>
-                            <p className="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus. Sed sagittis, risus vitae dignissim semper, turpis arcu congue augue, eget ornare orci libero nec enim. Aenean a aliquam nunc. Morbi tincidunt mattis nulla et interdum. Donec mollis tincidunt pellentesque. Vivamus laoreet sodales accumsan. Integer ornare vulputate mi posuere elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus. Sed sagittis, risus vitae dignissim semper, turpis arcu congue augue, eget ornare orci libero nec enim. Aenean a aliquam nunc. Morbi tincidunt mattis nulla et interdum. Donec mollis tincidunt pellentesque. Vivamus laoreet sodales accumsan. Integer ornare vulputate mi posuere elementum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus. Sed sagittis, risus vitae dignissim semper, turpis arcu congue augue, eget ornare orci libero nec enim. Aenean a aliquam nunc.</p>
+                            <p className="body"><strong>A PASSIONATE BEGINNING:</strong> <br />
+                                ShineAura was born from the passion and belief that beauty is a way to celebrate the natural beauty of every woman. We embarked on this journey with the desire to bring confidence and natural beauty to women through high-quality and unique products.</p>
                         </div>
                     </div>
                 </div>
@@ -78,10 +79,10 @@ const AboutUsPage = () => {
                         <div className="flex-row flex-l gap-md value-images">
                             {valueImages.map((image, index) => (
                                 <img
-                                key={index}
-                                src={image}
-                                alt={`${index + 1}`}
-                                style={{ width: imageWidth }}
+                                    key={index}
+                                    src={image}
+                                    alt={`${index + 1}`}
+                                    style={{ width: imageWidth }}
                                 />
                             ))}
                         </div>
