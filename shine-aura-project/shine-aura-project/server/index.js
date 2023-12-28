@@ -9,7 +9,7 @@ const signinRoute = require('./routes/signinRoute');
 const changepass = require('./routes/changepass');
 const authenticateToken = require('./middleware/auth');
 
-const Product = require('./models/Product');
+const Product = require('./models/Products');
 
 const app = express();
 const PORT = 3000;
@@ -32,12 +32,12 @@ connection.once('open', () => {
 });
 
 app.get('/products', async (req, res) => {
-  const searchTerm = req.query.term;
+  const searchTerm = req.query.term; // get the search term from the query parameters
  
   try {
       let query = {};
       if (searchTerm) {
-          query = { product_name: { $regex: new RegExp(searchTerm, 'i') } }; // case insensitive search
+          query = { product_name: { $regex: new RegExp(searchTerm, 'i') } };
       }
  
       const products = await Product.find(query);

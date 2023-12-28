@@ -82,6 +82,7 @@ router.delete('/users', authenticateToken, async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
+  
 router.put('/change-password', authenticateToken, async (req, res) => {
   const { email, currentPassword, newPassword, retypeNewPassword } = req.body;
   const userId = req.user.userId;
