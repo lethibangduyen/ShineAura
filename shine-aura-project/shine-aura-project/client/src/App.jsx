@@ -31,24 +31,25 @@ function App() {
     <Router>
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
-        <ScrollToTop />
-        <ToastContainer />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/policy" element={<PolicyPage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/product" element={<Productpage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/users" element={<User />} />
-          <Route path="/product/:id" element={<ProductDetailPage />} />
-          {/* <ProductCarousel /> */}
+          <ScrollToTop />
+          <ToastContainer />
+          <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/verification" element={<Verification />} />
+              <Route path="/resetpassword" element={<ResetPassword />} />
+              <Route path="/about-us" element={<AboutUsPage />} />
+              <Route path="/policy" element={<PolicyPage />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/product" element={<Productpage />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/user" element={<User />} />
+              <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );

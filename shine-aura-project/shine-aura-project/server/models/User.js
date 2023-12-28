@@ -13,16 +13,11 @@ const userSchema = new mongoose.Schema({
   // Add other fields as needed
 });
 
-userSchema.methods.generateResetToken = async function () {
-  const resetToken = crypto.randomBytes(16).toString('hex');
-  const resetTokenExpiryDate = new Date(new Date().getTime() + 30 * 60 * 1000); // 30 phút hết hạn
-
-  this.resetToken = resetToken;
-  this.resetTokenExpiryDate = resetTokenExpiryDate;
-
-  await this.save(); // Đảm bảo dữ liệu được lưu trữ trước khi kết thúc hàm
-
-  return resetToken;
+userSchema.methods.generateFourDigitToken = function() {
+  const token = Math.floor(1000 + Math.random() * 9000);
+  this.resetToken = token.toString();
+  this.resetTokenExpiryDate = new Date(new Date().getTime() + 30 * 60 * 1000); // 30 phút hết hạn
+  return this.resetToken;
 };
 
 const User = mongoose.model('User', userSchema);
