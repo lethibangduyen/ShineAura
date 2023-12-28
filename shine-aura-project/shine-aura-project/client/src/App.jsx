@@ -16,16 +16,13 @@ import Signup from './pages/signup/signup';
 import Homepage from './pages/homepage/homepage';
 import AboutUsPage from './pages/about-us/about-us-page';
 import PolicyPage from './pages/policy/policy'
-import  Contact from "./pages/contact/contact-page";
+import Contact from "./pages/contact/contact-page";
 import Payment from "./pages/payment/paymentpage";
 import User from "./pages/userdetail/userdetail";
 import Productpage from "./pages/product-page/product-page";
 import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 // import ProductCard from "./components/common/product-card/product-card";
-// import  Contact from "./Pages/Contactpage/Contactpage";
-// import Payment from "./Pages/Payment/Payment";
-// import Productpage from "./Pages/Productpage/Productpage";
 
 function App() {
   const [load] = useState(true);
@@ -47,7 +44,7 @@ function App() {
           <Route path="/product" element={<Productpage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/users" element={<User />} />
-          <Route path="/product-detail" element={<ProductDetailPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
           {/* <ProductCarousel /> */}
           </Routes>
         <Footer />
