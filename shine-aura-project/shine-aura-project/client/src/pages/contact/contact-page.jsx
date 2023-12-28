@@ -1,11 +1,11 @@
 import React from 'react';
-import './contact-page.css';
+import './contact-page.scss';
 import Logo from '../../assets/img/logo-black.png';
 import Button from '../../components/common/button/button';
 
 const Contactpage = () => {
     return (
-        <div className='contact-shine'>
+        <div className='contact-page'>
             <div>
                 <div class="C-container_1">
                     <p class="C-container_title_1">GET IN TOUCH</p>

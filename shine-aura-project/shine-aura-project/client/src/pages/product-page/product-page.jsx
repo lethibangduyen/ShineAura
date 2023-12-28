@@ -11,18 +11,19 @@ import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
     const [page, setPage] = useState(1);
-   const itemsPerPage = 24;
-   const [selectedProducts, setSelectedProducts] = useState([]);
-   const handleAddToCart = (product) => {
-       setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
-   };
-   const handleChange = (event, value) => {
-       setPage(value);
-       const elements = document.getElementsByClassName('prod-query-content');
-        if (elements && elements[0]) {
-           window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
-        }
-   };
+    const itemsPerPage = 24;
+    const [selectedProducts, setSelectedProducts] = useState([]);
+    const handleAddToCart = (product) => {
+        setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
+    };
+    
+    const handleChange = (event, value) => {
+        setPage(value);
+        const elements = document.getElementsByClassName('prod-query-content');
+            if (elements && elements[0]) {
+            window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
+            }
+    };
 
    const currentItems = products.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
