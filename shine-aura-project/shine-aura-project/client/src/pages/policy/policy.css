@@ -9,6 +9,16 @@
     object-fit: cover;
 }
 
+.policy:hover {
+    box-shadow: inset 0 0 0 2px #5E503F;
+}
+
+.policy:active {
+    box-shadow: inset 0 0 0 1px #EAE0D5, 0 0 0 1px #5E503F;
+    background: #5E503F;
+    color: white;
+}
+
 .hero-content {
     position: absolute;
     text-align: center;
@@ -30,6 +40,7 @@ h1 {
 .main-content {
     display: flex;
     padding: 64px 128px;
+    color: #593C35;
 }
 
 
@@ -77,9 +88,11 @@ body {
     margin-top: 5px;
     margin-left: 0px;
 }
-p{
+
+p {
     margin-left: 0;
 }
+
 ol li {
     padding-top: 0;
 }

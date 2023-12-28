@@ -1,4 +1,3 @@
-
 .homepage-first {
   position: relative;
   background-color: #f0f0f0;
@@ -31,6 +30,7 @@
 
 
 .text-product {
+  text-align: center;
   width: 632px;
   height: 138px;
   display: flex;
@@ -129,7 +129,7 @@
 }
 
 .collection-container {
-   padding: 128px 0px;
+  padding: 128px 0px;
 }
 
 .wireframe-6 {
@@ -186,7 +186,7 @@
 }
 
 @media only screen and (max-width: 1366px) {
-  .hero-text{
+  .hero-text {
     display: flex;
     width: 27.75rem;
     padding: var(--spacing-spc-none, 0rem);
@@ -199,7 +199,8 @@
     border-radius: var(--spacing-spc-none, 0rem);
     background-color: transparent;
   }
-  .connect-with-radiant{
+
+  .connect-with-radiant {
     color: #000;
     font-family: Montserrat;
     font-size: 1.1875rem;
@@ -209,6 +210,16 @@
     letter-spacing: 0.02375rem;
     text-transform: uppercase;
   }
+
+  .content {
+    font-weight: bold;
+  }
+
+  .home-product-container {
+    width: 100%;
+  }
+
+  .text-product {
   .content{
     font-weight: bold;
   }

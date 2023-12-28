@@ -45,7 +45,7 @@ const PolicyPage = () => {
                     <ol>
                         {/* Map through selected policy details to display */}
                         {Object.keys(selectedPolicy.details).map((detailKey, index) => (
-                            <li key={detailKey} className={`body-bld ${detailKey}`}>
+                            <li key={detailKey} className={`body-bld spc-vt-md ${detailKey}`}>
                                 {`${detailKey}`}
                                 <p className='body'>{selectedPolicy.details[detailKey]}</p>
                             </li>

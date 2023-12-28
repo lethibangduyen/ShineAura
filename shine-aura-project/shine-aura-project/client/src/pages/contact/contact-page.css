@@ -10,7 +10,7 @@
     font-family: Montserrat;
     font-weight: 800;
     font-size: 40px;
-    margin-top: 90px;
+    margin-top: 60px;
     padding-top: 90px;
     padding-bottom: 45px;
 }
@@ -28,11 +28,34 @@
     flex: 1;
 }
 
+
+.auth-btn-frame {
+    width: 180px;
+    height: 50px;
+    color: #5E503F;
+}
+
+.auth-btn-frame:hover {
+    box-shadow: inset 0 0 0 2px #5E503F;
+}
+
+
+.auth-btn-frame:active {
+    box-shadow: inset 0 0 0 1px #EAE0D5, 0 0 0 1px #5E503F;
+    background: #5E503F;
+    color: white;
+}
+
 .C-sub_title {
     font-family: Montserrat;
     font-weight: bold;
     font-size: 32px;
     margin: 0px;
+}
+
+.social-icon {
+    font-size: 32px;
+
 }
 
 /* Column 1 */
@@ -61,10 +84,17 @@
     font-size: 16px;
 }
 
+.label-FAQ {
+    margin-left: 10px;
+}
+
 .C-textbox--simple {
     height: 32px;
     width: 261px;
-    border: 1px solid rgba(174, 174, 174, 0.5)
+    border: 1px solid rgba(174, 174, 174, 0.5);
+    padding: 12px;
+    font-family: 'Nunito';
+
 }
 
 .C-textbox--simple::placeholder {
@@ -91,8 +121,9 @@
 .C-textbox--big {
     width: 548px;
     height: 153px;
-    padding: 0 0 0 0;
-    border: 1px solid rgba(174, 174, 174, 0.5)
+    padding: 5px;
+    border: 1px solid rgba(174, 174, 174, 0.5);
+    font-family: 'Nunito';
 }
 
 .C-textbox--big::placeholder {
@@ -150,13 +181,14 @@
 }
 
 .C-sub-column_3 label {
-    font-weight: normal;
+    /* font-weight: normal; */
 }
 
 .C-store-information {
     display: flex;
     justify-content: left;
     padding-bottom: 14px;
+    align-items: center;
 }
 
 .C-store-information svg {
@@ -202,9 +234,15 @@
 }
 
 .C-img {
+    display: flex;
+    width: 194.479px;
     height: 50px;
-    padding-bottom: 7px;
-    padding-top: 10px;
+    padding: 12.034px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30.084px;
+    flex-shrink: 0;
 }
 
 .C-sub-container_2 {
@@ -238,6 +276,7 @@
     padding-bottom: 20px;
 }
 
+
 .C-sub-button_2 svg {
     padding-right: 17.83px;
 }
@@ -246,6 +285,14 @@
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
     font-weight: 600;
+}
+
+input {
+    border-radius: 3px;
+}
+
+.social-label {
+    margin-left: 10px;
 }
 
 .C-child-box-subtitle_3 {
