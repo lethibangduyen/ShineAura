@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
   fullName: { type: String },
   gender: { type: String },
   dateOfBirth: { type: Date },
-  // Add other fields as needed
 });
 
 const User = mongoose.model('User', userSchema);

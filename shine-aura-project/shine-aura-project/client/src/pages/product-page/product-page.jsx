@@ -14,15 +14,24 @@ const ProductPage = () => {
     const [page, setPage] = useState(1);
     const itemsPerPage = 24;
     const [searchTerm, setSearchTerm] = useState('');
+
+    // useEffect(() => {
+    //     if (searchTerm) {
+    //         axios.get(`http://localhost:3000/products/${searchTerm}`)
+    //             .then(res => {
+    //                 setProducts(res.data);
+    //             })
+    //             .catch(err => console.error(err));
+    //     }
+    // }, [searchTerm]);
+
     useEffect(() => {
-        if (searchTerm) {
-            axios.get(`your_search_api_url?query=${searchTerm}`)
-                .then(res => {
-                    setProducts(res.data);
-                })
-                .catch(err => console.error(err));
-        }
-    }, [searchTerm]);
+        axios.get(`http://localhost:3001/products`)
+            .then(res => {
+                setProducts(res.data);
+            })
+            .catch(err => console.error(err));
+    }, []);
 
    const handleChange = (event, value) => {
        setPage(value);

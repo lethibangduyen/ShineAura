@@ -31,12 +31,23 @@ connection.once('open', () => {
   console.log('MongoDB Atlas connection established successfully');
 });
 
-
-app.get('/products', (req, res) => {
-  Product.find()
-      .then(products => res.json(products))
-      .catch(err => res.status(500).json('Error: ' + err));
-});
+app.get('/products', async (req, res) => {
+  const searchTerm = req.query.term; // get the search term from the query parameters
+ 
+  try {
+      let query = {};
+      if (searchTerm) {
+          // if a search term is provided, filter the products by name
+          query = { product_name: { $regex: new RegExp(searchTerm, 'i') } }; // case insensitive search
+      }
+ 
+      const products = await Product.find(query);
+      res.json(products);
+  } catch (error) {
+      console.error(`Error: ${error}`);
+      res.status(500).send('An error occurred while trying to fetch products.');
+  }
+ });
 
 app.post('/signup', signupRoute);
 app.post('/signin', signinRoute);
