@@ -37,7 +37,9 @@ const productSchema = new mongoose.Schema({
   ],
   variants: [
     {
-      // Define the structure for each variant (e.g., size, color, stock, etc.)
+      type: String,
+      required: true,
+      maxlength: 2000,
     },
   ],
   brands: {
