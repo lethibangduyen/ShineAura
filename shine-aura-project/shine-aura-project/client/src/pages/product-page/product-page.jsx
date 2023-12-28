@@ -149,27 +149,31 @@ const ProductPage = () => {
                             </div>
                             <div className="vt-divider"></div>
                             <div className="prod-display flex-col align-left gap-md">
-                                <div className = "product-dis-icon flex-row gap-md" >
+                                <div className = "product-dis-icon flex-row gap-md max-wdth" >
                                     <h3 className='h3'>PRODUCT SEARCH BY INDEX</h3>
-                                    <div className="product-collect3-search-bar ">
-                                        <button className="product-collect3-search-btn" onClick={() => setSearchTerm(inputValue)}>
-                                            <i className="bi bi-search"></i>
-                                        </button>
-                                        <input 
-                                        className="product-collect3-search-input" 
-                                        type="text" 
-                                        placeholder="Search"
-                                        onChange={(e) => setInputValue(e.target.value)}
-                                        />
+                                    <div className='flex-row gap-xs'>
+                                        <div className="product-collect3-search-bar">
+                                            <button className="product-collect3-search-btn" onClick={() => setSearchTerm(inputValue)}>
+                                                <i className="bi bi-search"></i>
+                                            </button>
+                                            <input 
+                                            className="product-collect3-search-input body" 
+                                            type="text" 
+                                            placeholder="Search"
+                                            onChange={(e) => setInputValue(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className='sort-filter-selected flex-row gap-2xs'>
+                                            <select name="sort" className='body'>
+                                                <option value="Sort">Sort by</option>
+                                                <option value="p:low-high">Price: Low to High</option>
+                                                <option value="p:high-low">Price: High to Low</option>
+                                                <option value="fiat">Fiat</option>
+                                                <option value="audi">Audi</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div>
-                                    <select id="sort" name="sort">
-                                        <option value="Sort">Sort by</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="fiat">Fiat</option>
-                                        <option value="audi">Audi</option>
-                                        </select>
-                                    </div>
+                                    
                                 </div>
                                 <div className="prod-grid gap-xs">
                                     {currentItems.map((product) => (

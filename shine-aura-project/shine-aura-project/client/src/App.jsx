@@ -4,6 +4,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './assets/css/global.css'
@@ -24,7 +25,7 @@ import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import Verification from "./pages/verification/verification";
 import ResetPassword from "./pages/reset-password/reset-password";
-// import ProductCard from "./components/common/product-card/product-card";
+
 function App() {
   const [load] = useState(true);
   return (
@@ -46,9 +47,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/users" element={<User />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
-          {/* <ProductCarousel /> */}
-          </Routes>
-        {/* <Footer /> */}
+        </Routes>
+        <Footer />
       </div>
     </Router>
   );

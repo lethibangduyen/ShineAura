@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import "./payment-page.css";
+import "./payment-page.scss";
 import { Link, useLocation } from 'react-router-dom';
 
 const PaymentPage = () => {

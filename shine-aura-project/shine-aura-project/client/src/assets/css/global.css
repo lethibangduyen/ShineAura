@@ -395,6 +395,10 @@ a {
   background-color: #F9F6F3;
 }
 
+.icon-size-16 {
+    font-size: 16px;
+}
+
 .icon-size-20 {
     font-size: 20px;
 }

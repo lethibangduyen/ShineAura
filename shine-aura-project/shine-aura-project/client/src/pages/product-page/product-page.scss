@@ -76,11 +76,6 @@
         scroll-snap-type: x mandatory;
     }
     
-    
-    /* .prod-collection-container::-webkit-scrollbar {
-        display: none;
-    } */
-    
     .promo-collection-sct .prod-collection {
         overflow: hidden;
     }
@@ -132,7 +127,6 @@
         background: #D9D9D9;
     }
     
-    
     .product-collect3-search-btn {
         width: 40px; 
         height: 40px; 
@@ -160,13 +154,23 @@
         border-radius: 5px;
         background: transparent; 
     }
-    
-    #sort {
-        height: 40px;
-        display: flex;
-        align-items: center;
-        background: #D9D9D9;
+
+    .product-collect3-search-input:focus {
+        outline: none;
+    }
+
+    .sort-filter-selected select {
         border: none;
+        background: transparent;
+        outline: none;
+        height: 100%;
+        padding: 0 12px;
+        height: 40px;
+    }
+
+    .sort-filter-selected {
+        background: var(--Rodeo-Dust-50, #F9F6F3);
+        align-items: center;
     }
 
     .carousel-container {

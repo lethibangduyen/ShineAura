@@ -15,7 +15,7 @@ router.get('/users', authenticateToken, (req, res) => {
     const userInformation = {
       userId: currentUser.userId,
       email: currentUser.email,
-        password: currentUser.password,
+      password: currentUser.password,
     };
 
     res.json(userInformation);
