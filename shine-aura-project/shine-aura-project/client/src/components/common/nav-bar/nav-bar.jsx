@@ -1,6 +1,7 @@
 // Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import './nav-bar.css';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Logo from '../../../assets/img/logo.svg';
 import Button from '../button/button';
@@ -11,7 +12,6 @@ function Navbar() {
   const [isNavOpen, setNavOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
   const [cartItemCount, setCartItemCount] = useState(0);
-
   function scrollHandler() {
     updateNavbar(window.scrollY >= 20);
   }
@@ -20,7 +20,28 @@ function Navbar() {
     setNavOpen(!isNavOpen);
     setSearchOpen(false);
   };
+  useEffect(() => {
+    // Gọi API để lấy thông tin giỏ hàng của user từ server
+    const fetchCartItemCount = async () => {
+      try {
+        const authToken = localStorage.getItem('token');
+        if (authToken) {
+          const response = await axios.get('/cart', {
+            headers: {
+              Authorization: `Bearer ${authToken}`,
+            },
+          });
 
+          if (response.data.success) {
+            setCartItemCount(response.data.cartItemCount);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching cart item count:', error);
+      }
+    };
+    fetchCartItemCount();
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
 
@@ -77,12 +98,14 @@ function Navbar() {
           )}
         </div>
         <div className="icon-button">
-          <Link to="/cart" className="nav-link"> {/* Add Link to the Cart Page */}
-            <Button btnStyle='icon-nav-btn' iconL='bi bi-cart'/>
-            {cartItemCount > 0 && (
-              <span className="cart-item-count">{cartItemCount}</span>
-            )}
-          </Link>
+        <Link to="/cart" className="nav-link">
+        <div className="icon-button">
+          <Button btnStyle='icon-nav-btn' iconL='bi bi-cart'/>
+          {cartItemCount > 0 && (
+            <div className="cart-item-count">{cartItemCount}</div>
+          )}
+        </div>
+      </Link>
         </div>
         <div className="icon-button">
           <DropdownButton btnStyle='icon-nav-btn' iconL='bi bi-person' dropdownStyle='user-setting-dropdown'/>
