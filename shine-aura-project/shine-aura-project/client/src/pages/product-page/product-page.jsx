@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './product-page.scss';
 import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
@@ -11,7 +12,17 @@ import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
     const [page, setPage] = useState(1);
-   const itemsPerPage = 24;
+    const itemsPerPage = 24;
+    const [searchTerm, setSearchTerm] = useState('');
+    useEffect(() => {
+        if (searchTerm) {
+            axios.get(`your_search_api_url?query=${searchTerm}`)
+                .then(res => {
+                    setProducts(res.data);
+                })
+                .catch(err => console.error(err));
+        }
+    }, [searchTerm]);
 
    const handleChange = (event, value) => {
        setPage(value);
@@ -116,22 +127,31 @@ const ProductPage = () => {
                             </div>
                             <div className="vt-divider"></div>
                             <div className="prod-display flex-col align-left gap-md">
-                                <div className = "product-dis-icon flex-row gap-md" >
+                                <div className = "product-dis-icon flex-row gap-md max-wdth" >
                                     <h3 className='h3'>PRODUCT SEARCH BY INDEX</h3>
-                                    <div className="product-collect3-search-bar ">
-                                        <button className="product-collect3-search-btn">
-                                            <i className="bi bi-search"></i>
-                                        </button>
-                                        <input className="product-collect3-search-input" type="text" placeholder="Search" />
+                                    <div className='filter-nav flex-row gap-md'>
+                                        <div className='flex-row'>
+                                            <button className="product-collect3-search-btn">
+                                                <i className="bi bi-search"></i>
+                                            </button>
+                                            <input 
+                                                className="product-collect3-search-input" 
+                                                type="text" 
+                                                placeholder="Search" 
+                                                value={searchTerm}
+                                                onChange={e => setSearchTerm(e.target.value)}
+                                            />
+                                        </div>
+                                        <div>
+                                            <select id="sort" name="sort">
+                                                <option value="Sort">Sort by</option>
+                                                <option value="saab">Saab</option>
+                                                <option value="fiat">Fiat</option>
+                                                <option value="audi">Audi</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div>
-                                    <select id="sort" name="sort">
-                                        <option value="Sort">Sort by</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="fiat">Fiat</option>
-                                        <option value="audi">Audi</option>
-                                        </select>
-                                    </div>
+                                    
                                 </div>
                                 <div className="prod-grid gap-xs">
                                     {currentItems.map((product) => (
