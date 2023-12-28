@@ -66,6 +66,7 @@ const Homepage = () => {
             <div className="product-parent-detail flex-row gap-md">
               <div className="home-list-product flex-row">
                 <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                  
                   {products.slice(0, 8).map((product) => (
                     <Productcard product={product} key={product.product_id}></Productcard>
                   ))}

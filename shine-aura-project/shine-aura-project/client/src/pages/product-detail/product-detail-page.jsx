@@ -4,20 +4,45 @@ import { useParams } from 'react-router-dom';
 import Button from "../../components/common/button/button";
 import ProductDescription from "../../components/product-detail/product-description/product-description";
 import ReviewSection from "../../components/product-detail/review-section/review-section";
-import ProductSlider from "../../components/product-detail/product-slider/product-slider";
 import getProductById from "../../utils/getProductById/getProductById.js";
+import getProductByBrand from "../../utils/getProductByBrand/getProductByBrand.js";
+import ProductCard from "../../components/common/product-card/product-card";
+import Carousel from "react-multi-carousel";
+
+const CarouselButton = ({ next, previous, ...rest }) => (
+    <div>
+      <button onClick={previous}><i className="bi bi-chevron-left"></i></button>
+      <button onClick={next}><i className="bi bi-chevron-right"></i></button>
+    </div>
+);
 
 const ProductDetailPage = () => {
     const { id } = useParams();
     const product = getProductById(id);
+    const similarProducts = getProductByBrand(product.brands);
+    console.log(similarProducts);
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 5
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 3
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
+    };
 
     return (
         <div className="flex-col content-container product-detail-page">
             <div className="section-container flex-col prod-detail-section-1">
-                <div className="section gap-2xl flex-row">
-                    <div className="image-display flex-col gap-xs">
-                        <div className="active-image-holder flex-col">
-                            <img src={product.images[0]} alt="active-image" className="active-img"/>
+                <div className="section gap-2xl flex-row res-width">
+                    <div className="image-display flex-col gap-xs res-width">
+                        <div className="active-image-holder flex-col res-width">
+                            <img src={product.images[0]} alt="active-image res-width" className="active-img"/>
                         </div>
                         <div className="prod-image-slider flex-row">
                             <div className="left-button">
@@ -34,7 +59,7 @@ const ProductDetailPage = () => {
                         </div>
                     </div>
                     <div className="vt-divider"></div>
-                    <div className="prod-detail-container flex-col gap-ms align-left">
+                    <div className="prod-detail-container flex-col gap-ms align-left ">
                         <div className="prod-br-nm-rv flex-col align-left gap-2xs">
                             <div className="prod-review flex-row gap-xs">
                                 <div className="review-stars">
@@ -52,7 +77,7 @@ const ProductDetailPage = () => {
                                 <p className="pre-title">{product.brands}</p>
                             </div>
                             <div className="prod-name">
-                                <h2 className="h2">{product.product_name}</h2>
+                                <p className="h2">{product.product_name}</p>
                             </div>
                         </div>
                         <div className="prod-desc-con">
@@ -82,12 +107,23 @@ const ProductDetailPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="section-container flex-row prod-detail-section-2 gap-ms align-left">
-                <ProductDescription />
-                <ReviewSection />
+            <div className="section-container prod-detail-section-2 flex-col">
+                <div className="section flex-row gap-ms align-left">
+                    <ProductDescription />
+                    <ReviewSection />
+                </div>
             </div>
             <div className="section-container flex-row">
-                <ProductSlider />
+                <div className="section flex-col gap-md">
+                    <div className="similar-prod-title">
+                        <p className="h2 uppercase">similar products</p>
+                    </div>
+                    <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} arrows={true} removeArrowOnDeviceType={["mobile"]}>
+                        {similarProducts.map((product) => (
+                            <ProductCard key={product.produc_id} product={product} />
+                        ))}
+                    </Carousel>
+                </div>
             </div>
         </div>
     )

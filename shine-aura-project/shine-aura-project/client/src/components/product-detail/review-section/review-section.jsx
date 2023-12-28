@@ -3,7 +3,7 @@ import './review-section.css'
 
 const ReviewSection = () => {
     return (
-        <div className="review-container flex-col gap-ms">
+        <div className="review-container flex-col gap-ms align-left">
             <div className="review-item flex-col align-left gap-xs">
                 <div className="rating-info">
                     <div className="user-name">

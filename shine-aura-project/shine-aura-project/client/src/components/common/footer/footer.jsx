@@ -6,8 +6,8 @@ import Button from '../button/button';
 const Footer = () => {
   return (
     <div className="footer flex-row">
-      <div className="footer-holder align-left flex-row">
-        <div className="footer-logo flex-col ">
+      <div className="footer-holder align-left gap-xl flex-row flex-wrap">
+        <div className="footer-logo flex-col">
           <img className="footer-vector-icon" alt="" src={Logo} />
         </div>
         <div className="footer-nav flex-row gap-xl align-left">

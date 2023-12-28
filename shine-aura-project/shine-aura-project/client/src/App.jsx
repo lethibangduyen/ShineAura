@@ -22,9 +22,11 @@ import User from "./pages/userdetail/userdetail";
 import Productpage from "./pages/product-page/product-page";
 import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
-import ProductCard from "./components/common/product-card/product-card";
-import Products from './data/products.json';
-import ProductCarousel from "./components/common/carousel/carousel";
+// import ProductCard from "./components/common/product-card/product-card";
+// import  Contact from "./Pages/Contactpage/Contactpage";
+// import Payment from "./Pages/Payment/Payment";
+// import Productpage from "./Pages/Productpage/Productpage";
+
 function App() {
   const [load] = useState(true);
   return (
@@ -47,7 +49,7 @@ function App() {
           <Route path="/users" element={<User />} />
           <Route path="/product-detail" element={<ProductDetailPage />} />
           {/* <ProductCarousel /> */}
-        </Routes>
+          </Routes>
         <Footer />
       </div>
     </Router>
