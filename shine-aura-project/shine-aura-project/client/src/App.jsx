@@ -22,11 +22,13 @@ import User from "./pages/userdetail/userdetail";
 import Productpage from "./pages/product-page/product-page";
 import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
+import Verification from "./pages/verification/verification";
+import ResetPassword from "./pages/reset-password/reset-password";
 // import ProductCard from "./components/common/product-card/product-card";
 // import  Contact from "./Pages/Contactpage/Contactpage";
 // import Payment from "./Pages/Payment/Payment";
 // import Productpage from "./Pages/Productpage/Productpage";
-
+import { Navigate } from 'react-router-dom';
 function App() {
   const [load] = useState(true);
   return (
@@ -35,10 +37,12 @@ function App() {
         <Navbar />
           <ScrollToTop />
           <Routes>
-              {/* <Route path="/" element={<Homepage />} />
+              <Route path="/" element={<Homepage />} />
               <Route path="/signin" element={<Signin />} />
-              <Route path="/signup" element={<Signup />} /> */}
+              <Route path="/signup" element={<Signup />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/verification" element={<Verification />} />
+              <Route path="/resetpassword" element={<ResetPassword />} />
               <Route path="/about-us" element={<AboutUsPage />} />
               <Route path="/policy" element={<PolicyPage />} />
               <Route path="/contact" element={<Contact />} />
@@ -48,7 +52,7 @@ function App() {
               <Route path="/user" element={<User />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
