@@ -79,7 +79,7 @@
 
 }
 
-@media screen and (max-width: 1024px) and (min-width: 464px) {
+@media screen and (max-width: 1366px) and (min-width: 767px) {
     .product-detail-page {
         margin-top: 105px;
         gap: 80px;
@@ -122,7 +122,7 @@
     }
 }
   
-  @media screen and (max-width: 463px) {
+  @media screen and (max-width: 767px) {
     .product-detail-page{
         margin-top: 50px;
         background-color: #F9F6F3;
@@ -139,7 +139,7 @@
     .product-detail-page .unactive-img{
         width: 91px;
     }
-    .section-container{
+    .prod-detail-section-2{
         max-width: 390px;
         padding: 0px 0px 0px 70px;
         justify-content: center;
@@ -182,7 +182,7 @@
         height: 90px;
         background-color: #3B3023;
         position: absolute;
-        top: 520px;
+        top: 530px;
         width: 100%;
     }
     .prod-price, .prod-discount{
@@ -205,7 +205,7 @@
         width: 400px;
         text-align: center;
     }
-    .carousel-container {
+    .section.carousel-container {
         width: 463px;
     }
     .product-detail-page .carousel-container  {
@@ -227,13 +227,9 @@
         transition: transform 0.3s ease-in-out;
       }
       .react-multi-carousel-item {
-        transform: scale(0.5); /* Adjust the scale factor as needed */
+        transform: scale(0.5);
       }
-      .react-multi-carousel-list{
-        margin: 0px;
-        width: 350px;
-      }
-      #no-scroll > div.flex-col.content-container.product-detail-page > div.section-container.flex-row > div > div.react-multi-carousel-list.carousel-container > ul > li {
+      #no-scroll > div.flex-col.content-container.product-detail-page > div.prod-detail-section-2.flex-row > div > div.react-multi-carousel-list.carousel-container > ul > li {
         margin-left: -120px; /* Điều chỉnh giá trị theo ý muốn của bạn */
     }
   }

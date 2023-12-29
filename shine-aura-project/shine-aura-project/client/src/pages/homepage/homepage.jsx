@@ -106,13 +106,6 @@ const Homepage = () => {
                     and security, guaranteeing a seamless and secure online shopping
                     experience.
                   </p>
-                  <p>
-                    Join us in this refined and sophisticated beauty expedition, where
-                    ShineAura emerges not only as a provider of exceptional products but
-                    also as a symbol of irresistibly elegant allure. Step into a realm
-                    of perpetual charm and make ShineAura your definitive destination
-                    for an unparalleled beauty experience.
-                  </p>
                 </div>
               </div>
             </div>
