@@ -72,23 +72,20 @@ gap: var(--Spacing-2, 16px);
   color: #FFFFFF;
   gap: 32px;
   padding: 10px;
-
-@media screen and (max-width: 1366px) and (min-width: 768px){
-  .footer{
-    width: 100%;
-  }
-
 }
-@media screen and (max-width: 1080px) {
-  .footer-holder {
-    justify-content: center;
+  @media screen and (max-width: 1366px) and (min-width: 768px){
+    .footer{
+      width: 100%;
+    }
+    .footer-holder {
+      justify-content: center;
+    }
+    /* .footer-logo {
+      width: 100px;
+      height: 40px;
+    } */
   }
-  /* .footer-logo {
-    width: 100px;
-    height: 40px;
-  } */
-}
- 
+   
 @media screen and (max-width: 767px) {
   .footer{
     padding: 24px;
@@ -105,7 +102,7 @@ gap: var(--Spacing-2, 16px);
     font-size: 7.222px;
   }
   .footer-contact-content div i{
-    font-size: 10px !important;
+    font-size: 8px !important;
   }
   .footer-sitemap-content, .footer-collection-content, .footer-button-right, .footer-contact-content{
     gap: 1px;
@@ -119,5 +116,9 @@ gap: var(--Spacing-2, 16px);
   .footer-button-left{
     margin-right: 6px;
   }
-}
+  .footer-media{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 }

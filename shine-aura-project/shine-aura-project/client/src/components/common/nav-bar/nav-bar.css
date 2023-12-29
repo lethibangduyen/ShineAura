@@ -133,7 +133,7 @@
   .nav-icon{
     gap: var(--spc-tk-md);
   }
-  .bi.bi {
+  .nav-logo i, .icon-nav-frame i {
     font-size: 30px;
   }
 }
@@ -146,8 +146,8 @@
   .nav-icon{
     gap: var(--spc-tk-2xs);
   }
-  .nav-list.bi.bi, .icon-nav-frame i {
-    font-size: 20px !important;
+  .nav-logo i, .icon-nav-frame i {
+    font-size: 20px;
   }
   .nav-parent{
     box-shadow: 0 1px 0px rgba(0, 0, 0, 0.5);
