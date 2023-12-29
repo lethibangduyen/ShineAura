@@ -24,16 +24,20 @@ import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import Verification from "./pages/verification/verification";
 import ResetPassword from "./pages/reset-password/reset-password";
-// import ProductCard from "./components/common/product-card/product-card";
+import { AuthProvider } from "./hooks/authProvider";
+
 function App() {
   const [load] = useState(true);
+
   return (
     <Router>
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+      <>
+        <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <AuthProvider>
+          <Navbar />
           <ScrollToTop />
           <ToastContainer />
-          <Routes>
+            <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/signin" element={<Signin />} />
               <Route path="/signup" element={<Signup />} />
@@ -48,10 +52,13 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/users" element={<User />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
-          </Routes>
-        <Footer />
-      </div>
+            </Routes>
+          <Footer />
+          </AuthProvider>
+        </div>
+      </>
     </Router>
   );
 }
+
 export default App;

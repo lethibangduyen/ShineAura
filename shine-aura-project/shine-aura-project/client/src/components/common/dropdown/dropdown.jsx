@@ -1,12 +1,14 @@
 import React from "react";
 import Button from "../button/button";
 import "./dropdown.css";
-import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../hooks/authProvider'
 
 
 const Dropdown = ({ dropdownStyle = ""}) => {
     const navigate = useNavigate();
+    const { signedInEmail } = useAuth();
+    const userName = signedInEmail.split("@")[0];
 
     const dropdownCollection = (
         <div className="collection-dropdown flex-row gap-lg align-left">
@@ -39,12 +41,13 @@ const Dropdown = ({ dropdownStyle = ""}) => {
     )
 
     const dropdownUserSetting = (
+        
         <div className="user-setting-dropdown flex-col gap-sm align-left">
             <div className="user-alias flex-row gap-sm">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Doe%2C_born_John_Nommensen_Duchac.jpg" alt="user avatar" className="user-avatar"/>
                 <div className="user-identity flex-col gap-xs align-left">
-                    <p className="user-name body">John Doe</p>
-                    <p className="user-id body">@johndoe0508</p>
+                    <p className="user-name body">{userName}</p>
+                    <p className="user-id body">{`@${signedInEmail}`}</p>
                 </div>
             </div>
             <div className="setting-btns flex-col gap-xs align-left">
@@ -53,7 +56,7 @@ const Dropdown = ({ dropdownStyle = ""}) => {
                 <Button text="terms & policies" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-receipt icon-size-17"/>
                 <Button text="purchase history" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-pass icon-size-17"/>
                 <Button text="change password" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-lock icon-size-17"/>
-                <Button text="sign out" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-arrow-bar-left icon-size-17"/>
+                <Button text="sign out" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-arrow-bar-left icon-size-17" onClick={() => navigate('/signin')}/>
             </div>
         </div>
     )
