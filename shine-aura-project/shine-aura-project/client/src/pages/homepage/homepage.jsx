@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './homepage.css'
 import { Link } from 'react-router-dom';
 import Pic1 from '../../assets/img/homepage/hero-1.png';
@@ -11,12 +11,22 @@ import About4 from '../../assets/img/homepage/about-4.png';
 import Contact from '../../assets/img/homepage/contact-us.png';
 import Collection from '../../components/homepage/collection/collection.jsx';
 import Button from '../../components/common/button/button.jsx';
-import products from '../../data/products.json';
 import Productcard from '../../components/common/product-card/product-card.jsx';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 const Homepage = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:3000/products')
+      .then(response => response.json())
+      .then(data => {
+          setProducts(data);
+          setFilteredProducts(data);
+      })
+      .catch(error => console.error('Error:', error));
+  }, []);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -66,7 +76,6 @@ const Homepage = () => {
             <div className="product-parent-detail flex-row gap-md">
               <div className="home-list-product flex-row">
                 <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
-                  
                   {products.slice(0, 8).map((product) => (
                     <Productcard product={product} key={product.product_id}></Productcard>
                   ))}
