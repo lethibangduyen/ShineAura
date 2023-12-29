@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './product-card.scss';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -13,7 +14,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           const authToken = localStorage.getItem('token');
     
           if (authToken) {
-            const response = await axios.post('/cart', { productId: product._id }, {
+            const response = await axios.post('http://localhost:3000/cart', { productId: product._id }, {
               headers: {
                 Authorization: `Bearer ${authToken}`,
               },
@@ -91,7 +92,9 @@ const ProductCard = ({ product, onAddToCart }) => {
                 <div className='prod-info-exp-holder flex-col gap-xs align-left'>
                     <div className='flex-col gap-2xs prod-n-pr-review align-left'>
                         <p className='prod-brand'>{product.brands}</p>
-                        <p className='prod-name'>{product.product_name}</p>
+                        <Link to={`/product/${product.product_id}`}>
+                          <div className='prod-name' title={product.product_name}>{product.product_name}</div>
+                        </Link>
                         <div className='flex-row prod-review gap-2xs'>
                             <p className='review-rate'>000 review</p>
                         </div>

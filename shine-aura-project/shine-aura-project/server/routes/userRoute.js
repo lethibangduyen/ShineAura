@@ -3,7 +3,6 @@ const User = require('../models/User');
 const authenticateToken = require('../middleware/auth');
 const router = express.Router();
 
-// Get current user
 router.get('/users', authenticateToken, (req, res) => {
   try {
     const currentUser = req.user;
@@ -26,7 +25,6 @@ router.get('/users', authenticateToken, (req, res) => {
   }
 });
 
-// Update current user information
 router.put('/users', authenticateToken, async (req, res) => {
     const currentUser = req.user;
   
@@ -36,15 +34,13 @@ router.put('/users', authenticateToken, async (req, res) => {
   
     const { fullName, gender, dateOfBirth, email, phoneNumber } = req.body;
   
-    // Validate input data
     if (!fullName || !gender || !dateOfBirth || !email || !phoneNumber) {
       return res.status(400).json({ message: 'Missing required fields' });
     }
   
     try {
-      // Use the _id of the current user from req.user to update information
       const updatedUser = await User.findByIdAndUpdate(
-        currentUser.userId, // Assuming the user ID is stored in req.user.userId
+        currentUser.userId,
         { $set: { fullName, gender, dateOfBirth, email, phoneNumber } },
         { new: true }
       );
@@ -60,7 +56,6 @@ router.put('/users', authenticateToken, async (req, res) => {
     }
   });
 
-  // Delete current user
 router.delete('/users', authenticateToken, async (req, res) => {
     const currentUser = req.user;
   
@@ -69,7 +64,6 @@ router.delete('/users', authenticateToken, async (req, res) => {
     }
   
     try {
-      // Assuming User model has a method to delete by user ID
       const deletedUser = await User.findByIdAndDelete(currentUser.userId);
   
       if (!deletedUser) {
@@ -88,25 +82,20 @@ router.put('/change-password', authenticateToken, async (req, res) => {
   const userId = req.user.userId;
 
   try {
-    // Fetch the user from the database using email
     const user = await User.findOne({ email });
 
-    // Check if the user with the given email exists
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // Check if the provided current password matches the one stored in the database
     if (currentPassword !== user.password) {
       return res.status(401).json({ message: 'Current password is incorrect' });
     }
 
-    // Check if the new password and retype password match
     if (newPassword !== retypeNewPassword) {
       return res.status(400).json({ message: 'New password and retype password do not match' });
     }
 
-    // Update the user's password in the database
     user.password = newPassword;
     await user.save();
 

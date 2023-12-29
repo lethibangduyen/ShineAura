@@ -11,18 +11,18 @@ const forgotRoute = require('./routes/forgotRoute');
 const sendtokenRoute = require('./routes/sendtokenRoute');
 const resetpassRoute = require('./routes/resetpassRoute');
 const authenticateToken = require('./middleware/auth');
+const cart = require('./routes/cart');
 
-const Product = require('./models/Products');
+const Product = require('./models/Product');
 
 const app = express();
 const PORT = 3000;
 
-app.use(cors()); // Đặt middleware CORS trước các route
+app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB Atlas connection string
 const mongoURI = 'mongodb+srv://baou0508:Phamhoangbao0508@shine-aura-test-db.pf0rcx6.mongodb.net/test?retryWrites=true&w=majority';
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURI);
 const connection = mongoose.connection;
 
 connection.once('open', () => {
@@ -30,7 +30,7 @@ connection.once('open', () => {
 });
 
 app.get('/products', async (req, res) => {
-  const searchTerm = req.query.term; // get the search term from the query parameters
+  const searchTerm = req.query.term;
  
   try {
       let query = {};
@@ -58,6 +58,7 @@ app.get('/products', productRoute);
 app.post('/forgot-password', forgotRoute);
 app.use('/', sendtokenRoute);
 app.use('/', resetpassRoute);
+app.post('/cart', cart);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

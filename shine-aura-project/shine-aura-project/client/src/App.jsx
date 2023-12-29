@@ -21,7 +21,7 @@ import Contact from "./pages/contact/contact-page";
 import Payment from "./pages/payment/paymentpage";
 import User from "./pages/userdetail/userdetail";
 import Productpage from "./pages/product-page/product-page";
-import Cart from "./pages/cartpage/Cartpage"
+import Cart from "./pages/cart-page/cart-page"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import Verification from "./pages/verification/verification";
 import ResetPassword from "./pages/reset-password/reset-password";

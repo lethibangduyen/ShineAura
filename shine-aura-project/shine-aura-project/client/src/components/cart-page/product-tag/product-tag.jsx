@@ -3,25 +3,28 @@ import "./product-tag.scss";
 import getProductById from "../../../utils/getProductById/getProductById.js";
 import dongFormatter from '../../../utils/dongFormatter/dongFormatter.js';
 
-const ProductTag = ({product_id, selectedVariant, selectedQuantity}) => {
+const ProductTag = ({product_id, selectedVariant, selectedQuantity, checkState}) => {
     const product = getProductById(product_id);
     const [quantity, setQuantity] = useState(selectedQuantity);
 
     const handleQuantityChange = (productId, newQuantity) => {
         if ((newQuantity <= 0) || (newQuantity >= 50)) return;
         else setQuantity(newQuantity);
-    };     
+    };
 
     let prodTotalPrice = product.price * quantity;
 
     return (
         <div className="product-tag">
             <div className="container flex-row">
+                <div className="check-input">
+                    <input type="checkbox" checked={checkState} />
+                </div>
                 <div className="prod-image flex-col">
-                    <img src={product.images[0]} alt="" />
+                    <img src={product.images[0]} alt="product-image"/>
                 </div>
                 <div className="vt-divider"></div>
-                <div className="prod-detail flex-col align-left gap-lg">
+                <div className="prod-detail flex-col align-left gap-md">
                     <div className="prod-indetify flex-col gap-xs align-left">
                         <div className="prod-name max-wdth">
                             <p className="btn-text">{product.product_name}</p>
@@ -60,7 +63,7 @@ const ProductTag = ({product_id, selectedVariant, selectedQuantity}) => {
                         </div>
                     </div>
                 </div>
-                <div className="total-price flex-col">
+                <div className="prod-total-price flex-col">
                     <p className="btn-text total-price-value">{dongFormatter(prodTotalPrice*1000)}</p>
                 </div>
             </div>

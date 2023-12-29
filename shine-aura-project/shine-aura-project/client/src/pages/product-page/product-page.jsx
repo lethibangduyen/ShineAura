@@ -1,25 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import './product-page.scss';
+import 'react-multi-carousel/lib/styles.css';
+
+import axios from 'axios';
 import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
 import Button from '../../components/common/button/button.jsx';
 import Productcard from '../../components/common/product-card/product-card.jsx';
 import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css';
 import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
-
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [filteredProducts, setFilteredProducts] = useState([]); // Add this line
+    const [filteredProducts, setFilteredProducts] = useState([]);
  
     useEffect(() => {
         fetch('http://localhost:3000/products')
           .then(response => response.json())
           .then(data => {
               setProducts(data);
-              setFilteredProducts(data); // Update this line
+              setFilteredProducts(data);
           })
           .catch(error => console.error('Error:', error));
     }, []);
@@ -69,8 +70,6 @@ const ProductPage = () => {
         }
     };
 
-
-
     return (
         <div className='product-page'>
             <div className='main-container flex-col'>
@@ -97,7 +96,7 @@ const ProductPage = () => {
                                                     ))}
                                         </Carousel>
                                 </div>
-                                <p className='body-lgt collection-description'>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tellus lectus. Sed sagittis, risus vitae dignissim semper, turpis arcu congue augue, eget ornare orci libero nec enim. Aenean a aliquam nunc.</p>
+                                <p className='body-lgt collection-description'>Son Tint Nước Siêu Lì, Lâu Trôi Romand Glasting Water Tint là son tint lì của thương hiệu Romand có chất son tint bóng tự như một lớp màng nước lướt nhẹ trên môi, chứa nhiều dưỡng chất giúp nuôi dưỡng đôi môi, son lên môi nhẹ và mướt mịn, dễ tán đều cùng với bảng màu rực rỡ đa dạng mang đến cho bạn đôi môi căng mọng tràn đầy sức sống, tự tin cả ngày dài.</p>
                             </div>
                         </div>
                         <div className='prod-query-content flex-row align-left'>
