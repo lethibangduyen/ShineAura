@@ -22,4 +22,23 @@ router.post('/verification', async (req, res) => {
   }
 });
 
+router.post('/resendotp', async (req, res) => {
+    try {
+      const { userEmail } = req.body;
+      const user = await User.findOne({ email : userEmail });
+  
+      if (user) {
+        const newResetToken = user.generateFourDigitToken();
+        await user.save();
+
+        res.json({ message: 'New OTP sent successfully' });
+      } else {
+        res.status(404).json({ error: 'User not found' });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  
 module.exports = router;

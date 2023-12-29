@@ -24,7 +24,7 @@ const handleSignIn = async (e) => {
       localStorage.setItem('token', response.data.token);
 
       // Navigate to the home page or any other authenticated route
-      navigate('/users');
+      navigate('/');
     }
   } catch (err) {
     console.log(err);

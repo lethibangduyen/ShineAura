@@ -5,8 +5,7 @@ const cors = require('cors');
 const signupRoute = require('./routes/signupRoute');
 const userRoute = require('./routes/userRoute');
 const signinRoute = require('./routes/signinRoute');
-const changepass = require('./routes/changepass');
-
+const changepassRoute = require('./routes/changepassRoute');
 const productRoute = require('./routes/productRoute');
 const forgotRoute = require('./routes/forgotRoute');
 const sendtokenRoute = require('./routes/sendtokenRoute');
@@ -57,7 +56,7 @@ app.get('/verification', (req, res) => {
 app.post('/signup', signupRoute);
 app.post('/signin', signinRoute);
 app.get('/users', authenticateToken, userRoute);
-app.put('/users', authenticateToken, changepass);
+app.put('/', authenticateToken, changepassRoute);
 app.delete('/users', authenticateToken, userRoute);
 app.get('/products', productRoute);
 app.post('/forgot-password', forgotRoute);

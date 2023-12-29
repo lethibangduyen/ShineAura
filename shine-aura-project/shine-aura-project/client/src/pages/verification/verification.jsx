@@ -12,10 +12,11 @@ const Verification = () => {
   const [verificationCode, setVerificationCode] = useState('');
   const [loading, setLoading] = useState(false);
   const [userEmail, setUserEmail] = useState(''); // State to store user email
-
+  const [resendCount, setResendCount] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
 
+  const maxResendAttempts = 5;
   useEffect(() => {
     if (location.state) {
       setUserEmail(location.state.email);
@@ -57,7 +58,10 @@ const Verification = () => {
 
     try {
       setLoading(true);
-
+      if (resendCount >= maxResendAttempts) {
+        toast.warning('You have reached the maximum number of resend attempts.');
+        return;
+      }
       const response = await axios.post('http://localhost:3000/verification', {
         verificationCode,
         userEmail, // Pass userEmail in the request
@@ -78,6 +82,24 @@ const Verification = () => {
     }
   };
   
+  const handleResendOTP = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.post('http://localhost:3000/resendotp', { userEmail });
+
+      if (response.data && response.data.message === 'New OTP sent successfully') {
+        toast.success('New OTP sent successfully');
+        setResendCount((prevCount) => prevCount + 1); // Increment the resend count for tracking
+      } else {
+        toast.error('Failed to resend OTP');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('An error occurred while resending OTP');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="section-container flex-row verification-page">
@@ -106,8 +128,12 @@ const Verification = () => {
               ))}
             </div>
             <p className="body">
-              Didn’t receive an OTP? <Link to="/resend-otp">Resend OTP</Link>
-            </p>
+        Didn’t receive an OTP?{' '}
+        <button type="button" onClick={handleResendOTP} disabled={loading}>
+          Resend OTP ({resendCount})
+        </button>
+      </p>
+
             <Button
               text={loading ? 'Verifying...' : 'Verify'}
               btnStyle="auth-btn"
