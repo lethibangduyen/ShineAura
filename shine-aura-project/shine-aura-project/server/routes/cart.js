@@ -17,8 +17,11 @@ router.post('/cart', authMiddleware, async (req, res) => {
     const existingCartItem = await CartModel.findOne({ userId, productId });
 
     if (existingCartItem) {
+      // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng
       existingCartItem.quantity += 1;
+      await existingCartItem.save();
     } else {
+      // Nếu sản phẩm chưa tồn tại trong giỏ hàng, tạo bản ghi mới
       await CartModel.create({ userId, productId });
     }
 
