@@ -103,8 +103,17 @@ const Footer = () => {
             </div>
           </div>
         </div>  
+        <div className="footer-media">
+                                    <div className='body-em'>
+                                        <label >Contact our medias:</label>
+                                    </div>
+                                    <div className="footer-icon-media">
+                                        <button> <i className="bi bi-facebook social-icon" ></i></button>
+                                        <button><i className="bi bi-twitter-x social-icon"></i></button>
+                                        <button><i className="bi bi-instagram social-icon"></i></button>
+                                    </div>
+                                </div>
       </div>
-      
     </div>
   );
 };
