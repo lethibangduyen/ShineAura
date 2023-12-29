@@ -33,6 +33,7 @@ const ProductPage = () => {
                 product && product.product_name && product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
             );
             setFilteredProducts(tempFilteredProducts);
+
         }
      }, [searchTerm, products]);
 

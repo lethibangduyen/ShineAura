@@ -1,4 +1,3 @@
-// Server code
 const express = require('express');
 const router = express.Router();
 const ProductModel = require('../models/Product');
@@ -19,7 +18,6 @@ router.post('/cart', authMiddleware, async (req, res) => {
 
     if (existingCartItem) {
       existingCartItem.quantity += 1;
-      await existingCartItem.save();
     } else {
       await CartModel.create({ userId, productId });
     }
