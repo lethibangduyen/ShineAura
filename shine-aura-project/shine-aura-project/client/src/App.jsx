@@ -32,7 +32,6 @@ function App() {
 
   return (
     <Router>
-      <>
         <div className="App" id={load ? "no-scroll" : "scroll"}>
         <AuthProvider>
           <Navbar />
