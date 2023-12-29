@@ -76,11 +76,6 @@
         scroll-snap-type: x mandatory;
     }
     
-    
-    /* .prod-collection-container::-webkit-scrollbar {
-        display: none;
-    } */
-    
     .promo-collection-sct .prod-collection {
         overflow: hidden;
     }
@@ -132,7 +127,6 @@
         background: #D9D9D9;
     }
     
-    
     .product-collect3-search-btn {
         width: 40px; 
         height: 40px; 
@@ -143,7 +137,16 @@
         justify-content: center;
         align-items: center;
     }
+
+    .product-collect3-search-bar {
+        border-radius: var(--spacing-spc-none, 0px);
+        background: var(--Rodeo-Dust-50, #F9F6F3);
+    }
     
+    .product-dis-icon {
+        justify-content: space-between;
+    }
+
     .product-collect3-search-input {
         flex: 1;
         padding: 8px;
@@ -151,13 +154,23 @@
         border-radius: 5px;
         background: transparent; 
     }
-    
-    #sort {
-        height: 40px;
-        display: flex;
-        align-items: center;
-        background: #D9D9D9;
+
+    .product-collect3-search-input:focus {
+        outline: none;
+    }
+
+    .sort-filter-selected select {
         border: none;
+        background: transparent;
+        outline: none;
+        height: 100%;
+        padding: 0 12px;
+        height: 40px;
+    }
+
+    .sort-filter-selected {
+        background: var(--Rodeo-Dust-50, #F9F6F3);
+        align-items: center;
     }
 
     .carousel-container {
@@ -167,5 +180,17 @@
     .width-reset {
         padding: 0 4px;
         width: fit-content !important;
+    }
+
+    .pagination {
+        .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root:hover {
+            color: #fff;
+            background-color: rgba(59, 48, 35, 0.5);
+        }
+
+        .Mui-selected {
+            color: #fff;
+            background-color: rgba(59, 48, 35, 0.88);
+        }
     }
 }

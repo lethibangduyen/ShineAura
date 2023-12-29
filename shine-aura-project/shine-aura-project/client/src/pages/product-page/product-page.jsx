@@ -4,24 +4,55 @@ import Heropic from '../../assets/img/product/hero.png';
 import High from '../../assets/img/product/highlight.png';
 import Button from '../../components/common/button/button.jsx';
 import Productcard from '../../components/common/product-card/product-card.jsx';
-import products from '../../data/products.json';
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
 import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
-    const [page, setPage] = useState(1);
-   const itemsPerPage = 24;
 
-   const handleChange = (event, value) => {
-       setPage(value);
-       const elements = document.getElementsByClassName('prod-query-content');
-        if (elements && elements[0]) {
-           window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
+    const [products, setProducts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filteredProducts, setFilteredProducts] = useState([]); // Add this line
+ 
+    useEffect(() => {
+        fetch('http://localhost:3000/products')
+          .then(response => response.json())
+          .then(data => {
+              setProducts(data);
+              setFilteredProducts(data); // Update this line
+          })
+          .catch(error => console.error('Error:', error));
+    }, []);
+ 
+    useEffect(() => {
+        if (!searchTerm) {
+            setFilteredProducts(products);
+        } else {
+            const tempFilteredProducts = products.filter(product => 
+                product && product.product_name && product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setFilteredProducts(tempFilteredProducts);
         }
-   };
+     }, [searchTerm, products]);
 
-   const currentItems = products.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+    const [inputValue, setInputValue] = useState("");
+    
+    const [page, setPage] = useState(1);
+    const itemsPerPage = 24;
+    const [selectedProducts, setSelectedProducts] = useState([]);
+    const handleAddToCart = (product) => {
+        setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
+    };
+
+    const handleChange = (event, value) => {
+        setPage(value);
+        const elements = document.getElementsByClassName('prod-query-content');
+            if (elements && elements[0]) {
+            window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
+            }
+    };
+
+    const currentItems = filteredProducts.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
     const responsive = {
         desktop: {
@@ -37,6 +68,8 @@ const ProductPage = () => {
           items: 1
         }
     };
+
+
 
     return (
         <div className='product-page'>
@@ -60,7 +93,7 @@ const ProductPage = () => {
                                 <div className='prod-collection-container prod-collection-scroll'>
                                         <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
                                                     {products.slice(0, 8).map((product) => (
-                                                        <Productcard product={product} key={product.product_id}></Productcard>
+                                                        <Productcard product={product} key={product.product_id} onAddToCart={handleAddToCart} ></Productcard>
                                                     ))}
                                         </Carousel>
                                 </div>
@@ -116,26 +149,35 @@ const ProductPage = () => {
                             </div>
                             <div className="vt-divider"></div>
                             <div className="prod-display flex-col align-left gap-md">
-                                <div className = "product-dis-icon flex-row gap-md" >
+                                <div className = "product-dis-icon flex-row gap-md max-wdth" >
                                     <h3 className='h3'>PRODUCT SEARCH BY INDEX</h3>
-                                    <div className="product-collect3-search-bar ">
-                                        <button className="product-collect3-search-btn">
-                                            <i className="bi bi-search"></i>
-                                        </button>
-                                        <input className="product-collect3-search-input" type="text" placeholder="Search" />
+                                    <div className='flex-row gap-xs'>
+                                        <div className="product-collect3-search-bar">
+                                            <button className="product-collect3-search-btn" onClick={() => setSearchTerm(inputValue)}>
+                                                <i className="bi bi-search"></i>
+                                            </button>
+                                            <input 
+                                            className="product-collect3-search-input body" 
+                                            type="text" 
+                                            placeholder="Search"
+                                            onChange={(e) => setInputValue(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className='sort-filter-selected flex-row gap-2xs'>
+                                            <select name="sort" className='body'>
+                                                <option value="Sort">Sort by</option>
+                                                <option value="p:low-high">Price: Low to High</option>
+                                                <option value="p:high-low">Price: High to Low</option>
+                                                <option value="fiat">Fiat</option>
+                                                <option value="audi">Audi</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div>
-                                    <select id="sort" name="sort">
-                                        <option value="Sort">Sort by</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="fiat">Fiat</option>
-                                        <option value="audi">Audi</option>
-                                        </select>
-                                    </div>
+                                    
                                 </div>
                                 <div className="prod-grid gap-xs">
                                     {currentItems.map((product) => (
-                                        <Productcard product={product} key={product.product_id}></Productcard>
+                                        <Productcard product={product} key={product.product_id} onAddToCart={handleAddToCart}></Productcard>
                                     ))}
                                 </div>
                                 <div className="pagination flex-col max-wdth">

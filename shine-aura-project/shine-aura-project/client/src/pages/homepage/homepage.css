@@ -29,6 +29,7 @@
 }
 
 .text-product {
+  text-align: center;
   width: 632px;
   height: 138px;
   display: flex;
@@ -182,7 +183,7 @@
   width: fit-content !important;
 }
 
-@media only screen and (max-width: 1366px) and (min-width: 768px) {
+@media only screen and (max-width: 1366px) {
   .hero-text {
     display: flex;
     padding: var(--spacing-spc-none, 0rem);
@@ -207,8 +208,17 @@
     letter-spacing: 0.02375rem;
     text-transform: uppercase;
   }
-  .homepage-first{
-    height: 700px;
+
+  .content {
+    font-weight: bold;
+  }
+
+  .home-product-container {
+    width: 100%;
+  }
+  
+  .content{
+    font-weight: bold;
   }
   .pic-parent{
     transform: scale(0.74);
@@ -412,6 +422,5 @@
   .text-contact-icon i, .contact-our-media div i {
     font-size: 10px !important;
   }
-
 
 }

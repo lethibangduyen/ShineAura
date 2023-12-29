@@ -1,7 +1,6 @@
 const express = require('express');
 const User = require('../models/User');
 const authenticateToken = require('../middleware/auth');
-
 const router = express.Router();
 
 // Get current user
@@ -16,7 +15,7 @@ router.get('/users', authenticateToken, (req, res) => {
     const userInformation = {
       userId: currentUser.userId,
       email: currentUser.email,
-        password: currentUser.password,
+      password: currentUser.password,
     };
 
     res.json(userInformation);
@@ -83,6 +82,7 @@ router.delete('/users', authenticateToken, async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
+  
 router.put('/change-password', authenticateToken, async (req, res) => {
   const { email, currentPassword, newPassword, retypeNewPassword } = req.body;
   const userId = req.user.userId;

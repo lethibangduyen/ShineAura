@@ -4,7 +4,7 @@ const User = require('../models/User');
 const authenticateToken = require('../middleware/auth');
 
 // Route for changing the password
-router.put('/users', authenticateToken, async (req, res) => {
+router.put('/changepass', authenticateToken, async (req, res) => {
   const { email, currentPassword, newPassword, retypeNewPassword } = req.body;
   const userId = req.user.userId;
 

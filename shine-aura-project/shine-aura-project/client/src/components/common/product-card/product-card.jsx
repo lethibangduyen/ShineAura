@@ -1,12 +1,51 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './product-card.scss';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onAddToCart }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-
+  
+    const handleAddToCartClick = async () => {
+        try {
+          const authToken = localStorage.getItem('token');
+    
+          if (authToken) {
+            const response = await axios.post('/cart', { productId: product._id }, {
+              headers: {
+                Authorization: `Bearer ${authToken}`,
+              },
+            });
+    
+            if (response.data.success) {
+              if (onAddToCart) {
+                onAddToCart(product);
+              }
+              toast.success('Product added to cart successfully', {
+                position: toast.POSITION.TOP_RIGHT,
+              });
+            } else {
+              console.error('Failed to add product to cart:', response.data.message);
+              toast.error('Failed to add product to cart', {
+                position: toast.POSITION.TOP_RIGHT,
+              });
+            }
+          } else {
+            console.error('User not logged in. Please log in to add products to cart.');
+            toast.error('Please log in to add products to cart', {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+          }
+        } catch (error) {
+          console.error('Error adding product to cart:', error);
+          toast.error('Error adding product to cart', {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        }
+      };
+    
     const handleExpandClick = () => {
         setIsExpanded((prevExpanded) => !prevExpanded);
     };
@@ -43,7 +82,7 @@ const ProductCard = ({ product }) => {
                     </div>
                     <div className='flex-col gap-2xs icon-collection'>
                         <i className='bi bi-suit-heart'></i>
-                        <i className="bi bi-cart-plus"></i>
+                        <i className='bi bi-cart-plus' onClick={handleAddToCartClick}></i>
                         <i className='bi bi-box-arrow-up-right' onClick={handleExpandClick}></i>
                     </div>
                 </div>
@@ -77,7 +116,7 @@ const ProductCard = ({ product }) => {
                     </div>
                     <div className='flex-row gap-xs btn-collection'>
                         <button className='body-lgt uppercase'>buy now</button>
-                        <button className='body-lgt uppercase'>add to cart</button>
+                        <button className='body-lgt uppercase' onClick={handleAddToCartClick}>add to cart</button>
                     </div>
                     <div className='flex-row gap-xs icon-collection'>
                         <i className='bi bi-suit-heart'></i>
