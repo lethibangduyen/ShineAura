@@ -10,8 +10,8 @@ const productRoute = require('./routes/productRoute');
 const forgotRoute = require('./routes/forgotRoute');
 const sendtokenRoute = require('./routes/sendtokenRoute');
 const resetpassRoute = require('./routes/resetpassRoute');
+const cart = require('./routes/cartRoute');
 const authenticateToken = require('./middleware/auth');
-const cart = require('./routes/cart');
 
 const Product = require('./models/Product');
 
@@ -59,6 +59,8 @@ app.post('/forgot-password', forgotRoute);
 app.use('/', sendtokenRoute);
 app.use('/', resetpassRoute);
 app.post('/cart', cart);
+app.delete('/cart', cart);
+app.patch('/cart', cart);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
