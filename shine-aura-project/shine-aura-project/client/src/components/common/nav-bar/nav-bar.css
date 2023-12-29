@@ -145,8 +145,8 @@
   .nav-icon{
     gap: var(--spc-tk-2xs);
   }
-  .bi.bi {
-    font-size: 20px;
+  .nav-list.bi.bi, .icon-nav-frame i {
+    font-size: 20px !important;
   }
   .nav-parent{
     box-shadow: 0 1px 0px rgba(0, 0, 0, 0.5);

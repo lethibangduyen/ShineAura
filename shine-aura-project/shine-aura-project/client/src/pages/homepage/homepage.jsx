@@ -65,15 +65,15 @@ const Homepage = () => {
             </div>
             <div className="product-parent-detail flex-row gap-md">
               <div className="home-list-product flex-row">
-                <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
-                    {products.slice(0, 8).map((product) => (
+                <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={ ["tablet"] ["mobile"]} arrows={true}>
+                    {products.slice(0, 5).map((product) => (
                         <Productcard product={product} key={product.product_id}></Productcard>
                     ))}
                 </Carousel>
               </div>
             </div>
             <div className='home-btn-see'>
-              <Button buttonText="See More" IconClass="bi bi-arrow-right" />
+              <Button text="See More" btnStyle='underline-btn' iconR='bi bi-arrow-right' textStyle='body-bld'/>
             </div>
           </div>
         </div>
@@ -96,13 +96,6 @@ const Homepage = () => {
                     prioritize your satisfaction with the highest standards of privacy
                     and security, guaranteeing a seamless and secure online shopping
                     experience.
-                  </p>
-                  <p>
-                    Join us in this refined and sophisticated beauty expedition, where
-                    ShineAura emerges not only as a provider of exceptional products but
-                    also as a symbol of irresistibly elegant allure. Step into a realm
-                    of perpetual charm and make ShineAura your definitive destination
-                    for an unparalleled beauty experience.
                   </p>
                 </div>
               </div>

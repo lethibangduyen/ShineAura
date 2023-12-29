@@ -52,7 +52,7 @@ function App() {
               <Route path="/user" element={<User />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
           </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
