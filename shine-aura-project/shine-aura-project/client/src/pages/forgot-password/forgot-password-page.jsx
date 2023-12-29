@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify'; // Thêm dòng này
+import 'react-toastify/dist/ReactToastify.css'; // Thêm dòng này
 import Logo from '../../assets/img/logo-black.png';
 import './forgot-password-page.scss';
 import Button from '../../components/common/button/button';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
-  const [notification, setNotification] = useState('');
-
-  const handleForgot = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('/forgot-password', { email });
-      setNotification(response.data.message);
-    } catch (error) {
-      console.error('Error:', error);
-      setNotification('Error sending reset email');
-    }
-  };
-
+    const [email, setEmail] = useState('');
+    const navigate = useNavigate();
+  
+    const handleForgot = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await axios.post('http://localhost:3000/forgot-password', { email });
+  
+        // Assuming your server response includes a resetToken
+        const resetToken = response.data.resetToken;
+  
+        toast.success(response.data.message);
+  
+        // Chuyển sang trang Verification và truyền resetToken
+        navigate('/verification', { state: { email, resetToken } });
+      } catch (error) {
+        console.error('Error:', error);
+        toast.error('Error sending reset email');
+      }
+    };
+  
+  
+  
+  
   return (
     <div className="section-container flex-row forgot-password-page">
       <div className="flex-row section gap-xl flex-wrap">
@@ -68,8 +81,8 @@ const ForgotPassword = () => {
             </div>
             <div className="body-sml">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi ipsam,
-                laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis voluptatibus molestiae sequi
+                ipsam, laudantium obcaecati tenetur hic dolores, dolorum eum asperiores nihil. Recusandae, beatae iste?
                 Architecto numquam nesciunt dicta.
               </p>
             </div>

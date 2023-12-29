@@ -25,32 +25,40 @@ import Cart from "./pages/cartpage/Cartpage"
 import ProductDetailPage from "./pages/product-detail/product-detail-page";
 import Verification from "./pages/verification/verification";
 import ResetPassword from "./pages/reset-password/reset-password";
+import { AuthProvider } from "./hooks/authProvider";
 
 function App() {
   const [load] = useState(true);
+
   return (
     <Router>
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <ToastContainer />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/policy" element={<PolicyPage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/product" element={<Productpage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/users" element={<User />} />
-          <Route path="/product/:id" element={<ProductDetailPage />} />
-        </Routes>
-        <Footer />
+      <>
+        <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <AuthProvider>
+          <Navbar />
+          <ScrollToTop />
+          <ToastContainer />
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/verification" element={<Verification />} />
+              <Route path="/resetpassword" element={<ResetPassword />} />
+              <Route path="/about-us" element={<AboutUsPage />} />
+              <Route path="/policy" element={<PolicyPage />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/product" element={<Productpage />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/users" element={<User />} />
+              <Route path="/product/:id" element={<ProductDetailPage />} />
+            </Routes>
+          <Footer />
+          </AuthProvider>
       </div>
     </Router>
   );
 }
+
 export default App;

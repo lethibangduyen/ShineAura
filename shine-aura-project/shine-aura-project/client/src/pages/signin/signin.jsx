@@ -5,6 +5,7 @@ import Logo from '../../assets/img/logo-black.png';
 import Button from '../../components/common/button/button';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/authProvider'
   
 const Signin = () => {
   const [email, setEmail] = useState('');
@@ -12,6 +13,9 @@ const Signin = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { signIn } = useAuth(); 
+
+
 const handleSignIn = async (e) => {
   e.preventDefault();
   setError('');
@@ -22,9 +26,8 @@ const handleSignIn = async (e) => {
 
     if (response.data.token) {
       localStorage.setItem('token', response.data.token);
-
-      // Navigate to the home page or any other authenticated route
-      navigate('/users');
+      signIn(email);
+      navigate('/');
     }
   } catch (err) {
     console.log(err);
