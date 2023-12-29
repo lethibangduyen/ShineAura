@@ -45,6 +45,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           });
         }
       };
+    
     const handleExpandClick = () => {
         setIsExpanded((prevExpanded) => !prevExpanded);
     };

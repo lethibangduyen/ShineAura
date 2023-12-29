@@ -8,9 +8,6 @@ const userSchema = new mongoose.Schema({
   fullName: { type: String },
   gender: { type: String },
   dateOfBirth: { type: Date },
-  resetToken: { type: String },
-  resetTokenExpiryDate: { type: Date },
-  // Add other fields as needed
 });
 
 userSchema.methods.generateFourDigitToken = function() {

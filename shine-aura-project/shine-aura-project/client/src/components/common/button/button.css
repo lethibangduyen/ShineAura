@@ -84,13 +84,14 @@ button {
     position: relative;
     box-sizing: content-box;
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
 .auth-btn-frame {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: var(--spacing-spc-xs, 8px);
     justify-content: center;
     border-radius: 5px;
     padding: 20px;

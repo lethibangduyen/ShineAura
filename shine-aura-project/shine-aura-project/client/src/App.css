@@ -1,0 +1,3 @@
+.App > div:nth-of-type(3) {
+    min-height: calc(100vh - 365px);
+}

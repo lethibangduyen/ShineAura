@@ -20,7 +20,6 @@ const ProductDetailPage = () => {
     const { id } = useParams();
     const product = getProductById(id);
     const similarProducts = getProductByBrand(product.brands);
-    console.log(similarProducts);
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -102,6 +101,10 @@ const ProductDetailPage = () => {
                                         frameStyle="prod-detail-btn"
                                     />
                                 ))}
+                            </div>
+                            <div className="buy-opt-btn flex-row gap-xs">
+                                <Button btnStyle="auth-btn" textStyle="btn-text-lgt" iconL="bi bi-cart-check square-icon" text="buy now" frameStyle="prod-detail-btn"/>
+                                <Button btnStyle="auth-btn" textStyle="btn-text-lgt" iconL="bi bi-cart-plus square-icon" text="add to cart" frameStyle="prod-detail-btn"/>
                             </div>
                         </div>
                     </div>
