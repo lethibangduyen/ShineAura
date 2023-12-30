@@ -11,13 +11,13 @@ export const AuthProvider = ({ children }) => {
     // You can also perform other sign-in related logic here if needed
   };
 
-  const signUp = () => {
+  const signOut = () => {
     setSignedInEmail('');
     // You can perform other sign-out related logic here if needed
   };
 
   return (
-    <AuthContext.Provider value={{ signedInEmail, signIn, signUp }}>
+    <AuthContext.Provider value={{ signedInEmail, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );

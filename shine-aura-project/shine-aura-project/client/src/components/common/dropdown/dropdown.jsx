@@ -8,8 +8,12 @@ import { useAuth } from '../../../hooks/authProvider'
 const Dropdown = ({ dropdownStyle = ""}) => {
     const navigate = useNavigate();
     const { signedInEmail } = useAuth();
+    const { signOut } = useAuth();
     const userName = signedInEmail.split("@")[0];
-
+    const handleSignOut = () => {
+        signOut();
+        navigate('/signin');
+    };
     const dropdownCollection = (
         <div className="collection-dropdown flex-row gap-lg align-left">
                 <div className="collection-titles flex-col gap-xs align-left">
@@ -56,7 +60,7 @@ const Dropdown = ({ dropdownStyle = ""}) => {
                 <Button text="terms & policies" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-receipt icon-size-17"/>
                 <Button text="purchase history" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-pass icon-size-17"/>
                 <Button text="change password" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-lock icon-size-17"/>
-                <Button text="sign out" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-arrow-bar-left icon-size-17" onClick={() => navigate('/signin')}/>
+                <Button text="sign out" btnStyle="underline-btn setting-btn" textStyle="body" iconL="bi bi-arrow-bar-left icon-size-17" onClick={(handleSignOut)}/>
             </div>
         </div>
     )
