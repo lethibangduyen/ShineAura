@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './product-card.scss';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const ProductCard = ({ product, onAddToCart }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-     const navigate = useNavigation();
+     const navigate = useNavigate();
 
     const handleAddToCartClick = async (productId) => {
     

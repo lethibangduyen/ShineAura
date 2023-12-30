@@ -7,84 +7,90 @@ import dongFormatter from '../../utils/dongFormatter/dongFormatter.js';
 
 
 const Cartpage = () => {
-    const navigate = useNavigate(); // Giữ nguyên sử dụng usenavigate
-    const [userProducts, setUserProducts] = useState([]);
-    const [allProducts, setAllProducts] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [totalQuantity, setTotalQuantity] = useState(0);
+  const navigate = useNavigate();
+  const [userProducts, setUserProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        // Cập nhật tổng số lượng khi userProducts thay đổi
-        const newTotalQuantity = userProducts.reduce((total, product) => total + product.quantity, 0);
-        setTotalQuantity(newTotalQuantity);
-    }, [userProducts]);
-
-    useEffect(() => {
-        // Cập nhật tổng giá tiền khi allProducts thay đổi
-        const newTotalPrice = allProducts.reduce((total, product) => total + product.price, 0);
-        setTotalPrice(newTotalPrice);
-    }, [allProducts]);
-    useEffect(() => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
         const authToken = localStorage.getItem('token');
-
         if (!authToken) {
-            console.error('User not logged in. Please log in to view cart items.');
-            // toast.error(...) - Assuming toast is defined elsewhere
-            return;
+          throw new Error('User not logged in. Please log in to view cart items.');
         }
 
-        fetch('http://localhost:3000/cart', {
-            headers: {
-                Authorization: `Bearer ${authToken}`,
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (Array.isArray(data)) {
-                    setUserProducts(data);
-                } else if (data && Array.isArray(data.items)) {
-                    setUserProducts(data.items);
-                } else {
-                    console.error('Unexpected data format:', data);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching cart items:', error);
-            });
-    }, []);
+        const response = await fetch('http://localhost:3000/cart', {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
 
-    useEffect(() => {
-        const fetchAllProducts = async () => {
-            const products = [];
-            for (let product of userProducts) {
-                const response = await fetch(`http://localhost:3000/product/products/${product.productId}`);
-                const data = await response.json();
-                products.push(data);
-            }
-            setAllProducts(products);
-        };
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-        fetchAllProducts();
-    }, [userProducts]);
+        const data = await response.json();
+        const cartItems = Array.isArray(data) ? data : (data && Array.isArray(data.items) ? data.items : []);
 
-    useEffect(() => {
-        localStorage.setItem('cartInfo', JSON.stringify({
-            userProducts,
-            allProducts,
-            totalPrice,
-        }));
-    }, [userProducts, allProducts, totalPrice]);
-
-    const deleteProduct = (productId) => {
-        setUserProducts(userProducts.filter(product => product.productId !== productId));
+        setUserProducts(cartItems);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message || 'An error occurred while fetching cart items.');
+        setLoading(false);
+      }
     };
 
-    return (
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      try {
+        const products = [];
+        for (let product of userProducts) {
+          const response = await fetch(`http://localhost:3000/product/products/${product.productId}`);
+          const data = await response.json();
+          products.push(data);
+        }
+        setAllProducts(products);
+      } catch (error) {
+        setError('An error occurred while fetching product details.');
+      }
+    };
+
+    fetchAllProducts();
+  }, [userProducts]);
+
+  useEffect(() => {
+    const newTotalPrice = allProducts.reduce((total, product) => total + product.price, 0);
+    setTotalPrice(newTotalPrice);
+  }, [allProducts]);
+
+  const deleteProduct = (productId) => {
+    setUserProducts(userProducts.filter(product => product.productId !== productId));
+  };
+
+  const handleBuyNow = () => {
+    const paymentInfo = {
+      products: userProducts,
+      totalPrice: totalPrice,
+    };
+
+    navigate('/payment', { state: { paymentInfo } });
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  return (
         <div className="cart-page flex-row gap-sm align-left">
             <div className='order-detail flex-col gap-xs'>
                 {userProducts.map((product) => (

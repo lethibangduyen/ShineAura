@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './payment-page.scss';
+import dongFormatter from '../../utils/dongFormatter/dongFormatter.js';
 
 const PaymentPage = () => {
   const [cartInfo, setCartInfo] = useState({});
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
-    const storedCartInfo = localStorage.getItem('cartInfo');
-    if (storedCartInfo) {
-      setCartInfo(JSON.parse(storedCartInfo));
+    if (location.state && location.state.paymentInfo) {
+      setCartInfo(location.state.paymentInfo);
+    } else {
+      console.error('No payment information found.');
     }
-  }, []);
+  }, [location.state]);
+
 
   useEffect(() => {
     const subtotal = calculateSubtotal();
@@ -48,11 +52,13 @@ const PaymentPage = () => {
   };
 
   const renderSelectedProducts = () => (
-    Array.isArray(cartInfo?.products) && cartInfo.products.length > 0 ? (
+    Array.isArray(cartInfo.products) && cartInfo.products.length > 0 ? (
       cartInfo.products.map((product) => (
-        <div key={product.id} className="order-detail">
-          <div className="body-sml">{`${product.name} - Color ${product.color} - Version ${product.version}`}</div>
-          <div className="body-sml">{formatCurrency(product.price * product.quantity)}</div>
+        <div key={product.productId} className="order-detail">
+          <div className="body-sml">
+            {`${product.product_name} - Color ${product.color} - Version ${product.version}`}
+          </div>
+          <div className="body-sml">{dongFormatter(product.price * product.quantity)}</div>
         </div>
       ))
     ) : null
@@ -179,15 +185,15 @@ const PaymentPage = () => {
     <div className="body-bld">Subtotal</div>
     <div className="sub-line">
       <div className="body-sml left-item">Delivery</div>
-      <div className="body-sml">{formatCurrency(calculateDelivery())}</div>
+      <div className="body-sml">{dongFormatter(calculateDelivery())}</div>
     </div>
     <div className="sub-line">
       <div className="body-sml left-item">Discount</div>
-      <div className="body-sml">- {formatCurrency(calculateDiscount(calculateSubtotal()))} (20%)</div>
+      <div className="body-sml">- {dongFormatter(calculateDiscount(calculateSubtotal()))} (20%)</div>
     </div>
     <div className="sub-line">
       <div className="body-sml left-item">Tax</div>
-      <div className="body-sml">{formatCurrency(calculateTax(calculateSubtotal()))} (10%)</div>
+      <div className="body-sml">{dongFormatter(calculateTax(calculateSubtotal()))} (10%)</div>
     </div>
   </div>
 
