@@ -1,78 +1,94 @@
-import React, { useState, useEffect}  from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './cart-page.scss';
 import ProductTag from '../../components/cart-page/product-tag/product-tag';
 import Button from '../../components/common/button/button';
 import dongFormatter from '../../utils/dongFormatter/dongFormatter.js';
 
+
 const Cartpage = () => {
-    const [userProducts, setUserProducts] = useState([]);   
- 
-    useEffect(() => {
-        const authToken = localStorage.getItem('token');
-       
-        if (!authToken) {
-          console.error('User not logged in. Please log in to view cart items.');
-          toast.error('Please log in to view cart items', {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          return;
-        }
-       
-        fetch('http://localhost:3000/cart', {
-          headers: {
-            Authorization: `Bearer ${authToken}`,
-          },
-        })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (Array.isArray(data)) {
-              setUserProducts(data);
-            } else if (data && Array.isArray(data.items)) {
-              setUserProducts(data.items);
-            } else {
-              console.error('Unexpected data format:', data);
-            }
-          })
-          .catch(error => {
-            console.error('Error fetching cart items:', error);
-          });
-    }, []);
-
+    const navigate = useNavigate(); // Giữ nguyên sử dụng usenavigate
+    const [userProducts, setUserProducts] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalQuantity, setTotalQuantity] = useState(0);
 
     useEffect(() => {
-    const fetchAllProducts = async () => {
-        const products = [];
-        for (let product of userProducts) {
-            const response = await fetch(`http://localhost:3000/product/products/${product.productId}`);
-            const data = await response.json();
-            products.push(data);
-        }
-        setAllProducts(products);
-    };
-
-    fetchAllProducts();
+        // Cập nhật tổng số lượng khi userProducts thay đổi
+        const newTotalQuantity = userProducts.reduce((total, product) => total + product.quantity, 0);
+        setTotalQuantity(newTotalQuantity);
     }, [userProducts]);
 
-    console.log(allProducts);
+    useEffect(() => {
+        // Cập nhật tổng giá tiền khi allProducts thay đổi
+        const newTotalPrice = allProducts.reduce((total, product) => total + product.price, 0);
+        setTotalPrice(newTotalPrice);
+    }, [allProducts]);
+    useEffect(() => {
+        const authToken = localStorage.getItem('token');
 
+        if (!authToken) {
+            console.error('User not logged in. Please log in to view cart items.');
+            // toast.error(...) - Assuming toast is defined elsewhere
+            return;
+        }
+
+        fetch('http://localhost:3000/cart', {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (Array.isArray(data)) {
+                    setUserProducts(data);
+                } else if (data && Array.isArray(data.items)) {
+                    setUserProducts(data.items);
+                } else {
+                    console.error('Unexpected data format:', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching cart items:', error);
+            });
+    }, []);
+
+    useEffect(() => {
+        const fetchAllProducts = async () => {
+            const products = [];
+            for (let product of userProducts) {
+                const response = await fetch(`http://localhost:3000/product/products/${product.productId}`);
+                const data = await response.json();
+                products.push(data);
+            }
+            setAllProducts(products);
+        };
+
+        fetchAllProducts();
+    }, [userProducts]);
+
+    useEffect(() => {
+        localStorage.setItem('cartInfo', JSON.stringify({
+            userProducts,
+            allProducts,
+            totalPrice,
+        }));
+    }, [userProducts, allProducts, totalPrice]);
 
     const deleteProduct = (productId) => {
-    setUserProducts(userProducts.filter(product => product.productId !== productId));
+        setUserProducts(userProducts.filter(product => product.productId !== productId));
     };
-    
-    let totalPrice = allProducts.reduce((total, product) => total + product.price, 0);
-    
+
     return (
         <div className="cart-page flex-row gap-sm align-left">
             <div className='order-detail flex-col gap-xs'>
                 {userProducts.map((product) => (
-                    <ProductTag key={product.productId} onDelete={deleteProduct} product_id={product.productId} selectedQuantity={product.quantity} selectedVariant="#02 Rosy"/>
+                    <ProductTag key={product.productId} onDelete={deleteProduct} product_id={product.productId} selectedQuantity={product.quantity} selectedVariant="#02 Rosy" />
                 ))}
             </div>
             <div className="billing-detail flex-col gap-xs">
@@ -88,12 +104,13 @@ const Cartpage = () => {
                         </div>
                         <div className="order-items flex-col max-wdth gap-xs">
                             {allProducts.map((product) => (
-                                <div className='item flex-row body-sml align-left max-wdth'>
+                                <div key={product.productId} className='item flex-row body-sml align-left max-wdth'>
                                     <p className='product-name'>{product.product_name}</p>
-                                    <p className='product-price'>{dongFormatter(product.price*1000)}</p>
+                                    <p className='product-price'>{dongFormatter(product.price * 1000)}</p>
                                 </div>
                             ))}
                         </div>
+
                     </div>
                     <div className="hr-divider"></div>
                     <div className="discount flex-col gap-xs align-left max-wdth">
@@ -101,7 +118,7 @@ const Cartpage = () => {
                             <p className='body-bld capitalize'>discount code</p>
                         </div>
                         <div className='discount-input max-wdth flex-col'>
-                            <input className='max-wdth' type="text" placeholder="Enter your discount code."/>
+                            <input className='max-wdth' type="text" placeholder="Enter your discount code." />
                         </div>
                     </div>
                     <div className="hr-divider"></div>
@@ -128,17 +145,36 @@ const Cartpage = () => {
                             <p className='body-bld capitalize'>total</p>
                         </div>
                         <div className="total-price-value">
-                            <p className='body-bld capitalize'>{dongFormatter(totalPrice*1000)}</p>
+                            <p className='body-bld capitalize'>{dongFormatter(totalPrice * 1000)}</p>
                         </div>
                     </div>
                 </div>
                 <div className="checkout-btns flex-row max-wdth gap-xs">
                     <div className="back-to-collection max-wdth">
-                        <Button btnStyle='auth-btn' customBtnStyle='max-wdth' text='back to shopping' frameStyle='max-wdth' textStyle='uppercase' iconL="bi bi-cart-plus icon-size-16 square-icon"/>
+                        <Button btnStyle='auth-btn' customBtnStyle='max-wdth' text='back to shopping' frameStyle='max-wdth' textStyle='uppercase' iconL="bi bi-cart-plus icon-size-16 square-icon" />
                     </div>
                     <div className="buy-now max-wdth">
-                        <Button btnStyle='auth-btn' customBtnStyle='max-wdth' text='buy now' frameStyle='max-wdth' textStyle='uppercase' iconL="bi bi-cart-check icon-size-16 square-icon"/>
-                    </div>
+                <Button
+                    btnStyle="auth-btn"
+                    customBtnStyle="max-wdth"
+                    text="buy now"
+                    frameStyle="max-wdth"
+                    textStyle="uppercase"
+                    iconL="bi bi-cart-check icon-size-16 square-icon"
+                    onClick={() => {
+                        const paymentInfo = {
+                            products: userProducts,
+                            totalPrice: totalPrice,
+                        };
+
+                        navigate({
+                            pathname: '/payment',
+                            search: `?paymentInfo=${encodeURIComponent(JSON.stringify(paymentInfo))}`,
+                        });
+                    }}
+                />
+            </div>
+
                 </div>
             </div>
         </div>

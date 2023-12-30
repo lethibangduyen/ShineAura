@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 import './product-card.scss';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -8,8 +8,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const ProductCard = ({ product, onAddToCart }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-  
+     const navigate = useNavigation();
+
     const handleAddToCartClick = async (productId) => {
+    
       if (!productId) {
         console.error('Product ID is undefined');
         toast.error('Product ID is undefined', {
@@ -42,17 +44,20 @@ const ProductCard = ({ product, onAddToCart }) => {
             });
           }
         } else {
-          console.error('User not logged in. Please log in to add products to cart.');
+          console.error('User not logged in. Redirecting to signin page.');
           toast.error('Please log in to add products to cart', {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
       } catch (error) {
+        console.error('Error adding product to cart:', error);
         toast.error(`Error adding product to cart`, {
           position: toast.POSITION.TOP_RIGHT,
         });
+        navigate('/signin');
       }
-     };     
+    };
+    
     
     const handleExpandClick = () => {
         setIsExpanded((prevExpanded) => !prevExpanded);

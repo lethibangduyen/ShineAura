@@ -1,95 +1,65 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import "./payment-page.scss";
 import { Link, useLocation } from 'react-router-dom';
+import './payment-page.scss';
 
 const PaymentPage = () => {
-
-  const location = useLocation();
-  const [selectedProducts, setSelectedProducts] = useState([]);
+  const [cartInfo, setCartInfo] = useState({});
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
-  const handleConfirmOrder = () => {
-    setTimeout(() => {
-      setShowSuccessMessage(true);
-    }, 2000);
-  };
+  const location = useLocation();
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const selectedProductIds = searchParams.get('selectedProductIds');
-    if (selectedProductIds) {
-      const ids = selectedProductIds.split(',');
-
-      // Gọi API để lấy dữ liệu sản phẩm từ trang cơ
-      axios.get(`YOUR_API_ENDPOINT/products?ids=${selectedProductIds}`)
-        .then(response => {
-          setSelectedProducts(response.data); // Cập nhật state với dữ liệu từ API
-        })
-        .catch(error => {
-          console.error('Error fetching product data:', error);
-        });
+    const storedCartInfo = localStorage.getItem('cartInfo');
+    if (storedCartInfo) {
+      setCartInfo(JSON.parse(storedCartInfo));
     }
-  }, [location.search]);
+  }, []);
 
-  const fetchProductInfoById = async (productId) => {
-    // Thực hiện gọi API hoặc xử lý để lấy thông tin sản phẩm từ productId
-    // Ví dụ: Gọi API backend để lấy thông tin sản phẩm từ productId
-    const response = await fetch(`YOUR_API_ENDPOINT/products/${productId}`);
-    if (response.ok) {
-      const productData = await response.json();
-      return productData;
-    } else {
-      throw new Error('Failed to fetch product information');
-    }
-  };
-
-  const renderSelectedProducts = () => {
-    if (Array.isArray(selectedProducts) && selectedProducts.length > 0) {
-      return selectedProducts.map((product) => (
-        <div key={product.id} className="order-detail">
-          <div className="body-sml">{`${product.name} - Color ${product.color} - Version ${product.version}`}</div>
-          <div className="body-sml">{`$${(product.price * product.quantity).toFixed(2)}`}</div>
-        </div>
-      ));
-    }
-    return null; // Hoặc thực hiện xử lý khác khi selectedProducts không phải là mảng hoặc rỗng
-  };
-  
-
-
-  const calculateSubtotal = () => {
-    if (selectedProducts && Array.isArray(selectedProducts) && selectedProducts.length > 0) {
-      return selectedProducts.reduce((total, product) => total + (product.price * product.quantity), 0);
-    } else {
-      return 0; // Trả về 0 nếu selectedProducts không tồn tại hoặc không phải là một mảng hợp lệ
-    }
-  };
-
-
-  const calculateDelivery = () => {
-    return 5.00;
-  };
-
-  const calculateDiscount = (subtotal) => {
-    return subtotal * 0.20; // 20% discount
-  };
-
-  const calculateTax = (subtotal) => {
-    return subtotal * 0.10; // 10% tax
-  };
-
-  const calculateTotal = () => {
+  useEffect(() => {
     const subtotal = calculateSubtotal();
     const delivery = calculateDelivery();
     const discount = calculateDiscount(subtotal);
     const tax = calculateTax(subtotal);
-    return subtotal + delivery - discount + tax;
+    const total = calculateTotal(subtotal, delivery, discount, tax);
+
+    // Sử dụng giá trị total theo cách phù hợp trong component của bạn
+  }, [cartInfo]);
+
+  const calculateSubtotal = () => (
+    Array.isArray(cartInfo?.products) && cartInfo.products.length > 0
+      ? cartInfo.products.reduce((total, product) => total + product.price * product.quantity, 0)
+      : 0
+  );
+
+  const calculateDelivery = () => 5.00;
+
+  const calculateDiscount = (subtotal) => subtotal * 0.20; // 20% discount
+
+  const calculateTax = (subtotal) => subtotal * 0.10; // 10% tax
+
+  const calculateTotal = (subtotal, delivery, discount, tax) => subtotal + delivery - discount + tax;
+
+  const formatCurrency = (amount) => `$${amount.toFixed(2)}`;
+
+  const handleConfirmOrder = () => {
+    if (window.confirm('Bạn có chắc chắn muốn đặt hàng không?')) {
+      // Gọi API hoặc xử lý đặt hàng ở đây
+      setShowSuccessMessage(true);
+    }
   };
+
+  const renderSelectedProducts = () => (
+    Array.isArray(cartInfo?.products) && cartInfo.products.length > 0 ? (
+      cartInfo.products.map((product) => (
+        <div key={product.id} className="order-detail">
+          <div className="body-sml">{`${product.name} - Color ${product.color} - Version ${product.version}`}</div>
+          <div className="body-sml">{formatCurrency(product.price * product.quantity)}</div>
+        </div>
+      ))
+    ) : null
+  );
 
   return (
     <div className="payment-page">
-
       <div className="LinkADD">
         <Link className="LinkOB" to="/">
           HOME
@@ -99,7 +69,6 @@ const PaymentPage = () => {
           CART
         </Link>
       </div>
-
       <div className="main-UI">
         <div className="payment-detail">
           <div className="h4 title">Payment Detail</div>
@@ -168,7 +137,8 @@ const PaymentPage = () => {
                     <Link to="/cart" className='LinkBut'>
                       <button className='ButtonConfirm' onClick={handleConfirmOrder}>
                         <i className="bi bi-check-circle"></i>
-                        <span>CONFIRM</span></button>
+                        <span>CONFIRM</span>
+                      </button>
                     </Link>
                   </div>
                   <div className="action-btn button_2">
@@ -192,39 +162,41 @@ const PaymentPage = () => {
         </div>
 
         <div className="billing-detail">
-          <div className="bill-title">
-            <div className="h4">Billing Detail</div>
-            <div className="name body">Le Dac Thanh Loc</div>
-          </div>
-          <div className="order-sum">
-            <div className="order-sum-title">
-              <div className="body-bld OST" >Order Summary</div>
-              <div className="body-bld">Price</div>
-            </div>
+  <div className="bill-title">
+    <div className="h4">Billing Detail</div>
+    <div className="name body">{cartInfo?.customerName}</div>
+  </div>
+  <div className="order-sum">
+    <div className="order-sum-title">
+      <div className="body-bld OST" >Order Summary</div>
+      <div className="body-bld">Price</div>
+    </div>
 
-            {renderSelectedProducts()}
-          </div>
+    {renderSelectedProducts()}
+  </div>
 
-          <div className="subtotal">
-            <div className="body-bld">Subtotal</div>
-            <div className="sub-line">
-              <div className="body-sml left-item">Delivery</div>
-              <div className="body-sml">{calculateDelivery().toFixed(2)}</div>
-            </div>
-            <div className="sub-line">
-              <div className="body-sml left-item">Discount</div>
-              <div className="body-sml">- {calculateDiscount(calculateSubtotal()).toFixed(2)} (20%)</div>
-            </div>
-            <div className="sub-line">
-              <div className="body-sml left-item">Tax</div>
-              <div className="body-sml">{calculateTax(calculateSubtotal()).toFixed(2)} (10%)</div>
-            </div>
-          </div>
-          <div className="total">
-            <div className="total-title body-bld">Total</div>
-            <div className="total-cost body-bld">{`$${calculateTotal().toFixed(2)}`}</div>
-          </div>
-        </div>
+  <div className="subtotal">
+    <div className="body-bld">Subtotal</div>
+    <div className="sub-line">
+      <div className="body-sml left-item">Delivery</div>
+      <div className="body-sml">{formatCurrency(calculateDelivery())}</div>
+    </div>
+    <div className="sub-line">
+      <div className="body-sml left-item">Discount</div>
+      <div className="body-sml">- {formatCurrency(calculateDiscount(calculateSubtotal()))} (20%)</div>
+    </div>
+    <div className="sub-line">
+      <div className="body-sml left-item">Tax</div>
+      <div className="body-sml">{formatCurrency(calculateTax(calculateSubtotal()))} (10%)</div>
+    </div>
+  </div>
+
+  <div className="total">
+    <div className="total-title body-bld">Total</div>
+    <div className="total-cost body-bld">{formatCurrency(calculateTotal())}</div>
+  </div>
+</div>
+
       </div>
     </div>
   );
