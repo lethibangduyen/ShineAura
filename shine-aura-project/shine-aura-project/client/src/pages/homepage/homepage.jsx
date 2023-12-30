@@ -22,7 +22,6 @@ const Homepage = () => {
       .then(response => response.json())
       .then(data => {
           setProducts(data);
-          setFilteredProducts(data);
       })
       .catch(error => console.error('Error:', error));
   }, []);

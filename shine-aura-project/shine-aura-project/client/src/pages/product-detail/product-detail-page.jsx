@@ -1,25 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./product-detail-page.scss";
 import { useParams } from 'react-router-dom';
 import Button from "../../components/common/button/button";
 import ProductDescription from "../../components/product-detail/product-description/product-description";
 import ReviewSection from "../../components/product-detail/review-section/review-section";
-import getProductById from "../../utils/getProductById/getProductById.js";
 import getProductByBrand from "../../utils/getProductByBrand/getProductByBrand.js";
 import ProductCard from "../../components/common/product-card/product-card";
 import Carousel from "react-multi-carousel";
 
-const CarouselButton = ({ next, previous, ...rest }) => (
-    <div>
-      <button onClick={previous}><i className="bi bi-chevron-left"></i></button>
-      <button onClick={next}><i className="bi bi-chevron-right"></i></button>
-    </div>
-);
-
 const ProductDetailPage = () => {
     const { id } = useParams();
-    const product = getProductById(id);
-    const similarProducts = getProductByBrand(product.brands);
+    const [product, setProduct] = useState({});
+    const [similarProducts, setSimilarProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+ 
+    useEffect(() => {
+        fetch(`http://localhost:3000/product/products/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                setProduct(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                setLoading(false);
+            });
+    }, [id]);
+ 
+    useEffect(() => {
+        if (product.brands) {
+            fetch(`http://localhost:3000/product/products/brand/${product.brands}`)
+                .then(response => response.json())
+                .then(data => {
+                    setLoading(false);
+                    setSimilarProducts(data);
+                })
+                .catch(error =>
+                    console.error(error));
+        }
+     }, [product.brands]);     
+     
+     if (loading) {
+        return <div>Loading...</div>; 
+    }
+         
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -112,7 +136,7 @@ const ProductDetailPage = () => {
             </div>
             <div className="section-container prod-detail-section-2 flex-col">
                 <div className="section flex-row gap-ms align-left">
-                    <ProductDescription />
+                    <ProductDescription description={product.tab_data.description}/>
                     <ReviewSection />
                 </div>
             </div>
@@ -123,7 +147,7 @@ const ProductDetailPage = () => {
                     </div>
                     <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} arrows={true} removeArrowOnDeviceType={["mobile"]}>
                         {similarProducts.map((product) => (
-                            <ProductCard key={product.produc_id} product={product} />
+                            <ProductCard key={product._id} product={product} />
                         ))}
                     </Carousel>
                 </div>

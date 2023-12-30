@@ -48,6 +48,7 @@
     border-radius: 0px 0px 5px 5px;
     border: 1px solid var(--Accent-Color, #5E503F);
     background: #F9F6F3;
+    transition: max-height 0.5s ease-in-out;
 }
 
 .detail-content-item {
@@ -55,9 +56,18 @@
     overflow: hidden;
 }
 
+.expanded {
+    max-height: 100%;
+}
+
+.expand-icon {
+    cursor: pointer;
+}
+
 ul.inside {
     list-style-position: inside;
 }
+
 @media screen and (max-width: 567px) {
     .detail-nav-btn{
         width: fit-content;

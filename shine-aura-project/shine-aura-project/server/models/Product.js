@@ -1,22 +1,22 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId, // Auto-generated unique identifier
+    _id: mongoose.Schema.Types.ObjectId,
     productUrl: {
       type: String,
       required: true,
-      unique: true, // Ensure URL uniqueness for data integrity
-      trim: true, // Remove extra whitespace
+      unique: true,
+      trim: true,
     },
     productId: {
       type: String,
       required: true,
-      index: true, // Create an index for efficient querying
+      index: true,
     },
     productName: {
       type: String,
       required: true,
-      trim: true, // Remove extra whitespace
+      trim: true,
     },
     productType: {
       type: String,
@@ -31,12 +31,11 @@ const productSchema = new mongoose.Schema({
       {
         type: String,
         required: true,
-        maxlength: 2000, // Limit string length for image URLs
+        maxlength: 2000,
       },
     ],
     variants: [
       {
-        // Define the structure for each variant (e.g., size, color, stock, etc.)
       },
     ],
     brands: {

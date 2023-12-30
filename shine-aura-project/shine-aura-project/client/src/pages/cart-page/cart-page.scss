@@ -9,7 +9,7 @@
         width: 354px;
     }
 
-    .order-title, .order-items, .discount-section, .total-price, .checkout-btns {
+    .order-title, .item, .discount-section, .total-price, .checkout-btns {
         justify-content: space-between;
     }
 
@@ -38,5 +38,9 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+    }
+
+    .item .product-name {
+        max-width: 80%;
     }
 }

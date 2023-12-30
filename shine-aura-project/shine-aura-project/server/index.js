@@ -53,13 +53,11 @@ app.post('/signin', signinRoute);
 app.get('/users', authenticateToken, userRoute);
 app.put('/', authenticateToken, changepassRoute);
 app.delete('/users', authenticateToken, userRoute);
-app.get('/products', productRoute);
+app.use('/product', productRoute);
 app.post('/forgot-password', forgotRoute);
 app.use('/', sendtokenRoute);
 app.use('/', resetpassRoute);
-app.post('/cart', cartRoute);
-// app.delete('/cart', cartRoute);
-// app.patch('/cart', cartRoute);
+app.use('/cart', cartRoute);
 
 app.use(express.json());
 

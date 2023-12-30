@@ -75,7 +75,7 @@ const ProductCard = ({ product, onAddToCart }) => {
                 <div className='flex-row prod-info bg-ivory align-left gap-xs'>
                     <div className='flex-col gap-sm left-bar'>
                         <div className='flex-col gap-xs prod-n-pr'>
-                            <Link to={`/product/${product.product_id}`}>
+                            <Link to={`/product/products/${product._id}`}>
                                 <div className='prod-name' title={product.product_name}>{product.product_name}</div>
                             </Link>
                             <div className='prod-price'>{product.price}.000&#x20AB;</div>
@@ -99,7 +99,7 @@ const ProductCard = ({ product, onAddToCart }) => {
                 <div className='prod-info-exp-holder flex-col gap-xs align-left'>
                     <div className='flex-col gap-2xs prod-n-pr-review align-left'>
                         <p className='prod-brand'>{product.brands}</p>
-                        <Link to={`/product/${product.product_id}`}>
+                        <Link to={`/product/products/${product._id}`}>
                           <div className='prod-name' title={product.product_name}>{product.product_name}</div>
                         </Link>
                         <div className='flex-row prod-review gap-2xs'>
