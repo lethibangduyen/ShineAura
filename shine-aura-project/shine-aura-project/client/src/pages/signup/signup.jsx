@@ -1,30 +1,33 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './signup.scss'
+import './signup.scss';
 import Logo from '../../assets/img/logo-black.png';
 import Button from '../../components/common/button/button';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [acceptTerms, setAcceptTerms] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
-    setError(''); // Clear previous errors
-  
+    setError('');
+
+    if (!acceptTerms) {
+      setError('Please accept the terms and conditions.');
+      return;
+    }
+
     axios.post('http://localhost:3000/signup', { email, password, confirmPassword })
       .then((res) => {
         const { token } = res.data;
-  
-        // Lưu token vào local storage
         localStorage.setItem('token', token);
-  
+
         console.log('Signup successful. Token:', token);
         navigate('/signin');
       })
@@ -37,7 +40,6 @@ const Signup = () => {
         }
       });
   };
-  
 
   return (
     <div className="signup-page flex-col section-container">
@@ -54,7 +56,12 @@ const Signup = () => {
             <input className="body max-wdth auth-input" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             <input className="body max-wdth auth-input" type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
             <div className="commitment flex-row gap-xs body">
-              <input className="body" type="checkbox" />
+              <input
+                className="body"
+                type="checkbox"
+                checked={acceptTerms}
+                onChange={() => setAcceptTerms(!acceptTerms)}
+              />
               <p>“I accept the terms and conditions.”</p>
             </div>
             <Button text="SIGN UP" btnStyle="auth-btn" customBtnStyle="max-wdth" frameStyle='max-wdth' type="submit"></Button>

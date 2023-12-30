@@ -54,7 +54,7 @@ function Navbar({ onAddToCart }) {
         ) : (
           <>
             <div className="nav-list">
-              <Link to="/product" className="nav-link">
+              <Link to="/product/products" className="nav-link">
                 <DropdownButton btnStyle='nav-btn' text='COLLECTION' iconL='bi bi-list icon-size-20 square-icon' dropdownStyle='collection-dropdown'/>
               </Link> 
             </div>
