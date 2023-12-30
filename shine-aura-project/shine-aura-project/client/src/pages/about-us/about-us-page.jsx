@@ -65,11 +65,11 @@ const AboutUsPage = () => {
                         <div className="right-container flex-row">
                             <ImageSlider images={sliderImages} />
                         </div>
-                        <div className="left-container flex-col flex-align-top md-spc">
-                            <p class="pre-title">About  us</p>
+                        <div className="left-container flex-col flex-align-top gap-xs">
+                            <p className="pre-title">About  us</p>
                             <h2 className="h2">Our Story</h2>
-                            <p className="body"><strong>A PASSIONATE BEGINNING:</strong> <br />
-                                ShineAura was born from the passion and belief that beauty is a way to celebrate the natural beauty of every woman. We embarked on this journey with the desire to bring confidence and natural beauty to women through high-quality and unique products.</p>
+                            <p className="body-bld">A PASSIONATE BEGINNING:</p>
+                            <p className="body">ShineAura was born from the passion and belief that beauty is a way to celebrate the natural beauty of every woman. We embarked on this journey with the desire to bring confidence and natural beauty to women through high-quality and unique products.</p>
                         </div>
                     </div>
                 </div>

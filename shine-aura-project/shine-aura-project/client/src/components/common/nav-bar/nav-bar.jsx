@@ -44,15 +44,14 @@ function Navbar() {
         ) : (
           <>
             <div className="nav-list">
-              <Link to="/product" className="nav-link">
+              <Link to="/product/products" className="nav-link">
                 <DropdownButton btnStyle='nav-btn' text='COLLECTION' iconL='bi bi-list icon-size-20 square-icon' dropdownStyle='collection-dropdown'/>
               </Link> 
             </div>
-            <div className="">
-              <Button text="HOT DEAL" btnStyle="nav-btn" />
-            </div> 
-            <div className="">
-              <Button text="BEST SELLER" btnStyle="nav-btn" />
+            <div className="nav-list">
+              <Link to="/contact" className="nav-link">
+                <Button text="CONTACT" btnStyle="nav-btn" />
+              </Link>
             </div>
             <div className="">
               <Link to="/about-us" className="nav-link">

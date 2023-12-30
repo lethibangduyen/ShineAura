@@ -2,23 +2,23 @@ const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    productUrl: {
+    product_url: {
       type: String,
       required: true,
       unique: true,
       trim: true,
     },
-    productId: {
+    product_id: {
       type: String,
       required: true,
       index: true,
     },
-    productName: {
+    product_name: {
       type: String,
       required: true,
       trim: true,
     },
-    productType: {
+    product_type: {
       type: String,
       required: true,
       trim: true,
