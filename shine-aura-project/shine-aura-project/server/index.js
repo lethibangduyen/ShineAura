@@ -13,12 +13,14 @@ const resetpassRoute = require('./routes/resetpassRoute');
 const cartRoute = require('./routes/cartRoute');
 const authenticateToken = require('./middleware/auth');
 const Product = require('./models/Product');
+const adminProduct = require('./routes/adminRoutes');
 
 const app = express();
 const PORT = 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json());
 
 const mongoURI = 'mongodb+srv://baou0508:Phamhoangbao0508@shine-aura-test-db.pf0rcx6.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(mongoURI);
@@ -58,8 +60,7 @@ app.post('/forgot-password', forgotRoute);
 app.use('/', sendtokenRoute);
 app.use('/', resetpassRoute);
 app.use('/cart', cartRoute);
-
-app.use(express.json());
+app.use('/products', adminProduct);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

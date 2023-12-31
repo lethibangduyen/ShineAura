@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 import Logo from '../../../assets/img/logo.svg';
 import Button from '../button/button';
 import DropdownButton from '../button/dropdown-button';
+import { useAuth } from '../../../hooks/authProvider';
 
-function Navbar() {
+function Navbar({ onAddToCart }) {
   const [navColour, updateNavbar] = useState(false);
   const [isNavOpen, setNavOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
-  const [cartItemCount, setCartItemCount] = useState(0);
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const { signedInEmail } = useAuth();
 
   function scrollHandler() {
     updateNavbar(window.scrollY >= 20);
@@ -28,6 +30,14 @@ function Navbar() {
       window.removeEventListener("scroll", scrollHandler);
     };
   }, []); 
+
+  useEffect(() => {
+    if (signedInEmail) {
+      setTotalQuantity((prevQuantity) => prevQuantity + 1);
+    }
+  }, [onAddToCart, signedInEmail]);
+
+
 
   return (
     <div className={`navigation flex-row flex-center-align ${navColour ? 'nav-scroll' : ''}`}>
@@ -76,13 +86,14 @@ function Navbar() {
           )}
         </div>
         <div className="icon-button">
-          <Link to="/cart" className="nav-link"> {/* Add Link to the Cart Page */}
-            <Button btnStyle='icon-nav-btn' iconL='bi bi-cart'/>
-            {cartItemCount > 0 && (
-              <span className="cart-item-count">{cartItemCount}</span>
-            )}
-          </Link>
-        </div>
+  <Link to="/cart" className="nav-link"> 
+    <Button btnStyle='icon-nav-btn' iconL='bi bi-cart'/>
+    {signedInEmail && totalQuantity > 0 && (
+      <span className="cart-item-count">{totalQuantity}</span>
+    )}
+  </Link>
+</div>
+
         <div className="icon-button">
           <DropdownButton btnStyle='icon-nav-btn' iconL='bi bi-person' dropdownStyle='user-setting-dropdown'/>
         </div>

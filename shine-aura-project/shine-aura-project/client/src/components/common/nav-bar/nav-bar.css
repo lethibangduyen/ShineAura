@@ -65,7 +65,20 @@
   background-color: #fff;
   padding: 0 15px 0 45px;
 }
-
+.cart-item-count {
+  position: absolute;
+  position: absolute;
+  top: 10px;
+  right: 104px;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+  background: rgb(84, 82, 82);
+}
 @media screen and (max-width: 1366px){
   .logo-img {
     display: none;
