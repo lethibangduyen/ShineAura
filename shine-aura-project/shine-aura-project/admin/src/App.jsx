@@ -19,8 +19,8 @@ function App() {
         <Header OpenSidebar={OpenSidebar} />
         <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
         <Routes>
+        <Route path='/' element={<Home />} />
           <Route path='/product' element={<Product />} />
-          <Route path='/' element={<Home />} />
         </Routes>
       </div>
     </Router>
