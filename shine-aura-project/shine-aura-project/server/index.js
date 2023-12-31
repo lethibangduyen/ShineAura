@@ -43,7 +43,7 @@ app.get('/products', async (req, res) => {
       console.error(`Error: ${error}`);
       res.status(500).send('An error occurred while trying to fetch products.');
   }
- });
+});
 
 app.get('/verification', (req, res) => {
   res.send('Verification route is working!');

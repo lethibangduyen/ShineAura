@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './homepage.css'
+import './homepage.scss'
 import { Link } from 'react-router-dom';
 import Pic1 from '../../assets/img/homepage/hero-1.png';
 import Pic2 from '../../assets/img/homepage/hero-2.png';
@@ -33,7 +33,7 @@ const Homepage = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 390 },
-      items: 2
+      items: 3
     },
     mobile: {
       breakpoint: { max: 390, min: 0 },
@@ -42,7 +42,7 @@ const Homepage = () => {
   };
 
   return (
-    <div className='homepage-shine flex-col '>
+    <div className='homepage flex-col '>
       <div className='homepage-shine-container site-mx-wdth flex-col'>
         <div className="homepage-first">
           <div className="pic-parent">
@@ -74,7 +74,7 @@ const Homepage = () => {
             </div>
             <div className="product-parent-detail flex-row gap-md">
               <div className="home-list-product flex-row">
-                <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
+                <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} swipeable={true} draggable={true} removeArrowOnDeviceType={["tablet", "mobile"]}>
                   {products.slice(0, 8).map((product) => (
                     <Productcard product={product} key={product.product_id}></Productcard>
                   ))}
@@ -125,6 +125,17 @@ const Homepage = () => {
                 <img className="img4" src={About4} />
               </div>
             </div>
+            <div className='about-us-see-more'>
+              <Link to="/about-us">
+                <Button
+                  text="See more"
+                  btnStyle="underline-btn"
+                  disabled={false}
+                  iconR="bi bi-arrow-right"
+                  iconSide="right"
+                />
+              </Link>
+            </div> 
           </div>
         </div>
         <div className="section-container flex-col gap-3xl">

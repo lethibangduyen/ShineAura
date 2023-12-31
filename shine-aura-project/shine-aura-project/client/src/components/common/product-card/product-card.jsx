@@ -6,7 +6,7 @@ import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const ProductCard = ({ product, onAddToCart }) => {
+const ProductCard = ({ product, onAddToCart, expandDisable = '' }) => {
     const [isExpanded, setIsExpanded] = useState(false);
   
     const handleAddToCartClick = async (productId) => {
@@ -91,7 +91,7 @@ const ProductCard = ({ product, onAddToCart }) => {
                     <div className='flex-col gap-2xs icon-collection'>
                         <i className='bi bi-suit-heart'></i>
                         <i className='bi bi-cart-plus' onClick={() => handleAddToCartClick(product._id)}></i>
-                        <i className='bi bi-box-arrow-up-right' onClick={() => handleExpandClick()}></i>
+                        <button disabled={expandDisable} onClick={() => handleExpandClick()}><i className='bi bi-box-arrow-up-right'></i></button>
                     </div>
                 </div>
             </div>

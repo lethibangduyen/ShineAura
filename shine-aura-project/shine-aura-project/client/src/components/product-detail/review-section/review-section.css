@@ -1,6 +1,6 @@
 .review-container {
     width: 100%;
-    min-width: 400px;
+    max-width: 40%;
     padding: 32px 24px 24px 24px;
     border-radius: var(--spacing-spc-none, 0px);
     border: 1px solid #855B49;
@@ -24,7 +24,11 @@
     margin: 0 auto;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 464px){
+@media screen and (max-width: 1040px) and (min-width: 464px){
+    .review-container {
+        max-width: 100%;
+    }
+
     .user-name p {
         font-family: var(--display-font);
         font-size: 24px;
@@ -38,10 +42,15 @@
         font-size: 20px;
     }
 }
-@media screen and (max-width: 463px) {
+@media screen and (max-width: 464px) {
     .review-container {
-        min-width: 0px;
+        max-width: 100%;
     }
+
+    .content-item {
+        font-size: 16px;
+    }
+
     .user-name p {
         font-size: 16px;
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './collection.css';
+import './collection.scss';
 
 import All from '../../../assets/img/homepage/all.jpg';
 import Eyes from '../../../assets/img/homepage/eyeshadow.jpg';
@@ -16,7 +16,7 @@ import Sunscreen from '../../../assets/img/homepage/sunscreen.jpg';
 
 const Collection = () => {
     return (
-        <div>
+        <div className='collection-comp'>
             <div className="home-collection">
             <div className="collection-card-list">
                 <a href="#" className="collection-card-item">

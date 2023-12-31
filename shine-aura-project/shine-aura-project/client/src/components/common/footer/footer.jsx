@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./footer.css";
+import "./footer.scss";
 import Logo from '../../../assets/img/logo.svg';
 import Button from '../button/button';
 
@@ -12,8 +12,7 @@ const Footer = () => {
           <img className="footer-vector-icon" alt="" src={Logo} />
         </div>
         <div className="footer-nav flex-row gap-xl align-left">
-        <div className="footer-container flex-row align-left ">
-          <div className="footer-sitemap flex-col align-left gap-2xs">
+        <div className="footer-sitemap flex-col align-left gap-2xs">
             <div className="footer-sitemap-title h4">
               <p>Sitemap</p> <hr />
             </div>
@@ -45,7 +44,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div>
           <div className="footer-collection flex-col align-left gap-2xs">
             <div className="footer-collection-title h4">
               <p>Collections</p> <hr />
