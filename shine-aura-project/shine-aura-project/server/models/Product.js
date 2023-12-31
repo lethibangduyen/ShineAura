@@ -8,17 +8,17 @@ const productSchema = new mongoose.Schema({
       unique: true,
       trim: true,
     },
-    productId: {
+    product_id: {
       type: String,
       required: false,
       index: true,
     },
-    productName: {
+    product_name: {
       type: String,
       required: true,
       trim: true,
     },
-    productType: {
+    product_type: {
       type: String,
       required: true,
       trim: true,

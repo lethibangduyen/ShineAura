@@ -1,5 +1,6 @@
 .detail-container {
     position: relative;
+    min-width: 800px;
 }
 
 .detail-nav {
@@ -43,6 +44,7 @@
 .detail-content {
     z-index: 4;
     max-height: 624px;
+    width: 100%;
     justify-content: flex-start;
     padding: 32px 24px 24px 24px;
     border-radius: 0px 0px 5px 5px;
@@ -66,6 +68,32 @@
 
 ul.inside {
     list-style-position: inside;
+}
+
+@media screen and (max-width: 1140px) {
+    .detail-nav-btn{
+        width: fit-content;
+        font-size: 9.5px;
+        font-weight: 500;
+    }
+
+    .detail-nav{
+        top: -36px;
+    }
+    .detail-content-item{
+        width: 100%;
+        font-size: 11px;
+    }
+
+    .detail-content{
+        width: 100%;
+        min-width: 367px;;
+    }
+
+    .detail-container{
+        width: 100%;
+        min-width: 367px;;
+    }
 }
 
 @media screen and (max-width: 567px) {

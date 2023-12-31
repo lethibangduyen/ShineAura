@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import AnimateHeight from 'react-animate-height';
 import "./product-description.css";
 
 const ProductDescription = ({ description }) => {
