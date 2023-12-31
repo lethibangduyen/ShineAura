@@ -1,59 +1,72 @@
-import React from 'react';
-import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
-  BsListCheck, BsMenuButtonWideFill, BsFillGearFill} from 'react-icons/bs';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { UilSignOutAlt, UilEstate, UilClipboardAlt, UilUsersAlt, UilPackage, UilChart } from '@iconscout/react-unicons';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import Logo from '../imgs/logo.png';
+import './Sidebar.css';
 
-function Sidebar({ openSidebarToggle, OpenSidebar }) {
-    const navigate = useNavigate();
+const SidebarData = [
+  {
+    icon: UilEstate,
+    heading: 'Dashboard',
+  },
+  {
+    icon: UilClipboardAlt,
+    heading: 'Orders',
+  },
+  {
+    icon: UilUsersAlt,
+    heading: 'Products',
+  },
+  {
+    icon: UilPackage,
+    heading: 'Cosmetics', // Updated heading to 'Cosmetics'
+  },
+  {
+    icon: UilChart,
+    heading: 'Analytics',
+  },
+];
 
-    return (
-        <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""}>
-            <div className='sidebar-title'>
-                <div className='sidebar-brand'>
-                    <BsCart3 className='icon_header' /> SHINEAURA
-                </div>
-                <span className='icon close_icon' onClick={OpenSidebar}>X</span>
-            </div>
+const Sidebar = () => {
+  const [selected, setSelected] = useState(0);
+  const [expanded, setExpanded] = useState(true);
 
-            <ul className='sidebar-list'>
-                <li className='sidebar-list-item'>
-                    <Link to="/">
-                        <BsGrid1X2Fill className='icon'/> Dashboard
-                    </Link>
-                </li>
-                <li className='sidebar-list-item'>
-                    <Link to="/product">
-                        <BsFillArchiveFill className='icon'/> Products
-                    </Link>
-                </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsFillGrid3X3GapFill className='icon'/> Categories
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsPeopleFill className='icon'/> Customers
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsListCheck className='icon'/> Inventory
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsMenuButtonWideFill className='icon'/> Reports
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsFillGearFill className='icon'/> Setting
-                </a>
-            </li>
-        </ul>
-    </aside>
-  )
-}
+  const sidebarVariants = {
+    true: {
+      left: '0',
+    },
+    false: {
+      left: '-60%',
+    },
+  };
 
-export default Sidebar
+  return (
+    <>
+      <div className="bars" style={expanded ? { left: '60%' } : { left: '5%' }} onClick={() => setExpanded(!expanded)}>
+        {/* Your bars icon */}
+      </div>
+      <motion.div className="sidebar" variants={sidebarVariants} animate={window.innerWidth <= 768 ? `${expanded}` : ''}>
+        <div className="logo">
+          <img src={Logo} alt="logo" />
+        </div>
+
+        <div className="menu">
+          {SidebarData.map((item, index) => (
+            <Link to={`/${item.heading.toLowerCase()}`} key={index}>
+              <div className={selected === index ? 'menuItem active' : 'menuItem'} onClick={() => setSelected(index)}>
+                <item.icon />
+                <span>{item.heading}</span>
+              </div>
+            </Link>
+          ))}
+          <div className="menuItem">
+            <UilSignOutAlt />
+          </div>
+        </div>
+      </motion.div>
+    </>
+  );
+};
+
+export default Sidebar;
