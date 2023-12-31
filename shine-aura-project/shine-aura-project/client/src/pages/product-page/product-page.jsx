@@ -12,6 +12,8 @@ import Pagination from '@mui/material/Pagination';
 
 const ProductPage = () => {
     const [products, setProducts] = useState([]);
+    const [brands, setBrands] = useState([]);
+    const [types, setTypes] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredProducts, setFilteredProducts] = useState([]);
  
@@ -21,6 +23,24 @@ const ProductPage = () => {
           .then(data => {
               setProducts(data);
               setFilteredProducts(data);
+          })
+          .catch(error => console.error('Error:', error));
+    }, []);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/product/brands')
+          .then(response => response.json())
+          .then(data => {
+              setBrands(data);
+          })
+          .catch(error => console.error('Error:', error));
+    }, []);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/product/types')
+          .then(response => response.json())
+          .then(data => {
+              setTypes(data);
           })
           .catch(error => console.error('Error:', error));
     }, []);
@@ -51,8 +71,51 @@ const ProductPage = () => {
         const elements = document.getElementsByClassName('prod-query-content');
             if (elements && elements[0]) {
             window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
-            }
+        }
     };
+
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [iconState, setIconState] = useState(false);
+
+    const handleClick = () => {
+        setIsExpanded(!isExpanded);
+        setIconState(!iconState);
+    };
+
+    const [isExpanded2, setIsExpanded2] = useState(false);
+    const [iconState2, setIconState2] = useState(false);
+
+
+    const handleClick2 = () => {
+        setIsExpanded2(!isExpanded2);
+        setIconState2(!iconState2);
+    };
+
+    const handleBrandClick = (brand) => {
+        fetch(`http://localhost:3000/product/products/brand/${brand}`)
+            .then(response => response.json())
+            .then(data => {
+                setFilteredProducts(data);
+            })
+            .catch(error => console.error('Error:', error));
+        const elements = document.getElementsByClassName('prod-query-content');
+        if (elements && elements[0]) {
+        window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
+        }
+     };
+
+     const handleTypeClick = (type) => {
+        fetch(`http://localhost:3000/product/products/type/${type}`)
+            .then(response => response.json())
+            .then(data => {
+                setFilteredProducts(data);
+            })
+            .catch(error => console.error('Error:', error));
+        const elements = document.getElementsByClassName('prod-query-content');
+        if (elements && elements[0]) {
+        window.scrollTo({ top: elements[0].offsetTop, behavior: 'smooth' });
+        }
+     };
 
     const currentItems = filteredProducts.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
@@ -115,25 +178,24 @@ const ProductPage = () => {
                                 <div className="filter-sct flex-col align-left gap-sm">
                                     <h4 className='h4 filter-title'>CATEGORY</h4>
                                     <div className="sub-filter-container flex-col align-left">
-                                        <Button text="CLEANSER" btnStyle="underline-btn"></Button>
-                                        <Button text="MOISTURIZER" btnStyle="underline-btn"></Button>
-                                        <Button text="MASK" btnStyle="underline-btn"></Button>
-                                        <Button text="LIPSTICK" btnStyle="underline-btn"></Button>
-                                        <Button text="FOUNDATION" btnStyle="underline-btn"></Button>
-                                        <Button text="MASCARA" btnStyle="underline-btn"></Button>
-                                        <Button text="EYELINER" btnStyle="underline-btn"></Button>
-                                        <Button text="BLUSH" btnStyle="underline-btn"></Button>
+                                    <div className={`types-btn-holder flex-col align-left ${isExpanded2 ? 'expanded' : ''}`}>
+                                            {types.map((type) => (
+                                                <Button text={type} frameStyle="uppercase" btnStyle="underline-btn" onClick={() => handleTypeClick(type)}></Button>
+                                            ))}
+                                        </div>
+                                        <button className="expand-contact-button flex-col" onClick={handleClick2}><i className={`bi ${isExpanded2 ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i></button>
                                     </div>
                                 </div>
                                 <div className="hr-divider"></div>
                                 <div className="filter-sct flex-col align-left gap-sm">
                                     <h4 className='h4 filter-title'>BRAND</h4>
-                                    <div className="sub-filter-container flex-col align-left">
-                                        <Button text="3CE" btnStyle="underline-btn"></Button>
-                                        <Button text="ROMAN" btnStyle="underline-btn"></Button>
-                                        <Button text="MERZY" btnStyle="underline-btn"></Button>
-                                        <Button text="PERIPERA" btnStyle="underline-btn"></Button>
-                                        <Button text="CLIO" btnStyle="underline-btn"></Button>
+                                    <div className="sub-filter-container brand-collection flex-col align-left">
+                                        <div className={`brands-btn-holder flex-col align-left ${isExpanded ? 'expanded' : ''}`}>
+                                            {brands.map((brand) => (
+                                                <Button text={brand} frameStyle="uppercase" btnStyle="underline-btn" onClick={() => handleBrandClick(brand)}></Button>
+                                            ))}
+                                        </div>
+                                        <button className="expand-contact-button flex-col" onClick={handleClick}><i className={`bi ${isExpanded ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i></button>
                                     </div>
                                 </div>
                                 <div className="hr-divider"></div>
@@ -168,8 +230,8 @@ const ProductPage = () => {
                                                 <option value="Sort">Sort by</option>
                                                 <option value="p:low-high">Price: Low to High</option>
                                                 <option value="p:high-low">Price: High to Low</option>
-                                                <option value="fiat">Fiat</option>
-                                                <option value="audi">Audi</option>
+                                                <option value="n:a-z">Name: A to Z</option>
+                                                <option value="n:z-a">Name: Z to A</option>
                                             </select>
                                         </div>
                                     </div>
@@ -182,7 +244,7 @@ const ProductPage = () => {
                                 </div>
                                 <div className="pagination flex-col max-wdth">
                                     <div className='flex-row'>
-                                        <Pagination count={Math.ceil(products.length / itemsPerPage)} page={page} onChange={handleChange} />
+                                        <Pagination count={Math.ceil(currentItems.length / itemsPerPage)} page={page} onChange={handleChange} />
                                     </div>
                                 </div>
                             </div>

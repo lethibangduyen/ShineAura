@@ -120,6 +120,17 @@
     .filter-container .hr-divider {
         margin-left: 0px;
     }
+
+    .types-btn-holder,
+    .brands-btn-holder {
+        max-height: 400px;
+        overflow: hidden;
+        justify-content: flex-start;
+    }
+
+    .expanded {
+        max-height: 100%;
+    }
     
     .prod-query-content .vt-divider {
         border-width: 0.1px;
@@ -169,6 +180,10 @@
         height: 100%;
         padding: 0 12px;
         height: 40px;
+    }
+
+    .expand-contact-button {
+        padding: 12px;
     }
 
     .sort-filter-selected {

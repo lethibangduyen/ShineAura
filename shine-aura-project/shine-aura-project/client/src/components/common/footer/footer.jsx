@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./footer.css";
 import Logo from '../../../assets/img/logo.svg';
 import Button from '../button/button';
@@ -18,19 +19,29 @@ const Footer = () => {
             </div>
             <div className=" flex-col footer-sitemap-content align-left ">
               <div className="footer-button">
-                <Button text="Home" btnStyle="footer-btn"/>
+                <Link to="/" className="nav-link">
+                  <Button text="Home" btnStyle="footer-btn"/>
+                </Link>
               </div>  
               <div className="footer-button">
-                <Button text="Product" btnStyle="footer-btn"/>
+                <Link to="/product/products" className="nav-link">
+                  <Button text="Product" btnStyle="footer-btn"/>
+                </Link>
               </div>
               <div className="footer-button">
-                <Button text="Collection" btnStyle="footer-btn"/>
+                <Link to="/about-us" className="nav-link">
+                  <Button text="About us" btnStyle="footer-btn"/>
+                </Link>
               </div>
               <div className="footer-button">
-                <Button text="Contact" btnStyle="footer-btn"/>
+                <Link to="/contact" className="nav-link">
+                  <Button text="Contact" btnStyle="footer-btn"/>
+                </Link>
               </div>
               <div className="footer-button">
-                <Button text="Term & Condition"btnStyle="footer-btn" />
+                <Link to="/policy" className="nav-link">
+                  <Button text="Term & Condition"btnStyle="footer-btn" />
+                </Link>
               </div>
             </div>
           </div>
@@ -42,42 +53,61 @@ const Footer = () => {
             <div className=" footer-collection-content flex-row align-left flex-left-align  ">
               <div className="footer-button-left flex-left-align  flex-col align-left gap-2xs  ">
                 <div className="footer-button">
-                <Button text="Cleanser"btnStyle="footer-btn" />
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Cleanser"btnStyle="footer-btn" />
+                </Link>
               </div>
                 <div className="footer-button">
-                <Button text="Sunscreen Cream"btnStyle="footer-btn" />
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Sunscreen Cream"btnStyle="footer-btn" />
+                  </Link>
               </div>
                 <div className="footer-button">
-                <Button text="Moisturizer" btnStyle="footer-btn" />
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Moisturizer" btnStyle="footer-btn" />
+                  </Link>
               </div>
                 <div className="footer-button">
-                  <Button text="Mask" btnStyle="footer-btn"/>
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Mask" btnStyle="footer-btn" />
+                  </Link>
                 </div>
-                <div className="footer-button">
-                <Button text="Mask" btnStyle="footer-btn" />
-              </div>
               </div>
               <div className="footer-button-right flex-col align-left gap-2xs">
                 <div className="footer-button">
-                  <Button text="Lipstick" btnStyle="footer-btn" />
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Lipstick" btnStyle="footer-btn" />
+                  </Link>
                 </div>
                 <div className="footer-button">
-                  <Button text="Foundation "btnStyle="footer-btn" />
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Foundation "btnStyle="footer-btn" />
+                  </Link>
                 </div>
                 <div className="footer-button">
-                  <Button text="Face Powder " btnStyle="footer-btn"/>
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Face Powder " btnStyle="footer-btn"/>
+                  </Link>
                 </div>
                 <div className="footer-button">
-                  <Button text="Mascara "btnStyle="footer-btn" />
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Mascara "btnStyle="footer-btn" />
+                  </Link>
                 </div>
                 <div className="footer-button">
-                  <Button text="Eyeshadow "btnStyle="footer-btn" />
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Eyeshadow "btnStyle="footer-btn" />
+                  </Link>
                 </div>
                 <div className="footer-button">
-                  <Button text="Blush " btnStyle="footer-btn"/>
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Blush " btnStyle="footer-btn"/>
+                  </Link>
                 </div>
                 <div className="footer-button">
-                  <Button text="Eyeliner " btnStyle="footer-btn"/>
+                  <Link to="/product/products" className="nav-link">
+                    <Button text="Eyeliner " btnStyle="footer-btn"/>
+                  </Link>
                 </div>
               </div>
             </div>

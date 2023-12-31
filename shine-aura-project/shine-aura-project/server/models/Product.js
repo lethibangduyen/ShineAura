@@ -1,24 +1,24 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+    // _id: mongoose.Schema.Types.ObjectId,
     productUrl: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
       trim: true,
     },
-    productId: {
+    product_id: {
       type: String,
-      required: true,
+      required: false,
       index: true,
     },
-    productName: {
+    product_name: {
       type: String,
       required: true,
       trim: true,
     },
-    productType: {
+    product_type: {
       type: String,
       required: true,
       trim: true,
@@ -30,7 +30,7 @@ const productSchema = new mongoose.Schema({
     images: [
       {
         type: String,
-        required: true,
+        required: false,
         maxlength: 2000,
       },
     ],

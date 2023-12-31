@@ -1,27 +1,23 @@
-import { useState } from 'react';
+// App.js
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/navbar';
-import Sidebar from './components/sidebar';
-import Home from './pages/home';
-import Product from './pages/adminProduct/product';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainDash from './components/MainDash/MainDash';
+import RightSide from './components/RigtSide/RightSide';
+import Sidebar from './components/Sidebar';
+import Product from './components/Product/Adproduct';
 
 function App() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
-
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle);
-  };
-
   return (
     <Router>
-      <div className='grid-container'>
-        <Header OpenSidebar={OpenSidebar} />
-        <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
-        <Routes>
-          <Route path='/product' element={<Product />} />
-          <Route path='/' element={<Home />} />
-        </Routes>
+      <div className="App">
+        <div className="AppGlass">
+          <Sidebar />
+          <Routes>
+            <Route path="/dashboard" element={<MainDash />} />
+            <Route path="/products" element={<Product />} />
+          </Routes>
+          {/* <RightSide /> */}
+        </div>
       </div>
     </Router>
   );

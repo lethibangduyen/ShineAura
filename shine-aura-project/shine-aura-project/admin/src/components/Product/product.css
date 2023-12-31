@@ -1,0 +1,91 @@
+/* product.scss */
+
+.admin-product-management-page {
+    padding: 20px;
+  }
+  
+  .admin-products-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #333; /* Your heading color */
+  }
+  
+  .new-product-form,
+  .existing-products,
+  .update-product-form {
+    margin-bottom: 20px;
+  }
+  
+  .new-product-form h3,
+  .existing-products h3,
+  .update-product-form h3 {
+    color: #333; /* Your heading color */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-top: 10px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: #333; /* Your label color */
+  }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Your input border color */
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007bff; /* Your button background color */
+    color: #fff; /* Your button text color */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Your button background color on hover */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Your list item border color */
+  }
+  
+  .see-more-button {
+    background-color: #007bff; /* Your button background color */
+    color: #fff; /* Your button text color */
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .see-more-button:hover {
+    background-color: #0056b3; /* Your button background color on hover */
+  }
+  
+  /* Customize styling for toast notifications if needed */
+  .Toastify__toast {
+    background-color: #333; /* Your toast background color */
+    color: #fff; /* Your toast text color */
+    border: 1px solid #fff; /* Your toast border color */
+  }
+  

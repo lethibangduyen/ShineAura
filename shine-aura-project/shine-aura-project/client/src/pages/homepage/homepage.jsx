@@ -82,7 +82,7 @@ const Homepage = () => {
               </div>
             </div>
             <div className='home-btn-see'>
-              <Link to="/product">
+              <Link to="/product/products">
                 <Button
                   text="See more"
                   btnStyle="underline-btn"

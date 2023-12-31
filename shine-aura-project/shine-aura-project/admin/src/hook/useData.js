@@ -21,8 +21,8 @@ const useData = (endpoint, requiresAuth = false) => {
         }
 
         const response = await fetch(endpoint, {
-          method: 'GET', // Specify the HTTP method, default is 'GET'
-          headers,        // Include headers only when authentication is required
+          method: 'GET',
+          headers,
         });
 
         const result = await response.json();
