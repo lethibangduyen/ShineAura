@@ -239,12 +239,12 @@ const ProductPage = () => {
                                 </div>
                                 <div className="prod-grid gap-xs">
                                     {currentItems.map((product) => (
-                                        <Productcard product={product} key={product.product_id} onAddToCart={handleAddToCart}></Productcard>
+                                        <Productcard product={product} key={product.product_id} onAddToCart={handleAddToCart} expandDisable='disable'></Productcard>
                                     ))}
                                 </div>
                                 <div className="pagination flex-col max-wdth">
                                     <div className='flex-row'>
-                                        <Pagination count={Math.ceil(currentItems.length / itemsPerPage)} page={page} onChange={handleChange} />
+                                        <Pagination count={Math.ceil(products.length / itemsPerPage)} page={page} onChange={handleChange} />
                                     </div>
                                 </div>
                             </div>

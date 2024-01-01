@@ -5,6 +5,10 @@ button {
     white-space: nowrap;
 }
 
+button:active {
+    opacity: 0.6;
+}
+
 .nav-btn {
     position: relative;
     display: inline-flex;
@@ -86,6 +90,11 @@ button {
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.auth-btn:hover .auth-btn-frame {
+    color: #F9F6F3;
+    background: var(--Light-element-backgrounds, #5E503F);
 }
 
 .auth-btn-frame {

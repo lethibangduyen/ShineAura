@@ -23,7 +23,6 @@ router.get('/products/:id', async (req, res) => {
 
 router.get('/products/brand/:brand', async (req, res) => {
   const { brand } = req.params;
-  console.log(brand);
   try {
    const products = await Product.find({ brands : brand });
    if (!products || products.length === 0) return res.status(404).send('No products found for this brand');

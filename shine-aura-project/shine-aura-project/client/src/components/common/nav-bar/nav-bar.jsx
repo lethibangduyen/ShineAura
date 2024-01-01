@@ -52,7 +52,12 @@ function Navbar({ onAddToCart }) {
         {isSearchOpen ? (
           null
         ) : (
-          <>
+          <div className='nav-btn-collections'>
+            <div className="nav-list">
+              <Link to="/" className="nav-link">
+                <Button btnStyle='nav-btn' text='HOME'/>
+              </Link> 
+            </div>
             <div className="nav-list">
               <Link to="/product/products" className="nav-link">
                 <DropdownButton btnStyle='nav-btn' text='COLLECTION' iconL='bi bi-list icon-size-20 square-icon' dropdownStyle='collection-dropdown'/>
@@ -73,7 +78,7 @@ function Navbar({ onAddToCart }) {
                 <Button text="POLICY" btnStyle="nav-btn" />
               </Link>
             </div>
-          </>
+          </div>
         )}
       </div>
       <div className="nav-icon flex-row gap-xs">

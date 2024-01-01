@@ -50,12 +50,12 @@ const ProductDetailPage = () => {
           items: 5
         },
         tablet: {
-          breakpoint: { max: 1024, min: 464 },
+          breakpoint: { max: 1040, min: 464 },
           items: 3
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
-          items: 3
+          items: 1
         }
     };
 
@@ -68,16 +68,10 @@ const ProductDetailPage = () => {
                             <img src={product.images[0]} alt="active-image res-width" className="active-img"/>
                         </div>
                         <div className="prod-image-slider flex-row">
-                            <div className="left-button">
-                                <i className="bi bi-chevron-left"></i>
-                            </div>
                             <div className="unactive-image-holder flex-row gap-xs">
                                 <img src={product.images[1]} alt="unactive-image" className="unactive-img"/>
                                 <img src={product.images[2]} alt="unactive-image" className="unactive-img"/>
-                                <img src={product.images[3]} alt="unactive-image" className="unactive-img"/>   
-                            </div>
-                            <div className="right-button">
-                                <i className="bi bi-chevron-right"></i>
+                                <img src={product.images[3]} alt="unactive-image" className="unactive-img"/>
                             </div>
                         </div>
                     </div>
@@ -141,11 +135,11 @@ const ProductDetailPage = () => {
                 </div>
             </div>
             <div className="section-container flex-row">
-                <div className="section flex-col gap-md">
+                <div className="section similar-products flex-col gap-md">
                     <div className="similar-prod-title">
                         <p className="h2 uppercase">similar products</p>
                     </div>
-                    <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} arrows={true} removeArrowOnDeviceType={["mobile"]}>
+                    <Carousel responsive={responsive} containerClass="carousel-container" itemClass="width-reset flex-col" slidesToSlide={1} keyBoardControl={true} draggable={true} swipeable={true}>
                         {similarProducts.map((product) => (
                             <ProductCard key={product._id} product={product} />
                         ))}

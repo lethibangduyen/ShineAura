@@ -3,6 +3,5 @@
 }
 
 .App {
-    background: var(--Rodeo-Dust-50, #F9F6F350);
-    padding-top: 58px;
+    background: var(--Rodeo-Dust-50, #F9F6F3);
 }
