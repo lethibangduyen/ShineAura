@@ -227,7 +227,15 @@ a {
     letter-spacing: 3% ;
     text-transform: uppercase;
 }
-
+.btn-text-lgt-xs {
+    font-family: var(--display-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 3% ;
+    text-transform: uppercase;
+}
 /* Input Italic */
 .input-i {
     font-family: var(--body-font);
@@ -257,6 +265,13 @@ a {
     font-weight: 500;
     line-height: normal;
     letter-spacing: 0.24px;
+}
+.input-s {
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: 00;
+    line-height: normal;
+    letter-spacing: 1%;
 }
 
 /* Vertical Spacing */
@@ -393,10 +408,6 @@ a {
 
 .bg-ivory {
   background-color: #F9F6F3;
-}
-
-.icon-size-16 {
-    font-size: 16px;
 }
 
 .icon-size-20 {
