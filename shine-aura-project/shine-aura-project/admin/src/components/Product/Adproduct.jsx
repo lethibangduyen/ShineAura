@@ -154,49 +154,54 @@ function AdminProducts() {
   };
 
   return (
-    <main className='admin-product-management-page'>
-      <div className="admin-products-container">
-        <h2>Admin Products</h2>
-
+    <main className='admin-product-management-page gap-xl'>
+      <div className="admin-product-title">
+        <h2 className='h2'>Products</h2>
+      </div>
+      <div className="admin-products-container flex-row gap-xl">
         <div className="new-product-form">
           <h3>Add New Product</h3>
           <form onSubmit={(e) => { e.preventDefault(); addProduct(); }}>
             <label>Product Name:</label>
-            <input type="text" name="productName" value={newProduct.productName} onChange={handleInputChange} required />
+            <input className='input-s' type="text" name="productName" value={newProduct.productName} onChange={handleInputChange} required />
 
             <label>Price:</label>
-            <input type="number" name="price" value={newProduct.price} onChange={handleInputChange} required />
+            <input className='input-s'type="number" name="price" value={newProduct.price} onChange={handleInputChange} required />
 
             <label>Product Type:</label>
-            <input type="text" name="productType" value={newProduct.productType} onChange={handleInputChange} required />
+            <input className='input-s'type="text" name="productType" value={newProduct.productType} onChange={handleInputChange} required />
 
             <label>Brands:</label>
-            <input type="text" name="brands" value={newProduct.brands} onChange={handleInputChange} required />
+            <input className='input-s'type="text" name="brands" value={newProduct.brands} onChange={handleInputChange} required />
 
-            <button type="submit">Add Product</button>
+            <button className='' type="submit">Add Product</button>
           </form>
         </div>
 
-        <div className="existing-products">
+        <div className="existing-products-container">
           <h3>Existing Products</h3>
-          <ul>
-            {visibleProducts.map((product) => (
-              <li key={product.productId}>
-                <strong>{product.productName}</strong> - ${product.price} - {product.productType} - {product.brands}
-                <button onClick={() => selectProductForUpdate(product)}>Update</button>
-                <button onClick={() => deleteProduct(product.productId)}>Delete</button>
-              </li>
-            ))}
-          </ul>
-          {products.length > visibleProducts.length && (
-            <button className="see-more-button" onClick={handleSeeMore}>
-              See More
-            </button>
-          )}
+            <div className="existing-products flex-col">
+              <ul>
+                {visibleProducts.map((product) => (
+                  <li className='body flex-col gap-xs' key={product.productId}>
+                    <strong>{product.productName}</strong> - ${product.price} - {product.productType} - {product.brands}
+                    <div className='li-button flex-row gap-xs'>
+                      <button onClick={() => selectProductForUpdate(product)}>Update</button>
+                      <button onClick={() => deleteProduct(product.productId)}>Delete</button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              {products.length > visibleProducts.length && (
+                <button className="see-more-button" onClick={handleSeeMore}>
+                  See More
+                </button>
+              )}
+          </div>
         </div>
 
         {showUpdateForm && selectedProduct && (
-          <div className="update-product-form">
+          <div className="update-product-form flex-left-align gap-xs">
             <h3>Update Product</h3>
             <form onSubmit={(e) => { e.preventDefault(); updateProduct(); }}>
               <div className="form-group">
@@ -218,9 +223,8 @@ function AdminProducts() {
                   value={editingProduct.price}
                   onChange={(e) => setEditingProduct({ ...editingProduct, price: e.target.value })}
                 />
+                <button className='Update-btn' type="submit">Update Product</button>
               </div>
-              {/* Add input fields for other properties you want to update */}
-              <button type="submit">Update Product</button>
             </form>
           </div>
         )}

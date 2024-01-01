@@ -1,9 +1,10 @@
 // App.js
 import './App.css';
+import '../../client/src/assets/css/global.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainDash from './components/MainDash/MainDash';
 import RightSide from './components/RigtSide/RightSide';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/sidebar';
 import Product from './components/Product/Adproduct';
 
 function App() {

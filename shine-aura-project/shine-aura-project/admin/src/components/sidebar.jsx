@@ -19,10 +19,6 @@ const SidebarData = [
     heading: 'Products',
   },
   {
-    icon: UilPackage,
-    heading: 'Cosmetics', // Updated heading to 'Cosmetics'
-  },
-  {
     icon: UilChart,
     heading: 'Analytics',
   },
@@ -42,7 +38,7 @@ const Sidebar = () => {
   };
 
   return (
-    <>
+    <div className='sidebar-main'>
       <div className="bars" style={expanded ? { left: '60%' } : { left: '5%' }} onClick={() => setExpanded(!expanded)}>
         {/* Your bars icon */}
       </div>
@@ -56,7 +52,7 @@ const Sidebar = () => {
             <Link to={`/${item.heading.toLowerCase()}`} key={index}>
               <div className={selected === index ? 'menuItem active' : 'menuItem'} onClick={() => setSelected(index)}>
                 <item.icon />
-                <span>{item.heading}</span>
+                <span className='btn-text-lgt-xs'>{item.heading}</span>
               </div>
             </Link>
           ))}
@@ -65,7 +61,7 @@ const Sidebar = () => {
           </div>
         </div>
       </motion.div>
-    </>
+    </div>
   );
 };
 
