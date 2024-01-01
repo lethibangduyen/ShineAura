@@ -13,7 +13,7 @@ const DropdownButton = ({ text="", onClick = () => {}, type, btnStyle="", disabl
 
  const handleMouseEnter = () => {
   clearTimeout(timerRef.current);
-  setDropdownOpen(!isDropdownOpen);
+  setDropdownOpen(true);
  };
 
  const handleMouseLeave = () => {

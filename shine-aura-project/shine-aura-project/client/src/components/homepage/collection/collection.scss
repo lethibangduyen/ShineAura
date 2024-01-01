@@ -39,16 +39,18 @@
         }
     }
     @media only screen and (max-width: 767px) {
-        .home-collection{
-            grid-template-columns: repeat(3, 98px);
-            grid-gap: 7.66px;
-          }
-          .collection-card-item{
-            width: 98px;
-            height: 112px;
-          }
-        .h4{
-            font-size: 8.418px;;
+        .home-collection {
+            grid-template-columns: repeat(3, 140px);
+            grid-gap: 4px;
+        }
+
+        .collection-card-item {
+            width: 140px;
+            height: 160px;
+        }
+
+        .collection-card-item p {
+            font-size: 14px;
         }
     }
 }

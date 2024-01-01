@@ -16,7 +16,7 @@ import Sunscreen from '../../../assets/img/homepage/sunscreen.jpg';
 
 const Collection = () => {
     return (
-        <div className='collection-comp'>
+        <div className='collection-comp flex-col'>
             <div className="home-collection">
             <div className="collection-card-list">
                 <a href="#" className="collection-card-item">

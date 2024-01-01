@@ -9,11 +9,10 @@
   
   .home-product {
     display: flex;
-    padding: var(--spacing-spc-md, 32px) var(--spacing-spc-none, 0px);
+    padding: var(--spacing-spc-md, 64px) 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing-spc-none, 0px);
     align-self: stretch;
   }
 
@@ -27,7 +26,7 @@
     border-radius: 260px;
     position: absolute;
     right: 133px;
-    bottom: 120px;
+    bottom: 170px;
     width: 521px;
     height: 521px;
     text-align: center;
@@ -91,6 +90,7 @@
       margin-left: 0;
     }
   }
+
   .wireframe-5 {
     padding: var(--spacing-spc-3xl, 128px) 123px;
   }
@@ -184,29 +184,18 @@
   
   @media only screen and (max-width: 1040px) {
     .hero-text {
-      display: flex;
-      padding: var(--spacing-spc-none, 0rem);
-      flex-direction: column;
-      align-items: center;
+      scale: 0.8;
       gap: 1.42519rem;
       position: absolute;
       right: 3rem;
       bottom: 3rem;
-      border-radius: 624px;
-      width: 500px;
-      height: 500px;
-      padding: 0px 18px 0px 18px;
+      border-radius: 540px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
     }
 
     .connect-with-radiant {
-      color: #000;
-      font-family: Montserrat;
-      font-size: 1.1875rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: 0.02375rem;
-      text-transform: uppercase;
+      font-size: 20px;
     }
 
     .img-container {
@@ -225,22 +214,8 @@
       max-width: 100%;
     }
   
-    .content {
-      font-weight: bold;
-    }
-  
     .home-product-container {
       width: 100%;
-    }
-    
-    .content{
-      font-weight: bold;
-    }
-
-    .pic-parent{
-      transform: scale(0.74);
-      position: relative;
-      top: -20px;
     }
 
     .about-us-see-more {
@@ -270,6 +245,26 @@
       align-self: unset;
     }
 
+    .wireframe-6 {
+      padding: 64px;
+    }
+
+    .contact-container {
+      width: 100%;
+      flex-direction: column;
+      height: fit-content;
+      gap: 24px;
+    }
+
+    .image-contact {
+      width: 100%;
+      background-color: transparent;
+    }
+
+    .contact-content {
+      width: 100%;
+    }
+
     .home-btn-see>Button>div>p{
       font-weight: 300;
       margin-bottom: 20px;
@@ -282,192 +277,86 @@
     .carousel-container {
       width: 726px;
     }
-
-    .collection-container {
-      padding: 80px 0px 100px 0px;
-    }
-
-    .contact-container {
-      width: 100%;
-      height: auto;
-    }
-    
-    .wireframe-6 {
-      width: 1024px;
-      padding: 100px;
-      padding-right: 40px;
-    }
-
-    .image-contact {
-      width: 341px;
-      height: 403px;
-    }
-
-    .Contact-us {
-      font-size: 50px;
-    }
-
-    .home-about-us {
-      position: relative;
-      overflow: hidden;
-      max-width: 1024px;
-    }
-  
-    .img-container {
-      max-width: 500px;
-      max-height: 620px;
-      overflow: hidden;
-    }
-
-    .text-contact {
-      padding-right: 60px;
-    }
   }
 
-  @media only screen and (max-width: 767px) {
-    .hero-text {
-      display: flex;
-      width: 195px;
-      height: 195px;
-      justify-content: center;
-      gap: 3px;
-      right: 25px;
-      bottom: 40px;
-      padding: 0px 6px 0px 6px;
-    }
+@media only screen and (max-width: 767px) {
+  .homepage-first {
+    width: 100%;
+    height: fit-content;
+  }
 
-    .title {
-      gap: 3px;
-    }
+  .hero-text {
+    padding: 16px 10%;
+    background-color: rgba(255, 255, 255, 0.5);
+    scale: unset;
+    gap: 4px;
+    height: fit-content;
+    width: 100%;
+    border-radius: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+  }
 
-    .shineaura{
-      font-size: 19px;
-    }
+  .carousel-container {
+    width: 484px;
+  }
 
-    .homepage-first{
-      height: 325px;
-    }
+  .collection-container {
+    align-items: center;
+  }
+}
 
-    .pic-parent{
-      transform: scale(0.4);
-      position: relative;
-      top: -150px;
-    }
+@media only screen and (max-width: 464px) {
+  .section-container {
+    overflow: hidden;
+  }
 
-    .h1{
-      font-size: 24px;
-    }
-    
-    .homepage-first{
-      width: 390px;
-    }
+  .wireframe-6 {
+    padding: 48px 24px;
+  }
 
-    .site-mx-wdth {
-      width: 100%;
-    }
+  .homepage-shine-container{
+    max-width: 100%;
+  }
+  
+  .homepage-shine-container > div {
+    max-width: 100%;
+    width: 100%;
+  }
 
-    .home-product{
-      max-width: 700px;
-      padding: 0px 50px 0px 50px;;
-    }
+  .home-about-us {
+    padding: 48px 24px;
+    height: fit-content;
+  }
 
-    .home-product-container{
-      gap: var(--spc-tk-xs);
-    }
+  .text-product {
+    width: 80%;
+  }
 
-    .text-product{
-      width: 100%;
-      text-align: center;
-      height: 80px;
-    }
+  .home-about-us .content-holder {
+    padding: 0px;
+    width: 100%;
+  }
 
-    .product-parent-detail {
-      height: 180px;
-      width: 242px;
-    }
+  .h1 {
+    font-size: 48px;
+  }
 
-    .carousel-container {
-      width: 320px;
-    }
+  .subtitle {
+    font-size: 16px;
+  }
 
-    .react-multi-carousel-list>ul{
-      width: 110px;
-      margin-block-start: 0em;
-      margin-block-end: 0em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      padding-inline-start: 0px;
-    }
+  .body {
+    font-size: 12px;
+  }
 
-    div.react-multi-carousel-list.carousel-container > ul > li {
-      margin-left: -120px;
-    }
+  .body-bld {
+    font-size: 12px;
+  }
 
-    .home-btn-see>Button>div>p{
-      font-size: 12px;
-      font-weight: 300;
-      margin-bottom: 10px;
-    }
-    
-    .home-about-us {
-      position: relative;
-      overflow: hidden;
-      width: 100%;;
-    }
-
-    .about-us-content {
-      max-width: 173px;
-      max-height: 173px;
-    }
-
-    .content-holder{
-      padding: 28px;
-    }
-
-    .img-container {
-      max-width: 149px;
-      max-height: 200px;
-      transform: scale(1.2);
-    }
-
-    .collection-container{
-      padding: 23px 0px 41px 0px;
-    }
-    
-    .wireframe-6 {
-      width: 100%;
-      height: 250px;
-      padding: 0px 0px 0px 20px;
-    }
-
-    .image-contact{
-      width: 129px;
-      height: 193px;
-    }
-
-    .contact-container{
-      display: flex;
-      margin: 0 auto;
-      justify-content: center;
-      align-items: center;
-      gap: var(--spc-tk-md);
-    }
-
-    .contact-content{
-      width: 200px;
-      gap: var(--spc-tk-xs);
-    }
-
-    .contact-our-media{
-      gap: 5px;
-    }
-
-    .text-contact{
-      padding-right: 30px;
-    }
-
-    .text-contact-icon i, .contact-our-media div i,.contact-our-media div i {
-      font-size: 10px;
-    }
-    }
+  .carousel-container {
+    width: 363px;
+  }
+}
 }
